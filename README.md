@@ -1,1 +1,6 @@
-# grupo_6_sprintOne
+# grupo_6_biciBikes
+
+- Matias Godoy 
+- Sofia Vazquez
+- Maria Rodriguez
+- Ezequiel Arias
