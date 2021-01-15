@@ -16,4 +16,4 @@ Sitios web de referencia:
 
 Se eligieron estas páginas porque consideramos que contienen diferentes elementos los cuales las hacen fluidas, ordenadas, cómodas a la vista y accesibles. Por tanto, dichos elementos serán útiles y funcionales a nuestro website.
 
-Nuestro website "Bici Bikes" será una lugar donde toda persona podrá encontrar su estilo propio de moverse. Se sentirán seguros con la infomación que les brindaremos y cómodos a la hora de elegir. Podrán optar por diferentes modelos para disfrutar de su rutina de ejercicios, sus paseos al aire libre en familia o bien como vehículo de su vida diaria.
+Nuestro website "Bici Bikes" será un lugar donde toda persona podrá encontrar su estilo propio de moverse. Se sentirán seguros con la infomación que les brindaremos y cómodos a la hora de elegir. Podrán optar por diferentes modelos para disfrutar de su rutina de ejercicios, sus paseos al aire libre en familia o bien como vehículo de su vida diaria.
