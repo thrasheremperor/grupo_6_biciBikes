@@ -5,6 +5,9 @@ Integrantes:
 - Maria Rodriguez
 - Ezequiel Arias
 
+Nuestro Trello:
+https://trello.com/b/ZbFRZnUU/programmernation
+
 Sitios web de referencia:
 - TopMega https://www.topmega.com.ar
 - ProBikes https://www.probikes.com.ar
