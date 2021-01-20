@@ -7,6 +7,8 @@ Integrantes:
 
 Somos un grupo de amigos entre 19 y 25 años, de diferentes zonas del Gran Buenos Aires, con dos pasiones en común: *las bicis y la programación*.
 Por eso creamos este sitio dónde cada quien podrá encontrar su Bike acorde a sus actividades y a su personalidad, con garantía de calidad y satisfacción. Bienvenidos a *"Bici Bikes"*
+Nuestro Trello:
+https://trello.com/b/ZbFRZnUU/programmernation
 
 Sitios web de referencia:
 - TopMega https://www.topmega.com.ar (Diseño de página y fluidez)
