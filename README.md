@@ -5,14 +5,17 @@ Integrantes:
 - Maria Rodriguez
 - Ezequiel Arias
 
+Somos un grupo de amigos entre 19 y 25 años, de diferentes zonas del Gran Buenos Aires, con dos pasiones en común: *las bicis y la programación*.
+Por eso creamos este sitio dónde cada quien podrá encontrar su Bike acorde a sus actividades y a su personalidad, con garantía de calidad y satisfacción. Bienvenidos a *"Bici Bikes"*
+
 Sitios web de referencia:
-- TopMega https://www.topmega.com.ar
-- ProBikes https://www.probikes.com.ar
-- Bianchi strore https://www.bianchistore.cl
-- Nitro bikes https://www.nitrobikes.com.ar
-- Bici Market https://www.bicimarket.com
-- Racer Bikes https://www.racerbikes.com.ar
-- We the people BMX https://wethepeoplebmx.de
+- TopMega https://www.topmega.com.ar (Diseño de página y fluidez)
+- ProBikes https://www.probikes.com.ar (Organización)
+- Bianchi strore https://www.bianchistore.cl (Diseño de imágenes en el home)
+- Nitro bikes https://www.nitrobikes.com.ar (Diseño del head)
+- Racer Bikes https://www.racerbikes.com.ar (Orden, accesibilidad y gama de colores)
+- We the people BMX https://wethepeoplebmx.de (Carrito de compras)
+- Mercado Libre Argentina https://www.mercadolibre.com.ar (Carrito de compras)
 
 Se eligieron estas páginas porque consideramos que contienen diferentes elementos los cuales las hacen fluidas, ordenadas, cómodas a la vista y accesibles. Por tanto, dichos elementos serán útiles y funcionales a nuestro website.
 
