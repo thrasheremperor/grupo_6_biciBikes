@@ -1,0 +1,6 @@
+--Establecimos una paleta de la gama:--
+  de los amarillos y negros
+--Establecimos 3 fuentes:--
+1- Bebas neue
+2- Montserrat
+3- Arial unicode
