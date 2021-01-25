@@ -28,7 +28,7 @@ button.navbar-toggler {
 }
 
 .wheel {
-    width: 6rem;
+    width: 5rem;
     border-radius: 70px;
     transition: all .5s ease;
     -webkit-transition: all .5s ease-out;
