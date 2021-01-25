@@ -1,0 +1,44 @@
+:root {
+    --black: #222831;
+    --darkGray: #393e46;
+    --yellow: #ffd369;
+    --lightGray: #eeeeee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a img{
+  width: 14rem;
+}
+
+a.navbar-brand {
+    margin: 0px;
+}
+
+button.navbar-toggler {
+
+}
+
+.wheel {
+    width: 14rem;
+    align-items: flex-end;
+}
+
+main {
+    min-height: 80vh;
+
+}
+
+footer {
+    height: 10vh;
+    background-color: darkred;
+}
