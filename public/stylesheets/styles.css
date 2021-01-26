@@ -11,20 +11,12 @@
     box-sizing: border-box;
 }
 
-.navbar {
-    
-}
-
 .navbar a img{
   width: 8em;
 }
 
 a.navbar-brand {
     margin: 0px;
-}
-
-button.navbar-toggler {
-
 }
 
 .wheel {
@@ -46,11 +38,6 @@ button.navbar-toggler {
     -moz-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
-}
-
-.indicate{
-   
-    
 }
 
 .indicate i {
