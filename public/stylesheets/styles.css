@@ -51,7 +51,7 @@ main {
 
 footer {
     height: 10vh;
-    background-color: darkred;
+    background-color: var(--yellow);
 }
 
 
