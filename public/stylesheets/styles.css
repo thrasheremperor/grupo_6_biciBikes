@@ -48,14 +48,31 @@ main {
     min-height: 80vh;
 
 }
+/* FOOTER */
 
 footer {
-    height: 10vh;
+    height: 30vh;
     background-color: var(--yellow);
+    border: solid 0.5px black;
+}
+ul li {
+    list-style: none;
+}
+ul a i {
+    color:black;
+}
+a {
+    text-decoration: none;
 }
 
-
+.logo{
+  max-width: 15em;
+  max-height: 10em;
+}
 
 @media(min-width:425){
-    
+    /*Queria que el logo desapareciera en mobile*/
+    .logo{
+        display:none;
+    }
 }
