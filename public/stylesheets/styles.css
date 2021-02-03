@@ -1,9 +1,3 @@
-:root {
-    --black: #222831;
-    --darkGray: #393e46;
-    --yellow: #ffd369;
-    --lightGray: #eeeeee;
-}
 
 * {
     margin: 0;
@@ -74,3 +68,6 @@ a {
 @media(min-width:425){
     
 }
+
+
+@import "home.css"
