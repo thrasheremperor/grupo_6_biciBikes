@@ -48,29 +48,6 @@ main {
     min-height: 80vh;
 
 }
-/* FOOTER */
-
-footer {
-    height: 20vh;
-    background-color: var(--yellow);
-    border: solid 0.5px black;
-}
-.logo{
-    max-width: 150px;
-    max-height: 100px;
-  }
-ul li {
-    list-style: none;
-}
-ul a i {
-    color:black;
-}
-a {
-    text-decoration: none;
-}
-
-
-
 @media(min-width:425){
     
 }
