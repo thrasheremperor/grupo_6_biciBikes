@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/header.ejs')  %> 
+<body>
+<%- include('../partials/head.ejs') %> 
+    <div class="container">
+        <form action="/admin" method="POST">
+            <h3>Agregar nuevo producto</h3>
+            <hr>
+            <div class="row">
+              <div class="col-md-6 col-lg-4">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="modelo" placeholder="marca" name="marca">
+                  <label for="modelo">Nombre del Producto</label>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <p>agrega imagen de producto</p>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="imagen" placeholder="imagen" name="img">
+                  <label for="imagen">Imagen</label>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="modelo" placeholder="marca" name="marca">
+                    <label for="modelo">Marca</label>
+                  </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="modelo" placeholder="modelo" name="modelo">
+                  <label for="modelo">precio de producto</label>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="form-floating mb-3">
+                  <input type="number" min="2000" max="2021" class="form-control" id="anio" placeholder="año" name="anio">
+                  <label for="anio">estado de producto</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="color" placeholder="color" name="color">
+                  <label for="color">ubicacion de proveedor </label>
+                </div>
+              <div class="col-md-6">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="color" placeholder="color" name="color">
+                  <label for="color">contacto de proveedor</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="color" placeholder="color" name="color">
+                  <label for="color">medio de cobro</label>
+                </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="color" placeholder="color" name="color">
+                  <label for="color">formar de envio</label>
+                </div>
+            
+            </div>
+          
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" type="submit">Guardar</button>
+            </div>
+          
+           
+            </form>
+    </div>
+ 
+    <%- include('../partials/footer.ejs')  %> 
+
+</body>
+</html>

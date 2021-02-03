@@ -1,10 +1,10 @@
 # grupo_6_biciBikes
 **Integrantes:**
 
-[Matias Godoy](https://github.com/thrasheremperor)**
-[Sofia Vazquez](https://github.com/msofia97)**
-[Maria Rodriguez](https://github.com/Maria5398)**
-[Ezequiel Arias](https://github.com/EzequielArias12)**
+[Matias Godoy](https://github.com/thrasheremperor)
+[Sofia Vazquez](https://github.com/msofia97)
+[Maria Rodriguez](https://github.com/Maria5398)
+[Ezequiel Arias](https://github.com/EzequielArias12)
 
 Somos un grupo de amigos entre 19 y 25 años, de diferentes zonas del Gran Buenos Aires, con dos pasiones en común: *las bicis y la programación*.
 Por eso creamos este sitio dónde cada quien podrá encontrar su Bike acorde a sus actividades y a su personalidad, con garantía de calidad y satisfacción. Bienvenidos a *"Bici Bikes"*

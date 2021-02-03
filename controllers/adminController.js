@@ -1,5 +1,5 @@
 module.exports = {
     index :(req, res) => {
-        res.render('Detalle')
+        res.render('Agregar Producto')
     }
 }
