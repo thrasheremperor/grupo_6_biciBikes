@@ -1,5 +1,6 @@
+const datoBicis
 module.exports = {
-    index :(req, res) => {
+    detalle :(req, res) => {
         res.render('Detalle')
     }
 }
