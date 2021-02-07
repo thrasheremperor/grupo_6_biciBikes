@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('./partials/header.ejs') %> 
+  <%- include('./partials/head') %> 
 <body>
-  <%- include('./partials/head.ejs') %> 
-  <main>
-    <%= detalle %> 
-  </main>
-  <%- include('./partials/footer.ejs') %> 
+  <%- include('./partials/header') %> 
+ 
+  <!--aqui es donde debe ir la vista de detalle de los productos selecionados -->
+
+  <select id="color" name="color"> <!--este dato debe ser guardado-->
+    <option>azul</option>
+    <option>rojo</option>
+    <option>negro</option>
+  </select>
+  <a href="#" class="subir">
+    <button>comprar ahora</button> <!--este debe llevar a la pagina de comprar -->
+  </a>
+  <a href="#" class="subir">
+  <button>agregar a carrito</button> <!--este debe llevar a la pagina de carrito-->
+  </a>
+  <%- include('./partials/footer') %> 
 </body>
 </html>

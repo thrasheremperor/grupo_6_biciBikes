@@ -1,5 +1,5 @@
 module.exports = {
-    index :(req, res) => {
-        res.render('Agregar Producto')
+    admin :(req, res) => {
+        res.render('admin') /*renderiso  la vista de admin.ejs */
     }
 }
