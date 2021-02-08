@@ -1,18 +1,319 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('./partials/header.ejs') %> 
+  <%- include('partials/head')%>
 <body>
-  <%- include('./partials/head.ejs') %> 
+  <%- include('partials/header')%>
+  <link rel="stylesheet" href="stylesheets/home.css">
+
   <main>
-    <%= about %> 
+    <hr color="gray" size="3">
+    <section class="banner">
+<h1>¡Bienvenidos a BiciBikes!</h1>
+<button type="button" class="btn btn-warning"><a href="products.ejs">Todos los productos</a></button>
+    </section>
+    <hr color="gray" size="3">
+
+    <div class="container products-wrapper">
+      <section class="row">
+
+        <!--Div de secciones-->
+
+        <!--Últimos productos vistos-->
+        <div class="col-12">
+<h2 class="products-title">Últimos vistos</h2>
+        </div>
+        <!--Div de grillas-->
+      
+        <div class=" a col-12 col-md-6 col-lg-3">
+          <!--Sección de cada producto-->
+          <section class="product-box">
+            
+              <a href="detalle.ejs"><img src="images/biciEjemplo.png" alt="Bicicleta"></a>
+          
+            <article>
+              <h3>$11.111</h3>
+              <span>Envio bonificado</span>
+              <i class="fas fa-truck"></i>
+            </article>
+            <div class="detalle">
+              <p>Bici MTB</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </section> <!--cierra sección de cada producto-->
+
+          <section class="product-box">
+            
+              <a href="detalle.ejs"><img src="images/biciEjemplo.png" alt="Bicicleta" class="img-fluid"></a>
+            
+            <article>
+              <h3>$11.111</h3>
+              <span>Envio bonificado</span>
+              <i class="fas fa-truck"></i>
+            </article>
+            <div class="detalle">
+              <p>Bici MTB</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </section>
+          <section class="product-box">
+            
+              <a href="detalle.ejs"><img src="images/biciEjemplo.png" alt="Bicicleta" class="img-fluid"></a>
+            
+            <article>
+              <h3>$11.111</h3>
+              <span>Envio bonificado</span>
+              <i class="fas fa-truck"></i>
+            </article>
+            <div class="detalle">
+              <p>Bici MTB</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </section>
+          <section class="product-box">
+            
+              <a href="detalle.ejs"><img src="images/biciEjemplo.png" alt="Bicicleta" class="img-fluid"></a>
+            
+            <article>
+              <h3>$11.111</h3>
+              <span>Envio bonificado</span>
+              <i class="fas fa-truck"></i>
+            </article>
+            <div class="detalle">
+              <p>Bici MTB</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </section>
+        </div>
+        
+        
+          <div class="col-12">
+            <hr color="gray" size="3">
+            <h2 class="products-title">Ahorrá ya</h2>
+                    </div>
+                    
+                    <div class="b col-12 col-md-6 col-lg-3">
+
+                      <section class="product-box">
+                        
+                          <a href="detalle.ejs"><img src="images/biciEjemplo1.jpeg" alt="Bicicleta" class="img-fluid"></a>
+                        
+                        <article>
+                          <h3>$11.111</h3>
+                          <span>40% OFF</span>
+                          <i class="fas fa-truck"></i>
+                        </article>
+                        <div class="detalle">
+                          <p>Bici uso diario</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </section>
+                      <section class="product-box">
+                        
+                          <a href="detalle.ejs"><img src="images/biciEjemplo1.jpeg" alt="Bicicleta" class="img-fluid"></a>
+                        
+                        <article>
+                          <h3>$11.111</h3>
+                          <span>40% OFF</span>
+                          <i class="fas fa-truck"></i>
+                        </article>
+                        <div class="detalle">
+                          <p>Bici uso diario</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </section>
+                      <section class="product-box">
+                        
+                          <a href="detalle.ejs"><img src="images/biciEjemplo1.jpeg" alt="Bicicleta" class="img-fluid"></a>
+                        
+                        <article>
+                          <h3>$11.111</h3>
+                          <span>40% OFF</span>
+                          <i class="fas fa-truck"></i>
+                        </article>
+                        <div class="detalle">
+                          <p>Bici uso diario</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </section>
+                      <section class="product-box">
+                        
+                          <a href="detalle.ejs"><img src="images/biciEjemplo1.jpeg" alt="Bicicleta" class="img-fluid"></a>
+                        
+                        <article>
+                          <h3>$11.111</h3>
+                          <span>40% OFF</span>
+                          <i class="fas fa-truck"></i>
+                        </article>
+                        <div class="detalle">
+                          <p>Bici uso diario</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </section>
+                      <section class="product-box">
+                        
+                          <a href="detalle.ejs"><img src="images/biciEjemplo1.jpeg" alt="Bicicleta" class="img-fluid"></a>
+                        
+                        <article>
+                          <h3>$11.111</h3>
+                          <span>40% OFF</span>
+                          <i class="fas fa-truck"></i>
+                        </article>
+                        <div class="detalle">
+                          <p>Bici uso diario</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </section>
+                      <section class="product-box">
+                       
+                          <a href="detalle.ejs"><img src="images/biciEjemplo1.jpeg" alt="Bicicleta" class="img-fluid"></a>
+                        
+                        <article>
+                          <h3>$11.111</h3>
+                          <span>40% OFF</span>
+                          <i class="fas fa-truck"></i>
+                        </article>
+                        <div class="detalle">
+                          <p>Bici uso diario</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </section>
+
+                    </div>
+                    
+
+
+                    
+
+
+        <div class="col-12">
+          <hr color="gray" size="3">
+            <h2 class="products-title">Populares</h2>
+                    </div>
+  
+                    <div class="c col-12 col-md-6 col-lg-3">
+
+                      <section class="product-box">
+                        
+                          <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg"  alt="Bicicleta" class="img-fluid"></a>
+                        
+                        <article>
+                          <h3>$11.111</h3>
+                          <span>Puerta a puerta</span>
+                          <i class="fas fa-truck"></i>
+                        </article>
+                        <div class="detalle">
+                          <p>Más popular</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </section>
+                      <section class="product-box">
+                        
+                          <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
+                        
+                        <article>
+                          <h3>$11.111</h3>
+                          <span>Puerta a puerta</span>
+                          <i class="fas fa-truck"></i>
+                        </article>
+                        <div class="detalle">
+                          <p>Más popular</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </section>
+                      <section class="product-box">
+                        
+                          <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
+                        
+                        <article>
+                          <h3>$11.111</h3>
+                          <span>Puerta a puerta</span>
+                          <i class="fas fa-truck"></i>
+                        </article>
+                        <div class="detalle">
+                          <p>Más popular</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </section>
+                      <section class="product-box">
+                        
+                          <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
+                        
+                        <article>
+                          <h3>$11.111</h3>
+                          <span>Puerta a puerta</span>
+                          <i class="fas fa-truck"></i>
+                        </article>
+                        <div class="detalle">
+                          <p>Más popular</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </section>
+                      <section class="product-box">
+                        
+                          <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
+                       
+                        <article>
+                          <h3>$11.111</h3>
+                          <span>Puerta a puerta</span>
+                          <i class="fas fa-truck"></i>
+                        </article>
+                        <div class="detalle">
+                          <p>Más popular</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </section>
+                      <section class="product-box">
+                        
+                          <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
+                        
+                        <article>
+                          <h3>$11.111</h3>
+                          <span>Puerta a puerta</span>
+                          <i class="fas fa-truck"></i>
+                        </article>
+                        <div class="detalle">
+                          <p>Más popular</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </section>
+                      <section class="product-box">
+                        
+                          <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
+                        
+                        <article>
+                          <h3>$11.111</h3>
+                          <span>Puerta a puerta</span>
+                          <i class="fas fa-truck"></i>
+                        </article>
+                        <div class="detalle">
+                          <p>Más popular</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </section>
+                      <section class="product-box">
+                        
+                          <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
+                        
+                        <article>
+                          <h3>$11.111</h3>
+                          <span>Puerta a puerta</span>
+                          <i class="fas fa-truck"></i>
+                        </article>
+                        <div class="detalle">
+                          <p>Más popular</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                      </section>
+                    </div>
+                   
+
+        <!--cierre div de grillas-->
+       </section>
+       
+    </div>
+    <button type="button" class="btn btn-warning"><a href="products.ejs">Todos los productos</a></button>
   </main>
-      <div class='col-12'>
-        <figure class="center">
-          <img src="../public/images/biciEjemplo.png" alt="" class="img-fluid">
-        </figure>
-      </div>
-    
- 
-  <%- include('./partials/footer.ejs') %> 
+<%- include('partials/footer') %> 
+
 </body>
 </html>
