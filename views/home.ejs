@@ -5,25 +5,36 @@
   <%- include('partials/header') %> 
   <link rel="stylesheet" href="stylesheets/home.css">
   <main>
-    <h2>Bienvenidos! Estos son nuestros productos</h2>
-    <div class="container-fluid">
-      <div class="col-sm-12 col-md-6 col-lg-3">
-        <section>
-          <article> <img src="images/biciEjemplo.png" alt="" class="img-fluid"></article>
-          <article> <img src="images/biciEjemplo.png" alt="" class="img-fluid"></article>
-          <article> <img src="images/biciEjemplo.png" alt="" class="img-fluid"></article>
-          <article> <img src="images/biciEjemplo.png" alt="" class="img-fluid"></article>
-          <article> <img src="images/biciEjemplo.png" alt="" class="img-fluid"></article>
-          <article> <img src="images/biciEjemplo.png" alt="" class="img-fluid"></article>
-          <article> <img src="images/biciEjemplo.png" alt="" class="img-fluid"></article>
-          <article> <img src="images/biciEjemplo.png" alt="" class="img-fluid"></article>
-</section>
+    <section class="banner">
+    <h1>Bienvenidos a Bici Bikes! Estos son nuestros productos</h1>
+  </section>
+    <div class="container products-wrapper">
+      <section class="row">
+        <div class="col-12">
+          <h2 class="products-title">Últimos vistos</h2>
+        </div>
+        <% products.forEach(producto =>{ %>
+      <div class="col-12 col-md-6 col-lg-3">
+        <section class="product-box">
+          <a href="">
+      <figure class="product-box_data">
+          <a href=""><img src="images/biciEjemplo.png" alt="" class="img-fluid"></a>
+        </figure>
+      <article>
+      <h3>$11111</h3>
+      <span>40% OFF</span>
+      <i class="fas fa-truck"></i>
+      </article>
+      <div class="detalle">
+        <p>Bici MTB</p>
+        <p>Lorem ipsum dolor sit amet</p>
+<% }) %>
         </div>
       </div>
-    </main>
+        </article>
+        </div>
+  
 
-
-
-  <%- include('partials/footer') %> 
+<%- include('partials/footer') %> 
 </body>
 </html>
