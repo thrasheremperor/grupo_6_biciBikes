@@ -21,6 +21,6 @@ app.use(express.static(__dirname + '/public'));
 app.use('/', homeRouter);
 app.use('/producto', detalleRouter);
 app.use('/admin', adminRouter);
-app.use('/registrotarjeta', tarjetaRouter);
+app.use('/registroTarjeta', tarjetaRouter);
 
 app.listen(port, () => console.log(`Server running in port ${port}`))

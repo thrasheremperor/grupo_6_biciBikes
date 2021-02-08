@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/header.ejs')  %> 
+<%- include('partials/head')  %> 
 <body>
-<%- include('../partials/head.ejs') %> 
+<%- include('partials/header') %> 
+
     <div class="container">
         <form action="" method="">
             <h3>Agregar nuevo producto</h3>
@@ -10,45 +11,54 @@
             <div class="row">
               <div class="col-md-6 col-lg-4">
                 <div class="form-floating mb-3"> <!--probar poner el input dentro de label-->
+                  <label for="name">Nombre </label>
                   <input type="text" class="form-control" id="name" placeholder="name" name="name">
-                  <label for="name">Nombre del Producto</label>
                 </div>
-              </div>
-              <div class="col-lg-6">
-                <p>agrega imagen de producto</p>
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="imagen" placeholder="imagen" name="img">
+            
+              <div class="col-md-6 col-lg-4">
+                <div class="form-floating mb-3">                  
                   <label for="imagen">Imagen</label>
+                  <input type="file" class="form-control" id="imagen" placeholder="imagen" name="img">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="modelo" placeholder="marca" name="marca">
                     <label for="modelo">Marca</label>
+                    <input type="text" class="form-control" id="modelo" placeholder="marca" name="marca">
                   </div>
               <div class="col-md-6 col-lg-4">
                 <div class="form-floating mb-3">
-                  <input type="number" class="form-control" id="number" placeholder="number" name="number">
                   <label for="color">precio de producto</label>
+                  <input type="number" class="form-control" id="number" placeholder="number" name="number">
                 </div>
               </div>
               <div class="col-md-6 col-lg-4">
                 <div class="form-floating mb-3"> <!--agregar selec aqui, nuevo o usado-->
                   <label for="anio">estado de producto</label>
+                  <select id="estado" name="estado">
+                    <option>usado</option>
+                    <option>nuevo</option>
+                  </select>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="text" placeholder="text" name="text">
                   <label for="color">ubicacion de proveedor </label>
+                  <input type="text" class="form-control" id="text" placeholder="ubicacion" name="text">
                 </div>
               <div class="col-md-6">
                 <div class="form-floating mb-3">
-                  <input type="number" class="form-control" id="number" placeholder="number" name="number">
                   <label for="color">contacto de proveedor</label>
+                  <input type="number" class="form-control" id="number" placeholder="contacto" name="number">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-floating mb-3">
                   <!--agregar un selec aqui , efetivo, tarjeta, pago facil-->
                   <label for="color">medio de cobro</label>
+                  <select id="medio" name="pago">
+                    <option>tarjeta</option>
+                    <option>efectivo</option>
+                    <option>pago facil</option>
+                  </select>
+
                 </div>
                 </div>
               </div>
@@ -56,6 +66,10 @@
                 <div class="form-floating mb-3">
                   <!--agregar un selec aqui , selec mercado envio, oca otros-->
                   <label for="color">formar de envio</label>
+                  <select id="estado" name="estado">
+                    <option>retiro personal</option>
+                    <option>envio</option>
+                    </select>
                 </div>
             
             </div>
@@ -67,7 +81,7 @@
         </form>
     </div>
  
-    <%- include('../partials/footer.ejs')  %> 
+    <%- include('partials/footer')  %> 
 
 </body>
 </html>
