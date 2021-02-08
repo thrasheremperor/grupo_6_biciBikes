@@ -5,31 +5,28 @@
 <%- include('partials/header') %> 
 
     <div class="container">
-        <form action="" method="">
+        <form action="/" method="post">
             <h3>Agregar nuevo producto</h3>
             <hr>
             <div class="row">
-              <div class="col-md-6 col-lg-4">
+              <div class="col-10">
                 <div class="form-floating mb-3"> <!--probar poner el input dentro de label-->
                   <label for="name">Nombre </label>
                   <input type="text" class="form-control" id="name" placeholder="name" name="name">
                 </div>
-            
-              <div class="col-md-6 col-lg-4">
-                <div class="form-floating mb-3">                  
-                  <label for="imagen">Imagen</label>
-                  <input type="file" class="form-control" id="imagen" placeholder="imagen" name="img">
+          
+              <div class="col-10">
                   <div class="form-floating mb-3">
                     <label for="modelo">Marca</label>
                     <input type="text" class="form-control" id="modelo" placeholder="marca" name="marca">
                   </div>
-              <div class="col-md-6 col-lg-4">
+              <div class="col-10">
                 <div class="form-floating mb-3">
                   <label for="color">precio de producto</label>
                   <input type="number" class="form-control" id="number" placeholder="number" name="number">
                 </div>
               </div>
-              <div class="col-md-6 col-lg-4">
+              <div class="col-10">
                 <div class="form-floating mb-3"> <!--agregar selec aqui, nuevo o usado-->
                   <label for="anio">estado de producto</label>
                   <select id="estado" name="estado">
@@ -38,18 +35,18 @@
                   </select>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-10">
                 <div class="form-floating mb-3">
                   <label for="color">ubicacion de proveedor </label>
                   <input type="text" class="form-control" id="text" placeholder="ubicacion" name="text">
                 </div>
-              <div class="col-md-6">
+              <div class="col-10">
                 <div class="form-floating mb-3">
                   <label for="color">contacto de proveedor</label>
                   <input type="number" class="form-control" id="number" placeholder="contacto" name="number">
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-10">
                 <div class="form-floating mb-3">
                   <!--agregar un selec aqui , efetivo, tarjeta, pago facil-->
                   <label for="color">medio de cobro</label>
@@ -62,7 +59,7 @@
                 </div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-10">
                 <div class="form-floating mb-3">
                   <!--agregar un selec aqui , selec mercado envio, oca otros-->
                   <label for="color">formar de envio</label>
@@ -71,12 +68,18 @@
                     <option>envio</option>
                     </select>
                 </div>
-            
+                <div class="col-10">
+                  <div class="">                  
+                    <label for="imagen">Imagen</label>
+                    <input type="file" class="" id="imagen" placeholder="imagen" name="img">
+                </div>
             </div>
           
             <div class="d-grid gap-2">
               <button class="btn btn-primary" type="submit">subir</button>
             </div>
+          </div>
+          </div>
           
         </form>
     </div>

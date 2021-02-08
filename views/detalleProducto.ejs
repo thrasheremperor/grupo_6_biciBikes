@@ -3,21 +3,10 @@
   <%- include('partials/head.ejs') %> 
 <body>
   <%- include('partials/header.ejs') %> 
-  <link rel="stylesheets" href="/public/stylesheets/detalle.css">
   <!--aqui es donde debe ir la vista de detalle de los productos selecionados -->
-  <h3>detalle de producto selecionado</h3>
+  <h2>Detalle de Producto Selecionado</h3>
   <hr>
-  <section class="container">
-    <div class="producto">
-      <a href="#">
-        <img src="/public/images/biciEjemplo.png" alt="">
-        <h2></h2>
-        <h2 class="name">bicileta</h2>
-        <i class="fas fa-truck">envio</i>
-        <h3 class="precio">$1.234</h3>
 
-      </a>
-  </section>
  <hr>
   <select id="color" name="color"> <!--este dato debe ser guardado-->
     <option>azul</option>
@@ -33,16 +22,13 @@
   <button>agregar a carrito</button> <!--este debe llevar a la pagina de carrito-->
   </a>
   <hr>
-  <div class="form-floating mb-3">
+  <div class="col-10">
   <input type="text" class="form-control" id="text" placeholder="comenta" name="text">
 </div>
   <div class="d-grid gap-2">
     <button class="btn btn-primary" type="submit">comentar</button>
   </div>
   <hr>
-  <h2>aqui se debe visualizar los comentarios hechos</h2>
- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis velit laboriosam quos et ducimus porro dicta nostrum harum, ea asperiores doloribus quod a rem consequuntur. Amet dolor laboriosam earum dolorem?</p>
- 
   <%- include('partials/footer.ejs') %> 
 </body>
 </html>
