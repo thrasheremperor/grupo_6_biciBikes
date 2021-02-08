@@ -1,0 +1,79 @@
+main{
+    background-color: rgba(250, 241, 119, 0.6);
+}
+
+section.banner{
+    background-color: rgba(10, 10, 9, 0.9)
+}
+h1{
+    color: white;
+
+}
+.btn{
+    border-radius: 8px;
+    box-shadow:var(--darkGray);
+    margin-left:56%;
+    margin-bottom: 12px;
+}
+.btn a{
+    text-decoration: none;
+    color:var(--black);
+}
+
+h2{
+    color: var(--darkGray);
+    font-size: 24px;
+    margin: 30px 0;
+    background-color:rgba(24, 24, 21, 0.5);
+    font-family: Arial;
+    text-align: center;
+
+}
+.a{
+    float:left
+}
+.b{
+    float:left
+}
+.c{
+    float:left;
+}
+section.product-box{
+  width: 100%;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:row;
+  position:relative;
+  border-top: 1px solid var(--darkGray);
+  padding: 10px;
+}
+
+
+img{
+  width: 100%;
+}
+
+
+/* Tablet */
+
+@media(min-width:426px){
+section.product-box{
+    float:left;
+    width:50%;
+}
+img{
+    width: 100%;
+}
+}
+
+/*ESCRITORIO*/
+
+@media(min-width:1024px) {
+    section.product-box{
+        float:left;
+        width:25%;
+    }
+    img{
+        width: 100%;
+    }
+    }
