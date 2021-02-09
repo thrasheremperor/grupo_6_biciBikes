@@ -1,90 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head')  %> 
+  <%- include('partials/head.ejs')%>
 <body>
-<%- include('partials/header') %> 
-
+  <%- include('partials/header.ejs') %> 
     <div class="container">
-        <form action="/" method="post">
-            <h3>Agregar nuevo producto</h3>
-            <hr>
-            <div class="row">
-              <div class="col-10">
-                <div class="form-floating mb-3"> <!--probar poner el input dentro de label-->
-                  <label for="name">Nombre </label>
-                  <input type="text" class="form-control" id="name" placeholder="name" name="name">
-                </div>
-          
-              <div class="col-10">
-                  <div class="form-floating mb-3">
-                    <label for="modelo">Marca</label>
-                    <input type="text" class="form-control" id="modelo" placeholder="marca" name="marca">
-                  </div>
-              <div class="col-10">
-                <div class="form-floating mb-3">
-                  <label for="color">precio de producto</label>
-                  <input type="number" class="form-control" id="number" placeholder="number" name="number">
-                </div>
-              </div>
-              <div class="col-10">
-                <div class="form-floating mb-3"> <!--agregar selec aqui, nuevo o usado-->
-                  <label for="anio">estado de producto</label>
-                  <select id="estado" name="estado">
-                    <option>usado</option>
-                    <option>nuevo</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-10">
-                <div class="form-floating mb-3">
-                  <label for="color">ubicacion de proveedor </label>
-                  <input type="text" class="form-control" id="text" placeholder="ubicacion" name="text">
-                </div>
-              <div class="col-10">
-                <div class="form-floating mb-3">
-                  <label for="color">contacto de proveedor</label>
-                  <input type="number" class="form-control" id="number" placeholder="contacto" name="number">
-                </div>
-              </div>
-              <div class="col-10">
-                <div class="form-floating mb-3">
-                  <!--agregar un selec aqui , efetivo, tarjeta, pago facil-->
-                  <label for="color">medio de cobro</label>
-                  <select id="medio" name="pago">
-                    <option>tarjeta</option>
-                    <option>efectivo</option>
-                    <option>pago facil</option>
-                  </select>
-
-                </div>
-                </div>
-              </div>
-              <div class="col-10">
-                <div class="form-floating mb-3">
-                  <!--agregar un selec aqui , selec mercado envio, oca otros-->
-                  <label for="color">formar de envio</label>
-                  <select id="estado" name="estado">
-                    <option>retiro personal</option>
-                    <option>envio</option>
-                    </select>
-                </div>
-                <div class="col-10">
-                  <div class="">                  
-                    <label for="imagen">Imagen</label>
-                    <input type="file" class="" id="imagen" placeholder="imagen" name="img">
-                </div>
-            </div>
-          
-            <div class="d-grid gap-2">
-              <button class="btn btn-primary" type="submit">subir</button>
-            </div>
+      <form action="/" method="POST">
+        <h3>Agregar nuevo Producto</h3>
+        <hr>
+        <div class="row">
+          <div class="col-10">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control">
           </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="modelo">Marca</label>
+            <input type="text" class="form-control">
           </div>
-          
-        </form>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="numero">Precio de Producto</label>
+            <input type="number" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="name">Descripcion</label>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label>estado de prodcuto</label>
+            <select id="estado" class="form-control">
+              <option>usado</option>
+              <option>nuevo</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="ubicacion">Ubicacion Proveedor</label>
+            <input type="ubicacion" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="number">Contacto Proveedor</label>
+            <input type="number" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="name">Medio De Cobro</label>
+            <option class="form-control">Tarjeta</option>
+            <option class="form-control">Efectivo</option>
+            <option class="form-control">Pago Facil</option>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="name">Envio</label>
+            <option class="form-control">Retiro</option>
+            <option class="form-control">Envio</option>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="name">Imagen de Producto</label>
+            <input type="file" class="form-control">
+          </div>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit">Publicar</button>
+        
+      </form>
     </div>
- 
-    <%- include('partials/footer')  %> 
-
+  <%- include('partials/footer.ejs')%> 
 </body>
 </html>

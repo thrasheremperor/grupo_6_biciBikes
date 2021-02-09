@@ -1,8 +1,6 @@
 /* FOOTER */
 
 footer {
-    width:127vh;
-    height:38vh;
     background-color: var(--yellow);
     border: solid 0.5px black;
 }
@@ -31,9 +29,7 @@ p{
 
 /* TABLETS*/
 @media(min-width:426px){
- footer{
-     width: 180vh;
- }
+ 
  .logo{
      display: block;
      width: 100%;
@@ -42,10 +38,6 @@ p{
 }
 /* DESKTOPS */
 @media(min-width:770px){
-    footer{
-       width: 190vh;
-       
-    }
     .logo{
         width:90%;
         height: 90%;
