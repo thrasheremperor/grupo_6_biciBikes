@@ -1,9 +1,11 @@
 [
     {
         "id": 1,
+        "name": "bicicleta",
         "marca": "specialized",
         "modelo": "top speed",
         "color": "rojo",
-        "img": "biciEjemplo.jpg"
+        "img": "biciEjemplo.jpg",
+        "precio": 1.234
     }
 ]

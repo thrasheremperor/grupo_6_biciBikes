@@ -3,6 +3,6 @@ const router = express.Router();
 
 const detalleController = require('../controllers/detalleController');
 
-router.get('/detalle', detalleController.index);
+router.get('/detalle/:id', detalleController.detalle);
 
 module.exports = router;

@@ -1,0 +1,12 @@
+*{
+    box-sizing: boder-box;
+    margin: 0;
+}
+.container{
+    text-decoration: none;
+    color: black;
+}
+section .producto{
+    padding: 20px;
+    
+}
