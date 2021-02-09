@@ -7,11 +7,12 @@ section.banner{
 }
 h1{
     color: white;
-
+    margin-left: 25px;
 }
 .btn{
     border-radius: 8px;
-    box-shadow:var(--darkGray);
+    text-shadow: 1px 1px 1px #6666;
+    box-shadow:6px 5px 24px #6666;
     margin-left:56%;
     margin-bottom: 12px;
 }
@@ -29,22 +30,15 @@ h2{
     text-align: center;
 
 }
-.a{
-    float:left
-}
-.b{
-    float:left
-}
-.c{
-    float:left;
-}
+
+
 section.product-box{
   width: 100%;
   display:flex;
   flex-wrap:wrap;
   flex-direction:row;
   position:relative;
-  border-top: 1px solid var(--darkGray);
+  border: 1px solid var(--darkGray);
   padding: 10px;
 }
 
@@ -52,17 +46,31 @@ section.product-box{
 img{
   width: 100%;
 }
-
+.detalle{
+margin-left: 30px;
+}
+p{
+    font-size:18px;
+    margin:0px 0px;
+    
+}
 
 /* Tablet */
 
 @media(min-width:426px){
 section.product-box{
     float:left;
-    width:50%;
+    width:100%;
+    
 }
 img{
     width: 100%;
+}
+h1{
+    margin-left: 35px;
+}
+.btn{
+    margin-left: 70%;
 }
 }
 
@@ -71,9 +79,16 @@ img{
 @media(min-width:1024px) {
     section.product-box{
         float:left;
-        width:25%;
+        width:100%;
+        
     }
     img{
         width: 100%;
+    }
+    h1{
+        margin-left: 150px;
+    }
+    .btn{
+margin-left: 67%;
     }
     }

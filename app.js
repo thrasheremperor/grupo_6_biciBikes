@@ -7,6 +7,8 @@ const port = 5000;
 
 const homeRouter = require('./routes/homeRouter');
 const detalleRouter = require('./routes/detalleRouter');
+const tarjetaRouter = require('./routes/tarjetaRouter');
+const adminRouter = require('./routes/adminRouter');
 const registroRouter = require('./routes/registroRouter');
 const loginRouter = require('./routes/loginRouter');
 
@@ -19,8 +21,10 @@ app.use(express.static(__dirname + '/public'));
 // rutas 
 
 app.use('/', homeRouter);
-app.use('/detalle', detalleRouter);
 app.use('/registro',registroRouter);
+app.use('/producto', detalleRouter);
+app.use('/admin', adminRouter);
+app.use('/registroTarjeta', tarjetaRouter);
 app.use('/login',loginRouter);
 
 app.listen(port, () => console.log(`Server running in port ${port}`))
