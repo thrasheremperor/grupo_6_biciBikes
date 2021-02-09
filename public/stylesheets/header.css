@@ -30,3 +30,40 @@ header .input-search button{
     height: 40%;
     width: 12%;
 }
+.navbar a img{
+    width: 8em;
+  }
+  
+  a.navbar-brand {
+      margin: 0px;
+  }
+  
+  .wheel {
+      position: absolute;
+      right: 20px;
+      top: 50px;
+      width: 5rem;
+      border-radius: 70px;
+      transition: all .5s ease;
+      -webkit-transition: all .5s ease-out;
+      -moz-transition: all .5s ease;
+      -ms-transition: all .5s ease;
+  }
+  
+  .wheel:hover {
+      box-shadow: 5px 5px 10px gray;
+      transform: scale(1.05);
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+  }
+  
+  .indicate i {
+      padding: 5px 0px 5px 5px;
+  }
+  
+  main {
+      min-height: 80vh;
+  
+  }
