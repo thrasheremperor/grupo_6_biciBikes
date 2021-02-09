@@ -44,6 +44,7 @@ padding: 1em;
     padding: 1em;
 }
 
+/*ANIMACION DE CSS*/
 .register-form form button:hover,
 .register-form form button:focus{
 background:red;
@@ -51,6 +52,7 @@ color:white;
 transition: background-color 1s;
 outline: 0;
 }
+
 .register-form form button,
 .register-form form input{
     width:98%;
@@ -62,7 +64,7 @@ outline: 0;
     border-bottom: 1px solid rgb(70, 4, 4);
 }
 .register-form form button {
-    background:rgba(250, 241, 119, 0.6);;
+    background:rgba(250, 241, 119, 0.6);
     color:black;
     border: 0;
     text-transform: uppercase;

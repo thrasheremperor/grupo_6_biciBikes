@@ -4,6 +4,7 @@
 @import "footer.css";
 @import "home.css";
 @import "header.css";
+@import "login.css";
 
 :root {
     --black: #222831;
