@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color:black;
+    background-color:rgba(250, 241, 119, 0.6);
     padding: 0 1.5em;
 }
 
@@ -18,15 +18,17 @@ h1 {
     text-align: center;
     font-size: 5em;
     font-family: 'Dancing Script', cursive;
-    color: white;
+}
+a{
+color: black;
 }
 p{
-    color: white;
+    color: black;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .register-wrapper{
-    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px 0 rgba(44, 40, 40, 0.9);
 }
 
 .register-wrapper > * {
@@ -34,7 +36,7 @@ padding: 1em;
 }
 
 .register-form {
-    background:#222222 ;
+    background-color:var(--yellow);
 }
 
 .register-form form {
@@ -51,7 +53,7 @@ outline: 0;
 }
 .register-form form button,
 .register-form form input{
-    width:100%;
+    width:98%;
     padding: .7em;
     border: none;
     background: none;
@@ -60,7 +62,7 @@ outline: 0;
     border-bottom: 1px solid rgb(70, 4, 4);
 }
 .register-form form button {
-    background:rgb(70, 4, 4);
+    background:rgba(250, 241, 119, 0.6);;
     color:black;
     border: 0;
     text-transform: uppercase;
@@ -69,7 +71,7 @@ outline: 0;
 
 
 .register-help{
-    background: black;
+    background: rgba(250, 241, 119, 0.6);;
 }
 
 .register-help h4,
@@ -86,6 +88,6 @@ outline: 0;
     .register-form .block{
         grid-column: 1 / 3;
     }
-}
+ }
 
 
