@@ -5,7 +5,7 @@
     --lightGray: #eeeeee;
 }
 header{
-    background-color: var(--yellow)
+    background-color: var(--yellow);
 }
 header .input-search{
     border-radius: 2px;

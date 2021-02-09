@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs')%>
+<body>
+  <%- include('partials/header.ejs') %> 
+    <div class="container">
+      <form action="/" method="POST">
+        <h3>Agregar nuevo Producto</h3>
+        <hr>
+        <div class="row">
+          <div class="col-10">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="modelo">Marca</label>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="numero">Precio de Producto</label>
+            <input type="number" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="name">Descripcion</label>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label>estado de prodcuto</label>
+            <select id="estado" class="form-control">
+              <option>usado</option>
+              <option>nuevo</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="ubicacion">Ubicacion Proveedor</label>
+            <input type="ubicacion" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="number">Contacto Proveedor</label>
+            <input type="number" class="form-control">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="name">Medio De Cobro</label>
+            <option class="form-control">Tarjeta</option>
+            <option class="form-control">Efectivo</option>
+            <option class="form-control">Pago Facil</option>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="name">Envio</label>
+            <option class="form-control">Retiro</option>
+            <option class="form-control">Envio</option>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="name">Imagen de Producto</label>
+            <input type="file" class="form-control">
+          </div>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit">Publicar</button>
+        
+      </form>
+    </div>
+  <%- include('partials/footer.ejs')%> 
+</body>
+</html>
