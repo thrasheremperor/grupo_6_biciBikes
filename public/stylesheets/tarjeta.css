@@ -1,0 +1,7 @@
+*{
+    margin: 0 auto;
+}
+body.tarjeta{
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-atmospheric-black-mountain-mountain-bike-outdoor-sports-image_182595.jpg');
+    background-size: 100% 100%;
+}

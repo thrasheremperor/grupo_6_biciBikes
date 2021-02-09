@@ -5,6 +5,7 @@
 @import "home.css";
 @import "header.css";
 @import "login.css";
+@import "tarjeta.css";
 
 :root {
     --black: #222831;
@@ -18,6 +19,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+.fa-twitter:hover{   color: aqua;}
+.fa-facebook-square:hover{   color: blue;}
+.fa-spotify:hover{   color: green;}
+.fa-apple:hover{   color: rgb(111, 122, 122);}
+.fa-amazon:hover{   color: orange;}
+.fa-instagram:hover{   color: rgb(206, 43, 111);}
 
 @media(min-width:425){
     

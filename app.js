@@ -11,7 +11,7 @@ const tarjetaRouter = require('./routes/tarjetaRouter');
 const adminRouter = require('./routes/adminRouter');
 const registroRouter = require('./routes/registroRouter');
 const loginRouter = require('./routes/loginRouter');
-
+const carritoRouter = require('./routes/carritoRouter');
 /* VIEW ENGINE */
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
@@ -26,5 +26,6 @@ app.use('/producto', detalleRouter);
 app.use('/admin', adminRouter);
 app.use('/registroTarjeta', tarjetaRouter);
 app.use('/login',loginRouter);
+app.use('/carrito', carritoRouter);
 
 app.listen(port, () => console.log(`Server running in port ${port}`))
