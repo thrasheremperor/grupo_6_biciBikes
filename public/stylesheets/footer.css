@@ -4,8 +4,9 @@ footer {
     background-color: var(--yellow);
     border-top: solid 2px black;
 }
+
 .logo{
-   display: none;
+   display:none;
 }
 ul li {
     list-style: none;

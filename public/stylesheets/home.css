@@ -40,18 +40,40 @@ section.product-box{
   position:relative;
   border: 1px solid var(--darkGray);
   padding: 10px;
+  border-radius: 8px;
+  transition: all 3s ease;
 }
-
+section.product-box:hover{
+    box-shadow: 5px 5px 10px gray;
+    transform: scale(1.05);
+}
 
 img{
   width: 100%;
 }
-.detalle{
-margin-left: 30px;
+article span, article i{
+    color:green;
 }
-p{
-    font-size:18px;
-    margin:0px 0px;
+
+article i{
+    position: absolute;
+    right:18px ;
+    top:-15;
+    border:1px solid green;
+    width:27px ;
+    height: 27px;
+    border-radius:20px ;
+    padding: 4px;
+    font-size:16px;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease;
+    -ms-transition:all 0.5s ease;
+}
+article i:hover{
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform:rotate(360deg); 
     
 }
 
