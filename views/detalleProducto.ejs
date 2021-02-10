@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
   <%- include('partials/head.ejs') %> 
-<body class="detalle">
+<body id="detalle-detalle">
   <%- include('partials/header.ejs') %> 
   <!--aqui es donde debe ir la vista de detalle de los productos selecionados -->
-  <h2>Detalle de Producto Selecionado</h3>
+  <h3>Detalle de Producto Selecionado</h3>
   <hr>
+  <div class="container-detalle">
+    <div class="row"> <!--div row para c. sección-->
 
- <hr>
+     <div class=" a col-12 col-md-6 col-lg-3"> <!--Div col para c. producto-->
+       <section class="product"> <!--Sección de cada producto-->
+         <a href=""><img src="/images/biciEjemplo.png" alt="Bicicleta"></a>
+         <article>
+           <h3>$11.111</h3>
+           <span>Envio bonificado</span>
+           <i class="fas fa-truck"></i>
+         </article>
+         <div class="detalle">
+           <p>Bici MTB</p>
+           <p>Lorem, ipsum dolor sit amet <br> consectetur adipisicing elit.</p>
+         </div>
+       </section>  <!--cierra sección de cada producto-->
+      </div> <!--cierra div col-->
+    </div>
+    <hr>
+  </div>
+
+ 
   <select id="color" name="color"> <!--este dato debe ser guardado-->
     <option>azul</option>
     <option>rojo</option>
@@ -15,11 +35,11 @@
   </select>
   <br>
   <a href="#" class="subir">
-    <button>COMPRAR AHORA</button> <!--este debe llevar a la pagina de comprar -->
+    <button class="btn btn-primary" type="submit">COMPRAR AHORA</button> <!--este debe llevar a la pagina de comprar -->
   </a>
   <br>
   <a href="#" class="subir">
-  <button>AGREGAR A CARRITO</button> <!--este debe llevar a la pagina de carrito-->
+  <button class="btn btn-primary" type="submit">AGREGAR A CARRITO</button> <!--este debe llevar a la pagina de carrito-->
   </a>
   <hr>
   <div class="col-10">
@@ -28,7 +48,10 @@
   <div class="d-grid gap-2">
     <button class="btn btn-primary" type="submit">COMENTAR</button>
   </div>
-  <hr>
+  <article><hr></article>
+  <article><hr></article>
+  <article><hr></article>
+  <article><hr></article>
   <%- include('partials/footer.ejs') %> 
 </body>
 </html>
