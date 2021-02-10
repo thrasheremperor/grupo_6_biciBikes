@@ -15,9 +15,10 @@
 }
 
 * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
+    
 }
 .fa-twitter:hover{   color: aqua;}
 .fa-facebook-square:hover{   color: blue;}
