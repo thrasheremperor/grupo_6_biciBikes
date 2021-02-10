@@ -9,7 +9,7 @@ header{
 }header .input-search{
     border-radius: 2px;
     padding:5px;
-    width: 100%;
+    width: 80%;
     height: 40px;
     position: relative;
 }
@@ -29,6 +29,9 @@ header .input-search button{
     height: 40%;
     width: 12%;
 }
+
+
+
 .navbar a img{
     width: 8em;
 }
@@ -36,7 +39,9 @@ header .input-search button{
 a.navbar-brand {
       margin: 0px;
 }
-  
+div .buscador{
+    padding: 0;
+}
 .wheel {
      position: absolute;
      right: 20px;
@@ -65,4 +70,26 @@ a.navbar-brand {
 main {
     min-height: 80vh;
 
+}
+@media(min-width:770px){
+    nav {
+        position: relative;
+        left:-30px;
+    }
+    .move{
+        position: relative;
+        left:-20px;
+    }
+    .boton{
+        position: relative;
+        left:60px;
+        top:-53px;
+    }
+}
+@media(min-width:1200px){
+    .boton{
+        position: relative;
+        left:30px;
+        top:-53px;
+    }
 }

@@ -76,6 +76,10 @@ article i:hover{
     transform:rotate(360deg); 
     
 }
+article i{
+    text-decoration: none;
+    color:green;
+}
 
 /* Tablet */
 

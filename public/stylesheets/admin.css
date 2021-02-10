@@ -1,9 +1,17 @@
-*{
-    margin: 0 auto;
-}
+
 body.admin{
     height: 100%;
     background-repeat: no-repeat;
-    background-image: url('');
+    background-color: rgb(136, 136, 132);
     background-size: 100% 100%;
+}
+
+div label{
+    font-family: Montserrat;
+    color: white;
+    font-size: x-large;
+}
+input .form-control:hover{
+    text-decoration: none;
+    color:rgb(225, 233, 112);
 }
