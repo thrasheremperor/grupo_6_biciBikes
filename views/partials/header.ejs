@@ -1,62 +1,74 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar">
-    <a class="navbar-brand" href="/"><img src="/images/logo.png" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span><img class="wheel" src="/images/wheel.png" alt=""></span>
-    </button>
+<header class="container-fluid">
+  <nav class="navbar navbar-expand-md navbar">
+    <div class="row">
+      <div class="col-10 col-md-3">
+        <a class="navbar-brand" href="/"><img src="/images/logo.png" class="img-fluid" alt=""></a>
+       
+      </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><img class="wheel" src="/images/wheel.png" alt=""></span>
+      </button>
+     
+      
+      <div class="move collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class=" navbar-nav p-0">
   
-    <div class="move collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/login/login">Registrate</a>
-            </li>
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="/registro/registro">Iniciar sesion</a>
-              </li>
-              <article class="mover">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/carrito/compras">Carrito de compras</a>
-                </li>
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                  <a class="nav-link" href="/admin/formulario">Administrador</a>
-                  </li>
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="/contacto/contacto">Contacto</a>
-                    </li>
-                  </article>
-                 <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Bicis
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">MTB</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Ciudad</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Pegable</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Kids</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">BMX</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Electrica</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Ruta</a>
-            <div class="dropdown-divider"></div>
-          </div>
-        </li>
-      </ul>
-      <div class="bucador">
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="buscar" aria-label="Search">
-          <button class="boton btn btn-outline-success my-2 my-sm-0" type="submit">buscar</button>
-        </form>
+          <li class="nav-item ">
+            <a class="nav-link" href="/admin/formulario">Administrador</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/contacto/contacto">Contacto</a>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Bicis
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">MTB</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Ciudad</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Pegable</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Kids</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">BMX</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Electrica</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Ruta</a>
+              <div class="dropdown-divider"></div>
+            </div>
+          </li>
+         
+        </ul>
+        <ul class="navbar-nav mr-auto" >
+          <li class="nav-item ">
+            <a class="nav-link" href="/login/login"><i class="fas fa-user-plus"></i></a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/registro/registro"><i class="fas fa-sign-in-alt"></i></a>
+          </li>
+  
+          <li class="nav-item ">
+            <a class="nav-link" href="/carrito/compras"><i class="fas fa-shopping-cart"></i></a>
+          </li>
+        </ul>
+
+      </div>
+
+  
+      </div>
+      <div class="col-12">
+          <form class="form-inline">
+            <input class="form-control mr-sm-2 input-search" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success ml-2  my-2 my-sm-0" type="submit">Search</button>
+          </form>
       </div>
     </div>
+   
   </nav>
 </header>

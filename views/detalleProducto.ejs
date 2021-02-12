@@ -19,7 +19,6 @@
          </article>
          <div class="detalle">
            <p>Bici MTB</p>
-           <p>Lorem, ipsum dolor sit amet <br> consectetur adipisicing elit.</p>
          </div>
        </section>  <!--cierra sección de cada producto-->
       </div> <!--cierra div col-->
@@ -33,25 +32,39 @@
     <option>rojo</option>
     <option>negro</option>
   </select>
-  <br>
+  
   <a href="#" class="subir">
-    <button class="btn btn-primary" type="submit">COMPRAR AHORA</button> <!--este debe llevar a la pagina de comprar -->
+    <button class="btn btn-primary detalle" type="submit">COMPRAR AHORA</button> <!--este debe llevar a la pagina de comprar -->
   </a>
   <br>
   <a href="#" class="subir">
-  <button class="btn btn-primary" type="submit">AGREGAR A CARRITO</button> <!--este debe llevar a la pagina de carrito-->
+  <button class="btn btn-primary detalle" type="submit">AGREGAR A CARRITO</button> <!--este debe llevar a la pagina de carrito-->
   </a>
   <hr>
+  <div class="d-grid gap-2">
+    <p>Lorem, ipsum dolor sit amet <br> consectetur adipisicing elit.</p>
+  </div>
   <div class="col-10">
-  <input type="text" class="form-control" id="text" placeholder="comenta" name="text">
+  <input type="text" class="form-control detalle" id="text" placeholder="comenta" name="text">
 </div>
   <div class="d-grid gap-2">
-    <button class="btn btn-primary" type="submit">COMENTAR</button>
+    <a href="#" class="subir">
+      <button class="btn btn-primary detalle" type="submit">COMENTAR</button>
+    </a>
+    
   </div>
-  <article><hr></article>
-  <article><hr></article>
-  <article><hr></article>
-  <article><hr></article>
+  <div>
+        <hr class="col-10" size="5">
+        <hr class="col-10" size="5">
+        <hr class="col-10" size="5">
+        <hr class="col-10" size="5">
+        <hr class="col-10" size="5">
+        <hr class="col-10" size="5">
+        <hr class="col-10" size="5">
+        <hr class="col-10" size="5">
+        <hr class="col-10" size="5">
+  </div>
+ 
   <%- include('partials/footer.ejs') %> 
 </body>
 </html>
