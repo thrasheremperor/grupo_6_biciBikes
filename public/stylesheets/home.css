@@ -30,42 +30,54 @@ section.product-box{
   border: 1px solid var(--darkGray);
   padding: 10px;
   margin: 10px 0;
+  background-color: white;
+}
+section.product-box:hover{
   box-shadow: 5px 5px 10px gray;
   transform: scale(1.05);
 }
-
+h2.products-title{
+    padding: 10px 0;
+}
+.detalle{
+    margin-left: 30px;
+}
+p{
+    font-size: 18px;
+    margin: 0px 0px;
+}
 img{
-  width: 100%;
+    width: 100%;
 }
 article span, article i{
     color:green;
 }
-
 article i{
-    position: absolute;
-    right:18px ;
-    top:-15;
-    border:1px solid green;
-    width:27px ;
-    height: 27px;
-    border-radius:20px ;
-    padding: 4px;
-    font-size:16px;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease;
-    -ms-transition:all 0.5s ease;
+ right: 18px;
+ top: -15px;
+ border:1px solid green;
+ width: 27px;
+ height: 27px;
+ border-radius: 20px;
+ padding:4px;
+ font-size:16px;
+ -webkit-transition: all .5s ease-out;
+ -moz-transition: all .5s ease;
+ -ms-transition: all .5s ease;
 }
-article i:hover{
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform:rotate(360deg); 
-    
+
+article i:hover {
+ -webkit-transform: rotate(360deg);
+ -moz-transform: rotate(360deg);
+ -ms-transform: rotate(360deg);
+ transform: rotate(360deg);
+
 }
 article i{
     text-decoration: none;
-    color:green;
+    color:green
 }
+
 
 /* Tablet */
 
@@ -80,9 +92,6 @@ img{
 }
 h1{
     margin-left: 35px;
-}
-.btn{
-    margin-left: 70%;
 }
 }
 
@@ -99,8 +108,6 @@ h1{
     }
     h1{
         margin-left: 150px;
-    }
-    .btn{
-margin-left: 67%;
+
     }
     }

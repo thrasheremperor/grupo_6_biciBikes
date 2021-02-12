@@ -4,15 +4,14 @@
 
   <body>
     <%- include('partials/header')%>
-      <link rel="stylesheet" href="stylesheets/home.css">
 
       <main>
-        <hr color="gray" size="3">
-        <section class="banner">
+        <section class="banner py-3">
           <h1>¡Bienvenidos a BiciBikes!</h1>
-          <button type="button" class="btn btn-warning"><a href="products.ejs">Todos los productos</a></button>
+          <div class="d-flex justify-content-end mt-4">
+            <button type="button" class="btn btn-warning"><a href="products.ejs">Todos los productos</a></button>
+          </div>
         </section>
-        <hr color="gray" size="3">
 
         <div class="container products-wrapper">
           <div class="row"> <!--div row para c. sección-->
@@ -343,8 +342,9 @@
             <!--cierre div de grillas-->
           
 
-    
-        <button type="button" class="btn btn-warning"><a href="products.ejs">Todos los productos</a></button>
+        <div class="d-flex justify-content-end mt-4">
+          <button type="button" class="btn btn-warning"><a href="products.ejs">Todos los productos</a></button>
+        </div>
       </main>
       <%- include('partials/footer') %>
 

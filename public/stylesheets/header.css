@@ -7,11 +7,12 @@
 header{
     background-color: var(--yellow);
 }
-header .search-container{
-    padding: 0;
-}
+
 header .input-search{
     width: 70%;
+}
+header .search-container{
+    padding: 0;
 }
 
 .navbar a img{
@@ -22,7 +23,7 @@ a.navbar-brand {
       margin: 0px;
 }
 div .buscador{
-    padding: 0;
+    margin: 0 auto;
 }
 .wheel {
      position: absolute;
