@@ -5,7 +5,9 @@ module . exports  =  {
         });
     },
     registro : ( req ,  res )  =>{
-            res.render( 'registro')
+            res.render( 'registro',{
+                title:"¡registrate aqui!"
+            })
          },
     }
      

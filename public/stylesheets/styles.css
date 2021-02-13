@@ -6,6 +6,7 @@
 @import "header.css";
 @import "login.css";
 @import "tarjeta.css";
+@import "registro.css";
 
 :root {
     --black: #222831;
