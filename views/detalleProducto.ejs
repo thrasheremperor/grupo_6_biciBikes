@@ -4,27 +4,38 @@
 <body id="detalle-detalle">
   <%- include('partials/header.ejs') %> 
   <!--aqui es donde debe ir la vista de detalle de los productos selecionados -->
-  <h3 clase="titulo-detalle">Detalle de Producto Selecionado</h3>
-  <hr>
+  
   <div class="container detalle">
     <div class="row detalle"> <!--div row para c. sección-->
-
-     <div class=" a col-12 col-md-6 col-lg-3"> <!--Div col para c. producto-->
-       <section class="product"> <!--Sección de cada producto-->
-         <a href=""></a><img width="500" height="400" src="/images/biciEjemplo.png" alt="Bicicleta"></a>
-         <article>
-           <h3>$11.111</h3>
-           <span>Envio bonificado</span>
-           <i class="fas fa-truck"></i>
-         </article>
-         <div class="detalle">
-           <p>Bici MTB</p>
-         </div>
-       </section>  <!--cierra sección de cada producto-->
-      </div> <!--cierra div col-->
-      <div>
-
+      <div class="col-12">
+        <h2 clase="titulo-detalle text-center">Detalle del Producto:</h2>
+        <h3 class="text-center"><%- producto.name + ' ' + producto.marca %></h3>
       </div>
+
+      <div class="col-12">
+        <div class="container text-left">
+          <div class="row box">
+            <figure class="text-center col-12 col-lg-8">
+              <img src="/images/<%-producto.img%>" alt="bicicleta" class="img-fluid">
+            </figure>
+          </div>
+          <div class="col-12 col-lg-4">
+            <h3 class="precio">$<%-producto.precio%></h3>
+            <span class="descuento"><%-producto.descuento%></span>
+            <span class="envio"><%-producto.envio%></span>
+            <i class="fas fa-trunk"></i>
+            <p class="color"><%-producto.color%></p>
+            <p class="modelo m-3"><%-producto.modelo%></p>
+            <a href=""><button class="btn btn-primary" type="submit">comprar</button></a>
+            <a href=""><button class="btn btn-primary" type="submit">agregar a carrito</button></a>
+            <p class="description mb-5"><%-producto.description%></p>
+
+          
+          </div>
+        </div>
+               
+      </div>
+
     </div>
 
   </div>

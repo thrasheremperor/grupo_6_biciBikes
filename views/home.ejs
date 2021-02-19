@@ -9,341 +9,107 @@
         <section class="banner py-3">
           <h1>¡Bienvenidos a BiciBikes!</h1>
           <div class="d-flex justify-content-end mt-4 mr-2 mb-10">
-            <button type="button" class="btn btn-warning ml-5"><a href="products.ejs">Todos los productos</a></button>
+            <button type="button" class="btn btn-warning ml-5"><a href="/productos/full">Todos los productos</a></button>
           </div>
         </section>
 
-        <div class="container products-wrapper">
-          <div class="row"> <!--div row para c. sección-->
+        <!--ULTIMOS VISTOS-->
+       <div class="container products-wrapper">
+         <div class="row">
+           <div class="col-12">
+             <h2 class="products-title">Ultimos vistos</h2>
+             <hr size="3">
+           </div>    
+           <% productsVisited.forEach(producto => { %>
+              <div class="a col-11 col-md-6 col-lg-3">
+                <section class="product-box">
+                  <a href="/productos/detalle/<%-producto.id%>/<%-producto.category%>">
+                   <img src="/images/<%-producto.img%>" alt="bicicleta" class="img-fluid">
+                  </a>
+                  <div class="detalle">
+                    <p><%-producto.name + ' ' + producto.marca%></p>
+                  </div>
+                  <article>
+                    <h3>$<%- producto.precio%></h3>
+                    <span>Envio<%-producto.envio%></span>
+                    <i class="fas fa-trunk"></i>
+                  </article>
 
-            <!--Div de secciones-->
-
-            <!--Últimos productos vistos-->
-            <div class="col-12">
-              <h2 class="products-title">Últimos vistos</h2>
-            </div>
-            <!--Div de grillas-->
-
-            <div class=" a col-11 col-md-6 col-lg-3"> <!--Div col para c. producto-->
-              <section class="product-box"> <!--Sección de cada producto-->
-
-                <a href="/productos/detalle/1"><img src="images/biciEjemplo.png" alt="Bicicleta"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>Envio bonificado</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Bici MTB</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>  <!--cierra sección de cada producto-->
-             </div> <!--cierra div col-->
-
-            <div class=" a col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="/productos/detalle/1"><img src="images/biciEjemplo.png" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>Envio bonificado</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Bici MTB</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            <div class=" a col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo.png" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>Envio bonificado</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Bici MTB</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            <div class=" a col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo.png" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>Envio bonificado</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Bici MTB</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
+                </section>
+              </div>
+             
+            <% }) %>
+            
           </div>
-
-         <div class="row"> <!--div row para c. sección-->
-            <div class="col-12">
-              <hr color="gray" size="3">
-              <h2 class="products-title">Ahorrá ya</h2>
-            </div>
-
-            <div class="b col-11 col-md-6 col-lg-3">
-
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo1.jpeg" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>40% OFF</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Bici uso diario</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            <div class="b col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo1.jpeg" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>40% OFF</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Bici uso diario</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            <div class="b col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo1.jpeg" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>40% OFF</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Bici uso diario</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            <div class="b col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo1.jpeg" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>40% OFF</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Bici uso diario</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            <div class="b col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo1.jpeg" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>40% OFF</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Bici uso diario</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            <div class="b col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo1.jpeg" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>40% OFF</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Bici uso diario</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-
-          </div>
-
-
-
-
-          <div class="row"> <!--div row para c. sección-->
-            <div class="col-12">
-              <hr color="gray" size="3">
-              <h2 class="products-title">Populares</h2>
-            </div>
-
-            <div class="c col-11 col-md-6 col-lg-3">
-
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>Puerta a puerta</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Más popular</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            <div class="c col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>Puerta a puerta</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Más popular</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            <div class="c col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>Puerta a puerta</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Más popular</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            <div class="c col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>Puerta a puerta</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Más popular</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            <div class="c col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>Puerta a puerta</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Más popular</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            <div class="c col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>Puerta a puerta</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Más popular</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            <div class="c col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>Puerta a puerta</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Más popular</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            <div class="c col-11 col-md-6 col-lg-3">
-              <section class="product-box">
-
-                <a href="detalle.ejs"><img src="images/biciEjemplo2.jpeg" alt="Bicicleta" class="img-fluid"></a>
-
-                <article>
-                  <h3>$11.111</h3>
-                  <span>Puerta a puerta</span>
-                  <i class="fas fa-truck"></i>
-                </article>
-                <div class="detalle">
-                  <p>Más popular</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-              </section>
-            </div>
-            </div>
         </div>
 
 
-            <!--cierre div de grillas-->
-          
+        <!--AHORRA YA-->
+        <div class="container products-wrapper">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="products-title">Ahorra ya</h2>
+              <hr size="3">
+            </div>
+
+            <% productsNow.forEach(producto => { %>
+              <div class="a col-11 col-md-6 col-lg-3">
+                <section class="product-box">
+                  <a href="/productos/detalle/<%-producto.id%>/<%-producto.category%>">
+                    <img src="/images/<%-producto.img%>" alt="bicicleta" class="img-fluid">
+                  </a>
+                  <div class="detalle">
+                    <h4><%-producto.name + ' ' + producto.marca%></h4>
+                  </div>
+                  <article>
+                    <h3>$<%-producto.precio%></h3>
+                    <span><%-producto.descuento%>% OFF</span>
+                    <i class="fas fa-trunk"></i>
+                  </article>
+
+                </section>
+              </div>
+             
+            <% }) %>
+
+          </div>
+        </div>
+
+
+        <!--POPULARES-->
+        <div class="container products-wrapper">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="products-title">Populares</h2>
+              <hr size="3">
+            </div>
+
+            <% productsPopular.forEach(producto => { %>
+              <div class="a col-11 col-md-6 col-lg-3">
+                <section class="product-box">
+                  <a href="/productos/detalle/<%-producto.id%>/<%-producto.category%>">
+                    <img src="/images/<%-producto.img%>"" alt="bicicleta" class="img-fluid">
+                  </a>
+                  <div class="detalle">
+                    <h4><%-producto.name + ' ' + producto.marca%></h4>
+                  </div>
+                  <article>
+                    <h3>$<%-producto.precio%></h3>
+                    <span><%-producto.envio%></span>
+                    <i class="fas fa-trunk"></i>
+                  </article>
+                </section>
+              </div>
+             
+            <% }) %>
+
+          </div>
+        </div>
+
+
 
         <div class="d-flex justify-content-end mt-4 mr-2">
-          <button type="button" class="btn btn-warning"><a href="products.ejs">Todos los productos</a></button>
+          <button type="button" class="btn btn-warning"><a href="/productos/full">Todos los productos</a></button>
         </div>
       </main>
       <%- include('partials/footer') %>
