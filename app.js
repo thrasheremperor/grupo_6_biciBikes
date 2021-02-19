@@ -16,6 +16,10 @@ app.set('views', __dirname + '/views');
 
 app.use(express.static(__dirname + '/public'));
 
+//NOSE 
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
+
 // rutas 
 
 app.use('/', homeRouter);

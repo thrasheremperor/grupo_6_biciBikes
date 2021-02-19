@@ -9,5 +9,9 @@ module . exports  =  {
                 title:"¡registrate aqui!"
             })
          },
+    user : (req , res) =>{
+        res.send(req.body)
+
     }
+}
      
