@@ -1,15 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {login, registro,about , user, processRegistro, processLogin} = require('../controllers/usuarioController');
-
-
-
-
-
-
-
-
-//RUTAS A LOGIN Y REGISTRO
+const {login, registro, processRegistro, processLogin} = require('../controllers/usuarioController');
 
 router.get('/registro',registro);
 router.post('/registro',processRegistro);

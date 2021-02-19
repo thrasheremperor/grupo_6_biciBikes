@@ -4,7 +4,7 @@
 <body class="admin">
   <%- include('partials/header.ejs') %> 
     <div class="container cargaProducto">
-      <form action="/" method="POST">
+      <form action="/productos/list" method="POST">
         <h3>Agregar nuevo Producto</h3>
         <hr>
         <div class="row">
@@ -34,16 +34,10 @@
         <div class="row"> 
           <div class="col-10">
             <label>Estado de prodcuto</label>
-            <select id="estado" class="form-control">
-              <option>usado</option>
-              <option>nuevo</option>
+            <select>
+              <option value="new">nuevo</option>
+              <option value="used">usado</option>
             </select>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-10">
-            <label for="ubicacion">Ubicacion Proveedor</label>
-            <input type="ubicacion" class="form-control">
           </div>
         </div>
         <div class="row">
@@ -55,16 +49,22 @@
         <div class="row">
           <div class="col-10">
             <label for="name">Medio De Cobro</label>
-            <option class="form-control">Tarjeta</option>
-            <option class="form-control">Efectivo</option>
-            <option class="form-control">Pago Facil</option>
+            <br>
+            <input name="cobro" type="checkbox">tarjetas
+            <br>
+            <input name="cobro1" type="checkbox">efectivo
+            <br>
+            <input name="cobro2" type="checkbox">pago facil
+
           </div>
         </div>
         <div class="row">
           <div class="col-10">
             <label for="name">Envio</label>
-            <option class="form-control">Retiro</option>
-            <option class="form-control">Envio</option>
+            <br>
+            <input name="envio" type="checkbox">retiro personal
+            <br>
+            <input name="envio1" type="checkbox">envio a domicilio
           </div>
         </div>
         <div class="row">

@@ -2,7 +2,7 @@ const dataBicis = require('../data/bicis');
 
 module.exports = {
     index : (req, res) => {
-        let visited = dataBicis.filter(producto =>{
+        let Visited = dataBicis.filter(producto =>{
             return producto.category == 'visited'
         })
         let now = dataBicis.filter(producto=>{
@@ -13,10 +13,9 @@ module.exports = {
         })
         res.render('home', {
             title : "Bici Bikes",
-            about : "Las mejores marcas al mejor precio, sin duda!",
-            productosVisited : visited,
-            productosNow: now,
-            productosPopular: popular
+            productsVisited: Visited,
+            productsNow: now,
+            productsPopular: popular
         })
     },
     carrito :(req, res) => {
@@ -24,7 +23,9 @@ module.exports = {
             title: 'carga de producto'
         })
     },
-    about : (req, res) => {
-        res.render('about')
+    productosFull: (req,res)=>{
+        res.render('products',{
+            title: 'todos los productos'
+        })
     }
 }
