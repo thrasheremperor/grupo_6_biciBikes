@@ -4,14 +4,14 @@
 <body id="detalle-detalle">
   <%- include('partials/header.ejs') %> 
   <!--aqui es donde debe ir la vista de detalle de los productos selecionados -->
-  <h3>Detalle de Producto Selecionado</h3>
+  <h3 clase="titulo-detalle">Detalle de Producto Selecionado</h3>
   <hr>
   <div class="container detalle">
-    <div class="row"> <!--div row para c. sección-->
+    <div class="row detalle"> <!--div row para c. sección-->
 
      <div class=" a col-12 col-md-6 col-lg-3"> <!--Div col para c. producto-->
        <section class="product"> <!--Sección de cada producto-->
-         <a href=""><img src="/images/biciEjemplo.png" alt="Bicicleta"></a>
+         <a href=""></a><img width="500" height="400" src="/images/biciEjemplo.png" alt="Bicicleta"></a>
          <article>
            <h3>$11.111</h3>
            <span>Envio bonificado</span>
@@ -22,7 +22,11 @@
          </div>
        </section>  <!--cierra sección de cada producto-->
       </div> <!--cierra div col-->
+      <div>
+
+      </div>
     </div>
+
   </div>
  
   <%- include('partials/footer.ejs') %> 
