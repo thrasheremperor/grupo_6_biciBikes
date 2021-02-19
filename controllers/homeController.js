@@ -3,7 +3,7 @@ const dataBicis = require('../data/bicis');
 module.exports = {
     index : (req, res) => {
         let visited = dataBicis.filter(producto =>{
-            return producto.categoty == 'visited'
+            return producto.category == 'visited'
         })
         let now = dataBicis.filter(producto=>{
             return producto.category == 'Now'
