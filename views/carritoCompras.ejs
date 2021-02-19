@@ -5,11 +5,46 @@
   <%- include('partials/header.ejs') %> 
   <!--aqui es donde debe ir la vista de detalle de los productos selecionados -->
   <h2>Carrito de Productos</h3>
-  <hr>
 
-  <a href="#" class="subir">
-    <button>COMPRAR AHORA</button> <!--este debe llevar a la pagina de comprar -->
-  </a>
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-4">
+        <img src="/images/otraBike.png">
+      </div>
+      <div class="description col-8">
+         <p>
+           Bici MTB, Rodado 27
+         </p>
+         <p>
+           $49.000
+         </p>
+        </div>  
+    </div>
+    <div class="options-container p-3">
+        <a href="">Eliminar</a> 
+        <a class="ml-5" href="">Otros productos</a>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-primary detalle m-3" type="submit">Continuar la compra</button>
+    </div>
+    
+    
+     
+    
+
+
+
+
+
+
+
+
+  </div>
+
+  
   <%- include('partials/footer.ejs') %> 
 </body>
 </html>
