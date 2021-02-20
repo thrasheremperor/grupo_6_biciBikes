@@ -27,5 +27,8 @@ module.exports = {
         res.render('products',{
             title: 'todos los productos'
         })
+    },
+    search: (req,res)=>{
+        res.send(req.query.buscador)
     }
 }

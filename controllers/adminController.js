@@ -1,12 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-const bicis = require('../data/bicis.json');
-const productosController = require('./productosController');
-
-const {getBicis, setBicis} = require(path.join('..','data','bicis'));
-
-const productos = getBicis();
-
 module.exports = {
     admin :(req, res) => {
         res.render('formCarga', { /*aqui se puede visualizar un formulario de carga de un nuevo producto */
@@ -34,32 +25,6 @@ module.exports = {
         res.render('productsEditado',{
             title: 'producto editado'
         })
-    },
-    processCarga : (req , res) =>{
-        const {nombre, marca, modelo, color,img,precio, envio,description,contacto} = req.body;
-        let lastID = 0;
-        bicis.forEach(productos => {
-            if(productos.id > lastID){
-                lastID = productos.id
-            }
-        });
-        const newProductos = {
-            id : lastID +1,
-            nombre,
-            marca,
-            modelo,
-            color,
-            img,
-            precio,
-            envio,
-            description,
-            contacto
-        }
-      
-        bicis.push(newProductos);
+    }
 
-        setProducto(bicis);
-
-        res.redirect('/productos/list')
-    },
 }
