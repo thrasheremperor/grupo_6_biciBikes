@@ -1,13 +1,48 @@
+const dataBicis = require('../data/bicis');
+const fs = require('fs');
 module.exports = {
-    admin :(req, res) => {
+    cargar :(req, res) => {
         res.render('formCarga', { /*aqui se puede visualizar un formulario de carga de un nuevo producto */
             title: 'Carga'
         }) /*renderiso  la vista de formCarga.ejs */
     },
+    cargado:(req,res)=>{
+        let lastID = 1;
+        dataBicis.forEach(producto => {
+            if (producto.id >lastID) {
+                lastID = producto.id
+                
+            }
+            
+        });
+        const {name,marca,precio,description,nuevo,usado,contacto,cobro,cobro1,cobro2,envio,envio1,img} = req.body;
+        const producto = {
+            id:lastID +1,
+            name,
+            marca,
+            precio,
+            description,
+            nuevo,
+            usado,
+            contacto,
+            cobro,
+            cobro1,
+            cobro2,
+            envio,
+            envio1,
+            img
+        }
+
+        dataBicis.push(producto)
+
+        fs.writeFileSync('./data/bicis.json',JSON.stringify(dataBicis),'utf-8');
+        res.redirect('/admin/list');
+    },
     
-    crear:(req,res) =>{
+    creado:(req,res) =>{
          res.render('productsList',{ /*aqui se puede visualizar los productos publicados con sus opciones */
-            title:'vista admin'
+            title:'vista admin',
+            dataBicis
         })
     },
     editar:(req,res)=>{  /*la opcion de edicion en producto se envuentra en la vista productList */

@@ -6,33 +6,92 @@
     <%- include('partials/header')%>
 
       <main>
-        <div class="container products-wrapper">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="products-title">Todos los productos:</h2>
-            </div>
 
-            <% forEach(producto => { %>
+        <!--ULTIMOS VISTOS-->
+       <div class="container products-wrapper">
+         <div class="row">
+          <div class="col-12">
+            <h2 class="products-title">Todos los productos</h2>
+            <hr size="3">
+          </div>    
+           <% productsVisited.forEach(producto => { %>
               <div class="a col-11 col-md-6 col-lg-3">
                 <section class="product-box">
-                  <a href="/products/detalle/<%-producto.id%>">
+                  <a href="/productos/detalle/<%-producto.id%>/<%-producto.category%>">
                    <img src="/images/<%-producto.img%>" alt="bicicleta" class="img-fluid">
                   </a>
-                  <article>
-                    <h3>$<%- producto.precio%></h3>
-                    <span>Envio<%-producto.envio%></span>
-                    <i class="fas fa-trunk"></i>
-                  </article>
                   <div class="detalle">
                     <p><%-producto.name + ' ' + producto.marca%></p>
                   </div>
+                  <article>
+                    <h3>$<%- producto.precio%></h3>
+                    <span>Envio<%-' ' + producto.envio%></span>
+                    <i class="fas fa-trunk"></i>
+                  </article>
+
                 </section>
               </div>
              
             <% }) %>
+            
           </div>
         </div>
 
+
+        <!--AHORRA YA-->
+        <div class="container products-wrapper">
+          <div class="row">
+
+            <% productsNow.forEach(producto => { %>
+              <div class="a col-11 col-md-6 col-lg-3">
+                <section class="product-box">
+                  <a href="/productos/detalle/<%-producto.id%>/<%-producto.category%>">
+                    <img src="/images/<%-producto.img%>" alt="bicicleta" class="img-fluid">
+                  </a>
+                  <div class="detalle">
+                    <p><%-producto.name + ' ' + producto.marca%></p>
+                  </div>
+                  <article>
+                    <h3>$<%-producto.precio%></h3>
+                    <span><%-producto.descuento%>% OFF</span>
+                    <i class="fas fa-trunk"></i>
+                  </article>
+
+                </section>
+              </div>
+             
+            <% }) %>
+
+          </div>
+        </div>
+
+
+        <!--POPULARES-->
+        <div class="container products-wrapper">
+          <div class="row">
+
+            <% productsPopular.forEach(producto => { %>
+              <div class="a col-11 col-md-6 col-lg-3">
+                <section class="product-box">
+                  <a href="/productos/detalle/<%-producto.id%>/<%-producto.category%>">
+                    <img src="/images/<%-producto.img%>"" alt="bicicleta" class="img-fluid">
+                  </a>
+                  <div class="detalle">
+                    <p><%-producto.name + ' ' + producto.marca%></p>
+                  </div>
+                  <article>
+                    <h3>$<%-producto.precio%></h3>
+                    <span><%-producto.envio%></span>
+                    <i class="fas fa-trunk"></i>
+                  </article>
+                </section>
+              </div>
+             
+            <% }) %>
+
+          </div>
+        </div>
+      </main>
       <%- include('partials/footer') %>
 
   </body>

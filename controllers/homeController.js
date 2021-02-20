@@ -24,11 +24,29 @@ module.exports = {
         })
     },
     productosFull: (req,res)=>{
-        res.render('products',{
-            title: 'todos los productos'
+        let Visited = dataBicis.filter(producto =>{
+            return producto.category == 'visited'
+        })
+        let now = dataBicis.filter(producto=>{
+            return producto.category == 'Now'
+        })
+        let popular = dataBicis.filter(producto=>{
+            return producto.category == 'popular'
+        })
+        res.render('products', {
+            title : "todos los productos",
+            productsVisited: Visited,
+            productsNow: now,
+            productsPopular: popular
         })
     },
-    search: (req,res)=>{
-        res.send(req.query.buscador)
+    search: (req,res)=>{ /*buscador siempre va por get */
+        const resultado = dataBicis.filter( producto =>{
+            return producto.name.includes(req.query.buscador) /*buscar producto por su nombre */
+        })
+        res.render('home',{
+            title: 'resultado de busqueda',
+            dataBicis: resultado   /*aun sin resolver -.- */
+        })
     }
 }

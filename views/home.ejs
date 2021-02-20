@@ -9,7 +9,7 @@
         <section class="banner py-3">
           <h1>¡Bienvenidos a BiciBikes!</h1>
           <div class="d-flex justify-content-end mt-4 mr-2 mb-10">
-            <button type="button" class="btn btn-warning ml-5"><a href="/productos/full">Todos los productos</a></button>
+            <button type="button" class="btn btn-warning ml-5"><a href="/full">Todos los productos</a></button>
           </div>
         </section>
 
@@ -31,7 +31,7 @@
                   </div>
                   <article>
                     <h3>$<%- producto.precio%></h3>
-                    <span>Envio<%-producto.envio%></span>
+                    <span>Envio<%-' ' + producto.envio%></span>
                     <i class="fas fa-trunk"></i>
                   </article>
 
@@ -59,7 +59,7 @@
                     <img src="/images/<%-producto.img%>" alt="bicicleta" class="img-fluid">
                   </a>
                   <div class="detalle">
-                    <h4><%-producto.name + ' ' + producto.marca%></h4>
+                    <p><%-producto.name + ' ' + producto.marca%></p>
                   </div>
                   <article>
                     <h3>$<%-producto.precio%></h3>
@@ -91,7 +91,7 @@
                     <img src="/images/<%-producto.img%>"" alt="bicicleta" class="img-fluid">
                   </a>
                   <div class="detalle">
-                    <h4><%-producto.name + ' ' + producto.marca%></h4>
+                    <p><%-producto.name + ' ' + producto.marca%></p>
                   </div>
                   <article>
                     <h3>$<%-producto.precio%></h3>
@@ -109,7 +109,7 @@
 
 
         <div class="d-flex justify-content-end mt-4 mr-2">
-          <button type="button" class="btn btn-warning"><a href="/productos/full">Todos los productos</a></button>
+          <button type="button" class="btn btn-warning"><a href="/full">Todos los productos</a></button>
         </div>
       </main>
       <%- include('partials/footer') %>
