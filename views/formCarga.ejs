@@ -4,46 +4,46 @@
 <body class="admin">
   <%- include('partials/header.ejs') %> 
     <div class="container cargaProducto">
-      <form action="" method="POST">
+      <form action="/admin/formCarga" method="POST">
         <h3>Agregar nuevo Producto</h3>
         <hr>
         <div class="row">
           <div class="col-10">
-            <label for="nombre">Nombre</label>
-            <input type="text" class="form-control">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" name="name">
           </div>
         </div>
         <div class="row">
           <div class="col-10">
             <label for="modelo">Marca</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="marca">
           </div>
         </div>  
         <div class="row">
           <div class="col-10">
             <label for="precio">Precio de Producto</label>
-            <input type="number" class="form-control">
+            <input type="number" class="form-control" name="precio">
           </div>
         </div>
         <div class="row">
           <div class="col-10">
             <label for="description">Descripcion</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="description">
           </div>
         </div>
         <div class="row"> 
           <div class="col-10">
             <label>Estado de prodcuto</label>
-            <select>
-              <option value="estado">nuevo</option>
-              <option value="estado">usado</option>
-            </select>
+            <br>
+            <input name="nuevo" type="checkbox">usado
+            <br>
+            <input name="usado" type="checkbox">nuevo
           </div>
         </div>
         <div class="row">
           <div class="col-10">
             <label for="contacto">Contacto Proveedor</label>
-            <input type="numero" class="form-control">
+            <input type="numero" class="form-control" name="contacto">
           </div>
         </div>
         <div class="row">
@@ -52,9 +52,9 @@
             <br>
             <input name="cobro" type="checkbox">tarjetas
             <br>
-            <input name="cobro" type="checkbox">efectivo
+            <input name="cobro1" type="checkbox">efectivo
             <br>
-            <input name="cobro" type="checkbox">pago facil
+            <input name="cobro2" type="checkbox">pago facil
 
           </div>
         </div>
@@ -64,13 +64,13 @@
             <br>
             <input name="envio" type="checkbox">retiro personal
             <br>
-            <input name="envio" type="checkbox">envio a domicilio
+            <input name="envio1" type="checkbox">envio a domicilio
           </div>
         </div>
         <div class="row">
           <div class="col-10">
-            <label name="img">Imagen de Producto</label>
-            <input type="file" class="form-control">
+            <label name="imgagen">Imagen de Producto</label>
+            <input type="text" class="form-control" name="img">
           </div>
         </div>
         <br>
