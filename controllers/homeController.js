@@ -1,4 +1,5 @@
 const dataBicis = require('../data/bicis');
+const fs = require('fs');
 
 module.exports = {
     index : (req, res) => {
@@ -24,20 +25,9 @@ module.exports = {
         })
     },
     productosFull: (req,res)=>{
-        let Visited = dataBicis.filter(producto =>{
-            return producto.category == 'visited'
-        })
-        let now = dataBicis.filter(producto=>{
-            return producto.category == 'Now'
-        })
-        let popular = dataBicis.filter(producto=>{
-            return producto.category == 'popular'
-        })
-        res.render('products', {
-            title : "todos los productos",
-            productsVisited: Visited,
-            productsNow: now,
-            productsPopular: popular
+        res.render('products',{
+            title: 'Todos los productos',
+            dataBicis
         })
     },
     search: (req,res)=>{ /*buscador siempre va por get */

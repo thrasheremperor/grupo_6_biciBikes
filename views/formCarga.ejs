@@ -5,7 +5,7 @@
   <%- include('partials/header.ejs') %> 
     <div class="container cargaProducto">
       <form action="/admin/formCarga" method="POST">
-        <h3>Agregar nuevo Producto</h3>
+        <h3 class="text-center">Agregar nuevo Producto</h3>
         <hr>
         <div class="row">
           <div class="col-10">
@@ -29,33 +29,6 @@
           <div class="col-10">
             <label for="description">Descripcion</label>
             <input type="text" class="form-control" name="description">
-          </div>
-        </div>
-        <div class="row"> 
-          <div class="col-10">
-            <label>Estado de prodcuto</label>
-            <br>
-            <input name="nuevo" type="checkbox">usado
-            <br>
-            <input name="usado" type="checkbox">nuevo
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-10">
-            <label for="contacto">Contacto Proveedor</label>
-            <input type="numero" class="form-control" name="contacto">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-10">
-            <label for="cobro">Medio De Cobro</label>
-            <br>
-            <input name="cobro" type="checkbox">tarjetas
-            <br>
-            <input name="cobro1" type="checkbox">efectivo
-            <br>
-            <input name="cobro2" type="checkbox">pago facil
-
           </div>
         </div>
         <div class="row">
