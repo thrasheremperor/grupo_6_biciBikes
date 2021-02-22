@@ -3,10 +3,10 @@ const router = express.Router();
 /*destructuri */
 const {index,carrito,productosFull, search} = require('../controllers/homeController');
 
-router.get('/', index);
-router.get('/compras', carrito);
-router.get('/full', productosFull);
-router.get('/buscar', search)
+router.get('/', index); /*ruta lista */
+router.get('/compras', carrito); /*ruta lista */
+router.get('/full', productosFull);/*ruta lista */
+router.get('/buscar', search); /*aun en proceso */
 
 
 module.exports = router;

@@ -20,19 +20,19 @@
                   </a>
                   <article>
                     <h3>$<%- producto.precio%></h3>
-                    <span>Envio<%-producto.envio%></span>
+                    <span>Envio<%- ' ' + producto.envio%></span>
                     <i class="fas fa-trunk"></i>
                   </article>
                   <div class="detalle">
                     <p><%-producto.name + ' ' + producto.marca%></p>
                   </div>
                 </section>
-                <li class="">
-                  <div class="m-2 d-flex justify-content-around">
-                    <a href="" class="btn btn-sm btn-success">editar</a>
-                    <a href="" class="btn btn-sm btn-danger">borrar</a>
-                  </div>
-                </li>
+                <div class="m-2 justify-content-around">
+                  <a href="/admin/editar/<%= producto.id %>" class="btn btn-sm btn-success">editar</a>
+                  <form action="/admin/eliminar/<%= producto.id %>?_method=DELETE " method="POST">
+                    <button class="btn btn-sm btn-danger" type="submit">borrar</button>
+                  </form>
+                </div>
               </div>
              
             <% }) %>
