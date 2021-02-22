@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
   <%- include('partials/head.ejs') %> 
-<body>
+<body class="cart-body">
+  <link rel="stylesheet" href="/stylesheets/carrito.css">
+  
   <%- include('partials/header.ejs') %> 
   <!--aqui es donde debe ir la vista de detalle de los productos selecionados -->
-  <h2>Carrito de Productos</h3>
-
-  <div class="container-fluid">
+  <h2 class="">Carrito de Productos</h2>
+   
+    <div class="cart-item container-fluid">
 
     <div class="row">
 
-      <div class="col-4">
+      <div class="col-6 col-md-3">
         <img src="/images/otraBike.png">
       </div>
-      <div class="description col-8">
+      <div class="description col-6 col-md-9">
          <p>
-           Bici MTB, Rodado 27
-         </p>
-         <p>
+           Bici MTB, Rodado 27, Azul
+           <br>
            $49.000
          </p>
         </div>  
@@ -26,10 +27,23 @@
         <a href="">Eliminar</a> 
         <a class="ml-5" href="">Otros productos</a>
     </div>
+    
+  </div>
 
-    <div class="row">
-      <button class="btn btn-primary detalle m-3" type="submit">Continuar la compra</button>
-    </div>
+  
+   <section class="cart-footer">
+
+    
+
+      <p>Total a pagar</p>
+      
+      <button class="d-flex align-self-end mb-1" type="submit">Continuar compra</button>
+
+     <p class="mr-1">$</p> <p>90.000</p>
+
+   </section>
+    
+ 
     
     
      
@@ -38,11 +52,7 @@
 
 
 
-
-
-
-
-  </div>
+  
 
   
   <%- include('partials/footer.ejs') %> 
