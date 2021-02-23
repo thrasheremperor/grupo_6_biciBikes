@@ -5,12 +5,10 @@
 @import "header.css";
 @import "login.css";
 @import "registro.css";
-<<<<<<< HEAD
 @import "carrito.css";
-=======
 @import "general.css";
 @import "products.css";
->>>>>>> 1d6f6cc43a26ed3a60acd7f27c80bb85aeb39fff
+
 
 :root {
     --black: #222831;

@@ -12,18 +12,22 @@
     margin-right: auto;
     padding: 1.5em;
 }
+
 .registro{
     text-align: center;
     font-size: 5em;
     font-family: 'Dancing Script', cursive;
 }
+
 a{
    color: black;
 }
+
 .register-form form p label{
     color: black;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .register-form form p input{
     color: black;
     font-family: Arial, Helvetica, sans-serif;
