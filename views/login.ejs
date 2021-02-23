@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head')%>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <body>
+    <%- include('partials/header')%>
+     <div class="login">
+       
+
+       <form class="sesion" action="" method="POST">
+
+          <h2>Inicia sesion</h2>
+          <p>
+            <input type="email" placeholder="Email">
+          </p>
+
+          <p>
+            <input type="password" placeholder="Contraseña">
+          </p>
+
+          <p>
+            <button class="button" type="submit">Entrar</button>
+          </p>
+       
+        <a href="/usuario/registro">¿Todavia no tiene una cuenta?</a>
+        <a href="">¿Olvidaste tu Contraseña?</a>
+      </form>
+    </div>
+          
+
+    
+        
+      <%- include('partials/footer') %>
+
+  </body>
+  </html>

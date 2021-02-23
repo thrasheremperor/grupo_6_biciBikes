@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs')%>
+<body class="cuerpo">
+  <%- include('partials/header.ejs') %> 
+    <div class="formCarga">
+      <form action="/admin/formCarga" method="POST" class="contenedor">
+        <h3 class="text-center registro">Agregar nuevo Producto</h3>
+        <hr>
+        <div class="row">
+          <div class="col-10">
+            <label for="name">Nombre</label>
+            <input type="text" name="name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="modelo">Marca</label>
+            <input type="text"  name="marca">
+          </div>
+        </div>  
+        <div class="row">
+          <div class="col-10">
+            <label for="precio">Precio de Producto</label>
+            <input type="number"  name="precio">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="description">Descripcion</label>
+            <input type="text" name="description">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label for="envio">Envio</label>
+            <br>
+            <input name="envio" type="checkbox">retiro personal
+            <br>
+            <input name="envio1" type="checkbox">envio a domicilio
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <label name="imgagen">Imagen de Producto</label>
+            <input type="text"  name="img">
+          </div>
+        </div>
+        <br>
+        <button class="button" type="submit">Publicar</button>
+        
+      </form>
+    </div>
+  <%- include('partials/footer.ejs')%> 
+</body>
+</html>

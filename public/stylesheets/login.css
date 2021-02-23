@@ -1,0 +1,79 @@
+
+.login{
+    background:rgba(250, 241, 119, 0.6); 
+    display: flex;
+   min-height: 100vh;
+}
+
+.sesion{
+margin:30px auto;
+width:85%;
+max-width:500px;
+background-color:var(--yellow);
+padding:30px;
+border: 1px solid rgba(0, 0, 0, 0.2);
+}
+a{
+    color:black;
+}
+a:hover{
+    color: red;
+}
+p{
+   color:black;
+}
+h2 {
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+    background-color:var(--yellow);
+    font-size: 2em;
+}
+
+.sesion {
+    box-shadow: 0 0 20px 0 rgba(44, 40, 40, 0.9);
+}
+
+input {
+    text-align: center;
+    display: block;
+}
+input::placeholder{
+    color: black;
+}
+
+ .login .sesion button:hover,
+ .login .sesion button:focus{
+    background:red;
+    color:white;
+    transition: background-color 1s;
+    outline: 0;
+}
+
+.button,
+input{
+    font-size:15px;
+    width:98%;
+    padding: .7em;
+    border: none;
+    background: none;
+    outline: none;
+    color: black;
+    border-bottom: 1px solid rgb(70, 4, 4);
+    margin:15px 0 15px 0;
+}
+.button {
+    background-color:rgba(250, 241, 119, 0.6); ;
+    border-bottom: none;
+}
+
+@media(min-width:426px){
+    h2 {
+        font-size:5em;
+    }
+    
+}
+@media(min-width:768px){
+  a {
+      margin-top: 30px;
+  }
+}

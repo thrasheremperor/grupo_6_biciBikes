@@ -1,0 +1,35 @@
+@import "detalle.css";
+@import "admin.css";
+@import "footer.css";
+@import "home.css";
+@import "header.css";
+@import "login.css";
+@import "registro.css";
+@import "carrito.css";
+@import "general.css";
+@import "products.css";
+
+
+:root {
+    --black: #222831;
+    --darkGray: #393e46;
+    --yellow: #ffd369;
+    --lightGray: #eeeeee;
+}
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+.fa-twitter:hover{   color: aqua;}
+.fa-facebook-square:hover{   color: blue;}
+.fa-spotify:hover{   color: green;}
+.fa-apple:hover{   color: rgb(111, 122, 122);}
+.fa-amazon:hover{   color: orange;}
+.fa-instagram:hover{   color: rgb(206, 43, 111);}
+
+@media(min-width:425){
+    
+}

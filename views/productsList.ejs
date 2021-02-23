@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head')%>
+
+  <body>
+    <%- include('partials/header')%>
+
+      <main>
+        <div class="container products-wrapper">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="products-title">Lista de productos</h2>
+            </div>
+            
+
+            <% dataBicis.forEach(producto => { %>
+              <div class="a col-11 col-md-6 col-lg-3">
+                <section class="product-box">
+                   <img src="/images/<%-producto.img%>" alt="bicicleta" class="img-fluid">
+                  </a>
+                  <article>
+                    <h3>$<%- producto.precio%></h3>
+                    <span>Envio<%- ' ' + producto.envio%></span>
+                    <i class="fas fa-trunk"></i>
+                  </article>
+                  <div class="detalle">
+                    <p><%-producto.name + ' ' + producto.marca%></p>
+                  </div>
+                </section>
+                <div class="m-2 justify-content-around">
+                  <a href="/admin/editar/<%= producto.id %>" class="btn btn-sm btn-success">editar</a>
+                  <form action="/admin/eliminar/<%= producto.id %>?_method=DELETE " method="POST">
+                    <button class="btn btn-sm btn-danger" type="submit">borrar</button>
+                  </form>
+                </div>
+              </div>
+             
+            <% }) %>
+            
+          </div>
+        </div>
+     
+        
+      </main>
+      <%- include('partials/footer') %>
+
+  </body>
+  </html>
