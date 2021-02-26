@@ -2,7 +2,7 @@
 
 **Daily 1: 22/02/2021**
 
-- Acordamos quienes se van realizar cada tarjeta 
+- Acordamos quienes se van realizar cada tarjeta del sprint 4
 - Pusimos al dia a Nuestra compañera Sofia que estuvo ausente unos dias por problemas tecnicos
 - Hablamos sobre lo necesario para terminar la realizacion del los sprint atrasados
 
