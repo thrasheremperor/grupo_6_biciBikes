@@ -12,7 +12,7 @@ Por eso creamos este sitio dónde cada quien podrá encontrar su Bike acorde a s
 
 Nuestro **[Trello](https://trello.com/b/ZbFRZnUU/programmernation)**
 
-**[Retrospectiva]()**
+**[Retrospectiva](https://github.com/thrasheremperor/grupo_6_biciBikes/blob/develop/retros/retro.md)**
 
 **Sitios web de referencia:**
 
