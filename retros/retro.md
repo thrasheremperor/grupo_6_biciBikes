@@ -5,7 +5,7 @@
  -apoyo mutuo 
  *hacer menos*
  -De mi parte ver menos anime y leer menos comic, para dedicarle al sprint
- **hacer mas**
+ *hacer mas*
  -hacer mas mas reuniones productivas
  -mejor organizacion 
  *empezar a hacer*
