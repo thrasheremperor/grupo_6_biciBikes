@@ -15,7 +15,7 @@ Nuestro **[Trello](https://trello.com/b/ZbFRZnUU/programmernation)**
 **[Retrospectiva](https://github.com/thrasheremperor/grupo_6_biciBikes/blob/develop/retros/retro.md)**
 
 
-**[Daily]()**
+**[Daily](https://github.com/thrasheremperor/grupo_6_biciBikes/blob/develop/daily.md)**
 
 **Sitios web de referencia:**
 
