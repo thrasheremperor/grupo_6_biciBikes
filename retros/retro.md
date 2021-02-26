@@ -1,6 +1,6 @@
 **Retrospectiva 1**
 
-*seguir haciendo*
+**seguir haciendo**
  - trabajo en equipo 
  -apoyo mutuo 
 *hacer menos*
