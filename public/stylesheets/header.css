@@ -14,6 +14,13 @@ header .input-search{
 header .search-container{
     padding: 0;
 }
+.dropdown-menu {
+    background-color: var(--yellow);
+    border: none;
+}
+.text-center {
+    text-align: center!important;
+}
 .row{
  margin-left: -15px;
 }
@@ -63,7 +70,6 @@ div .buscador{
 @media(min-width:770px){
     nav {
         position: relative;
-        left:-30px;
     }
     .move{
         position: relative;

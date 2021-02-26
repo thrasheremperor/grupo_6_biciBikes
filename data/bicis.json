@@ -1,7 +1,6 @@
-[
-    {
+[{
         "id": 1,
-        "name": "meria",
+        "name": "Bicicle",
         "marca": "specialized",
         "modelo": "top speed",
         "color": "azul",
@@ -46,7 +45,7 @@
         "img": "biciEjemplo1.jpeg",
         "precio": 11.234,
         "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-        "envio": "",
+        "envio": "Envio",
         "descuento": 20,
         "category": "Now"
     },
@@ -59,7 +58,7 @@
         "img": "biciEjemplo2.jpeg",
         "precio": 1.234,
         "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-        "envio": "",
+        "envio": "Envio",
         "descuento": 25,
         "category": "Now"
     },

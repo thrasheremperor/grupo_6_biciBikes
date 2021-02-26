@@ -11,14 +11,14 @@
       </button> <!--imagen desplegable-->
         
       <div class="move collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class=" navbar-nav p-0">
+        <ul class=" navbar-nav">
   
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrador</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="/admin/formCarga">Agregar nuevo</a></li>
-              <li><a class="dropdown-item" href="/admin/list">lista de productos</a></li>
-              <li><a class="dropdown-item" href="/admin/:id/edit">productos editados</a></li>
+              <div class="dropdown-divider"></div>
+              <li><a class="dropdown-item" href="/admin/list">Lista de productos</a></li>
             </ul>
           </li>
           <li class="nav-item ">
@@ -27,7 +27,7 @@
   
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Bicis
+              Filtro
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">MTB</a>
@@ -43,7 +43,7 @@
               <a class="dropdown-item" href="#">Electrica</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Ruta</a>
-              <div class="dropdown-divider"></div>
+              
             </div>
           </li>
          
@@ -63,13 +63,12 @@
 
       </div>
     
-      <div class="col-12 buscador">
+      <div class="col-12  col-md-6 buscador">
           <form class="form-inline" action="/buscar" method="GET">
             <input class="form-control mr-sm-2 input-search" type="search" placeholder="Marcas y mas ..." aria-label="Search" name="buscador">
             <button class="btn btn-outline-success ml-2  my-2 my-sm-0" type="submit">Buscar</button>
           </form>
       </div>
     </div>
-  </div>
   </nav>
 </header>

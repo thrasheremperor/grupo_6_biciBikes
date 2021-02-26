@@ -2,8 +2,8 @@
     background-color:rgba(250, 241, 119, 0.6);
 }
 h2{
-    background-color: gray;
-    color:#ffd369;
+    background-color: #ffd369;
+    color:black;
 }
 .description p{
     font-size: 14px;

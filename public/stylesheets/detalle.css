@@ -1,5 +1,54 @@
-.product{
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
+@import "general.css";
+
+
+.container .detalle {
+    background-color: white;    
+}
+.contain{
+    border:1px solid rgba(0, 0, 0, 0.2);
+    border: none;
+    margin: 5px;
+box-shadow: 0 0 20px 0 rgba(44, 40, 40, 0.9);
+margin-top:10px;
+margin-bottom: 5px;
+}
+.modelo{
+    font-family: Montserrat;
+    font-size: larger;
+}
+.sub-titulo{
+    font-family: Montserrat;
+    font-size: 25px;
+}
+.imgProducto{
+    height: -5px -5px -5px -5px;
+}
+.precio{
+    font-size: large;
+}
+.descuento{
+    font-size: large;
+    color: rgb(59, 221, 59);
+}
+@media (min-width:766){
+    .sub-titulo{
+        font-family: Montserrat;
+        font-size: 50px;
+    }
+
+}
+
+@media (min-width: 1024px){
+    .imgProducto{
+            box-shadow: 0 0 20px 0 rgba(44, 40, 40, 0.4);
+            
+    }
+    .modelo{
+        font-family: Montserrat;
+        font-size: larger;
+    }
+    .sub-titulo{
+        font-family: Montserrat;
+        font-size: 30px;
+    }
 }

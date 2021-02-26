@@ -21,16 +21,16 @@
                   <article>
                     <h3>$<%- producto.precio%></h3>
                     <span>Envio<%- ' ' + producto.envio%></span>
-                    <i class="fas fa-trunk"></i>
+                    <i class="fas fa-truck"></i>
                   </article>
                   <div class="detalle">
                     <p><%-producto.name + ' ' + producto.marca%></p>
                   </div>
                 </section>
                 <div class="m-2 justify-content-around">
-                  <a href="/admin/editar/<%= producto.id %>" class="btn btn-sm btn-success">editar</a>
+                  <a href="/admin/editar/<%= producto.id %>" class="btn btn-sm btn-success"><i class= "fas fa-edit">EDIT</i></a>
                   <form action="/admin/eliminar/<%= producto.id %>?_method=DELETE " method="POST">
-                    <button class="btn btn-sm btn-danger" type="submit">borrar</button>
+                    <button class="btn btn-sm btn-danger" type="submit"><i class="fas fa-trash-alt">DELETE</i></button>
                   </form>
                 </div>
               </div>
