@@ -12,6 +12,7 @@ Por eso creamos este sitio dónde cada quien podrá encontrar su Bike acorde a s
 
 Nuestro **[Trello](https://trello.com/b/ZbFRZnUU/programmernation)**
 
+**[Retrospectiva]()**
 
 **Sitios web de referencia:**
 
