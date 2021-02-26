@@ -21,19 +21,19 @@
 
  **Retrospectiva 2**
 
- *Comenzara hacer* 
- 
+ **Comenzara hacer**
  - estar mas comunicados
  -profundizar temas de estudios
  -mejorar organizacion
  - cumplir los tiempos dados en el trello
  - 
- *continuar haciendo*
+ **continuar haciendo**
   -continuar haciendo reuniones
-  *hacer menos*  
+  
+  **hacer menos**
    -dejar de ser confiado con el tiempo dado   
    
-  *Hacer mas* 
+  **Hacer mas**
     -realizar mas practica dejar de hacer 
     -dejar de procastinar
 
