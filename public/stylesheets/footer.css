@@ -2,7 +2,6 @@
 
 footer {
     background-color:#ffd369;
-    border-top: solid 2px black;
 }
 
 .logo{
@@ -44,7 +43,7 @@ p{
  }
 
 }
-/* DESKTOPS */
+
 @media(min-width:426px){
     .logo{
         width:100%;

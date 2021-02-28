@@ -1,6 +1,8 @@
 @import "general.css";
 
-
+.paraBorder {
+    height: 50%;
+}
 .container .detalle {
     background-color: white;    
 }

@@ -20,22 +20,28 @@ module . exports  =  {
                 title:"¡registrate aqui!"
             })
          },
-    processRegistro : (req , res) =>{
-        const {nombre, apellido, pass, email} = req.body;
+    processRegistro : (req , res, next) =>{
+        
 
-        let lastID = 0;
+        const {nombre, apellido, pass, email,perfil} = req.body;
+
+        let lastID = 1;
         users.forEach(user => {
             if(user.id > lastID){
                 lastID = user.id
             }
         });
 
+        let passHash = bcrypt.hashSync(pass,10);
+
         const newUser = {
-            id : lastID +1,
+            id : Number(lastID +1),
             nombre,
-            pass,
+            pass : passHash,
             apellido,
-            email
+            email,
+            perfil : req.files[0].originalname
+            
         }
       
         users.push(newUser);
