@@ -5,7 +5,7 @@
   <%- include('partials/header.ejs') %> 
     <div class="container cargaProducto">
       <form action="/admin/editado/<%= producto.id %>?_method=PUT" method="POST">
-        <h3>Editar Producto</h3>
+        <h2>Editar Producto</h3>
         <hr>
         <div class="row">
           <div class="col-10">
@@ -34,21 +34,23 @@
 
         <div class="row">
           <div class="col-10">
-            <label for="envio">Envio</label>
-            <br>
-            <input name="retiro" value="<%= producto.retiro %>" type="checkbox">retiro personal
-            <br>
-            <input name="envio" value="<%= producto.envio %>" type="checkbox">envio a domicilio
+           <p><label for="">Envio</label></p> 
+           <label for="">Retiro personal</label>
+           <input class="" type="checkbox" name="envio" value="<%= producto.envio %>">
+           <label for="">Envio por Correo</label> 
+           <input class="" type="checkbox" name="envio1" value="<%= producto.envio1 %>">
           </div>
         </div>
         <div class="row">
           <div class="col-10">
             <label name="imgagen">Imagen de Producto</label>
-            <input type="text" class="form-control" name="img" value="<%= producto.img %>">
+            <input type="file" class="form-control" name="img" value="<%= producto.img %>">
           </div>
         </div>
         <br>
-        <button class="btn btn-primary" type="submit">Subir cambios</button>
+        <div class="text-center mb-3">
+          <button class="btn btn-warning" type="submit">Subir cambios</button>
+        </div>
         
       </form>
     </div>

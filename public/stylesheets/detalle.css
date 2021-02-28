@@ -15,20 +15,62 @@ margin-bottom: 5px;
 .modelo{
     font-family: Montserrat;
     font-size: larger;
+    margin:10px
 }
 .sub-titulo{
     font-family: Montserrat;
     font-size: 25px;
+    margin:10px
 }
 .imgProducto{
     height: -5px -5px -5px -5px;
 }
 .precio{
     font-size: large;
+    margin:10px
 }
 .descuento{
     font-size: large;
     color: rgb(59, 221, 59);
+    margin:10px
+}
+.color{
+    font-size: large;
+    margin:10px
+}
+.description{
+    font-size: large;
+    margin:10px
+}
+.envio{
+    font-size: large;
+    margin:10px
+}
+div .auto i:hover {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg)
+       
+}
+div .auto i{
+    text-decoration: none;
+    color:green;
+    margin:10px
+}
+div .auto i{
+    right: 18px;
+top: -15px;
+border:1px solid green;
+width: 27px;
+height: 27px;
+border-radius: 20px;
+padding:4px;
+font-size:16px;
+transition: all .5s ease;
+-webkit-transition: all .5s ease-out;
+-moz-transition: all .5s ease;
+-ms-transition: all .5s ease;
 }
 @media (min-width:766){
     .sub-titulo{

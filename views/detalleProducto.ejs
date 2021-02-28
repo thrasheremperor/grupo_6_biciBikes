@@ -15,13 +15,13 @@
         <div class="col-12 paraBorder">
           <div class="contain text-left">
             <div class="row box">
-              <div class="col-12 col-lg-8 imgProducto">
+              <div class="col-12 col-lg-7 imgProducto">
                 <figure class="text-center">
                   <img src="/images/<%-producto.img%>" alt="bicicleta" class="img-fluid">
                 </figure>
                 <hr>
               </div>
-              <div class="col-12 col-lg-4 text-center">
+              <div class="col-12 col-lg-4 text-center auto">
                 <h3 class="sub-titulo"><%- producto.name + ' ' + producto.marca %></h3>
                 <p class="modelo">Modelo:<%-' ' + producto.modelo%></p>
                 <h3 class="precio">$<%-producto.precio%><span class="descuento"><%= '  ' + producto.descuento%>%OFF</span></h3>
@@ -33,7 +33,7 @@
                 <a href=""><button class="btn btn-warning" type="submit">comprar</button></a>
                 <a href=""><button class="btn btn-warning" type="submit">agregar a carrito</button></a>
                 <hr>
-                <p class="nombre"><%- producto.name + ' ' + producto.marca %></p>
+                <p class="sub-titulo"><%- producto.name + ' ' + producto.marca %></p>
                 <p class="description mb-5"><%-producto.description%></p>
               </div> 
             </div>
@@ -41,6 +41,7 @@
         </div>
       </div>      
     </section>
+    <hr>
   </div>
  
   <%- include('partials/footer.ejs') %> 

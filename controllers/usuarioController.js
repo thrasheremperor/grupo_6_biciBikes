@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const users = require('../data/users.json');
+const bcrypt = require('bcrypt');
 
 const {getUsuario, setUsuario} = require(path.join('..','data','users'));
 
@@ -43,7 +44,26 @@ module . exports  =  {
         res.redirect('/usuario/login')
     },
     processLogin : (req ,res )=>{
-        res.send(req.body)
+        const {pass, email} = req.body;
+         if(!email || !pass){
+             return res.redirect('/login')
+         }
+
+        let loguarse = usuario.find(user => user.email.toLowerCase() === email.toLowerCase().trim());
+
+        if(loguarse){
+            if(bcrypt.compareSync(pass.trim(), loguarse.pass)){
+               return res.redirect('/')
+            }else{
+                res.render('login',{
+                    error: 'Datos no validos'
+                })
+            }
+        }else{
+            res.render('login',{
+                error: 'Datos no validos'
+            })
+        }
     }
 }
      

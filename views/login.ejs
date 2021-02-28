@@ -22,7 +22,13 @@
           <p>
             <button class="button" type="submit">Entrar</button>
           </p>
-       
+          
+          <% if (typeof error != 'undefined') { %>
+           <div class="alert alert-darger">
+             <span><%= error %> </span>
+           </div>
+          <% } %>
+
         <a href="/usuario/registro">¿Todavia no tiene una cuenta?</a>
         <a href="">¿Olvidaste tu Contraseña?</a>
       </form>

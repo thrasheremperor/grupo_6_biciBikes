@@ -21,7 +21,10 @@ h2{
     text-align: center;
 
 }
-
+.home-text{
+    font-family: Montserrat;
+    text-align: center;
+}
 
 section.product-box{
   width: 100%;
@@ -41,6 +44,7 @@ section.product-box:hover{
 h2.products-title{
     padding: 10px 0;
 }
+
 
 p{
     font-size: 18px;

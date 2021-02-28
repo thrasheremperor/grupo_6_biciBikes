@@ -26,6 +26,10 @@ input .form-control:hover{
     transition: background-color 1s;
     outline: 0;
 }
+input[type=checkbox]{
+    box-sizing: border-box;
+    padding: 0;
+}
 
 @media(max-width : 425px){
   .session{
