@@ -12,7 +12,7 @@
         <div class="register-wrapper">
             <div class="register-form">
                 
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <p>
                         <label>Nombre</label>
                         <input type="text" name="nombre">
@@ -29,9 +29,12 @@
                         <label>Contraseña</label>
                         <input type="password" name="pass">
                     </p>
-
+                    <div id="div_file">
+                        <p id="texto" class="">Agregar foto de perfil</p>
+                        <input type="file" name="perfil" id="btn-enviar" >
+                    </div>
                     <p>                        
-                    <button class="block" type="submit">
+                    <button class="block mt-3" type="submit">
                         Registrarme
                     </button>   
                     </p>                                 

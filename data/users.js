@@ -9,7 +9,7 @@ module.exports = {
         return JSON.parse(fs.readFileSync(users_db,'utf-8'));
     },
     setUsuario : (data) => {
-        fs.writeFileSync(users_db,JSON.stringify(data),'utf-8');
+        fs.writeFileSync(users_db,JSON.stringify(data,null,2),'utf-8');
 
     }
 }
