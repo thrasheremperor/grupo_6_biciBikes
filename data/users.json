@@ -65,5 +65,13 @@
     "apellido": "soira",
     "email": "fox@outlook.com",
     "perfil": "logo.jpg"
+  },
+  {
+    "id": 12,
+    "nombre": "maria",
+    "pass": "$2b$10$9Xu5llOWeDj00brOdWRtTOcPm0UjzcxhtMivM/B3d4IIsrVza14ve",
+    "apellido": "baez",
+    "email": "manoca@gmail.com",
+    "perfil": "overol.png"
   }
 ]

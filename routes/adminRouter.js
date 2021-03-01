@@ -1,10 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
+const multer = require('multer');
+const upload = require('../middleware/multer.bikes')
 
 const {cargar,creado, editar, borrar,editado,cargado} = require('../controllers/adminController');
 
 router.get('/formCarga', cargar); /*ruta a formulario de carga de producto / ruta lista*/
-router.post('/formCarga', cargado); /*este es para almacenar los patos enviados por el formulario / ruta lista */
+router.post('/formCarga', upload.any(), cargado); /*este es para almacenar los patos enviados por el formulario / ruta lista */
 
 router.get('/list', creado); /*ruta donde se encuentra los productos publicados / ruta lista*/
 

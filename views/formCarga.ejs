@@ -4,7 +4,7 @@
 <body class="cuerpo">
   <%- include('partials/header.ejs') %> 
     <div class="formCarga">
-      <form action="/admin/formCarga" method="POST" class="contenedor">
+      <form action="/admin/formCarga" method="POST" class="contenedor" enctype="multipart/form-data">
         <h2>Agregar nuevo Producto</h2>
         <hr>
         <div class="row">
@@ -43,7 +43,7 @@
         <div class="row">
           <div class="col-10">
             <label name="imgagen">Imagen de Producto</label>
-            <input type="file"  name="img">
+            <input class="form-control form-control-lg" id="formFileLg" type="file"  name="img">
           </div>
         </div>
         <br>

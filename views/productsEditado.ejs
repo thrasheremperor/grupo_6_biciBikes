@@ -4,7 +4,7 @@
 <body class="admin">
   <%- include('partials/header.ejs') %> 
     <div class="container cargaProducto">
-      <form action="/admin/editado/<%= producto.id %>?_method=PUT" method="POST">
+      <form action="/admin/editado/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <h2>Editar Producto</h3>
         <hr>
         <div class="row">
@@ -44,7 +44,7 @@
         <div class="row">
           <div class="col-10">
             <label name="imgagen">Imagen de Producto</label>
-            <input type="file" class="form-control" name="img" value="<%= producto.img %>">
+            <input type="text" class="form-control" name="img" value="<%= producto.img %>">
           </div>
         </div>
         <br>
