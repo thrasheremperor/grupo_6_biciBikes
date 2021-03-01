@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const {login, registro, processRegistro, processLogin} = require('../controllers/usuarioController');
+const {login, registro, processRegistro, processLogin,profile} = require('../controllers/usuarioController');
 const path = require('path');
 const multer = require('multer');
+
 
 const storage = multer.diskStorage({
     destination : (req,file,cb)=>{
@@ -14,6 +15,8 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({storage})
+
+router.get('/profile',profile);/*ruta lista*/
 
 router.get('/registro',registro); /*ruta lista */
 router.post('/registro',upload.any(),processRegistro);/*ruta lista */

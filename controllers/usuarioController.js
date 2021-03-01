@@ -10,6 +10,11 @@ const usuario = getUsuario();
 
 
 module . exports  =  {
+    profile : ( req ,  res )  =>{
+        res.render( 'profile', {
+            title:"Profile"
+        });
+    },
     login : ( req ,  res )  =>{
         res.render( 'login', {
             title:"Log in"

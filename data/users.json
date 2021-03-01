@@ -65,5 +65,13 @@
     "apellido": "soira",
     "email": "fox@outlook.com",
     "perfil": "logo.jpg"
+  },
+  {
+    "id": 12,
+    "nombre": "Ezequiel",
+    "pass": "$2b$10$zCmCTCam5VmdMfPLXEbeQ.TcyCWrAJssBFuD3DWhHEWeNGW/hqUWG",
+    "apellido": "Arias",
+    "email": "Ezequiel_art12@outlook.com",
+    "perfil": "logo.jpg"
   }
 ]
