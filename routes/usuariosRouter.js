@@ -1,21 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-const {login, registro, processRegistro, processLogin , perfil, eliminar, fatality} = require('../controllers/usuarioController');
+const {login, registro, processRegistro, processLogin , profileAdmin, eliminar, fatality} = require('../controllers/usuarioController');
 
+/*VALIDACIONES */
+const registerValidator = require('../validations/registerValidator')
+
+const upload = require('../middleware/subidaDeImagen');
 const path = require('path');
 const multer = require('multer');
 
-const storage = multer.diskStorage({
-    destination : (req,file,cb)=>{
-     cb(null,'public/images/users')
-    },
-    filename : (req,file,cb)=>{
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-})
-
-const upload = multer({storage})
 
 router.get('/profile',profileAdmin);
 router.get('/registro',registro); /*ruta lista */

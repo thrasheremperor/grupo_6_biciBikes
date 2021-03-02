@@ -23,9 +23,11 @@
                     </p>
                     <p>
                         <label>Email</label>
-                        <input type="email" name="email">
+                        <span class="text-danger"><%= (typeof errores != 'undefined' && errores.nombre) ? errores.nombre.msg : "" %>  </span>
+                        <input type="email" name="email" value="<%= (typeof old != 'undefined' && old.nombre) ? old.nombre : ""%>">
                     </p>
                     <p>
+                        <span class="text-danger"><%= (typeof errores != 'undefined' && errores.pass) ? errores.pass.msg : "" %>  </span>
                         <label>Contraseña</label>
                         <input type="password" name="pass">
                     </p>
@@ -49,6 +51,15 @@
                         Al hacer clic en "Registrarte", aceptas nuestras Condiciones, la Política de datos y la Política de cookies.
                          Es posible que te enviemos notificaciones por SMS, que puedes desactivar cuando quieras.
                     </p>
+                    <div class="col-12 col-md-8">
+                        <% if (typeof !errores = 'undefined') { %>
+                            <ul>
+                                <% errores.forEach(error =>{ %>
+                                    <li><% error.msg %></li>
+                                    <% } %>
+                            </ul>
+                        <% } %>
+                    </div>
                 </div>
             </div>
 

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const users = require('../data/users.json');
 const bcrypt = require('bcrypt');
-const { validationResult } = require('express-validator');
+const { check,validationResult,body } = require('express-validator');
 
 const {getUsuario, setUsuario} = require(path.join('..','data','users'));
 
@@ -27,7 +27,15 @@ module . exports  =  {
          },
     processRegistro : (req , res, next) =>{
         
+        const errores = validationResult(req);
 
+        if(!errores.isEmpty()){
+            return res.send('/usuario/register',{
+                errores : errores.mapped(),
+                old : req.body
+            })
+        }else{
+            
         const {nombre, apellido, pass, email,perfil} = req.body;
 
         let lastID = 1;
@@ -45,7 +53,7 @@ module . exports  =  {
             pass : passHash,
             apellido,
             email,
-            perfil : req.files[0].originalname,
+            perfil 
             
         }
       
@@ -53,6 +61,8 @@ module . exports  =  {
 
         setUsuario(users);
         res.redirect('/usuario/login')
+        }
+
     },
     processLogin : (req ,res )=>{ 
         let errores = validationResult(req);
