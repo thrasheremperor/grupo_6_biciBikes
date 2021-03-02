@@ -32,10 +32,12 @@
         <a href="">¿Olvidaste tu Contraseña?</a>
       </form>
 
-      <% if (typeof error != 'undefined') { %>
-        <div class="alert alert-darger">
-          <span><%= error %> </span>
-        </div>
+      <% if (typeof errores != 'undefined') { %>
+        <ul>
+          <% errores.forEach(error =>{%>
+            <li><%= error.msg %> </li>
+          <% }) %> 
+        </ul>
        <% } %>
     </div>
           
@@ -45,4 +47,4 @@
       <%- include('partials/footer') %>
 
   </body>
-  </html>
+</html>

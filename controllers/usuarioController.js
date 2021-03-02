@@ -22,7 +22,7 @@ module . exports  =  {
             })
          },
     processRegistro : (req , res, next) =>{
-        
+
 
         const {nombre, apellido, pass, email,perfil} = req.body;
 
@@ -48,13 +48,15 @@ module . exports  =  {
         users.push(newUser);
 
         setUsuario(users);
-        res.redirect('/usuario/login')
+        res.redirect('login')
     },
     processLogin : (req ,res )=>{ 
         let errores = validationResult(req);
+
         if(!errores.isEmpty()){
             return res.render('login',{
-
+                title:"Log in",
+                errores : errores.errors
             })
         }else{
             /*aqui pido los datos pass y email para comprar con los ya registrados */
@@ -66,10 +68,14 @@ module . exports  =  {
             if(result){
 
                 if(bcrypt.compareSync(pass.trim(), result.pass)){
+                   /*necesito de la vista y ruta perfil para que todo funcione 
+                   se aclara que la compracion de datos funciona */ 
                     req.session.user = {
                         id: result.id,
+                        nombre: result.nombre,
+                        apellido : result.apellido, 
                         email: result.email,
-                        avatar: result.avatar
+                        perfil: result.perfil
                     }
                     if(recordar){
                         res.cookie('biciBikes', res.session.user,{
@@ -81,8 +87,13 @@ module . exports  =  {
                                 
                 }
              
-                res.render('login',{
-                    error: 'Datos invalidos'
+                return res.render('login',{
+                    errores:[{
+                        msg: "datos invalidos!"
+                    }
+
+                    ]
+                    
                 })
             }
 
@@ -90,7 +101,7 @@ module . exports  =  {
     perfil : (req,res)=>{
         res.render('perfil')
     },
-    fatality : (req,res)=>{
+    cerrar : (req,res)=>{
         req.session.destroy();
         if(req.cookie.biciBikes){
             res.cookie('biciBikes','',{
@@ -102,8 +113,8 @@ module . exports  =  {
     eliminar  : (req,res)=>{
         usuario.forEach(user =>{
             if(user.id === Number(req.params.id)){
-                if(fs.existsSync(path.join('public','images','users', users.avatar))){
-                    fs.unlinkSync(path.join('public','images','users', users.avatar))
+                if(fs.existsSync(path.join('public','images','users', users.perfil))){
+                    fs.unlinkSync(path.join('public','images','users', users.perfil))
                 }
                 eliminar = usuario.indeOf(user);
                 usuario.splice(eliminar,1)

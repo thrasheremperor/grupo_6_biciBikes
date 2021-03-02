@@ -73,5 +73,13 @@
     "apellido": "baez",
     "email": "manoca@gmail.com",
     "perfil": "overol.png"
+  },
+  {
+    "id": 13,
+    "nombre": "",
+    "pass": "$2b$10$oayUgJOZkLDRyi0YPkPCge9Hx/d/uTQEI.e7Uppa3JcDYWondbFze",
+    "apellido": "",
+    "email": "",
+    "perfil": "overol.png"
   }
 ]
