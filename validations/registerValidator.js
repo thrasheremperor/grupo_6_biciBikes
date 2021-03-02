@@ -1,5 +1,5 @@
 const {check, validationResult, body} = require('express-validator');
-const { getUsuario} = require('../data/users')
+const { getUsuario} = require('../data/users');
 const admins = getUsuario();
 
 module.exports = [
