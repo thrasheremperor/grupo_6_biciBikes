@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const users = require('../data/users.json');
 const bcrypt = require('bcrypt');
+const { validationResult } = require('express-validator');
 
 const {getUsuario, setUsuario} = require(path.join('..','data','users'));
 
@@ -10,10 +11,9 @@ const usuario = getUsuario();
 
 
 module . exports  =  {
-    profile : ( req ,  res )  =>{
-        res.render( 'profile', {
-            title:"Profile"
-        });
+    profileAdmin : (req, res) => {
+        const user = usuario.find(user => user.id === +req.params.id)
+        res.render('admin/profile',{user})
     },
     login : ( req ,  res )  =>{
         res.render( 'login', {
@@ -45,7 +45,7 @@ module . exports  =  {
             pass : passHash,
             apellido,
             email,
-            perfil : req.files[0].originalname
+            perfil : req.files[0].originalname,
             
         }
       
@@ -54,27 +54,37 @@ module . exports  =  {
         setUsuario(users);
         res.redirect('/usuario/login')
     },
-    processLogin : (req ,res )=>{
-        const {pass, email} = req.body;
-         if(!email || !pass){
-             return res.redirect('/login')
-         }
+    processLogin : (req ,res )=>{ 
+        let errores = validationResult(req);
+        if(!errores.isEmpty()){
+            return res.render('login',{
 
-        let loguarse = usuario.find(user => user.email.toLowerCase() === email.toLowerCase().trim());
+            })
+        }else{
+            /*aqui pido los datos pass y email para comprar con los ya registrados */
+            const {pass, email , recordar} = req.body;
 
-        if(loguarse){
-            if(bcrypt.compareSync(pass.trim(), loguarse.pass)){
-               return res.redirect('/')
-            }else{
+            let result = usuario.find(user => user.email === email);
+
+            /*y en caso de que los datos coincidan este re redirecciona en home ya teniendo acceso a todas las paginas*/
+            if(result){
+
+                if(bcrypt.compareSync(pass, result.pass)){
+                   return res.redirect('/')
+                }
+                if(recordar){
+                    res.cookie('biciBikes', res.session.user,{
+                        maxAge: 1000*60
+                    })
+                }
+                                
+                }
+             
                 res.render('login',{
-                    error: 'Datos no validos'
+                    error: 'Datos invalidos'
                 })
             }
-        }else{
-            res.render('login',{
-                error: 'Datos no validos'
-            })
-        }
+
     }
 }
      

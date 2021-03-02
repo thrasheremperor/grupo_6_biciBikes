@@ -1,5 +1,6 @@
 const dataBicis = require('../data/bicis');
 const fs = require('fs');
+const { patch } = require('../routes/adminRouter');
 
 module.exports = {
     cargar :(req, res) => {
@@ -7,7 +8,8 @@ module.exports = {
             title: 'Cargar producto'
         }) /*renderiso  la vista de formCarga.ejs */
     },
-    cargado:(req,res)=>{    /*guadado de datos traidos del formulario de carga de producto */
+    cargado:(req,res,next)=>{    /*guadado de datos traidos del formulario de carga de producto */
+        
         let lastID = 1;
         dataBicis.forEach(producto => {
             if (producto.id >lastID) { /*indica el valor del proximo id */
@@ -25,7 +27,7 @@ module.exports = {
             description,
             envio,
             envio1,
-            img
+            img : req.files[0].filename
         }
 
         dataBicis.push(producto) /*envio los datos guardados a el archivo json */
@@ -68,6 +70,11 @@ module.exports = {
     borrar: (req,res)=>{ /*la opcion de borara en producto se envuentra en la vista productList */
         dataBicis.forEach(producto =>{
             if(producto.id === Number(req.params.id)){ /*  si el producto seleccionado esta*/
+               
+                if(fs.existsSync(patch.join('public', 'images',producto.img))){
+                    fs.unlinkSync(path.join('public','images',producto.img))
+                }
+               
                 let borrar = dataBicis.indexOf(producto); /*este lo cuarga en nuestra variable */
                 dataBicis.splice(borrar,1) /*para luego borrar el elemento seleccionado */
             }
