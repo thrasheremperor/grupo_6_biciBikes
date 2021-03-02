@@ -2,6 +2,7 @@ const dataBicis = require('../data/bicis');
 const fs = require('fs');
 const { patch } = require('../routes/adminRouter');
 
+
 module.exports = {
     cargar :(req, res) => {
         res.render('formCarga', { /*aqui se puede visualizar un formulario de carga de un nuevo producto */

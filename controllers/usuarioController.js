@@ -27,12 +27,13 @@ module . exports  =  {
          },
     processRegistro : (req , res, next) =>{
         
-        const errores = validationResult(req);
+        
 
+        let errores = validationResult(req);
         if(!errores.isEmpty()){
-            return res.send('/usuario/register',{
-                errores : errores.mapped(),
-                old : req.body
+            return res.render('registro',{
+                title : 'register',
+                errores : errores.errors
             })
         }else{
             
@@ -68,7 +69,8 @@ module . exports  =  {
         let errores = validationResult(req);
         if(!errores.isEmpty()){
             return res.render('login',{
-
+                title : 'log in',
+                errores : errores.errors
             })
         }else{
             /*aqui pido los datos pass y email para comprar con los ya registrados */

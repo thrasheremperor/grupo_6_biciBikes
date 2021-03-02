@@ -26,7 +26,7 @@ module.exports = [
     .withMessage('Uno nombre de más de 3 letras por favor!'),
 
     body('nombre').custom(value => {
-        let result = admins.find(admin => admin.username.toLowerCase() === value.toLowerCase().trim());
+        let result = admins.find(admin => admin.nombre === value);
 
         if(result){
             return false
