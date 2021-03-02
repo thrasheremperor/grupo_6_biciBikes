@@ -69,13 +69,18 @@ module . exports  =  {
             /*y en caso de que los datos coincidan este re redirecciona en home ya teniendo acceso a todas las paginas*/
             if(result){
 
-                if(bcrypt.compareSync(pass, result.pass)){
+                if(bcrypt.compareSync(pass.trim(), result.pass)){
+                    req.session.user = {
+                        id: result.id,
+                        email: result.email,
+                        avatar: result.avatar
+                    }
+                    if(recordar){
+                        res.cookie('biciBikes', res.session.user,{
+                            maxAge: 1000*60
+                        })
+                    }
                    return res.redirect('/')
-                }
-                if(recordar){
-                    res.cookie('biciBikes', res.session.user,{
-                        maxAge: 1000*60
-                    })
                 }
                                 
                 }
@@ -84,6 +89,32 @@ module . exports  =  {
                     error: 'Datos invalidos'
                 })
             }
+
+    },
+    perfil : (req,res)=>{
+        res.render('perfil')
+    },
+    fatality : (req,res)=>{
+        req.session.destroy();
+        if(req.cookie.biciBikes){
+            res.cookie('biciBikes','',{
+                maxAge: -1
+            })
+        }
+        res.redirect('/')
+    },
+    eliminar  : (req,res)=>{
+        usuario.forEach(user =>{
+            if(user.id === Number(req.params.id)){
+                if(fs.existsSync(path.join('public','images','users', users.avatar))){
+                    fs.unlinkSync(path.join('public','images','users', users.avatar))
+                }
+                eliminar = usuario.indeOf(user);
+                usuario.splice(eliminar,1)
+            }
+        });
+        fs.writeFileSync('../data/users.json', JSON.stringify(usuario,null,2));
+        res.redirect('/')
 
     }
 }

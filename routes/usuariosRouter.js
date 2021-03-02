@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const {login, registro, processRegistro, processLogin, profileAdmin} = require('../controllers/usuarioController');
+
+const {login, registro, processRegistro, processLogin , perfil, eliminar, fatality} = require('../controllers/usuarioController');
+
 const path = require('path');
 const multer = require('multer');
 
@@ -21,6 +23,12 @@ router.post('/registro',upload.any(),processRegistro);/*ruta lista */
 
 router.get('/login',login);/*ruta lista */
 router.post('/login',processLogin);/*ruta lista */
+
+//*router.get('/perfil',userCheck,perfil);*/
+
+router.delete('/delete/:id', eliminar);
+
+router.get('/cerrar', fatality)
 
 
 

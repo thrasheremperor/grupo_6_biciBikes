@@ -2,6 +2,11 @@ const express = require('express');
 const app = express();
 const port = 5000;
 const methodOverride = require('method-override');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const localCheck = require('./middleware/localCheck');
+const cookieCheck = require('./middleware/cookieCheck');
 
 /* ROUTER */
 
@@ -17,9 +22,15 @@ app.use(express.json());
 
 /* VIEW ENGINE */
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views');
+app.set('views', path.join(__dirname + '/views'));
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname + '/public')));
+app.use(cookieParser());
+app.use(session({
+    secret : "privado"
+}));
+app.use(localCheck);
+app.use(cookieCheck)
 
 // rutas 
 

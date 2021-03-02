@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const multer = require('multer');
-const upload = require('../middleware/multer.bikes')
+const upload = require('../middleware/imgBikes')
 
 const {cargar,creado, editar, borrar,editado,cargado} = require('../controllers/adminController');
 
