@@ -42,4 +42,9 @@ app.use('/usuario', usuariosRouter);
 app.use('/admin', adminRouter);
 
 
-app.listen(port, () => console.log(`Server running in port ${port}`))
+app.listen(port, () => console.log(`
+*************************************
+Server running in port ${port}
+Link ---->> http://localhost:${port}
+*************************************
+`));
