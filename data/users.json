@@ -81,5 +81,12 @@
     "apellido": "",
     "email": "",
     "perfil": "overol.png"
+  },
+  {
+    "id": 14,
+    "nombre": "patata",
+    "pass": "$2b$10$Aznoh1zTBUrrb7Xf7rFfnOUPtyfJCt4oxtnj..alIIXdaiwz64eyG",
+    "apellido": "Arias",
+    "email": "frita@gmail.com"
   }
 ]

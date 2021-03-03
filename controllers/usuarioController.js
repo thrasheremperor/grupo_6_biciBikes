@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const users = require('../data/users.json');
 const bcrypt = require('bcrypt');
-const { validationResult } = require('express-validator');
+const { check,validationResult,body } = require('express-validator');
 
 const {getUsuario, setUsuario} = require(path.join('..','data','users'));
 
@@ -11,6 +11,10 @@ const usuario = getUsuario();
 
 
 module . exports  =  {
+    profileAdmin : (req, res) => {
+        const user = usuario.find(user => user.id === +req.params.id)
+        res.render('admin/profile',{user})
+    },
     login : ( req ,  res )  =>{
         res.render( 'login', {
             title:"Log in"
@@ -22,8 +26,17 @@ module . exports  =  {
             })
          },
     processRegistro : (req , res, next) =>{
+        
+        
 
-
+        let errores = validationResult(req);
+        if(!errores.isEmpty()){
+            return res.render('registro',{
+                title : 'register',
+                errores : errores.errors
+            })
+        }else{
+            
         const {nombre, apellido, pass, email,perfil} = req.body;
 
         let lastID = 1;
@@ -41,19 +54,20 @@ module . exports  =  {
             pass : passHash,
             apellido,
             email,
-            perfil : req.files[0].originalname,
+            perfil 
             
         }
       
         users.push(newUser);
 
         setUsuario(users);
-        res.redirect('login')
+        res.redirect('/usuario/login')
+        }
+
     },
     processLogin : (req ,res )=>{ 
 
         let errores = validationResult(req);
-
         if(!errores.isEmpty()){
             return res.render('login',{
                 title:"Log in",   
@@ -101,7 +115,7 @@ module . exports  =  {
     perfil : (req,res)=>{
         res.render('perfil')
     },
-    cerrar : (req,res)=>{
+    fatality : (req,res)=>{
         req.session.destroy();
         if(req.cookie.biciBikes){
             res.cookie('biciBikes','',{
@@ -113,8 +127,8 @@ module . exports  =  {
     eliminar  : (req,res)=>{
         usuario.forEach(user =>{
             if(user.id === Number(req.params.id)){
-                if(fs.existsSync(path.join('public','images','users', users.perfil))){
-                    fs.unlinkSync(path.join('public','images','users', users.perfil))
+                if(fs.existsSync(path.join('public','images','users', users.avatar))){
+                    fs.unlinkSync(path.join('public','images','users', users.avatar))
                 }
                 eliminar = usuario.indeOf(user);
                 usuario.splice(eliminar,1)
