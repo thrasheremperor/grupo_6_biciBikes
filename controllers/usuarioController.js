@@ -51,11 +51,12 @@ module . exports  =  {
         res.redirect('login')
     },
     processLogin : (req ,res )=>{ 
+
         let errores = validationResult(req);
 
         if(!errores.isEmpty()){
             return res.render('login',{
-                title:"Log in",
+                title:"Log in",   
                 errores : errores.errors
             })
         }else{
@@ -70,29 +71,28 @@ module . exports  =  {
                 if(bcrypt.compareSync(pass.trim(), result.pass)){
                    /*necesito de la vista y ruta perfil para que todo funcione 
                    se aclara que la compracion de datos funciona */ 
-                    req.session.user = {
-                        id: result.id,
-                        nombre: result.nombre,
-                        apellido : result.apellido, 
-                        email: result.email,
-                        perfil: result.perfil
-                    }
-                    if(recordar){
-                        res.cookie('biciBikes', res.session.user,{
-                            maxAge: 1000*60
-                        })
-                    }
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   
                    return res.redirect('/')
                 }
                                 
                 }
-             
+
                 return res.render('login',{
+                    title: "log in",
                     errores:[{
                         msg: "datos invalidos!"
-                    }
-
-                    ]
+                    }]
                     
                 })
             }
