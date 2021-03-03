@@ -1,6 +1,6 @@
 const dataBicis = require('../data/bicis');
 const fs = require('fs');
-const { patch } = require('../routes/adminRouter');
+const path = require('path');
 
 
 module.exports = {
@@ -72,7 +72,7 @@ module.exports = {
         dataBicis.forEach(producto =>{
             if(producto.id === Number(req.params.id)){ /*  si el producto seleccionado esta*/
                
-                if(fs.existsSync(patch.join('public', 'images',producto.img))){
+                if(fs.existsSync(path.join('public', 'images',producto.img))){
                     fs.unlinkSync(path.join('public','images',producto.img))
                 }
                
