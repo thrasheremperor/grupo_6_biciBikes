@@ -77,7 +77,7 @@ module.exports  =  {
             /*aqui pido los datos pass y email para comprar con los ya registrados */
             const {pass, email , recordar} = req.body;
 
-            let result = usuario.find(user => user.email === email);
+            let result = users.find(user => user.email === email);
 
             /*y en caso de que los datos coincidan este re redirecciona en home ya teniendo acceso a todas las paginas*/
             if(result){
@@ -132,16 +132,16 @@ module.exports  =  {
         res.redirect('/')
     },
     eliminar  : (req,res)=>{
-        usuario.forEach(user =>{
+        users.forEach(user =>{
             if(user.id === Number(req.params.id)){
                 if(fs.existsSync(path.join('public','images','users', user.perfil))){
                     fs.unlinkSync(path.join('public','images','users', user.perfil))
                 }
-                eliminar = usuario.indeOf(user);
+                eliminar = users.indeOf(user);
                 usuario.splice(eliminar,1)
             }
         });
-        fs.writeFileSync('../data/users.json', JSON.stringify(usuario,null,2));
+        fs.writeFileSync('../data/users.json', JSON.stringify(users,null,2));
         res.redirect('/')
 
     }

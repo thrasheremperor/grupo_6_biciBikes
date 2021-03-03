@@ -10,8 +10,6 @@ const loginValidator = require('../validations/loginValidator');
 
 const upload = require('../middleware/subidaDeImagen');
 
-/*router.get('/profile',perfil);*/
-
 router.get('/registro',registro); /*ruta lista */
 router.post('/registro',upload.any() ,registerValidator,processRegistro);/*ruta lista */
 
