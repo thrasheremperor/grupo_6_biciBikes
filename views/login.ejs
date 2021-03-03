@@ -7,7 +7,6 @@
     <%- include('partials/header')%>
      <div class="login">
        
-
        <form class="sesion" action="" method="POST">
 
           <h2>Inicia sesion</h2>
@@ -19,6 +18,14 @@
             <input type="password" placeholder="Contraseña" name="pass">
           </p>
 
+          <% if (typeof errores != 'undefined') { %>
+            <ul>
+              <% errores.forEach(error =>{%>
+                <li><%= error.msg %> </li>
+              <% }) %> 
+            </ul>
+           <% } %>
+
           <p>
             <input type="checkbox" name="recordar" id="recordar">
             <label for="recordar">Recuerdame</label>
@@ -27,22 +34,11 @@
             <button class="button" type="submit">Entrar</button>
           </p>
           
-
         <a href="/usuario/registro">¿Todavia no tiene una cuenta?</a>
         <a href="">¿Olvidaste tu Contraseña?</a>
       </form>
 
-      <% if (typeof errores != 'undefined') { %>
-        <ul>
-          <% errores.forEach(error =>{%>
-            <li><%= error.msg %> </li>
-          <% }) %> 
-        </ul>
-       <% } %>
-    </div>
-          
-
-    
+    </div> 
         
       <%- include('partials/footer') %>
 

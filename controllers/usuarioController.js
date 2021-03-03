@@ -10,11 +10,11 @@ const usuario = getUsuario();
 
 
 
-module . exports  =  {
-    profileAdmin : (req, res) => {
+module.exports  =  {
+    /*profileAdmin : (req, res) => {
         const user = usuario.find(user => user.id === +req.params.id)
         res.render('admin/profile',{user})
-    },
+    },*/
     login : ( req ,  res )  =>{
         res.render( 'login', {
             title:"Log in"
@@ -66,7 +66,7 @@ module . exports  =  {
 
     },
     processLogin : (req ,res )=>{ 
-
+        
         let errores = validationResult(req);
         if(!errores.isEmpty()){
             return res.render('login',{
@@ -85,18 +85,23 @@ module . exports  =  {
                 if(bcrypt.compareSync(pass.trim(), result.pass)){
                    /*necesito de la vista y ruta perfil para que todo funcione 
                    se aclara que la compracion de datos funciona */ 
+                                  
+                  /* req.session.user = {
+                       id: result.id,
+                       perfil :result.perfil,
+                       nombre : result.nombre,
+                       apellido : result.apellido,
+                       email : result.email
+
+                   }
+
+                   if(recordar){
+                       res.cookie('biciBikes', req.session.user,{
+                           maxAge: 1000*60
+                       })
+                   }*/
                    
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
-                   
+                   //return res.redirect('/usuario/miPerfil')
                    return res.redirect('/')
                 }
                                 
@@ -113,11 +118,13 @@ module . exports  =  {
 
     },
     perfil : (req,res)=>{
-        res.render('perfil')
+        res.render('perfil',{
+            title: "Mi perfil"
+        })
     },
-    fatality : (req,res)=>{
+    cerrar : (req,res)=>{
         req.session.destroy();
-        if(req.cookie.biciBikes){
+        if(req.cookies.biciBikes){
             res.cookie('biciBikes','',{
                 maxAge: -1
             })
@@ -127,8 +134,8 @@ module . exports  =  {
     eliminar  : (req,res)=>{
         usuario.forEach(user =>{
             if(user.id === Number(req.params.id)){
-                if(fs.existsSync(path.join('public','images','users', users.avatar))){
-                    fs.unlinkSync(path.join('public','images','users', users.avatar))
+                if(fs.existsSync(path.join('public','images','users', user.perfil))){
+                    fs.unlinkSync(path.join('public','images','users', user.perfil))
                 }
                 eliminar = usuario.indeOf(user);
                 usuario.splice(eliminar,1)
