@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
-const multer = require('multer');
 const upload = require('../middleware/imgBikes')
 const userCheck = require ('../middleware/userCheck');
 
@@ -13,9 +11,9 @@ router.post('/formCarga', upload.any(), userCheck, cargado); /*este es para alma
 router.get('/list', userCheck,creado); /*ruta donde se encuentra los productos publicados / ruta lista*/
 
 router.get('/editar/:id',userCheck,editar)/*ruta para productos ya editados / ruta lista */
-router.put('/editado/:id',userCheck, editado); /*ruta para edicion de producto / ruta lista*/
+router.put('/editado/:id', editado); /*ruta para edicion de producto / ruta lista*/
 
-router.delete('/eliminar/:id',userCheck, borrar); /*ruta para borrar un producto */
+router.delete('/eliminar/:id', borrar); /*ruta para borrar un producto */
 
 
 

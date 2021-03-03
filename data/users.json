@@ -12,5 +12,12 @@
     "pass": "$2b$10$smDSGJlo6pE5ZCF8DSnaEewMLhKkQAD.CuD3wMLf2Kl7xLnFRnwR2",
     "apellido": "sofi",
     "email": "sofi@sofi.com"
+  },
+  {
+    "id": 3,
+    "nombre": "Fulano",
+    "pass": "$2b$10$uBnXgm5cG9MkzZ3Af.ednu2FMYdTvgIIgCGaoKM1I8I/FxEM8S2yi",
+    "apellido": "Pepe",
+    "email": "fulano@gmail.com"
   }
 ]
