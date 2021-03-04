@@ -17,4 +17,10 @@
 
 **Daily 4: 26/02/2021**
 
-- 
+- Nos reunimos con ailu, para ver como vamos con los sprint y las distrubuciones de la tarea
+
+**Se realizo otras Reuniones pero no las registramos**
+
+**Daily 04/03/2021**
+
+- Se realizo una reunion con todo el equipo con Jona y Eric (profes) para ver como ibamos y ayudarnos con unos problemas y hacer observaciones 
