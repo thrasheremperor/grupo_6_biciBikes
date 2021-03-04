@@ -25,9 +25,14 @@ module.exports = {
         })
     },
     productosFull: (req,res)=>{
+
+        /*let productofull = dataBicis.filter(productofull =>{
+            return productofull.id == 'id'
+        })*/
         res.render('products',{
             title: 'Todos los productos',
-            dataBicis
+            dataBicis,
+            //productofull
         })
     },
     search: (req,res)=>{ /*buscador siempre va por get */

@@ -7,12 +7,9 @@ module.exports = [
     .notEmpty()
     .withMessage('El nombre de usuario es requerido'),
 
-    check('nombre')
-    .isLength({
-        min:3,
-        max:20
-        })
-    .withMessage('La contraseña debe tener un min de '),
+    check('apellido')
+    .notEmpty()
+    .withMessage('El apellido de usuario es requerido'),
 
     check('pass')
     .notEmpty()
@@ -21,12 +18,12 @@ module.exports = [
     check('pass')
     .isLength({
         min:3,
-        max:8
+        max:20
         })
-    .withMessage('Uno nombre de más de 3 letras por favor!'),
+    .withMessage('La contraseña debe tener entre 3 y 20 caracteres'),
 
-    body('nombre').custom(value => {
-        let result = admins.find(admin => admin.nombre === value);
+    body('email').custom(value => {
+        let result = admins.find(admin => admin.email === value);
 
         if(result){
             return false

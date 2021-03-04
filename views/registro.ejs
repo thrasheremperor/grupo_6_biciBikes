@@ -35,6 +35,15 @@
                         <p id="texto" class="">Agregar foto de perfil</p>
                         <input type="file" name="perfil" id="btn-enviar" >
                     </div>
+
+                    <% if (typeof errores != 'undefined') { %>
+                        <ul>
+                          <% errores.forEach(error =>{%>
+                            <li><%= error.msg %> </li>
+                          <% }) %> 
+                        </ul>
+                    <% } %>
+
                     <p>                        
                     <button class="block mt-3" type="submit">
                         Registrarme
@@ -53,13 +62,6 @@
                     </p>
                     
                 </div>
-                <% if (typeof errores != 'undefined') { %>
-                    <ul>
-                      <% errores.forEach(error =>{%>
-                        <li><%= error.msg %> </li>
-                      <% }) %> 
-                    </ul>
-                   <% } %>
             </div>
 
         </div>    

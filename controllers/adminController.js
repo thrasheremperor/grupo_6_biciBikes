@@ -1,6 +1,6 @@
 const dataBicis = require('../data/bicis');
 const fs = require('fs');
-const { patch } = require('../routes/adminRouter');
+const path = require('path');
 
 
 module.exports = {
@@ -28,7 +28,7 @@ module.exports = {
             description,
             envio,
             envio1,
-            img : req.files[0].filename
+            img 
         }
 
         dataBicis.push(producto) /*envio los datos guardados a el archivo json */
@@ -61,8 +61,7 @@ module.exports = {
                 producto.description = description;
                 producto.envio = envio;
                 producto.envio1 = envio1;
-                producto.img = img;
-                
+                producto.img = (req.files[0])? req.files[0].filename : producto.img
             }
         });
         fs.writeFileSync('./data/bicis.json', JSON.stringify(dataBicis),'utf-8');
@@ -72,7 +71,7 @@ module.exports = {
         dataBicis.forEach(producto =>{
             if(producto.id === Number(req.params.id)){ /*  si el producto seleccionado esta*/
                
-                if(fs.existsSync(patch.join('public', 'images',producto.img))){
+                if(fs.existsSync(path.join('public', 'images',producto.img))){
                     fs.unlinkSync(path.join('public','images',producto.img))
                 }
                

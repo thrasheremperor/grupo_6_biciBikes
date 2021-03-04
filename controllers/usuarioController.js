@@ -10,7 +10,11 @@ const usuario = getUsuario();
 
 
 
-module . exports  =  {
+module.exports  =  {
+    /*profileAdmin : (req, res) => {
+        const user = usuario.find(user => user.id === +req.params.id)
+        res.render('admin/profile',{user})
+    },*/
     login : ( req ,  res )  =>{
         res.render( 'login', {
             title:"Log in"
@@ -62,49 +66,65 @@ module . exports  =  {
 
     },
     processLogin : (req ,res )=>{ 
+        
         let errores = validationResult(req);
         if(!errores.isEmpty()){
             return res.render('login',{
-                title : 'log in',
+                title:"Log in",   
                 errores : errores.errors
             })
         }else{
             /*aqui pido los datos pass y email para comprar con los ya registrados */
             const {pass, email , recordar} = req.body;
 
-            let result = usuario.find(user => user.email === email);
+            let result = users.find(user => user.email === email);
 
             /*y en caso de que los datos coincidan este re redirecciona en home ya teniendo acceso a todas las paginas*/
             if(result){
 
                 if(bcrypt.compareSync(pass.trim(), result.pass)){
-                    req.session.user = {
-                        id: result.id,
-                        email: result.email,
-                        avatar: result.avatar
-                    }
-                    if(recordar){
-                        res.cookie('biciBikes', res.session.user,{
-                            maxAge: 1000*60
-                        })
-                    }
+                   /*necesito de la vista y ruta perfil para que todo funcione 
+                   se aclara que la compracion de datos funciona */ 
+                                  
+                  /* req.session.user = {
+                       id: result.id,
+                       perfil :result.perfil,
+                       nombre : result.nombre,
+                       apellido : result.apellido,
+                       email : result.email
+
+                   }
+
+                   if(recordar){
+                       res.cookie('biciBikes', req.session.user,{
+                           maxAge: 1000*60
+                       })
+                   }*/
+                   
+                   //return res.redirect('/usuario/miPerfil')
                    return res.redirect('/')
                 }
                                 
                 }
-             
-                res.render('login',{
-                    error: 'Datos invalidos'
+
+                return res.render('login',{
+                    title: "log in",
+                    errores:[{
+                        msg: "datos invalidos!"
+                    }]
+                    
                 })
             }
 
     },
     perfil : (req,res)=>{
-        res.render('profile')
+        res.render('perfil',{
+            title: "Mi perfil"
+        })
     },
-    fatality : (req,res)=>{
+    cerrar : (req,res)=>{
         req.session.destroy();
-        if(req.cookie.biciBikes){
+        if(req.cookies.biciBikes){
             res.cookie('biciBikes','',{
                 maxAge: -1
             })
@@ -112,16 +132,16 @@ module . exports  =  {
         res.redirect('/')
     },
     eliminar  : (req,res)=>{
-        usuario.forEach(user =>{
+        users.forEach(user =>{
             if(user.id === Number(req.params.id)){
-                if(fs.existsSync(path.join('public','images','users', users.avatar))){
-                    fs.unlinkSync(path.join('public','images','users', users.avatar))
+                if(fs.existsSync(path.join('public','images','users', user.perfil))){
+                    fs.unlinkSync(path.join('public','images','users', user.perfil))
                 }
-                eliminar = usuario.indeOf(user);
+                eliminar = users.indeOf(user);
                 usuario.splice(eliminar,1)
             }
         });
-        fs.writeFileSync('../data/users.json', JSON.stringify(usuario,null,2));
+        fs.writeFileSync('../data/users.json', JSON.stringify(users,null,2));
         res.redirect('/')
 
     }
