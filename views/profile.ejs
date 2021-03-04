@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,22 +10,52 @@
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/stylesheets/styles.css">
     </head>
-<body>
-    <%- include('./partials/header')  %> 
-
-    <main>
-        <h1>Datos del administrador</h1>
-        <ul class="list-group">
-            <li class="list-group-item">Nombre</li>
-            <li class="list-group-item">Apellido</li>
-            <li class="list-group-item">Email</li>
-            <li class="list-group-item">Contraseña</li>
-            <li class="list-group-item">Perfil</li>
-           
-          </ul>
-    </main>
-
-    <%- include('./partials/footer')  %> 
-
-</body>
+    <body class="cuerpo">
+        <%- include('partials/header')%>
+       
+        <div class="contenedor">
+            <div class="pic">
+                <img src="/public/images/users/Naruto.jpg">
+            </div>
+            <div class="row">
+            <div class="register-wrapper">
+                <div class="register-form">
+                    
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <p>
+                            <label>Nombre</label>
+                            <input type="text" name="nombre">
+                        </p>
+                        <p>
+                            <label>Apellido</label>
+                            <input type="text" name="apellido">
+                        </p>
+                        <p>
+                            <label>Email</label>
+                           
+                            <input type="email" name="email" value="<%= (typeof old != 'undefined' && old.nombre) ? old.nombre : ""%>">
+                        </p>
+                        <p>
+                           
+                            <label>Contraseña</label>
+                            <input type="password" name="pass">
+                        </p>
+    
+                        <p>                        
+                        <button class="block mt-3" type="submit">
+                            Editar
+                        </button>   
+                        </p>                                 
+                    </form> 
+                    
+                </div>
+    
+            </div>    
+        </div>
+        </div>
+    
+    
+        
+    
+        <%- include('partials/footer') %>
 </html>

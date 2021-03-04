@@ -11,10 +11,6 @@ const usuario = getUsuario();
 
 
 module . exports  =  {
-    profileAdmin : (req, res) => {
-        const user = usuario.find(user => user.id === +req.params.id)
-        res.render('admin/profile',{user})
-    },
     login : ( req ,  res )  =>{
         res.render( 'login', {
             title:"Log in"
@@ -104,7 +100,7 @@ module . exports  =  {
 
     },
     perfil : (req,res)=>{
-        res.render('perfil')
+        res.render('profile')
     },
     fatality : (req,res)=>{
         req.session.destroy();
