@@ -2,9 +2,12 @@
 
 
 .pic {
+    position: relative;
+    left:-10px;
+    top:-10px;
     display: inline-block;
-    padding: 8px 30px 8px 30px;
-    background: linear-gradient(130deg, #74b9ff, #e66767);
+    padding: 8px 34px 8px 34px;
+    background: linear-gradient(130deg, #062c52, #e10808);
     margin: auto;
     border-radius: 50%;
     background-size: 200% 300%;
