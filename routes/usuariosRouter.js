@@ -10,13 +10,15 @@ const loginValidator = require('../validations/loginValidator');
 
 const upload = require('../middleware/subidaDeImagen');
 
+/*rutas*/
+
 router.get('/registro',registro); /*ruta lista */
 router.post('/registro',upload.any() ,registerValidator,processRegistro);/*ruta lista */
 
 router.get('/login',login);/*ruta lista */
 router.post('/login',loginValidator,processLogin);/*ruta lista */
 
-router.get('/miPerfil', perfil);
+router.get('/miPerfil', userCheck,perfil);
 
 router.get('/cerrarSesion', cerrar);
 

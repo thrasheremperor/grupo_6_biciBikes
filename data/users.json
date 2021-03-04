@@ -1,23 +1,24 @@
 [
   {
-    "id": 1,
-    "nombre": "Maria",
-    "pass": "1234",
-    "apellido": "Keiren",
-    "email": "Maria@outlook.com"
-  },
-  {
     "id": 2,
-    "nombre": "sofi",
-    "pass": "$2b$10$smDSGJlo6pE5ZCF8DSnaEewMLhKkQAD.CuD3wMLf2Kl7xLnFRnwR2",
-    "apellido": "sofi",
-    "email": "sofi@sofi.com"
+    "nombre": "maria",
+    "pass": "$2b$10$sHTD/J76/LlK54J2dD/kfuz0lh5qWewA2bMud2SiV49z0jY5oWmOi",
+    "apellido": "isabel",
+    "email": "monaca@gmail.com"
   },
   {
     "id": 3,
-    "nombre": "Fulano",
-    "pass": "$2b$10$uBnXgm5cG9MkzZ3Af.ednu2FMYdTvgIIgCGaoKM1I8I/FxEM8S2yi",
-    "apellido": "Pepe",
-    "email": "fulano@gmail.com"
+    "nombre": "larisa",
+    "pass": "$2b$10$VMFQ1MkGSShGGF0VeSlKyOGz4m/d215PVVgufCbVQsIin0XdtyCRm",
+    "apellido": "sopato",
+    "email": "voldemore@gmail.com"
+  },
+  {
+    "id": 4,
+    "nombre": "volti",
+    "pass": "$2b$10$eqXoSUpoUZf9Ui4QEEgNWecwALMBUQLnBptDokCHh4sixeEWe8W.i",
+    "apellido": "more",
+    "email": "cabra@gmail.com",
+    "foto": "foto-1614828236236.png"
   }
 ]
