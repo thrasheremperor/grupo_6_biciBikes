@@ -1,7 +1,7 @@
 /* FOOTER */
 
 footer {
-    background-color:darkgoldenrod;
+    background-color: darkgoldenrod;
 }
 
 .logo{
@@ -28,6 +28,14 @@ a {
 }
 p{
     font-size:9px;
+}
+
+.texto {
+    color: var(--yellow);
+}
+
+.texto:hover {
+    color: var(--darkGreen);
 }
 
 /* TABLETS*/
