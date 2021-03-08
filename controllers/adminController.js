@@ -61,8 +61,7 @@ module.exports = {
                 producto.description = description;
                 producto.envio = envio;
                 producto.envio1 = envio1;
-                producto.img = img;
-                
+                producto.img = img
             }
         });
         fs.writeFileSync('./data/bicis.json', JSON.stringify(dataBicis),'utf-8');
@@ -80,7 +79,7 @@ module.exports = {
                 dataBicis.splice(borrar,1) /*para luego borrar el elemento seleccionado */
             }
         });
-        fs.writeFileSync('./data/bicis.json', JSON.stringify(dataBicis),'utf-8');
+        fs.writeFileSync('../data/bicis.json', JSON.stringify(dataBicis,null,2),'utf-8');
         res.redirect('/admin/list') /*recarga los datos con los elementos actualizados */
     }
 }

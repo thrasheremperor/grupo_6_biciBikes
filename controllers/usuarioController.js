@@ -2,21 +2,15 @@ const fs = require('fs');
 const path = require('path');
 const users = require('../data/users.json');
 const bcrypt = require('bcrypt');
-const { check,validationResult,body } = require('express-validator');
+const {check , validationResult, body}= require('express-validator');
 
 const {getUsuario, setUsuario} = require(path.join('..','data','users'));
 
-const usuario = getUsuario();
-
-
+const usuario = getUsuario(); /*user.json parseador  */
 
 module.exports  =  {
-    /*profileAdmin : (req, res) => {
-        const user = usuario.find(user => user.id === +req.params.id)
-        res.render('admin/profile',{user})
-    },*/
     login : ( req ,  res )  =>{
-        res.render( 'login', {
+        res.render( 'login', { 
             title:"Log in"
         });
     },
@@ -27,9 +21,8 @@ module.exports  =  {
          },
     processRegistro : (req , res, next) =>{
         
-        
-
         let errores = validationResult(req);
+
         if(!errores.isEmpty()){
             return res.render('registro',{
                 title : 'register',
@@ -37,7 +30,7 @@ module.exports  =  {
             })
         }else{
             
-        const {nombre, apellido, pass, email,perfil} = req.body;
+        const {nombre, apellido, pass, email, foto} = req.body;
 
         let lastID = 1;
         users.forEach(user => {
@@ -54,7 +47,7 @@ module.exports  =  {
             pass : passHash,
             apellido,
             email,
-            perfil 
+            foto : req.files[0].filename
             
         }
       
@@ -68,10 +61,12 @@ module.exports  =  {
     processLogin : (req ,res )=>{ 
         
         let errores = validationResult(req);
+
         if(!errores.isEmpty()){
             return res.render('login',{
                 title:"Log in",   
-                errores : errores.errors
+                errores : errores.mapped(),
+                old : req.body
             })
         }else{
             /*aqui pido los datos pass y email para comprar con los ya registrados */
@@ -86,20 +81,19 @@ module.exports  =  {
                    /*necesito de la vista y ruta perfil para que todo funcione 
                    se aclara que la compracion de datos funciona */ 
                                   
-                  /* req.session.user = {
+                   req.session.user = {
                        id: result.id,
-                       perfil :result.perfil,
+                       foto :result.foto,
                        nombre : result.nombre,
                        apellido : result.apellido,
                        email : result.email
-
                    }
 
                    if(recordar){
                        res.cookie('biciBikes', req.session.user,{
                            maxAge: 1000*60
                        })
-                   }*/
+                   }
                    
                    //return res.redirect('/usuario/miPerfil')
                    return res.redirect('/')
@@ -118,8 +112,12 @@ module.exports  =  {
 
     },
     perfil : (req,res)=>{
-        res.render('perfil',{
-            title: "Mi perfil"
+
+        let datoUser = usuario.find( perfil => perfil.id === req.params.id);
+
+        res.render( 'perfil',{
+            title: "Mi perfil",
+            datoUser
         })
     },
     cerrar : (req,res)=>{
@@ -132,12 +130,12 @@ module.exports  =  {
         res.redirect('/')
     },
     eliminar  : (req,res)=>{
-        usuario.forEach(user =>{
+        users.forEach(user =>{
             if(user.id === Number(req.params.id)){
-                if(fs.existsSync(path.join('public','images','users', user.perfil))){
-                    fs.unlinkSync(path.join('public','images','users', user.perfil))
+                if(fs.existsSync(path.join('public','images','users', user.foto))){
+                    fs.unlinkSync(path.join('public','images','users', user.foto))
                 }
-                eliminar = usuario.indeOf(user);
+                eliminar = users.indeOf(user);
                 usuario.splice(eliminar,1)
             }
         });
