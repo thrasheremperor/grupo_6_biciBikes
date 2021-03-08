@@ -1,13 +1,16 @@
 
 
+.acount{
+  padding:-100px;
+}
 
 .pic {
     position: relative;
     left:-10px;
     top:-10px;
     display: inline-block;
-    padding: 8px 34px 8px 34px;
-    background: linear-gradient(130deg, #062c52, #e10808);
+    padding: 8px;
+    background: linear-gradient(130deg, #000000, #ff0000);
     margin: auto;
     border-radius: 50%;
     background-size: 200% 300%;
