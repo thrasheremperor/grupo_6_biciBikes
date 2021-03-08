@@ -1,11 +1,5 @@
-:root {
-    --black: #222831;
-    --darkGray: #393e46;
-    --yellow: #ffd369;
-    --lightGray: #eeeeee;
-}
 header{
-    background-color: var(--yellow);
+    background-color: var(--black);
 }
 
 header .input-search{
@@ -15,9 +9,14 @@ header .search-container{
     padding: 0;
 }
 .dropdown-menu {
-    background-color: var(--yellow);
+    background-color: darkgoldenrod;
     border: none;
 }
+
+.dropdown-menu a:hover{
+    background-color: var(--darkGreen);
+}
+
 .text-center {
     text-align: center!important;
 }

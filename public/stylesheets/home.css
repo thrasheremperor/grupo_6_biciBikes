@@ -1,15 +1,20 @@
 main{
-    background-color: rgba(250, 241, 119, 0.6);
+    background-color: var(--black);
 }
 
 section.banner{
-    background-color: rgba(10, 10, 9, 0.9)
+    background-image: url('../images/biciBanner.jpeg');
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 30%;
+    background-color: var(--black);
 }
 h1{
     color: white;
     margin-left: 25px;
     text-align: center;
     font-size: 3em;
+    background-color: rgba(11, 10, 7, 0.5);
 }
 
 h2{
@@ -32,17 +37,19 @@ section.product-box{
   flex-wrap:wrap;
   flex-direction:row;
   position:relative;
-  border: 1px solid var(--darkGray);
+  border: 1px solid var(--darkGreen);
   padding: 10px;
   margin: 10px 0;
   background-color: white;
-  box-shadow: 10px 10px 10px gray;
+  box-shadow: 10px 10px 10px var(--yellow);
+  text-decoration: none;
 }
 section.product-box:hover{
   transform: scale(1.05);
 }
 h2.products-title{
     padding: 10px 0;
+    background-color: darkgoldenrod;
 }
 
 
@@ -53,13 +60,14 @@ p{
 img{
     width: 100%;
 }
-article span, article i{
-    color:green;
+article span{
+    color: var(--darkGray);
 }
 article i{
  right: 18px;
  top: -15px;
- border:1px solid green;
+ color: var(--darkGreen);
+ border:1px solid var(--darkGray);
  width: 27px;
  height: 27px;
  border-radius: 20px;
@@ -78,11 +86,6 @@ article i:hover {
  transform: rotate(360deg);
 
 }
-article i{
-    text-decoration: none;
-    color:green
-}
-
 
 /* Tablet */
 
