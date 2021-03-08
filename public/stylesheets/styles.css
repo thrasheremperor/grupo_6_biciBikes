@@ -11,10 +11,14 @@
 @import "perfil.css";
 
 :root {
-    --black: #222831;
     --darkGray: #393e46;
-    --yellow: #ffd369;
     --lightGray: #eeeeee;
+    --bc:rgba(250, 241, 119, 0.6);
+    --green: rgb(187, 206, 168);
+    --black: rgb(11, 10, 7);
+    --darkGreen: rgb(116, 128, 103);
+    --yellow: rgb(227, 216, 126);
+    --orange: rgb(231, 155, 54);
 }
 
 * {
