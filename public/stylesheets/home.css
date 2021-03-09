@@ -1,4 +1,7 @@
 main{
+    background-image: url('../images/trail.jpeg');
+    background-repeat: none;
+    background-size: auto;
     background-color: var(--black);
 }
 
@@ -29,6 +32,10 @@ h2{
 .home-text{
     font-family: Montserrat;
     text-align: center;
+}
+
+.product-box_data:hover {
+    text-decoration: none;
 }
 
 section.product-box{
