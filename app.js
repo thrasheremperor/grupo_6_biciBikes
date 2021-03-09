@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const localCheck = require('./middleware/localCheck');
 const cookieCheck = require('./middleware/cookieCheck');
+const validator = require('validator');
 
 /* ROUTER */
 
