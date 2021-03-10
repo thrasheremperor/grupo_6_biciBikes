@@ -34,9 +34,8 @@ h2{
     text-align: center;
 }
 
-container:hover{
-    outline: none;
-    outline-style: none;
+.product-box_data:hover {
+    text-decoration: none;
 }
 
 section.product-box{

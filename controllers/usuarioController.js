@@ -47,7 +47,7 @@ module.exports  =  {
             pass : passHash,
             apellido,
             email,
-            foto : req.files[0].filename
+            foto 
             
         }
       
@@ -65,8 +65,8 @@ module.exports  =  {
         if(!errores.isEmpty()){
             return res.render('login',{
                 title:"Log in",   
-                errores : errores.mapped(),
-                old : req.body
+                errores : errores.errors,
+               
             })
         }else{
             /*aqui pido los datos pass y email para comprar con los ya registrados */
