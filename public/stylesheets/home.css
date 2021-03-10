@@ -74,8 +74,8 @@ article span{
 article i{
  right: 18px;
  top: -15px;
- color: var(--darkGreen);
- border:1px solid var(--darkGray);
+ color: orange;
+ border:1px solid rgb(241, 226, 11);
  width: 27px;
  height: 27px;
  border-radius: 20px;

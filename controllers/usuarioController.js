@@ -95,8 +95,8 @@ module.exports  =  {
                        })
                    }
                    
-                   //return res.redirect('/usuario/miPerfil')
-                   return res.redirect('/')
+                   return res.redirect('/usuario/miPerfil')
+                  
                 }
                                 
                 }
@@ -139,7 +139,7 @@ module.exports  =  {
                 usuario.splice(eliminar,1)
             }
         });
-        fs.writeFileSync('../data/users.json', JSON.stringify(usuario,null,2));
+        fs.writeFileSync('./data/users.json', JSON.stringify(usuario,null,2));
         res.redirect('/')
 
     }
