@@ -31,11 +31,17 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
         validate: {
-          
+          isEmail: true
         }
       },
       imageId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        reference: {
+          model: {
+            tabelname: 'Images'
+          }
+        },
+        key: 'id'
       },
       createdAt: {
         allowNull: false,
