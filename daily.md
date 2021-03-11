@@ -24,3 +24,11 @@
 **Daily 04/03/2021**
 
 - Se realizo una reunion con todo el equipo con Jona y Eric (profes) para ver como ibamos y ayudarnos con unos problemas y hacer observaciones 
+
+**Daily Sprint-5  08/03/2021**
+
+- Nos repartimos tareas del sprint 5
+
+**Daily 10/03/2021**
+
+- Breve reunion para ver como estaba cada miembro del equipo

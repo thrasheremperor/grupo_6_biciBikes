@@ -20,5 +20,19 @@
     "apellido": "more",
     "email": "cabra@gmail.com",
     "foto": "foto-1614828236236.png"
+  },
+  {
+    "id": 5,
+    "nombre": "Papa",
+    "pass": "$2b$10$Gwf8trEzKHszSAuR0ps/e.NlAmNStV4nBD6YHWskUJFlPnv3Rqey2",
+    "apellido": "frita",
+    "email": "lays@gmail.com"
+  },
+  {
+    "id": 6,
+    "nombre": "emely",
+    "pass": "$2b$10$Z8KU72K6tKHqjNjbIW1K1O0Wo2Hx2lq2E90nojY4gzIbf4v2xOscS",
+    "apellido": "patata",
+    "email": "eme@gmail.com"
   }
 ]

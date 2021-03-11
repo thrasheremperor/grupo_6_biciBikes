@@ -2,29 +2,54 @@
 <html lang="es">
     <%- include('partials/head')%>
 <body>
-    <%- include('partials/header')%> 
-
-    <main>
-        <h1>Mi Perfil</h1>
-
-        <div class="text-center col-10">
-
-            <img src="/images/users/<%= user.foto%>" alt="foto de perfil" class="img-fluid">
-
-            <p>Nombre de usuario: <span><%= ' ' + user.nombre + ' ' + user.apellido%> </span></p>
-
-            <p>Email: <span><%= ' ' + user.email %> </span></p>
-
-            <a href="/usuario/cerrarSesion">cerrar sesion</a>
-
-            <form action="/usuario/eliminarUsuario/<%= user.id %>?_method=DELETE " method="POST">
-                <button type="submit">Eliminar cuenta</button>
-            </form>
-
+    <body class="cuerpo">
+        <%- include('partials/header')%>
+       
+        <div class="contenedor">
+            
+            <div class="row">
+            <div class="register-wrapper">
+                <div class="register-form">
+                    
+                    <form >
+                        <div class="pic">
+                            <img src="/images/users/<%= user.foto%>" alt="foto de perfil" class="img-fluid">
+                        </div>
+                        <div>
+                            <!--ESPACIO PARA QUE SE ACOMODEN LAS COSAS-->
+                        </div>
+                        <p>
+                            <label>usuario: <span><%= ' ' + user.nombre + ' ' + user.apellido%> </span></label>
+                            
+                        </p>
+                        <p class="ml-md-3">
+                            <label>Email: <span><%= ' ' + user.email %> </span></label>
+                          
+                        </p>
+                       
+    
+                        <p>                        
+                        <button class="block mt-3 mb-2" type="submit">
+                             <a href="/usuario/cerrarSesion">cerrar sesion</a>
+                        </button>  
+                        </p>       
+                        <form action="/usuario/eliminarUsuario/<%= user.id %>?_method=DELETE " method="POST" class="acount">
+                            <button type="submit" >Eliminar cuenta</button>
+                        </form>                           
+                       
+                    </form> 
+                    
+                </div>
+    
+            </div>    
         </div>
-    </main>
-
-    <%- include('partials/footer')  %> 
-
+        </div>
+    
+    
+        
+    
+        <%- include('partials/footer') %>
+    </body>
 </body>
 </html>
+
