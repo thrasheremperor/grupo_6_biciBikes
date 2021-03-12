@@ -2,6 +2,10 @@
     background-color: darkgoldenrod;
 }
 
+#footer {
+    align-self: center;
+}
+
 .more-links li {
     text-align: center;
 }
@@ -44,6 +48,10 @@
     align-self: center;
 }
 
+.logo {
+    width: 60%;
+}
+
 .copyright-box {
     text-align: center;
     width: 100%;
@@ -62,10 +70,35 @@
 
 /* TABLETS*/
 @media(min-width:768px){
+    #footer {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .boxed1, .boxed2, .boxed3 {
+        width: 100%;
+        grid-column: span 2;
+    }
+
+    .boxed1 {
+        margin-top: 15px;
+    }
+
+    .logo {
+        width: 80%;
+        margin-top: 15px;
+    }
+
+    .copyright-box {
+        text-align: center;
+        grid-column: 1 / -1;
+    }
+
     .texto {
         font-size: 20px;
     }
 }
 @media(min-width:1020px){
- 
+    .icono i {
+        font-size: 3rem;
+    }
 }

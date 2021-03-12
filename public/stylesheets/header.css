@@ -88,8 +88,20 @@ div ul li a:hover {
 }
 
 @media(min-width:768px){
-    
+    .search-form {
+        width: 73%;
+    }
+    .header-btn {
+        position: relative;
+        left: 5%;
+    }
 }
 @media(min-width:1200px){
-    
+    .search-form {
+        width: 64%;
+    }
+    .header-btn {
+        position: relative;
+        left: 5%;
+    }
 }

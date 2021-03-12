@@ -3,40 +3,35 @@
 <%- include('partials/head')%>
   <body>
     <%- include('partials/header')%>
-
       <main>
         <div class="container products-wrapper">
           <div class="row">
             <div class="col-12">
               <h2 class="products-title">Todos los productos</h2>
             </div>
-            
-
             <% dataBicis.forEach(producto => { %>
-              <div class="a col-11 col-md-6 col-lg-3">
+              <div class="col-12 col-md-4">
                 <section class="product-box">
-                  <a href="/productos/detalle/<%-producto.id%>"> <!--falta enlace a detalle-->
-                   <img src="/images/<%-producto.img%>" alt="bicicleta" class="img-fluid">
+                  <a href="/productos/detalle/<%- producto.id %>/<%- producto.category %>">
+                    <figure class="product-box_image">
+                      <img src="/images/<%- producto.img %> " alt="bicicleta" class="img-fluid">
+                    </figure>
+                    <article class="product-box_data">
+                      <h6><%- producto.name %> </h6>
+                      <h6><%- producto.marca %> </h6>
+                      <span>$<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                      <% if (producto.descuento != 0) { %>
+                        <span><%- producto.descuento %>% OFF </span>
+                      <% } %>
+                      <i class="fas fa-truck"></i>
+                    </article>
                   </a>
-                  <article>
-                    <h3>$<%- producto.precio%></h3>
-                    <span>Envio<%- ' ' +producto.envio%></span>
-                    <i class="fas fa-truck"></i>
-                  </article>
-                  <div class="detalle">
-                    <p><%-producto.name + ' ' + producto.marca%></p>
-                  </div>
                 </section>
               </div>
-             
-            <% }) %>
-            
+            <% }) %>  
           </div>
         </div>
-     
-        
       </main>
       <%- include('partials/footer') %>
-
   </body>
   </html>
