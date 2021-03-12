@@ -5,6 +5,12 @@ main{
     background-color: var(--black);
 }
 
+a{
+    text-decoration: none;
+    outline: none;
+    outline-style: none;
+}
+
 section.banner{
     background-image: url('../images/biciBanner.jpeg');
     background-repeat: no-repeat;
@@ -12,9 +18,9 @@ section.banner{
     background-position-y: 30%;
     background-color: var(--black);
 }
+
 h1{
     color: white;
-    margin-left: 25px;
     text-align: center;
     font-size: 3em;
     background-color: rgba(11, 10, 7, 0.5);
@@ -29,13 +35,10 @@ h2{
     text-align: center;
 
 }
+
 .home-text{
     font-family: Montserrat;
     text-align: center;
-}
-
-.product-box_data:hover {
-    text-decoration: none;
 }
 
 section.product-box{
@@ -51,25 +54,40 @@ section.product-box{
   box-shadow: 10px 10px 10px var(--yellow);
   text-decoration: none;
 }
+
 section.product-box:hover{
   transform: scale(1.05);
 }
+
 h2.products-title{
     padding: 10px 0;
     background-color: darkgoldenrod;
 }
 
-
 p{
     font-size: 18px;
     margin: 0px 0px;
 }
+
 img{
     width: 100%;
 }
+
 article span{
     color: var(--darkGray);
 }
+
+.srch-btn {
+    position: relative;
+    left: 40%;
+    margin-bottom: 20px;
+    background-color: var(--darkGreen);
+}
+
+#home-lower-button {
+    margin: 0;
+}
+
 article i{
  right: 18px;
  top: -15px;
@@ -91,35 +109,19 @@ article i:hover {
  -moz-transform: rotate(360deg);
  -ms-transform: rotate(360deg);
  transform: rotate(360deg);
-
 }
 
 /* Tablet */
 
 @media(min-width:426px){
-section.product-box{
-    float:left;
-    width:100%;
-    
-}
-img{
-    width: 100%;
-}
-h1{
-    margin-left: 35px;
-}
+    .srch-btn {
+        position: relative;
+        left: 47%;
+    }
 }
 
 /*ESCRITORIO*/
 
 @media(min-width:1024px) {
-    section.product-box{
-        float:left;
-        width:100%;
-        
-    }
-    img{
-        width: 100%;
-    }
-
-    }
+    
+}

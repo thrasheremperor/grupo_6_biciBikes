@@ -12,13 +12,10 @@
     </head>
     <body class="cuerpo">
         <%- include('partials/header')%>
-       
         <div class="contenedor">
-            
             <div class="row">
             <div class="register-wrapper">
                 <div class="register-form">
-                    
                     <form action="" method="POST" enctype="multipart/form-data">
                         <div class="pic">
                             <img src="/public/images/users/Naruto.jpg">
@@ -36,31 +33,22 @@
                         </p>
                         <p>
                             <label>Email</label>
-                           
                             <input type="email" name="email" value="<%= (typeof old != 'undefined' && old.nombre) ? old.nombre : ""%>">
                         </p>
                         <p>
-                           
                             <label>Contraseña</label>
                             <input type="password" name="pass">
                         </p>
-    
                         <p>                        
                         <button class="block mt-3" type="submit">
                             Cerrar sesion
                         </button>   
                         </p>                                 
                     </form> 
-                    
                 </div>
-    
             </div>    
         </div>
-        </div>
-    
-    
-        
-    
+    </div>
         <%- include('partials/footer') %>
     </body>
 </html>

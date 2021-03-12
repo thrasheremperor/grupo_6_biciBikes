@@ -17,7 +17,7 @@
     "marca": "specialized",
     "modelo": "top speed",
     "color": "rojo",
-    "img": "biciEjemplo1.jpeg",
+    "img": "biciEjemplo1.png",
     "precio": "11.234",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "descuento": 0,
@@ -42,7 +42,7 @@
     "marca": "specialized",
     "modelo": "top speed",
     "color": "azul",
-    "img": "biciEjemplo1.jpeg",
+    "img": "biciEjemplo1.png",
     "precio": 11.234,
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "Envio",
@@ -81,7 +81,7 @@
     "marca": "specialized",
     "modelo": "top speed",
     "color": "rojo",
-    "img": "biciEjemplo1.jpeg",
+    "img": "biciEjemplo1.png",
     "precio": 1.234,
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "Puerta a puerta",
@@ -116,7 +116,7 @@
     "marca": "kjaskasnhk",
     "precio": "073546556",
     "description": "cytfugkuhoi",
-    "img": "overol.png"
+    "img": "biciEjemplo1.png"
   },
   {
     "id": 12,
@@ -126,7 +126,7 @@
     "description": "pavo",
     "envio": "on",
     "envio1": "on",
-    "img": "img-1614867073601.jpg"
+    "img": "biciCanasto.jpg"
   },
   {
     "id": 13,
@@ -136,7 +136,7 @@
     "description": "bicis",
     "envio": "on",
     "envio1": "on",
-    "img": "img-1614872918653.jpeg"
+    "img": "otraBike.png"
   },
   {
     "id": 1,
@@ -156,7 +156,7 @@
     "marca": "Specialized",
     "modelo": "top speed",
     "color": "rojo",
-    "img": "biciEjemplo1.jpeg",
+    "img": "biciEjemplo1.png",
     "precio": 11234,
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "descuento": 0,
@@ -181,7 +181,7 @@
     "marca": "Specialized",
     "modelo": "top speed",
     "color": "azul",
-    "img": "biciEjemplo1.jpeg",
+    "img": "biciEjemplo1.png",
     "precio": 11234,
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "Envio",
@@ -220,7 +220,7 @@
     "marca": "Specialized",
     "modelo": "top speed",
     "color": "rojo",
-    "img": "biciEjemplo1.jpeg",
+    "img": "biciEjemplo1.png",
     "precio": 1234,
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "Puerta a puerta",

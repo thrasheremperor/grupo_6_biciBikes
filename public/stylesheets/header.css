@@ -1,4 +1,8 @@
-header{
+body {
+    background-color: var(--black);
+}
+
+.header {
     background-color: darkgoldenrod;
 }
 
@@ -6,36 +10,41 @@ header{
     background-color: rgba(11, 10, 7, 0.5);
 }
 
-header .input-search{
-    width: 70%;
-}
-
-header .search-container{
-    padding: 0;
-}
-
 .search-form {
-    position: relative;
     display: flex;
-    align-items: center;
+    position: relative;
+    right: 5%;
+    width: 90%;
+    padding: revert;
 }
 
-.input-search {
-    border: solid 1px var(--darkGreen);
-    display: block;
-    margin: 0px 0px 0px 30px;
-    border-radius: 3px;
+.btn {
+    display: flex;
+    color: var(--black);
+    background-color: var(--darkGreen);
+    position: relative;
+    left: 10%;
     height: 40px;
-    font-size: 1.5em;
+    margin-top: 14px;
+}
+
+.btn:hover {
+    background-color: darkgoldenrod;
+
 }
 
 .dropdown-menu {
     background-color: darkgoldenrod;
     border: none;
+    text-align: center;
 }
 
 .dropdown-menu a:hover{
     background-color: var(--darkGreen);
+}
+
+.dropdown-divider {
+    color: var(--darkGreen);
 }
 
 .navbar-nav i{
@@ -53,21 +62,15 @@ div ul li a:hover {
     color: var(--black);
 }
 
-.btn {
-    color: var(--black);
-    background-color: var(--darkGreen);
-}
-
-.btn:hover {
-    background-color: darkgoldenrod;
-
+.nav-link {
+    font-size: 1rem;
 }
 
 .wheel {
      position: absolute;
-     right: 20px;
+     right: 15px;
      top: 10px;
-     width: 5rem;
+     width: 4rem;
      border-radius: 70px;
      transition: all .5s ease;
      -webkit-transition: all .5s ease-out;
@@ -76,7 +79,7 @@ div ul li a:hover {
 }
 
 .wheel:hover {
-    box-shadow: 0px 5px 5px 0px gray;
+    box-shadow: 0px 5px 5px 0px var(--black);
     transform: scale(1.05);
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
@@ -84,24 +87,9 @@ div ul li a:hover {
     transform: rotate(-90deg);
 }
 
-@media(min-width:770px){
-    nav {
-        position: relative;
-    }
-    .move{
-        position: relative;
-        left:-20px;
-    }
-    .boton{
-        position: relative;
-        left:60px;
-        top:-53px;
-    }
+@media(min-width:768px){
+    
 }
 @media(min-width:1200px){
-    .boton{
-        position: relative;
-        left:30px;
-        top:-53px;
-    }
+    
 }
