@@ -21,9 +21,6 @@
     font-family: 'Dancing Script', cursive;
 }
 
-a{
-   color: black;
-}
 
 .register-form form p label{
     color: black;
@@ -53,13 +50,13 @@ padding: 1em;
 }
 
 /*ANIMACION DE CSS*/
-.register-form form button:hover,
+/* .register-form form button:hover,
 .register-form form button:focus{
 background:red;
 color:white;
 transition: background-color 1s;
 outline: 0;
-}
+} */
 p#texto {
     text-align: center;
     color: black;

@@ -3,11 +3,11 @@ body {
 }
 
 .header {
-    background-color: darkgoldenrod;
+    background-image: url('../images/bg-tree.png');
 }
 
 .row {
-    background-color: rgba(11, 10, 7, 0.5);
+    background-color: rgba(11, 10, 7, 0.1);
 }
 
 .search-form {
@@ -34,13 +34,17 @@ body {
 }
 
 .dropdown-menu {
-    background-color: darkgoldenrod;
+    background-color: rgba(184, 135, 11, 0.603);
     border: none;
     text-align: center;
 }
 
+.dropdown-menu .dropdown-item {
+    color: black;
+}
+
 .dropdown-menu a:hover{
-    background-color: var(--darkGreen);
+    background-color: rgba(19, 83, 19, 0.658);
 }
 
 .dropdown-divider {
@@ -52,14 +56,14 @@ body {
     padding-left: 5px;
 }
 
-div ul li a{
+.navbar-collapse ul li a{
     font-family: Montserrat;
-    font-size: 18px;
+    font-size: 20px;
     color: var(--yellow);
 }
 
-div ul li a:hover {
-    color: var(--black);
+.navbar-collapse ul li a:hover {
+    color: var(--darkGreen);
 }
 
 .nav-link {
@@ -67,19 +71,20 @@ div ul li a:hover {
 }
 
 .wheel {
-     position: absolute;
-     right: 15px;
-     top: 10px;
-     width: 4rem;
-     border-radius: 70px;
-     transition: all .5s ease;
-     -webkit-transition: all .5s ease-out;
-     -moz-transition: all .5s ease;
-     -ms-transition: all .5s ease;
+    background-color: darkgray;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    width: 4rem;
+    border-radius: 70px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
 }
 
 .wheel:hover {
-    box-shadow: 0px 5px 5px 0px var(--black);
+    box-shadow: 5px 5px 5px 5px var(--black);
     transform: scale(1.05);
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
@@ -95,13 +100,19 @@ div ul li a:hover {
         position: relative;
         left: 5%;
     }
+    .navbar-collapse ul li a{
+        font-size: 18px;
+    }
 }
-@media(min-width:1200px){
+@media(min-width:1024px){
     .search-form {
         width: 64%;
     }
     .header-btn {
         position: relative;
         left: 5%;
+    }
+    .navbar-collapse ul li a{
+        font-size: 23px;
     }
 }

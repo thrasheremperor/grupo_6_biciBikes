@@ -1,8 +1,7 @@
-
 .login{
     background:rgba(250, 241, 119, 0.6); 
     display: flex;
-   min-height: 100vh;
+    min-height: 100vh;
 }
 
 .sesion{
@@ -13,12 +12,7 @@ background-color:var(--yellow);
 padding:30px;
 border: 1px solid rgba(0, 0, 0, 0.2);
 }
-a{
-    color:black;
-}
-a:hover{
-    color: red;
-}
+
 p{
    color:black;
 }
@@ -41,13 +35,13 @@ input::placeholder{
     color: black;
 }
 
- .login .sesion button:hover,
+ /* .login .sesion button:hover,
  .login .sesion button:focus{
     background:red;
     color:white;
     transition: background-color 1s;
     outline: 0;
-}
+} */
 
 .button,
 input{
