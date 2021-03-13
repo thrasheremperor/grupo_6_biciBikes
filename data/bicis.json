@@ -9,7 +9,8 @@
     "precio": "11.234",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "descuento": 0,
-    "category": "visited"
+    "category": "bmx",
+    "section": "visited"
   },
   {
     "id": 2,
@@ -21,7 +22,7 @@
     "precio": "11.234",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "descuento": 0,
-    "category": "visited",
+    "category": "eletric",
     "section": "visited"
   },
   {

@@ -104,6 +104,7 @@ window.onload = () => {
                     break;
             }
         }
+        
         $date.onblur = () => {
             switch (true) {
                 case !$date.value.trim():
