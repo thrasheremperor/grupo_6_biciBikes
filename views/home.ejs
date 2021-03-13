@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include('partials/head')%>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
+
 
 
   <body>
@@ -11,6 +15,14 @@
           <h1>¡Bienvenidos a BiciBikes!</h1>
         </section>
 
+        <div class="owl-carousel owl-theme mt-3">
+          <div class="item"><a href=""><img id="image-main" src="/images/summersale.png"></a></li></div>
+          <div class="item"><a href=""><img id="image-main" src="/images/naranjasale.png"></a></li></div>
+          <div class="item"><a href=""><img id="image-main" src="/images/bikesOwl2.png"></a></li></div>
+          <div class="item"><a href=""><img id="image-main" src="/images/electricsale.png"></a></li></div>
+          <div class="item"><a href=""><img id="image-main" src="/images/womanBike.png"></a></li></div>
+        </div>
+        
         <!--ULTIMOS VISTOS-->
        <div class="container">
          <div class="row">
@@ -21,7 +33,7 @@
            <% productsVisited.forEach(producto => { %>
             <div class="col-12 col-md-4">
               <section class="product-box">
-                <a href="/productos/detalle/<%- producto.id %>/<%- producto.category %>">
+                <a href="/productos/detalle/<%- producto.id %>/<%- producto.section %>">
                   <figure class="product-box_image">
                     <img src="/images/<%- producto.img %> " alt="bicicleta" class="img-fluid">
                   </figure>
@@ -52,7 +64,7 @@
             <% productsNow.forEach(producto => { %>
               <div class="col-12 col-md-6">
                 <section class="product-box">
-                  <a href="/productos/detalle/<%- producto.id %>/<%- producto.category %>">
+                  <a href="/productos/detalle/<%- producto.id %>/<%- producto.section %>">
                     <figure class="product-box_image">
                       <img src="/images/<%- producto.img %> " alt="bicicleta" class="img-fluid">
                     </figure>
@@ -83,7 +95,7 @@
             <% productsPopular.forEach(producto => { %>
               <div class="col-12 col-md-4">
                 <section class="product-box">
-                  <a href="/productos/detalle/<%- producto.id %>/<%- producto.category %>">
+                  <a href="/productos/detalle/<%- producto.id %>/<%- producto.section %>">
                     <figure class="product-box_image">
                       <img src="/images/<%- producto.img %> " alt="bicicleta" class="img-fluid">
                     </figure>
@@ -111,6 +123,8 @@
         </div>
       </main>
       <%- include('partials/footer') %>
-
-  </body>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+      <script src="/javascripts/home.js"></script>
+    </body>
   </html>

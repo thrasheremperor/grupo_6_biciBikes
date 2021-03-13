@@ -1,6 +1,5 @@
 main{
     background-image: url('../images/trail.jpeg');
-    background-repeat: none;
     background-size: auto;
     background-color: var(--black);
 }
@@ -19,11 +18,28 @@ section.banner{
     background-color: var(--black);
 }
 
+.owl-nav span {
+    color: var(--yellow);
+    font-size: 60px;
+}
+
+.owl-nav .owl-prev{
+    position: absolute;
+    left: 2%;
+    top: 10%;
+}
+
+.owl-nav .owl-next{
+    position: absolute;
+    right: 3%;
+    top: 10%;
+}
+
 h1{
     color: white;
     text-align: center;
     font-size: 3em;
-    background-color: rgba(11, 10, 7, 0.5);
+    background-color: rgba(11, 10, 7, 0.7);
 }
 
 h2{
@@ -111,6 +127,7 @@ article i:hover {
  transform: rotate(360deg);
 }
 
+
 /* Tablet */
 
 @media(min-width:426px){
@@ -118,10 +135,24 @@ article i:hover {
         position: relative;
         left: 47%;
     }
+    .owl-nav span {
+        font-size: 70px;
+    }
+    .owl-nav .owl-prev{
+        top: 30%;
+    }
+    .owl-nav .owl-next{
+        top: 30%;
+    }
 }
 
 /*ESCRITORIO*/
 
 @media(min-width:1024px) {
-    
+    .owl-nav .owl-prev{
+        top: 35%;
+    }
+    .owl-nav .owl-next{
+        top: 35%;
+    }
 }

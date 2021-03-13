@@ -21,7 +21,8 @@
     "precio": "11.234",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "descuento": 0,
-    "category": "visited"
+    "category": "visited",
+    "section": "visited"
   },
   {
     "id": 3,
@@ -34,7 +35,8 @@
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "bonificado",
     "descuento": 0,
-    "category": "visited"
+    "category": "visited",
+    "section": "visited"
   },
   {
     "id": 5,
@@ -47,7 +49,8 @@
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "Envio",
     "descuento": 20,
-    "category": "Now"
+    "category": "Now",
+    "section": "Now"
   },
   {
     "id": 6,
@@ -60,7 +63,8 @@
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "Envio",
     "descuento": 25,
-    "category": "Now"
+    "category": "Now",
+    "section": "Now"
   },
   {
     "id": 7,
@@ -73,7 +77,8 @@
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "Puerta a puerta",
     "descuento": 0,
-    "category": "popular"
+    "category": "popular",
+    "section": "popular"
   },
   {
     "id": 8,
@@ -86,7 +91,8 @@
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "Puerta a puerta",
     "descuento": 0,
-    "category": "popular"
+    "category": "popular",
+    "section": "popular"
   },
   {
     "id": 9,
@@ -99,7 +105,8 @@
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "Puerta a puerta",
     "descuento": 0,
-    "category": "popular"
+    "category": "popular",
+    "section": "popular"
   },
   {
     "id": 10,
@@ -137,107 +144,5 @@
     "envio": "on",
     "envio1": "on",
     "img": "otraBike.png"
-  },
-  {
-    "id": 1,
-    "name": "Bicycle",
-    "marca": "Specialized",
-    "modelo": "top speed",
-    "color": "azul",
-    "img": "biciEjemplo.png",
-    "precio": 11234,
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-    "descuento": 0,
-    "category": "visited"
-  },
-  {
-    "id": 2,
-    "name": "Bicicleta",
-    "marca": "Specialized",
-    "modelo": "top speed",
-    "color": "rojo",
-    "img": "biciEjemplo1.png",
-    "precio": 11234,
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-    "descuento": 0,
-    "category": "visited"
-  },
-  {
-    "id": 3,
-    "name": "Bicicleta",
-    "marca": "Specialized",
-    "modelo": "top speed",
-    "color": "rojo",
-    "img": "biciEjemplo2.jpeg",
-    "precio": 11234,
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-    "envio": "bonificado",
-    "descuento": 0,
-    "category": "visited"
-  },
-  {
-    "id": 5,
-    "name": "Bicicleta",
-    "marca": "Specialized",
-    "modelo": "top speed",
-    "color": "azul",
-    "img": "biciEjemplo1.png",
-    "precio": 11234,
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-    "envio": "Envio",
-    "descuento": 20,
-    "category": "Now"
-  },
-  {
-    "id": 6,
-    "name": "Bicicleta",
-    "marca": "Specialized",
-    "modelo": "top speed",
-    "color": "rojo",
-    "img": "biciEjemplo2.jpeg",
-    "precio": 1234,
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-    "envio": "Envio",
-    "descuento": 25,
-    "category": "Now"
-  },
-  {
-    "id": 7,
-    "name": "Bicicleta",
-    "marca": "Specialized",
-    "modelo": "top speed",
-    "color": "rojo",
-    "img": "biciEjemplo.png",
-    "precio": 1234,
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-    "envio": "Puerta a puerta",
-    "descuento": 0,
-    "category": "popular"
-  },
-  {
-    "id": 8,
-    "name": "Bicicleta",
-    "marca": "Specialized",
-    "modelo": "top speed",
-    "color": "rojo",
-    "img": "biciEjemplo1.png",
-    "precio": 1234,
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-    "envio": "Puerta a puerta",
-    "descuento": 0,
-    "category": "popular"
-  },
-  {
-    "id": 9,
-    "name": "Bicicleta",
-    "marca": "Specialized",
-    "modelo": "top speed",
-    "color": "rojo",
-    "img": "biciEjemplo2.jpeg",
-    "precio": 1234,
-    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-    "envio": "Puerta a puerta",
-    "descuento": 0,
-    "category": "popular"
   }
 ]
