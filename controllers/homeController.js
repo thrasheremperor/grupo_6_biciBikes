@@ -4,13 +4,13 @@ const fs = require('fs');
 module.exports = {
     index : (req, res) => {
         let Visited = dataBicis.filter(producto =>{
-            return producto.category == 'visited'
+            return producto.section == 'visited'
         })
         let now = dataBicis.filter(producto=>{
-            return producto.category == 'Now'
+            return producto.section == 'Now'
         })
         let popular = dataBicis.filter(producto=>{
-            return producto.category == 'popular'
+            return producto.section == 'popular'
         })
         res.render('home', {
             title : "Bici Bikes",
@@ -21,27 +21,24 @@ module.exports = {
     },
     carrito :(req, res) => {
         res.render('carritoCompras', {
-            title: 'carga de producto'
+            title: 'Carga de Producto'
         })
     },
     productosFull: (req,res)=>{
 
-        /*let productofull = dataBicis.filter(productofull =>{
-            return productofull.id == 'id'
-        })*/
         res.render('products',{
-            title: 'Todos los productos',
-            dataBicis,
-            //productofull
+            title: 'Todos los Productos',
+            dataBicis
         })
     },
-    search: (req,res)=>{ /*buscador siempre va por get */
-        const resultado = dataBicis.filter( producto =>{
-            return producto.name.includes(req.query.buscador) /*buscar producto por su nombre */
+    search: (req, res) => { /*buscador siempre va por get */
+        const resultado = dataBicis.filter(producto => {
+            return producto.name.includes(req.query.buscador) || producto.marca.includes(req.query.buscador) || producto.modelo.includes(req.query.buscador)
         })
+        res.send(resultado)
         res.render('home',{
-            title: 'resultado de busqueda',
-            dataBicis: resultado   /*aun sin resolver -.- */
+            title: 'Resultado de Busqueda',
+            dataBicis: resultado   
         })
     }
 }

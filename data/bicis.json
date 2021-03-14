@@ -36,7 +36,7 @@
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "bonificado",
     "descuento": 0,
-    "category": "visited",
+    "category": "kids",
     "section": "visited"
   },
   {
@@ -50,7 +50,7 @@
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "Envio",
     "descuento": 20,
-    "category": "Now",
+    "category": "mtb",
     "section": "Now"
   },
   {
@@ -64,7 +64,7 @@
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "Envio",
     "descuento": 25,
-    "category": "Now",
+    "category": "ciudad",
     "section": "Now"
   },
   {
@@ -78,7 +78,7 @@
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "Puerta a puerta",
     "descuento": 0,
-    "category": "popular",
+    "category": "pegable",
     "section": "popular"
   },
   {
@@ -92,7 +92,7 @@
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "Puerta a puerta",
     "descuento": 0,
-    "category": "popular",
+    "category": "ruta",
     "section": "popular"
   },
   {
@@ -106,7 +106,7 @@
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "envio": "Puerta a puerta",
     "descuento": 0,
-    "category": "popular",
+    "category": "bmx",
     "section": "popular"
   },
   {
