@@ -105,7 +105,7 @@ window.onload = () => {
             }
         }
         
-        $date.onblur = () => {
+        /* $date.onblur = () => {
             switch (true) {
                 case !$date.value.trim():
                     $dateError.innerHTML = 'Debes ingresar su fecha de nacimiento'
@@ -125,5 +125,5 @@ window.onload = () => {
                     $dateError.innerHTML = null
                     break;
             }
-        }
+        } */
 }
