@@ -15,23 +15,6 @@ section.banner{
     background-color: var(--black);
 }
 
-.owl-nav span {
-    color: var(--yellow);
-    font-size: 60px;
-}
-
-.owl-nav .owl-prev{
-    position: absolute;
-    left: 2%;
-    top: 10%;
-}
-
-.owl-nav .owl-next{
-    position: absolute;
-    right: 3%;
-    top: 10%;
-}
-
 h1{
     color: white;
     text-align: center;
@@ -47,7 +30,7 @@ h1{
     text-align: center;
     padding: 10px 0;
     background-color: darkgoldenrod;
-
+    margin-top: 20px;
 }
 
 .home-text{
@@ -69,28 +52,30 @@ h1{
   text-decoration: none;
 }
 
-.product-box:hover{
-  transform: scale(1.05);
-}
-
 .product-box a {
     text-decoration: none;
     color: black;
+    text-transform: uppercase;
+    text-align: center;
 }
 
-
-
-p{
-    font-size: 18px;
-    margin: 0px 0px;
+div.container div.row div.col-12 section.product-box:hover{
+    transform: scale(1.009);
 }
 
-img{
-    width: 100%;
+div.container div.row div.col-12 section.hvr-box-shadow-outset {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
 }
 
-article span{
-    color: var(--darkGray);
+div.container div.row div.col-12 section.hvr-box-shadow-outset:hover, .hvr-box-shadow-outset:focus, .hvr-box-shadow-outset:active {
+    box-shadow: 20px 20px 20px var(--yellow);
 }
 
 .srch-btn {
@@ -132,32 +117,78 @@ article i:hover {
  transform: rotate(360deg);
 }
 
+@-webkit-keyframes hvr-ripple-in {
+    100% {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 1;
+    }
+  }
+  @keyframes hvr-ripple-in {
+    100% {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 1;
+    }
+}
+
+.hvr-ripple-in {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px var(--black);
+    position: relative;
+}
+
+.hvr-ripple-in:before {
+    content: '';
+    position: absolute;
+    border: darkgoldenrod solid 4px;
+    border-radius: .25rem;
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+.hvr-ripple-in:hover:before, .hvr-ripple-in:focus:before, .hvr-ripple-in:active:before {
+    -webkit-animation-name: hvr-ripple-in;
+    animation-name: hvr-ripple-in;
+}
+
+.hvr-bounce-in {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 20px var(--yellow);
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+.hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
+    -webkit-transform: scale(5);
+    transform: scale(5);
+    -webkit-transition-timing-function: cubic-bezier(0.20, 20.02, 0.60, 0.36);
+    transition-timing-function: cubic-bezier(0.20, 20.02, 0.60, 0.36);
+}
 
 /* Tablet */
 
 @media(min-width:426px){
     .srch-btn {
-        position: relative;
         left: 47%;
-    }
-    .owl-nav span {
-        font-size: 70px;
-    }
-    .owl-nav .owl-prev{
-        top: 30%;
-    }
-    .owl-nav .owl-next{
-        top: 30%;
     }
 }
 
 /*ESCRITORIO*/
 
 @media(min-width:1024px) {
-    .owl-nav .owl-prev{
-        top: 35%;
-    }
-    .owl-nav .owl-next{
-        top: 35%;
-    }
+    
 }

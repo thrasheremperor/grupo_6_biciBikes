@@ -6,9 +6,80 @@ body {
     background-image: url('../images/bg-tree.png');
 }
 
-.row {
+.row-header {
     background-color: rgba(11, 10, 7, 0.1);
 }
+
+@-webkit-keyframes hvr-icon-bob {
+    0% {
+      -webkit-transform: translateY(-6px);
+      transform: translateY(-6px);
+    }
+    50% {
+      -webkit-transform: translateY(-2px);
+      transform: translateY(-2px);
+    }
+    100% {
+      -webkit-transform: translateY(-6px);
+      transform: translateY(-6px);
+    }
+}
+@keyframes hvr-icon-bob {
+    0% {
+      -webkit-transform: translateY(-6px);
+      transform: translateY(-6px);
+    }
+    50% {
+      -webkit-transform: translateY(-2px);
+      transform: translateY(-2px);
+    }
+    100% {
+      -webkit-transform: translateY(-6px);
+      transform: translateY(-6px);
+    }
+}
+@-webkit-keyframes hvr-icon-bob-float {
+    100% {
+      -webkit-transform: translateY(-6px);
+      transform: translateY(-6px);
+    }
+}
+@keyframes hvr-icon-bob-float {
+    100% {
+      -webkit-transform: translateY(-6px);
+      transform: translateY(-6px);
+    }
+}
+.hvr-icon-bob {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.hvr-icon-bob {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.hvr-icon-bob:hover, .hvr-icon-bob:focus, .hvr-icon-bob:active {
+    -webkit-animation-name: hvr-icon-bob-float, hvr-icon-bob;
+    animation-name: hvr-icon-bob-float, hvr-icon-bob;
+    -webkit-animation-duration: .3s, 1.5s;
+    animation-duration: .3s, 1.5s;
+    -webkit-animation-delay: 0s, .3s;
+    animation-delay: 0s, .3s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+    animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+    animation-iteration-count: 1, infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-direction: normal, alternate;
+    animation-direction: normal, alternate;
+}
+  
 
 .search-form {
     display: flex;
@@ -16,6 +87,7 @@ body {
     right: 5%;
     width: 90%;
     padding: revert;
+    margin-bottom: 10px;
 }
 
 .btn {
@@ -25,7 +97,6 @@ body {
     position: relative;
     left: 10%;
     height: 40px;
-    margin-top: 14px;
 }
 
 .btn:hover {
@@ -33,8 +104,54 @@ body {
 
 }
 
+@-webkit-keyframes hvr-ripple-in {
+    100% {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 1;
+    }
+  }
+  @keyframes hvr-ripple-in {
+    100% {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 1;
+    }
+}
+
+.hvr-ripple-in {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px var(--black);
+    position: relative;
+}
+.hvr-ripple-in:before {
+    content: '';
+    position: absolute;
+    border: darkgoldenrod solid 4px;
+    border-radius: .25rem;
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.hvr-ripple-in:hover:before, .hvr-ripple-in:focus:before, .hvr-ripple-in:active:before {
+    -webkit-animation-name: hvr-ripple-in;
+    animation-name: hvr-ripple-in;
+}
+
 .dropdown-menu {
-    background-color: rgba(184, 135, 11, 0.603);
+    background-color: rgba(184, 135, 11, 0.85);
     border: none;
     text-align: center;
 }

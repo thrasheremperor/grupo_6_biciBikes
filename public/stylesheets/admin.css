@@ -10,11 +10,11 @@ body.admin{
     margin-bottom: 10px;
 }
 
-div label{
+/* div label{
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     font-size: x-large;
-}
+} */
 input .form-control:hover{
     text-decoration: none;
     color:rgb(225, 233, 112);
