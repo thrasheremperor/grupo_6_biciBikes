@@ -1,7 +1,7 @@
 .login{
     background:rgba(250, 241, 119, 0.6); 
     display: flex;
-   min-height: 100vh;
+    min-height: 100vh;
 }
 
 .sesion{

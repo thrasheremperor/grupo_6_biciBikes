@@ -34,13 +34,17 @@ body {
 }
 
 .dropdown-menu {
-    background-color: darkgoldenrod;
+    background-color: rgba(184, 135, 11, 0.603);
     border: none;
     text-align: center;
 }
 
+.dropdown-menu .dropdown-item {
+    color: black;
+}
+
 .dropdown-menu a:hover{
-    background-color: var(--darkGreen);
+    background-color: rgba(19, 83, 19, 0.658);
 }
 
 .dropdown-divider {
