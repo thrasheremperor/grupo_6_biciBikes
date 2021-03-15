@@ -24,7 +24,6 @@
 .sesion-registro{
     margin:30px auto;
     width:100%;
-    max-width:500px;
     background-color: rgba(227, 216, 126, 0.7);
     padding:30px;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -46,9 +45,12 @@
     margin:15px 0 15px 0;
 }
 
+#passwordError2 {
+
+}
+
 .btn-registro {
     width: 50%;
-    display: block;
     position: relative;
     left: 25%;
     border-radius: 2px;
