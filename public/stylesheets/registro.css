@@ -45,12 +45,9 @@
     margin:15px 0 15px 0;
 }
 
-#passwordError2 {
-
-}
-
 .btn-registro {
     width: 50%;
+    margin-top: 10px;
     position: relative;
     left: 25%;
     border-radius: 2px;
