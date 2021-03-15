@@ -26,11 +26,11 @@ module.exports  =  {
         if(!errores.isEmpty()){
             return res.render('registro',{
                 title : 'register',
-                errores : errores.errors
+                errores : errores.mapped()
             })
         }else{
             
-        const {nombre, apellido, pass, email, foto} = req.body;
+        const {nombre, apellido, pass,pass2, email,date , foto} = req.body;
 
         let lastID = 1;
         users.forEach(user => {
@@ -44,10 +44,12 @@ module.exports  =  {
         const newUser = {
             id : Number(lastID +1),
             nombre,
-            pass : passHash,
+            pass: passHash,
+            pass2,
             apellido,
             email,
-            foto 
+            foto,
+            date
             
         }
       
@@ -65,7 +67,7 @@ module.exports  =  {
         if(!errores.isEmpty()){
             return res.render('login',{
                 title:"Log in",   
-                errores : errores.errors,
+                errores : errores.mapped()
                
             })
         }else{
@@ -86,7 +88,8 @@ module.exports  =  {
                        foto :result.foto,
                        nombre : result.nombre,
                        apellido : result.apellido,
-                       email : result.email
+                       email : result.email,
+                       date:result.date
                    }
 
                    if(recordar){

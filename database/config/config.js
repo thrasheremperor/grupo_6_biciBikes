@@ -1,12 +1,11 @@
 module.exports = {
   development: {
     username: "root",
-    password: "root",
+    password: "5398",
     database: "grupo_6_biciBikes",
     host: "127.0.0.1",
     dialect: "mysql",
-    seederStorage : "sequelize",
-    port : 8889
+    seederStorage : "sequelize"
   },
   test: {
     username: "root",
