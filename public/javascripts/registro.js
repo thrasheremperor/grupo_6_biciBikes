@@ -17,7 +17,7 @@ window.onload = () => {
         $dateError = qs('#dateError'),
         regExAlpha = /^[a-zA-Z\sñáéíóúü ]+$/i,
         regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-        regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+        regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,42}$/;
 
         $name.onblur = () => {
             switch (true) {
@@ -77,7 +77,7 @@ window.onload = () => {
                     $password.classList.add('is-invalid')
                     break;
                 case !regExPass.test($password.value):
-                    $passwordError.innerHTML = 'La contraseña debe contener: entre 6 o 12 caracters, minimo una mayuscula, una minuscula y un numero'
+                    $passwordError.innerHTML = 'La contraseña debe contener: entre 7 o 42 caracters, minimo una mayuscula, una minuscula y un numero'
                     $password.classList.add('is-invalid')
                     break;
                 default:
@@ -105,7 +105,7 @@ window.onload = () => {
             }
         }
         
-        $date.onblur = () => {
+        /* $date.onblur = () => {
             switch (true) {
                 case !$date.value.trim():
                     $dateError.innerHTML = 'Debes ingresar su fecha de nacimiento'
@@ -125,5 +125,5 @@ window.onload = () => {
                     $dateError.innerHTML = null
                     break;
             }
-        }
+        } */
 }

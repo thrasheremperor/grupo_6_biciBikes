@@ -6,8 +6,8 @@
     <%- include('partials/header')%>
    
     <div class="contenedor">
-        <div class="form">
-            <form id="form" class="container" action="" enctype="multipart/form-data">
+        <div class="form-registro">
+            <form id="form" class="sesion-registro" action="" enctype="multipart/form-data">
                 <h1 class="registro h1 mt-2">Registro</h1>
 
                 <input id="name" class="form-control mt-5" name="name" type="text" placeholder="Nombre">
@@ -25,8 +25,8 @@
                 <input id="password2" class="form-control mt-5" name="pass2" type="password" placeholder="Repetir Contraseña">
                 <span id="passwordError2"><%= (typeof errores != 'undefined' && errores.pass2)? errores.pass2.msg: "" %> </span>
                 
-                <input id="date" class="form-control mt-5" name="date" type="date">
-                <span id="dateError"><%= (typeof errores != 'undefined' && errores.date)? errores.date.msg: "" %> </span>
+                <!--<input id="date" class="form-control mt-5" name="date" type="date">
+                <span id="dateError"><%= (typeof errores != 'undefined' && errores.date)? errores.date.msg: "" %> </span>-->
                 
                 <button class="btn btn-primary" type="submit">Send</button>
             </form>
