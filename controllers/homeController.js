@@ -3,20 +3,20 @@ const fs = require('fs');
 
 module.exports = {
     index : (req, res) => {
-        let Visited = dataBicis.filter(producto =>{
+        let productsVisited = dataBicis.filter(producto =>{
             return producto.section == 'visited'
         })
-        let now = dataBicis.filter(producto=>{
-            return producto.section == 'Now'
+        let productsNow = dataBicis.filter(producto=>{
+            return producto.section == 'now'
         })
-        let popular = dataBicis.filter(producto=>{
+        let productsPopular = dataBicis.filter(producto=>{
             return producto.section == 'popular'
         })
         res.render('home', {
             title : "Bici Bikes",
-            productsVisited: Visited,
-            productsNow: now,
-            productsPopular: popular
+            productsVisited,
+            productsNow,
+            productsPopular
         })
     },
     carrito :(req, res) => {
@@ -25,7 +25,6 @@ module.exports = {
         })
     },
     productosFull: (req,res)=>{
-
         res.render('products',{
             title: 'Todos los Productos',
             dataBicis

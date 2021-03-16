@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "name": "Bicicle",
+    "name": "Bicycle",
     "marca": "specialized",
     "modelo": "top speed",
     "color": "azul",
-    "img": "biciEjemplo.png",
+    "img": "biciAzul.png",
     "precio": "11.234",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "descuento": 0,
@@ -18,7 +18,7 @@
     "marca": "specialized",
     "modelo": "top speed",
     "color": "rojo",
-    "img": "biciEjemplo1.png",
+    "img": "biciRoja.png",
     "precio": "11.234",
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
     "descuento": 0,
@@ -30,11 +30,10 @@
     "name": "bicicleta",
     "marca": "specialized",
     "modelo": "top speed",
-    "color": "rojo",
-    "img": "biciEjemplo2.jpeg",
+    "color": "amarillo",
+    "img": "biciAmarilla.png",
     "precio": 11.234,
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-    "envio": "bonificado",
     "descuento": 0,
     "category": "kids",
     "section": "visited"
@@ -44,39 +43,36 @@
     "name": "bicicleta",
     "marca": "specialized",
     "modelo": "top speed",
-    "color": "azul",
-    "img": "biciEjemplo1.png",
+    "color": "verde",
+    "img": "biciVerde.png",
     "precio": 11.234,
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-    "envio": "Envio",
     "descuento": 20,
     "category": "mtb",
-    "section": "Now"
+    "section": "now"
   },
   {
     "id": 6,
     "name": "bicicleta",
     "marca": "specialized",
     "modelo": "top speed",
-    "color": "rojo",
-    "img": "biciEjemplo2.jpeg",
+    "color": "negro",
+    "img": "biciNegra.png",
     "precio": 1.234,
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-    "envio": "Envio",
     "descuento": 25,
     "category": "ciudad",
-    "section": "Now"
+    "section": "now"
   },
   {
     "id": 7,
     "name": "bicicleta",
     "marca": "specialized",
     "modelo": "top speed",
-    "color": "rojo",
-    "img": "biciEjemplo.png",
+    "color": "violeta",
+    "img": "biciVioleta.png",
     "precio": 1.234,
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-    "envio": "Puerta a puerta",
     "descuento": 0,
     "category": "pegable",
     "section": "popular"
@@ -86,11 +82,10 @@
     "name": "bicicleta",
     "marca": "specialized",
     "modelo": "top speed",
-    "color": "rojo",
-    "img": "biciEjemplo1.png",
+    "color": "negro",
+    "img": "biciNegra.png",
     "precio": 1.234,
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-    "envio": "Puerta a puerta",
     "descuento": 0,
     "category": "ruta",
     "section": "popular"
@@ -101,10 +96,9 @@
     "marca": "specialized",
     "modelo": "top speed",
     "color": "rojo",
-    "img": "biciEjemplo2.jpeg",
+    "img": "biciRoja.png",
     "precio": 1.234,
     "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
-    "envio": "Puerta a puerta",
     "descuento": 0,
     "category": "bmx",
     "section": "popular"
@@ -114,9 +108,7 @@
     "name": "soy nuevo",
     "marca": "producto",
     "precio": "324",
-    "description": "probando para ver si funciona",
-    "envio": "on",
-    "envio1": "on"
+    "description": "probando para ver si funciona"
   },
   {
     "id": 11,
@@ -132,8 +124,6 @@
     "marca": "patin",
     "precio": "2000",
     "description": "pavo",
-    "envio": "on",
-    "envio1": "on",
     "img": "biciCanasto.jpg"
   },
   {
@@ -142,8 +132,6 @@
     "marca": "wetheppeople",
     "precio": "10000",
     "description": "bicis",
-    "envio": "on",
-    "envio1": "on",
     "img": "otraBike.png"
   }
 ]

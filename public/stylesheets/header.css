@@ -188,26 +188,27 @@ body {
 }
 
 .wheel {
-    background-color: darkgray;
+    background-color: var(--darkGreen);
     position: absolute;
     right: 15px;
     top: 10px;
     width: 4rem;
     border-radius: 70px;
-    transition: all .5s ease;
-    -webkit-transition: all .5s ease-out;
-    -moz-transition: all .5s ease;
-    -ms-transition: all .5s ease;
+    transition: all 1.0s ease;
+    -webkit-transition: all 1.0s ease-out;
+    -moz-transition: all 1.0s ease;
+    -ms-transition: all 1.0s ease; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
 }
 
-.wheel:hover {
+.wheel:hover, .wheel:focus, .wheel:active {
     box-shadow: 5px 5px 5px 5px var(--black);
-    transform: scale(1.05);
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-}
+    transform: scale(20.05);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+} 
 
 @media(min-width:768px){
     .search-form {

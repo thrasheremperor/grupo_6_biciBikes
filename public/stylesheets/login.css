@@ -88,11 +88,9 @@ label.checkbox {
 }
 
 @media(min-width:426px){
-    h2 {
-        font-size:5em;
-    }
     
 }
+
 @media(min-width:768px){
   #help-login {
       margin-top: 30px;
