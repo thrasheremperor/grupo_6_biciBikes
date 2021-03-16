@@ -11,12 +11,12 @@
           <h2>Inicia sesion</h2>
           <p>
             <input type="email" placeholder="Email" name="email">
-            <span><%= (typeof errores != 'undefined' && errores.email)? errores.email.msg: "" %> </span>
+            <span class="text-center"><%= (typeof errores != 'undefined' && errores.email)? errores.email.msg: "" %> </span>
           </p>
 
           <p>
             <input type="password" placeholder="Contraseña" name="pass">
-            <span><%= (typeof errores != 'undefined' && errores.pass)? errores.pass.msg: "" %></span>
+            <span class="text-center"><%= (typeof errores != 'undefined' && errores.pass)? errores.pass.msg: "" %></span>
           </p>
 
           <span>

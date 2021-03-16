@@ -40,7 +40,7 @@
     "section": "visited"
   },
   {
-    "id": 5,
+    "id": 4,
     "name": "bicicleta",
     "marca": "specialized",
     "modelo": "top speed",
@@ -54,7 +54,7 @@
     "section": "Now"
   },
   {
-    "id": 6,
+    "id": 5,
     "name": "bicicleta",
     "marca": "specialized",
     "modelo": "top speed",
@@ -68,7 +68,7 @@
     "section": "Now"
   },
   {
-    "id": 7,
+    "id": 6,
     "name": "bicicleta",
     "marca": "specialized",
     "modelo": "top speed",
@@ -82,7 +82,7 @@
     "section": "popular"
   },
   {
-    "id": 8,
+    "id": 7,
     "name": "bicicleta",
     "marca": "specialized",
     "modelo": "top speed",
@@ -96,7 +96,7 @@
     "section": "popular"
   },
   {
-    "id": 9,
+    "id": 8,
     "name": "bicicleta",
     "marca": "specialized",
     "modelo": "top speed",
@@ -111,15 +111,6 @@
   },
   {
     "id": 10,
-    "name": "soy nuevo",
-    "marca": "producto",
-    "precio": "324",
-    "description": "probando para ver si funciona",
-    "envio": "on",
-    "envio1": "on"
-  },
-  {
-    "id": 11,
     "name": "hola",
     "marca": "kjaskasnhk",
     "precio": "073546556",
@@ -127,7 +118,7 @@
     "img": "biciEjemplo1.png"
   },
   {
-    "id": 12,
+    "id": 11,
     "name": "pato",
     "marca": "patin",
     "precio": "2000",
@@ -138,6 +129,144 @@
   },
   {
     "id": 13,
+    "name": "bici",
+    "marca": "wetheppeople",
+    "precio": "10000",
+    "description": "bicis",
+    "envio": "on",
+    "envio1": "on",
+    "img": "otraBike.png"
+  },
+  {
+    "id": 14,
+    "name": "Bicicle",
+    "marca": "specialized",
+    "modelo": "top speed",
+    "color": "azul",
+    "img": "biciEjemplo.png",
+    "precio": "11.234",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
+    "descuento": 0,
+    "category": "bmx",
+    "section": "visited"
+  },
+  {
+    "id": 14,
+    "name": "bicicleta",
+    "marca": "specialized",
+    "modelo": "top speed",
+    "color": "rojo",
+    "img": "biciEjemplo1.png",
+    "precio": "11.234",
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
+    "descuento": 0,
+    "category": "eletric",
+    "section": "visited"
+  },
+  {
+    "id": 15,
+    "name": "bicicleta",
+    "marca": "specialized",
+    "modelo": "top speed",
+    "color": "rojo",
+    "img": "biciEjemplo2.jpeg",
+    "precio": 11.234,
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
+    "envio": "bonificado",
+    "descuento": 0,
+    "category": "kids",
+    "section": "visited"
+  },
+  {
+    "id": 16,
+    "name": "bicicleta",
+    "marca": "specialized",
+    "modelo": "top speed",
+    "color": "azul",
+    "img": "biciEjemplo1.png",
+    "precio": 11.234,
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
+    "envio": "Envio",
+    "descuento": 20,
+    "category": "mtb",
+    "section": "Now"
+  },
+  {
+    "id": 17,
+    "name": "bicicleta",
+    "marca": "specialized",
+    "modelo": "top speed",
+    "color": "rojo",
+    "img": "biciEjemplo2.jpeg",
+    "precio": 1.234,
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
+    "envio": "Envio",
+    "descuento": 25,
+    "category": "ciudad",
+    "section": "Now"
+  },
+  {
+    "id": 18,
+    "name": "bicicleta",
+    "marca": "specialized",
+    "modelo": "top speed",
+    "color": "rojo",
+    "img": "biciEjemplo.png",
+    "precio": 1.234,
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
+    "envio": "Puerta a puerta",
+    "descuento": 0,
+    "category": "pegable",
+    "section": "popular"
+  },
+  {
+    "id": 19,
+    "name": "bicicleta",
+    "marca": "specialized",
+    "modelo": "top speed",
+    "color": "rojo",
+    "img": "biciEjemplo1.png",
+    "precio": 1.234,
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
+    "envio": "Puerta a puerta",
+    "descuento": 0,
+    "category": "ruta",
+    "section": "popular"
+  },
+  {
+    "id": 20,
+    "name": "bicicleta",
+    "marca": "specialized",
+    "modelo": "top speed",
+    "color": "rojo",
+    "img": "biciEjemplo2.jpeg",
+    "precio": 1.234,
+    "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit",
+    "envio": "Puerta a puerta",
+    "descuento": 0,
+    "category": "bmx",
+    "section": "popular"
+  },
+  {
+    "id": 22,
+    "name": "hola",
+    "marca": "kjaskasnhk",
+    "precio": "073546556",
+    "description": "cytfugkuhoi",
+    "img": "biciEjemplo1.png"
+  },
+  {
+    "id": 23,
+    "name": "pato",
+    "marca": "patin",
+    "precio": "2000",
+    "description": "pavo",
+    "envio": "on",
+    "envio1": "on",
+    "img": "biciCanasto.jpg"
+  },
+  {
+    "id": 24,
     "name": "bici",
     "marca": "wetheppeople",
     "precio": "10000",

@@ -11,22 +11,22 @@
                 <h1 class="registro h1 mt-2">Registro</h1>
 
                 <input id="name" class="form-control mt-5" name="name" type="text" placeholder="Nombre">
-                <span class="error" id="nameError"><%= (typeof errores != 'undefined' && errores.name)? errores.name.msg: "" %> </span>
+                <span class="error text-center" id="nameError"><%= (typeof errores != 'undefined' && errores.name)? errores.name.msg: "" %> </span>
                 
                 <input id="lastname" class="form-control mt-5" name="apellido" type="text" placeholder="Apellido">
-                <span id="lastNameError"><%= (typeof errores != 'undefined' && errores.apellido)? errores.apellido.msg: "" %> </span>
+                <span id="lastNameError" class="text-center"><%= (typeof errores != 'undefined' && errores.apellido)? errores.apellido.msg: "" %> </span>
                 
                 <input id="email" class="form-control mt-5" name="email" type="email" placeholder="Email">
-                <span id="emailError"><%= (typeof errores != 'undefined' && errores.email)? errores.email.msg: "" %> </span>
+                <span id="emailError" class="text-center"><%= (typeof errores != 'undefined' && errores.email)? errores.email.msg: "" %> </span>
                 
                 <input id="password" class="form-control mt-5" name="pass" type="password" placeholder="Contraseña">
-                <span id="passwordError"><%= (typeof errores != 'undefined' && errores.pass)? errores.pass.msg: "" %> </span>
+                <span id="passwordError" class="text-center"><%= (typeof errores != 'undefined' && errores.pass)? errores.pass.msg: "" %> </span>
                 
                 <input id="password2" class="form-control mt-5" name="pass2" type="password" placeholder="Repetir Contraseña">
-                <span id="passwordError2"><%= (typeof errores != 'undefined' && errores.pass2)? errores.pass2.msg: "" %> </span>
+                <span id="passwordError2" class="text-center"><%= (typeof errores != 'undefined' && errores.pass2)? errores.pass2.msg: "" %> </span>
                 
                 <!--<input id="date" class="form-control mt-5" name="date" type="date">
-                <span id="dateError"><%= (typeof errores != 'undefined' && errores.date)? errores.date.msg: "" %> </span>-->
+                <span id="dateError" class="text-center"><%= (typeof errores != 'undefined' && errores.date)? errores.date.msg: "" %> </span>-->
                 
                 <button class="btn btn-primary" type="submit">Send</button>
             </form>

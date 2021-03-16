@@ -61,7 +61,7 @@ module.exports = {
                 producto.description = description;
                 producto.envio = envio;
                 producto.envio1 = envio1;
-                producto.img = img 
+                producto.img = img(req.files[0].filename)
             }
         });
         fs.writeFileSync('./data/bicis.json', JSON.stringify(dataBicis),'utf-8');

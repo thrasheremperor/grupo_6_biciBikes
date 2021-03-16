@@ -6,7 +6,7 @@ const userCheck = require ('../middleware/userCheck');
 
 router.get('/', index); /*ruta lista */
 router.get('/compras',userCheck, carrito); /*ruta lista */
-router.get('/full', productosFull);/*ruta lista */
+router.get('/full', productosFull);/*ruta lista  de productos visibles por cualquiera*/
 router.get('/buscar', search); /*aun en proceso */
 
 
