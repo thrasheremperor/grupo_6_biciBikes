@@ -1,77 +1,297 @@
 .paraBorder {
     height: 50%;
 }
+
 .container .detalle {
     background-color: white;    
 }
+
+section.detalle h2.titulo-detalle {
+    text-transform: uppercase;
+    background-color: #ffd369;
+    color:black;
+    font-size: 4em;
+}
+
 .contain{
     border:1px solid rgba(0, 0, 0, 0.2);
     border: none;
     margin: 5px;
-box-shadow: 0 0 20px 0 rgba(44, 40, 40, 0.9);
-margin-top:10px;
-margin-bottom: 5px;
+    box-shadow: 0 0 20px 0 rgba(44, 40, 40, 0.9);
+    margin-top:10px;
+    margin-bottom: 5px;
 }
+
 .modelo{
     font-family: Montserrat;
     font-size: larger;
-    margin:10px
+    margin:10px;
+    text-transform: capitalize;
 }
+
 .sub-titulo{
     font-family: Montserrat;
     font-size: 25px;
-    margin:10px
+    margin:10px;
+    text-transform: capitalize;
 }
+
 .imgProducto{
     height: -5px -5px -5px -5px;
 }
+
 .precio{
     font-size: large;
     margin:10px
 }
+
 .descuento{
     font-size: large;
     color: rgb(59, 221, 59);
     margin:10px
 }
+
 .color{
     font-size: large;
     margin:10px
 }
+
 .description{
     font-size: large;
     margin:10px
 }
-.envio{
-    font-size: large;
-    margin:10px
-}
-div .auto i:hover {
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        transform: rotate(360deg)
-       
-}
+
 div .auto i{
     text-decoration: none;
     color:green;
-    margin:10px
-}
-div .auto i{
+    margin:10px;
     right: 18px;
-top: -15px;
-border:1px solid green;
-width: 27px;
-height: 27px;
-border-radius: 20px;
-padding:4px;
-font-size:16px;
-transition: all .5s ease;
--webkit-transition: all .5s ease-out;
--moz-transition: all .5s ease;
--ms-transition: all .5s ease;
+    top: -15px;
+    border:1px solid green;
+    width: 27px;
+    height: 27px;
+    border-radius: 20px;
+    padding:4px;
+    font-size:16px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
 }
+
+div .auto i:hover {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg)     
+}
+
+.btns-detalle {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+}
+
+.btn-detalle {
+   width: 80%;
+   text-transform: uppercase;
+}
+
+.btn-detalle a{
+    text-decoration: none;
+    color: black;
+}
+
+.form-control-color-picker {
+    position: relative;
+    height: 40px;
+    border-color: #dee4e5;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+.form-control-color-picker > .form-control-color-picker-value {
+    font-size: 1.2em;
+    padding: 10px 15px;
+    cursor: default;
+}
+.form-control-color-picker > .form-control-color-picker-dropdown {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    z-index: 10;
+    background: #fff;
+    display: none;
+}
+.form-control-color-picker > .form-control-color-picker-dropdown > .form-control-color-picker-dropdown-item {
+    padding: 10px 15px;
+    position: relative;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+.form-control-color-picker > .form-control-color-picker-dropdown > .form-control-color-picker-dropdown-item:before {
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 34px;
+    background-color: transparent;
+    left: 3px;
+    top: 3px;
+}
+.form-control-color-picker > .form-control-color-picker-dropdown > .form-control-color-picker-dropdown-item:hover:before, .form-control-color-picker > .form-control-color-picker-dropdown > .form-control-color-picker-dropdown-item:focus:before, .form-control-color-picker > .form-control-color-picker-dropdown > .form-control-color-picker-dropdown-item.selected:before {
+    background-color: #fff;
+}
+.form-control-color-picker > .form-control-color-picker-triangle {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 9px solid rgba(255, 255, 255, 0.5);
+    right: 10px;
+    top: 17px;
+    z-index: 10;
+}
+.form-control-color-picker > .form-control-color-picker-triangle:after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(255, 255, 255, 0.8);
+    left: -6px;
+    top: -8px;
+    z-index: 10;
+}
+.form-control-color-picker:focus {
+    background: #fff !important;
+    color: #4f4f4f !important;
+}
+.form-control-color-picker:focus > .form-control-color-picker-dropdown {
+    display: block;
+}
+.form-control-color-picker:focus > .form-control-color-picker-triangle {
+    border-top: 9px solid #333;
+}
+.form-control-color-picker:focus > .form-control-color-picker-triangle:after {
+    border-top: 6px solid #4f4f4f;
+}
+
+
+
+@-webkit-keyframes hvr-buzz-out {
+    10% {
+      -webkit-transform: translateX(3px) rotate(2deg);
+      transform: translateX(3px) rotate(2deg);
+    }
+    20% {
+      -webkit-transform: translateX(-3px) rotate(-2deg);
+      transform: translateX(-3px) rotate(-2deg);
+    }
+    30% {
+      -webkit-transform: translateX(3px) rotate(2deg);
+      transform: translateX(3px) rotate(2deg);
+    }
+    40% {
+      -webkit-transform: translateX(-3px) rotate(-2deg);
+      transform: translateX(-3px) rotate(-2deg);
+    }
+    50% {
+      -webkit-transform: translateX(2px) rotate(1deg);
+      transform: translateX(2px) rotate(1deg);
+    }
+    60% {
+      -webkit-transform: translateX(-2px) rotate(-1deg);
+      transform: translateX(-2px) rotate(-1deg);
+    }
+    70% {
+      -webkit-transform: translateX(2px) rotate(1deg);
+      transform: translateX(2px) rotate(1deg);
+    }
+    80% {
+      -webkit-transform: translateX(-2px) rotate(-1deg);
+      transform: translateX(-2px) rotate(-1deg);
+    }
+    90% {
+      -webkit-transform: translateX(1px) rotate(0);
+      transform: translateX(1px) rotate(0);
+    }
+    100% {
+      -webkit-transform: translateX(-1px) rotate(0);
+      transform: translateX(-1px) rotate(0);
+    }
+}
+
+@keyframes hvr-buzz-out {
+    10% {
+      -webkit-transform: translateX(3px) rotate(2deg);
+      transform: translateX(3px) rotate(2deg);
+    }
+    20% {
+      -webkit-transform: translateX(-3px) rotate(-2deg);
+      transform: translateX(-3px) rotate(-2deg);
+    }
+    30% {
+      -webkit-transform: translateX(3px) rotate(2deg);
+      transform: translateX(3px) rotate(2deg);
+    }
+    40% {
+      -webkit-transform: translateX(-3px) rotate(-2deg);
+      transform: translateX(-3px) rotate(-2deg);
+    }
+    50% {
+      -webkit-transform: translateX(2px) rotate(1deg);
+      transform: translateX(2px) rotate(1deg);
+    }
+    60% {
+      -webkit-transform: translateX(-2px) rotate(-1deg);
+      transform: translateX(-2px) rotate(-1deg);
+    }
+    70% {
+      -webkit-transform: translateX(2px) rotate(1deg);
+      transform: translateX(2px) rotate(1deg);
+    }
+    80% {
+      -webkit-transform: translateX(-2px) rotate(-1deg);
+      transform: translateX(-2px) rotate(-1deg);
+    }
+    90% {
+      -webkit-transform: translateX(1px) rotate(0);
+      transform: translateX(1px) rotate(0);
+    }
+    100% {
+      -webkit-transform: translateX(-1px) rotate(0);
+      transform: translateX(-1px) rotate(0);
+    }
+}
+
+.hvr-buzz-out {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.hvr-buzz-out:hover, .hvr-buzz-out:focus, .hvr-buzz-out:active {
+    -webkit-animation-name: hvr-buzz-out;
+    animation-name: hvr-buzz-out;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+  
+
 @media (min-width:766){
     .sub-titulo{
         font-family: Montserrat;

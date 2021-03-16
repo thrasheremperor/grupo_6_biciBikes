@@ -3,7 +3,8 @@ let qs = (element) => {
 }
 
 window.onload = () => {
-    let $name = qs('#name'),
+    let $form = qs('#form'),
+        $name = qs('#name'),
         $nameError = qs('#nameError'),
         $lastNameError = qs('#lastNameError'),
         $lastName = qs('#lastname'),
@@ -15,9 +16,15 @@ window.onload = () => {
         $passwordError2 = qs('#passwordError2'),
         $date = qs('#date'),
         $dateError = qs('#dateError'),
+        $terms = qs('#flexCheckDefault'),
+        $termsErrors = qs('#termsErrors'),
+        $file = qs('#formFile'),
+        $fileErrors = qs('#fileErrors'),
+        $imgPreview = qs('#img-preview'),
         regExAlpha = /^[a-zA-Z\sñáéíóúü ]+$/i,
         regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
         regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,42}$/;
+
 
         $name.onblur = () => {
             switch (true) {
@@ -104,8 +111,7 @@ window.onload = () => {
                     break;
             }
         }
-        
-        /* $date.onblur = () => {
+        $date.onblur = () => {
             switch (true) {
                 case !$date.value.trim():
                     $dateError.innerHTML = 'Debes ingresar su fecha de nacimiento'
@@ -125,5 +131,70 @@ window.onload = () => {
                     $dateError.innerHTML = null
                     break;
             }
-        } */
+        }
+        $terms.addEventListener('blur', () => {
+            if($terms.checked){
+                $termsErrors.innerHTML = ''
+                $terms.value = 'on'
+                $sexo.classList.remove('is-invalid');
+                $sexo.classList.add('is-valid');
+            } else {
+                $termsErrors.innerHTML = 'Para crear una cuenta debes aceptar los términos y condiciones'
+            }
+        })
+        $terms.addEventListener('click',function(){
+            $terms.value = 'on'
+            $terms.classList.toggle('is-valid');
+            $terms.classList.remove('is-invalid');
+            $termsErrors.innerHTML = ""
+        })
+        
+        $file.addEventListener('change', 
+        function fileValidation(){
+            console.log($file.value);
+            let filePath = $file.value, //Capturo el valor del input
+                allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
+                if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+                $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+                $file.value = '';
+                $imgPreview.innerHTML = '';
+                return false;
+            }else{
+                // Image preview
+                if($file.files && $file.files[0]){
+                    let reader = new FileReader();
+                    reader.onload = function(e){
+                        $imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
+                    };
+                    reader.readAsDataURL($file.files[0]);
+                    $fileErrors.innerHTML = '';
+                }
+            }
+        })
+        
+        $form.addEventListener('submit',function(event){
+            let error = false;
+            event.preventDefault()
+            console.log($form.elements)
+            let elementosForm = this.elements
+            
+            for (let index = 0; index < elementosForm.length-1; index++) {
+                if(elementosForm[index].value == ""){
+                    elementosForm[index].classList.add('is-invalid');
+                    submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                    error = true;
+                }
+            }
+    
+            if(!$terms.checked){
+                $terms.classList.add('is-invalid');
+                $termsErrors.innerHTML = "Debes aceptar las bases y condiciones"
+                error = true
+            }
+    
+            if(!error){
+                $form.submit()
+            }
+    
+        })
 }
