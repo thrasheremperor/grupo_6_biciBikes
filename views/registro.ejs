@@ -9,28 +9,6 @@
         <div class="form-registro">
             <form id="form" class="sesion-registro" action="" enctype="multipart/form-data">
                 <h1 class="registro h1 mt-2">Registro</h1>
-<<<<<<< HEAD
-
-                <input id="name" class="form-control mt-5" name="name" type="text" placeholder="Nombre">
-                <span class="error text-center" id="nameError"><%= (typeof errores != 'undefined' && errores.name)? errores.name.msg: "" %> </span>
-                
-                <input id="lastname" class="form-control mt-5" name="apellido" type="text" placeholder="Apellido">
-                <span id="lastNameError" class="text-center"><%= (typeof errores != 'undefined' && errores.apellido)? errores.apellido.msg: "" %> </span>
-                
-                <input id="email" class="form-control mt-5" name="email" type="email" placeholder="Email">
-                <span id="emailError" class="text-center"><%= (typeof errores != 'undefined' && errores.email)? errores.email.msg: "" %> </span>
-                
-                <input id="password" class="form-control mt-5" name="pass" type="password" placeholder="Contraseña">
-                <span id="passwordError" class="text-center"><%= (typeof errores != 'undefined' && errores.pass)? errores.pass.msg: "" %> </span>
-                
-                <input id="password2" class="form-control mt-5" name="pass2" type="password" placeholder="Repetir Contraseña">
-                <span id="passwordError2" class="text-center"><%= (typeof errores != 'undefined' && errores.pass2)? errores.pass2.msg: "" %> </span>
-                
-                <!--<input id="date" class="form-control mt-5" name="date" type="date">
-                <span id="dateError" class="text-center"><%= (typeof errores != 'undefined' && errores.date)? errores.date.msg: "" %> </span>-->
-                
-                <button class="btn btn-primary" type="submit">Send</button>
-=======
                 <input id="name" class="form-control mt-5 form-datos" name="name" type="text" placeholder="Nombre">
                 <span class="error" id="nameError"></span>
                 <input id="lastname" class="form-control mt-5 form-datos" name="last name" type="text" placeholder="Apellido">
@@ -45,7 +23,7 @@
                 <span id="dateError"></span>
                 <div class="mt-5">
                     <div class="img-container" id="img-preview"></div>
-                    <input class="form-control mt-3" type="file" id="formFile">
+                    <input class="form-control photo-box mt-3" type="file" id="formFile">
                     <span id="fileErrors"></span>
                 </div>
                 <div class="form-check mt-5">
@@ -58,7 +36,6 @@
                 <div>
                     <button class="btn btn-registro hvr-box-shadow-outset" type="submit">Send</button>
                 </div>
->>>>>>> e45e4a2bd2a6fdc750e9551c24a00b2cb7aff37c
             </form>
         </div>
     </div>

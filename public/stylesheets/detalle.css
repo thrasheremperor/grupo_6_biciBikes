@@ -302,15 +302,21 @@ div .auto i:hover {
 
 @media (min-width: 1024px){
     .imgProducto{
-            box-shadow: 0 0 20px 0 rgba(44, 40, 40, 0.4);
-            
+      align-self: center;
+      box-shadow: 0 0 20px 0 rgba(44, 40, 40, 0.4);
     }
+
+    #hr {
+      display: none;
+    }
+
     .modelo{
-        font-family: Montserrat;
-        font-size: larger;
+      font-family: Montserrat;
+      font-size: larger;
     }
+    
     .sub-titulo{
-        font-family: Montserrat;
-        font-size: 30px;
+      font-family: Montserrat;
+      font-size: 30px;
     }
 }

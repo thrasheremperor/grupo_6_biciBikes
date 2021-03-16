@@ -147,7 +147,7 @@ window.onload = () => {
             $terms.classList.toggle('is-valid');
             $terms.classList.remove('is-invalid');
             $termsErrors.innerHTML = ""
-        })
+        })  
         
         $file.addEventListener('change', 
         function fileValidation(){
@@ -171,7 +171,7 @@ window.onload = () => {
                 }
             }
         })
-        
+
         $form.addEventListener('submit',function(event){
             let error = false;
             event.preventDefault()

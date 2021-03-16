@@ -4,32 +4,35 @@
 
   <body>
     <%- include('partials/header')%>
-     <div class="login">
+    <div class="login">
        
-       <form class="sesion" action="" method="POST">
-
-          <h2>Inicia sesion</h2>
-          <p>
-            <input type="email" placeholder="Email" name="email">
-            <span class="text-center"><%= (typeof errores != 'undefined' && errores.email)? errores.email.msg: "" %> </span>
-          </p>
-
-          <p>
-            <input type="password" placeholder="Contraseña" name="pass">
-            <span class="text-center"><%= (typeof errores != 'undefined' && errores.pass)? errores.pass.msg: "" %></span>
-          </p>
-
-          <span>
-            <input type="checkbox" name="recordar" id="recordar">
-            <label for="recordar">Recuerdame</label>
-          </span>
-          
-          <p>
-            <button class="button" type="submit">Entrar</button>
-          </p>
-          
+      <form class="sesion" action="" method="POST">
+        <h2 class="loginh2">Inicia sesion</h2>
         
-      <%- include('partials/footer') %>
+        <input type="email" placeholder="Email" name="email" class="login-credentials">
+        <span><%= (typeof errores != 'undefined' && errores.email)? errores.email.msg: "" %> </span>
+          
+
+          
+        <input type="password" placeholder="Contraseña" name="pass" class="login-credentials">
+        <span><%= (typeof errores != 'undefined' && errores.pass)? errores.pass.msg: "" %></span>
+          
+
+        <span>
+          <input class="checkbox" type="checkbox" name="recordar" id="recordar">
+          <label for="recordar">Recuerdame</label>
+        </span>
+          
+          
+        <button class="btn login-button" type="submit">Entrar</button>
+          
+          
+        <a href="/usuario/registro" class="help-login">¿Todavia no tiene una cuenta?</a>
+        <a href="" class="help-login">¿Olvidaste tu Contraseña?</a>
+      </form>
+    </div>
+
+    <%- include('partials/footer') %>
 
   </body>
 </html>

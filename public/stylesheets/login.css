@@ -1,6 +1,6 @@
 .login{
     background-image: url('../images/bg-tree.png');
-    background-position: 0% 39%; 
+    background-position: 0% 22%; 
     background-attachment: fixed;
     display: flex;
 }
@@ -33,7 +33,7 @@
     color: black;
 }
 
-#login-credentials{
+.login-credentials{
     font-size:15px;
     width:98%;
     padding: .7em;
@@ -46,7 +46,8 @@
 }
 
 #recordar {
-    width: 15%;
+    margin-left: 10px;
+    margin-right: 5px;
 }
 
 label.checkbox {
@@ -54,7 +55,7 @@ label.checkbox {
     align-items: center;
 }
 
-#help-login {
+.help-login {
     color: black;
     display: flex;  
     justify-content: center;
@@ -62,7 +63,8 @@ label.checkbox {
 
 .login-button {
     width: 50%;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     display: block;
     position: relative;
     left: 25%;
@@ -87,12 +89,13 @@ label.checkbox {
     box-shadow: 6px 8px 0 0 var(--black);
 }
 
-@media(min-width:426px){
-    
-}
 
 @media(min-width:768px){
-  #help-login {
-      margin-top: 30px;
+  .login {
+      background-position: 0% 31%;
   }
+}
+
+@media(min-width:1024px){
+    
 }
