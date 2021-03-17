@@ -33,9 +33,14 @@
     color: black;
 }
 
-img {
-    width: 100%;
-    height: auto;
+input[type="date"]:before {
+    content: attr(placeholder) !important;
+    color: black;
+    margin-right: 0.5em;
+}
+
+input[type="date"]:focus:before, input[type="date"]:valid:before {
+    content: "";
 }
 
 .photo-box {

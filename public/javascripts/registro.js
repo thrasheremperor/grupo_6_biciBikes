@@ -151,7 +151,6 @@ window.onload = () => {
         
         $file.addEventListener('change', 
         function fileValidation(){
-            console.log($file.value);
             let filePath = $file.value, //Capturo el valor del input
                 allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
                 if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
@@ -175,7 +174,7 @@ window.onload = () => {
         $form.addEventListener('submit',function(event){
             let error = false;
             event.preventDefault()
-            console.log($form.elements)
+
             let elementosForm = this.elements
             
             for (let index = 0; index < elementosForm.length-1; index++) {
