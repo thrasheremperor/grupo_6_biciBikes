@@ -60,6 +60,50 @@
   - dejar de procastinar 
   - dejar de ser confiado con el tiempo dado
   (comento que lo de dejar de procastinar, es mas para los primeros sprint, dado que en ellos tuvimos muchas dificulatades de todo tipo lastimasamente y los venimos arrastrado )
+  
+**Retrospectiva 4 **
+
+** Comenzar a hacer **
+- definir los sprint no finalizados ya
+- Profundizar mas por cuenta propia
+- 
+**Hacer mas**
+- Pedir mas ayuda y no quedarnos estancados en un tema
+- a ser mas organizados
+- Mayor comunicacion 
+
+**Hacer menos**
+- divagar en los detalles del proyecto
+
+**continuar haciendo **
+- aprendiendo temas nuevos
+- seguir actualizando el proyecto
+- continuar con el curso
+
+**dejar de hacer**
+- Modificaciones sin consultar con el equipo
+- olvidar completar actividad del playground
+
+**Retrospectiva 5**
+
+**comenzar a hacer**
+- realizar las validacion con JS front
+- Ayudar al equipo con los temas 
+- finiquitar el sprint 5
+
+**Hacer mas**
+- Estudiar mas
+- comunicar con el equipo inconvenientes a la hora de poder realizar una tarea 
+
+**Hacer menos**
+- procastinar tareas individuales de cada uno
+
+**continuar haciendo**
+- Manter la comunicacion con los compañeros
+- Dedicarle mas tiempo a base de datos
+
+**dejar de hacer**
+- tareas no tan urgentes 
 
   
 
