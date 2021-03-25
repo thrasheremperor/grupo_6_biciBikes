@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('partials/head')%>
+<%- include('../partials/head')%>
 
   <body>
-    <%- include('partials/header')%>
+    <%- include('../partials/header')%>
     <div class="login">
        
       <form class="sesion" action="" method="POST">
@@ -14,9 +14,13 @@
           
 
           
-        <input type="password" placeholder="Contraseña" name="pass" class="login-credentials">
-        <span><%= (typeof errores != 'undefined' && errores.pass)? errores.pass.msg: "" %></span>
+        <input type="password" placeholder="Contraseña" name="password" class="login-credentials">
+        <span><%= (typeof errores != 'undefined' && errores.password)? errores.password.msg: "" %></span>
           
+
+        //opcion para usuario normal y admin
+
+
 
         <span>
           <input class="checkbox" type="checkbox" name="recordar" id="recordar">
@@ -32,7 +36,7 @@
       </form>
     </div>
 
-    <%- include('partials/footer') %>
+    <%- include('../partials/footer') %>
 
   </body>
 </html>

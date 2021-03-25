@@ -3,19 +3,19 @@ const { getUsuario} = require('../data/users');
 const admins = getUsuario();
 
 module.exports = [
-    check('nombre')
+    check('name')
     .notEmpty()
     .withMessage('El nombre de usuario es requerido'),
 
-    check('apellido')
+    check('lastName')
     .notEmpty()
     .withMessage('El apellido de usuario es requerido'),
 
-    check('pass')
+    check('password')
     .notEmpty()
     .withMessage('La constraseña es requerida'),
 
-    check('pass')
+    check('password')
     .isLength({
         min:3,
         max:20

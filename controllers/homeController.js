@@ -20,7 +20,7 @@ module.exports = {
         })
     },
     carrito :(req, res) => {
-        res.render('carritoCompras', {
+        res.render('user/carritoCompras', {
             title: 'Carga de Producto'
         })
     },

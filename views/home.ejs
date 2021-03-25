@@ -35,14 +35,14 @@
               <section class="product-box hvr-box-shadow-outset">
                 <a href="/productos/detalle/<%- producto.id %>/<%- producto.section %>">
                   <figure class="product-box_image">
-                    <img src="/images/<%- producto.img %> " alt="bicicleta" class="img-fluid">
+                    <img src="/images/imgProduct/<%- producto.img %> " alt="bicicleta" class="img-fluid">
                   </figure>
                   <article class="product-box_data">
                     <h6><%- producto.name %> </h6>
-                    <h6><%- producto.marca %> </h6>
-                    <span>$<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
-                    <% if (producto.descuento != 0) { %>
-                      <span><%- producto.descuento %>% OFF </span>
+                    <h6><%- producto.make %> </h6>
+                    <span>$<%- (producto.price - producto.price * producto.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                    <% if (producto.discount != 0) { %>
+                      <span><%- producto.discount %>% OFF </span>
                     <% } %>
                     <i class="fas fa-truck"></i>
                   </article>
@@ -66,14 +66,14 @@
                 <section class="product-box hvr-box-shadow-outset">
                   <a href="/productos/detalle/<%- producto.id %>/<%- producto.section %>">
                     <figure class="product-box_image">
-                      <img src="/images/<%- producto.img %> " alt="bicicleta" class="img-fluid">
+                      <img src="/images/imgProduct/<%- producto.img %> " alt="bicicleta" class="img-fluid">
                     </figure>
                     <article class="product-box_data">
                       <h6><%- producto.name %> </h6>
-                      <h6><%- producto.marca %> </h6>
-                      <span>$<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
-                      <% if (producto.descuento != 0) { %>
-                        <span><%- producto.descuento %>% OFF </span>
+                      <h6><%- producto.make %> </h6>
+                      <span>$<%- (producto.price - producto.price * producto.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                      <% if (producto.discount != 0) { %>
+                        <span><%- producto.discount %>% OFF </span>
                       <% } %>
                       <i class="fas fa-truck"></i>
                     </article>
@@ -97,14 +97,14 @@
                 <section class="product-box hvr-box-shadow-outset">
                   <a href="/productos/detalle/<%- producto.id %>/<%- producto.section %>">
                     <figure class="product-box_image">
-                      <img src="/images/<%- producto.img %> " alt="bicicleta" class="img-fluid">
+                      <img src="/images/imgProduct/<%- producto.img %> " alt="bicicleta" class="img-fluid">
                     </figure>
                     <article class="product-box_data">
                       <h6><%- producto.name %> </h6>
-                      <h6><%- producto.marca %> </h6>
-                      <span>$<%- (producto.precio - producto.precio * producto.descuento / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
-                      <% if (producto.descuento != 0) { %>
-                        <span><%- producto.descuento %>% OFF </span>
+                      <h6><%- producto.make %> </h6>
+                      <span>$<%- (producto.price - producto.price * producto.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                      <% if (producto.discount != 0) { %>
+                        <span><%- producto.discount %>% OFF </span>
                       <% } %>
                      
                       <i class="fas fa-truck"></i>

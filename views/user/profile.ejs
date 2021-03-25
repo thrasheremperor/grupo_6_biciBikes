@@ -11,33 +11,33 @@
         <link rel="stylesheet" href="/stylesheets/styles.css">
     </head>
     <body class="cuerpo">
-        <%- include('partials/header')%>
+        <%- include('../partials/header')%>
         <div class="contenedor">
             <div class="row">
             <div class="register-wrapper">
                 <div class="register-form">
                     <form action="" method="POST" enctype="multipart/form-data">
                         <div class="pic">
-                            <img src="/public/images/users/Naruto.jpg">
+                            <img src="/public/images/imgUser/Naruto.jpg">
                         </div>
                         <div>
                             <!--ESPACIO PARA QUE SE ACOMODEN LAS COSAS-->
                         </div>
                         <p>
                             <label>Nombre</label>
-                            <input type="text" name="nombre">
+                            <input type="text" name="name">
                         </p>
                         <p>
                             <label>Apellido</label>
-                            <input type="text" name="apellido">
+                            <input type="text" name="lastName">
                         </p>
                         <p>
                             <label>Email</label>
-                            <input type="email" name="email" value="<%= (typeof old != 'undefined' && old.nombre) ? old.nombre : ""%>">
+                            <input type="email" name="email" value="<%= (typeof old != 'undefined' && old.email) ? old.email : ""%>">
                         </p>
                         <p>
                             <label>Contraseña</label>
-                            <input type="password" name="pass">
+                            <input type="password" name="password">
                         </p>
                         <p>                        
                         <button class="block mt-3" type="submit">
@@ -49,6 +49,6 @@
             </div>    
         </div>
     </div>
-        <%- include('partials/footer') %>
+        <%- include('../partials/footer') %>
     </body>
 </html>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head.ejs')%>
+  <%- include('../partials/head.ejs')%>
 <body class="admin">
-  <%- include('partials/header.ejs') %> 
+  <%- include('../partials/header.ejs') %> 
     <div class="container cargaProducto">
       <form action="/admin/editado/<%= producto.id %>?_method=PUT" method="POST">
         <h2>Editar Producto</h3>
@@ -16,13 +16,13 @@
         <div class="row">
           <div class="col-10">
             <label for="modelo">Marca</label>
-            <input type="text" class="form-control" name="marca" value="<%= producto.marca %>">
+            <input type="text" class="form-control" name="make" value="<%= producto.make %>">
           </div>
         </div>  
         <div class="row">
           <div class="col-10">
             <label for="precio">Precio de Producto</label>
-            <input type="number" class="form-control" name="precio" value="<%= producto.precio %>">
+            <input type="number" class="form-control" name="price" value="<%= producto.price %>">
           </div>
         </div>
         <div class="row">
@@ -32,15 +32,7 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-10">
-           <p><label for="">Envio</label></p> 
-           <label for="">Retiro personal</label>
-           <input class="" type="checkbox" name="envio" value="<%= producto.envio %>">
-           <label for="">Envio por Correo</label> 
-           <input class="" type="checkbox" name="envio1" value="<%= producto.envio1 %>">
-          </div>
-        </div>
+
         <div class="row">
           <div class="col-10">
             <label name="imgagen">Imagen de Producto</label>
@@ -54,6 +46,6 @@
         
       </form>
     </div>
-  <%- include('partials/footer.ejs')%> 
+  <%- include('../partials/footer.ejs')%> 
 </body>
 </html>

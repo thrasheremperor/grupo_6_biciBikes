@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('partials/head')%>
+<%- include('../partials/head')%>
 
   <body>
-    <%- include('partials/header')%>
+    <%- include('../partials/header')%>
 
       <main>
         <div class="container products-wrapper">
@@ -16,25 +16,21 @@
             <% dataBicis.forEach(producto => { %>
               <div class="a col-11 col-md-6 col-lg-3">
                 <section class="product-box">
-
-                   <img src="/images/<%-producto.img %>" alt="bicicleta" class="img-fluid">
+                   <img src="/images/imgProduct/<%-producto.img %>" alt="bicicleta" class="img-fluid">
               
                   <article>
-                    <h3>$<%- producto.precio%></h3>
-                    <span>Envio<%- ' ' + producto.envio%></span>
+                    <h3>$<%- producto.price%></h3>
+                    
                     <i class="fas fa-truck"></i>
                   </article>
-
                   <div class="detalle">
-                    <p><%-producto.name + ' ' + producto.marca%></p>
+                    <p><%-producto.name + ' ' + producto.make%></p>
                   </div>
-
                 </section>
-
                <div class="product-box">
                 <div class="m-2 justify-content-around">
                   <a href="/admin/editar/<%= producto.id %>" class="btn btn-sm btn-success"><i class= "fas fa-edit"></i></a>
-                  <form action="/admin/eliminar/<%= producto.id %>?_method=DELETE " method="POST">
+                  <form action="/admin/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
                     <button class="btn btn-sm btn-danger" type="submit"><i class="fas fa-trash-alt"></i></button>
                   </form>
                 </div>
@@ -48,7 +44,7 @@
      
         
       </main>
-      <%- include('partials/footer') %>
+      <%- include('../partials/footer') %>
 
   </body>
   </html>

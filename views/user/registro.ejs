@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('partials/head')%>
+<%- include('../partials/head')%>
 
 <body class="cuerpo">
-    <%- include('partials/header')%>
+    <%- include('../partials/header')%>
    
     <div class="contenedor">
         <div class="form-registro">
-            <form id="form" class="sesion-registro" action="/data/users" method="POST" enctype="multipart/form-data">
+
+            <form id="form" class="sesion-registro" action="" method="POST" enctype="multipart/form-data">
                 <h1 class="registro h1 mt-2">Registro</h1>
+
                 <input id="name" class="form-control mt-5 form-datos" name="name" type="text" placeholder="Nombre">
                 <span class="error" id="nameError"></span>
-                <input id="lastname" class="form-control mt-5 form-datos" name="last name" type="text" placeholder="Apellido">
+                <span><%=(typeof errores != 'undefined' && errores.name)? errores.name.msg: "" %></span>
+
+                <input id="lastname" class="form-control mt-5 form-datos" name="lastName" type="text" placeholder="Apellido">
                 <span id="lastNameError"></span>
+                <span><%=(typeof errores != 'undefined' && errores.lastName)? errores.lastName.msg: "" %></span>
+
                 <input id="email" class="form-control mt-5 form-datos" name="email" type="email" placeholder="Email">
                 <span id="emailError"></span>
+                <span><%=(typeof errores != 'undefined' && errores.email)? errores.email.msg: "" %></span>
+
                 <input id="password" class="form-control mt-5 form-datos" name="password" type="password" placeholder="Contraseña">
                 <span id="passwordError"></span>
+                <span><%=(typeof errores != 'undefined' && errores.password)? errores.password.msg: "" %></span>
+
                 <input id="password2" class="form-control mt-5 form-datos" name="password2" type="password" placeholder="Repetir Contraseña">
                 <span id="passwordError2"></span>
+                <span><%=(typeof errores != 'undefined' && errores.password2)? errores.password2.msg: "" %></span>
+
                 <input id="date" class="form-control mt-5 form-datos" name="date" type="date" placeholder="Fec. Nac. - ">
                 <span id="dateError"></span>
+                <span><%=(typeof errores != 'undefined' && errores.date)? errores.date.msg: "" %></span>
+
                 <div class="mt-5">
                     <div class="img-container" id="img-preview"></div>
-                    <input class="form-control photo-box mt-3 img-thumbnail" type="file" id="formFile">
+                    <input class="form-control photo-box mt-3 img-thumbnail" type="file" id="formFile" name="foto">
                     <span id="fileErrors"></span>
                 </div>
+
                 <div class="form-check mt-5">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
@@ -33,6 +48,7 @@
                     </label>
                     <div id="termsErrors"></div>
                 </div>
+                
                 <div>
                     <button class="btn btn-registro hvr-box-shadow-outset" type="submit">Send</button>
                 </div>
@@ -43,7 +59,7 @@
 
     
 
-    <%- include('partials/footer') %>
+    <%- include('../partials/footer') %>
     <script src="/javascripts/registro.js"></script>
     <script src="http://momentjs.com/downloads/moment.min.js"></script>
 </body>

@@ -6,6 +6,6 @@ module.exports = [
 check('email')
 .isEmail().withMessage('campo requerido'),
 
-check('pass')
+check('password')
 .notEmpty().withMessage('campo requerido')
 ]

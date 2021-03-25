@@ -9,7 +9,7 @@
     <section class="detalle">
       <div class="row">
         <div class="col-12">
-          <h2 class="titulo-detalle"><%- producto.name %> <%- producto.marca %></h2>
+          <h2 class="titulo-detalle"><%- producto.name %> <%- producto.make %></h2>
 
         </div>
         <div class="col-12 paraBorder">
@@ -17,14 +17,14 @@
             <div class="row box">
               <div class="col-12 col-lg-7 imgProducto">
                 <figure class="text-center">
-                  <img src="/images/<%-producto.img%>" alt="bicicleta" class="img-fluid">
+                  <img src="/images/imgProduct/<%-producto.img%>" alt="bicicleta" class="img-fluid">
                 </figure>
                 <hr id="hr">
               </div>
               <div class="col-12 col-lg-4 text-center auto">
-                <h3 class="sub-titulo"><%- producto.name + ' ' + producto.marca %></h3>
-                <p class="modelo">Modelo:<%-' ' + producto.modelo%></p>
-                <h3 class="precio">$<%-producto.precio%><span class="descuento"><%= '  ' + producto.descuento%>%OFF</span></h3>
+                <h3 class="sub-titulo"><%- producto.name + ' ' + producto.make %></h3>
+                <p class="modelo">Modelo:<%-' ' + producto.model%></p>
+                <h3 class="precio">$<%-producto.price%><span class="descuento"><%= '  ' + producto.discount%>%OFF</span></h3>
                 <i class="fas fa-truck"></i>
                 <div class="form-control-color-picker mb-4" tabindex="0">
                   <div class="form-control-color-picker-value"></div>

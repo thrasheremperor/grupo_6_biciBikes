@@ -5,7 +5,7 @@ const path = require('path');
 
 module.exports = {
     cargar :(req, res) => {
-        res.render('formCarga', { /*aqui se puede visualizar un formulario de carga de un nuevo producto */
+        res.render('admin/formCarga', { /*aqui se puede visualizar un formulario de carga de un nuevo producto */
             title: 'Cargar producto'
         }) /*renderiso  la vista de formCarga.ejs */
     },
@@ -19,15 +19,13 @@ module.exports = {
             }
             
         });
-        const {name,marca,precio,description,envio,envio1,img} = req.body; 
+        const {name,make,price,description,img} = req.body; 
         const producto = {
             id:lastID +1,
             name,
-            marca,
-            precio,
-            description,
-            envio,
-            envio1,
+            make,
+            price,
+            description, 
             img : req.files[0].filename
         }
 
@@ -38,30 +36,34 @@ module.exports = {
     },
     
     creado:(req,res) =>{
-         res.render('productsList',{ /*aqui se puede visualizar los productos publicados con sus opciones */
+         res.render('admin/productsList',{ /*aqui se puede visualizar los productos publicados con sus opciones */
             title:'Carga realizada',
             dataBicis
         })
     },
     editar:(req,res)=>{  /*la opcion de edicion en producto se envuentra en la vista productEditado */
         const producto = dataBicis.find(producto => producto.id === +req.params.id)
-        res.render('productsEditado',{
+        res.render('admin/productsEditado',{
             title: 'Editar producto',
             producto
         })
     },   
     editado:(req,res)=>{ /*aqui se puede visualizar los productos ya editados */
-        const {name,marca,precio,description,envio,envio1,img} = req.body;
+        let id = req.params.id
+        const {name,make,price,description,img} = req.body;
         dataBicis.forEach(producto =>{
             if(producto.id === +req.params.id){
                 producto.id = Number(req.params.id);
                 producto.name = name;
-                producto.marca = marca;
-                producto.precio = precio;
-                producto.description = description;
-                producto.envio = envio;
-                producto.envio1 = envio1;
-                producto.img = img(req.files[0].filename)
+                producto.make = make;
+                producto.price = price;
+                producto.description = description;                             
+                if(req.files[0]){
+                    if(fs.existsSync(path.join('public', 'images','imgProduct',producto.img))){
+                        fs.unlinkSync(path.join('public','images','imgProduct',producto.img))
+                        producto.img = req.files[0].filename
+                    }
+                }
             }
         });
         fs.writeFileSync('./data/bicis.json', JSON.stringify(dataBicis),'utf-8');
@@ -71,15 +73,15 @@ module.exports = {
         dataBicis.forEach(producto =>{
             if(producto.id === Number(req.params.id)){ /*  si el producto seleccionado esta*/
                
-                if(fs.existsSync(path.join('public', 'images',producto.img))){
-                    fs.unlinkSync(path.join('public','images',producto.img))
+                if(fs.existsSync(path.join('public', 'images','imgProduct',producto.img))){
+                    fs.unlinkSync(path.join('public','images','imgProduct',producto.img))
                 }
                
                 let borrar = dataBicis.indexOf(producto); /*este lo cuarga en nuestra variable */
                 dataBicis.splice(borrar,1) /*para luego borrar el elemento seleccionado */
             }
         });
-        fs.writeFileSync('./data/bicis.json', JSON.stringify(dataBicis,null,2),'utf-8');
+        fs.writeFileSync('./data/bicis.json',JSON.stringify(dataBicis,null,2),'utf-8');
         res.redirect('/admin/list') /*recarga los datos con los elementos actualizados */
     }
 }
