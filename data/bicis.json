@@ -112,14 +112,6 @@
     "img": "biciEjemplo1.png"
   },
   {
-    "id": 11,
-    "name": "pato",
-    "make": "patin",
-    "price": "2000",
-    "description": "pavo",
-    "img": "biciCanasto.jpg"
-  },
-  {
     "id": 13,
     "name": "bici",
     "make": "wetheppeople",
@@ -254,5 +246,13 @@
     "price": "10000",
     "description": "bicis",
     "img": "otraBike.png"
+  },
+  {
+    "id": 25,
+    "name": "maria",
+    "make": "isabel",
+    "price": "54321",
+    "description": "hola de nuevo estamos de prueba la nuva ruta sirve o no",
+    "img": "img-1616699870353.jpg"
   }
 ]

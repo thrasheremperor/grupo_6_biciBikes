@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Maria",
+    "password": "$2b$10$Xv8ur3ipwu4BoUIU2WN0C.9q/VVjGNDDRibxR7zmNJnb/8Ak2kWqi",
+    "password2": "$2b$10$W08Ygfstok4X47.czYjCAOu4vQlm2rL.5p6i4UUMV08b7xMdOLtiq",
+    "lastName": "Báez Rodríguez",
+    "email": "maria@gmail.com",
+    "foto": "foto-1616698744577.jpg",
+    "date": "1998-10-08"
+  }
+]

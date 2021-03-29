@@ -57,13 +57,8 @@ module.exports = {
                 producto.name = name;
                 producto.make = make;
                 producto.price = price;
-                producto.description = description;                             
-                if(req.files[0]){
-                    if(fs.existsSync(path.join('public', 'images','imgProduct',producto.img))){
-                        fs.unlinkSync(path.join('public','images','imgProduct',producto.img))
-                        producto.img = req.files[0].filename
-                    }
-                }
+                producto.description = description; 
+                producto.img = (req.files[0])?req.files[0].filename : producto.img                            
             }
         });
         fs.writeFileSync('./data/bicis.json', JSON.stringify(dataBicis),'utf-8');

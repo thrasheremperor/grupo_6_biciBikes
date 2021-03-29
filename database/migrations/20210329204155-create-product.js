@@ -9,40 +9,31 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
       },
-      make: {
-        type: Sequelize.STRING,
-        allowNull: false
+      makeId: {
+        type: Sequelize.INTEGER
       },
-      model: {
-        type: Sequelize.STRING,
-        allowNull: false
+      modelId: {
+        type: Sequelize.INTEGER
       },
-      color: {
-        type: Sequelize.STRING,
-        allowNull: false
+      colorId: {
+        type: Sequelize.INTEGER
       },
       price: {
-        type: Sequelize.DECIMAL,
-        allowNull: false
+        type: Sequelize.DECIMAL
       },
       description: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: Sequelize.STRING
       },
-      discount: {
+      discountId: {
         type: Sequelize.INTEGER
       },
       categoryId: {
-        type: Sequelize.INTEGER,
-        reference: {
-          model: {
-            tablename: 'Categories'
-          }
-        },
-        key : 'id'
+        type: Sequelize.INTEGER
+      },
+      imageId: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

@@ -142,7 +142,7 @@ module.exports  =  {
                 userJson.splice(eliminar,1)
             }
         });
-        fs.writeFileSync('./data/users.json',JSON.stringify(userJson,null,2),'utf-8');
+        fs.writeFileSync('./data/users.json',JSON.stringify(userJson),'utf-8');
         res.redirect('/')
     }
 }
