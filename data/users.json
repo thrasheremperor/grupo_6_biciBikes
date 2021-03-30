@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Ezequiel ",
+    "password": "$2b$10$qKnUec0mqkkV1CDHz7eNru65ZIGGTkt8djLRhXcQxc0oi1K4rfYC2",
+    "password2": "$2b$10$Q1zhwuYq2EJl.RXAxJWyV.zZvOeVm3VMMXGlA2OOXeyoWUdvDEou6",
+    "lastName": "Arias",
+    "email": "Ezequiel_arT12@outlook.com",
+    "foto": "foto-1616962682508.jpg",
+    "date": "2001-03-27"
+  }
+]
