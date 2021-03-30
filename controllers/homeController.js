@@ -3,20 +3,20 @@ const db = require('../database/models');
 const {Op} = require('sequelize')
 module.exports = {
     index : (req, res) => {
-        /*let productsVisited = Products.filter(producto =>{
+        let productsVisited = db.Products.filter(producto =>{
             return producto.section == 'visited'
         })
-        let productsNow = Products.filter(producto=>{
+        let productsNow = db.Products.filter(producto=>{
             return producto.section == 'now'
         })
-        let productsPopular = Products.filter(producto=>{
+        let productsPopular = db.Products.filter(producto=>{
             return producto.section == 'popular'
-        })*/
+        })
         res.render('home', {
             title : "Bici Bikes",
-            /*productsVisited,
+            productsVisited,
             productsNow,
-            productsPopular*/
+            productsPopular
         })
     },
     carrito :(req, res) => {
