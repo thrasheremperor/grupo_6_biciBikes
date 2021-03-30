@@ -27,6 +27,6 @@ check('discount')
 check('category')
 .notEmpty().withMessage('campo requerido'),
 
-check('img')
+check('image')
 .notEmpty().withMessage('campo requerido'),
 ]

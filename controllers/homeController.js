@@ -1,22 +1,22 @@
-const dataBicis = require('../data/bicis');
 const fs = require('fs');
-
+const db = require('../database/models');
+const {Op} = require('sequelize')
 module.exports = {
     index : (req, res) => {
-        let productsVisited = dataBicis.filter(producto =>{
+        /*let productsVisited = Products.filter(producto =>{
             return producto.section == 'visited'
         })
-        let productsNow = dataBicis.filter(producto=>{
+        let productsNow = Products.filter(producto=>{
             return producto.section == 'now'
         })
-        let productsPopular = dataBicis.filter(producto=>{
+        let productsPopular = Products.filter(producto=>{
             return producto.section == 'popular'
-        })
+        })*/
         res.render('home', {
             title : "Bici Bikes",
-            productsVisited,
+            /*productsVisited,
             productsNow,
-            productsPopular
+            productsPopular*/
         })
     },
     carrito :(req, res) => {
@@ -25,19 +25,25 @@ module.exports = {
         })
     },
     productosFull: (req,res)=>{
-        res.render('products',{
-            title: 'Todos los Productos',
-            dataBicis
+        db.Products.findAll()
+        .then(productos => {
+            res.render('products',{
+                title: 'Todos los Productos',
+                productos
+            })
         })
     },
     search: (req, res) => { /*buscador siempre va por get */
-        const resultado = dataBicis.filter(producto => {
-            return producto.name.includes(req.query.buscador) || producto.marca.includes(req.query.buscador) || producto.modelo.includes(req.query.buscador)
+        db.Products.findAll({
+            where : {
+                title: req.query.buscador
+            }
         })
-        res.send(resultado)
-        res.render('home',{
-            title: 'Resultado de Busqueda',
-            dataBicis: resultado   
+        .then( productos => {
+            return res.render('SearchResult',{
+                productos
+            })
         })
+        .catch(error => res.send(error))
     }
 }

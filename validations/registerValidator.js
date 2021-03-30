@@ -1,6 +1,7 @@
 const {check, validationResult, body} = require('express-validator');
-const { getUsuario} = require('../data/users');
-const admins = getUsuario();
+/*const { getUsuario} = require('../data/users');
+const admins = getUsuario();*/
+const db = require('../database/models');
 
 module.exports = [
     check('name')
@@ -22,17 +23,32 @@ module.exports = [
         })
     .withMessage('La contraseña debe tener entre 3 y 20 caracteres'),
 
-    body('email').custom(value => {
-        let result = admins.find(admin => admin.email === value);
+    check('password2').custom((value,{req})=> value !== req.body.password ? false : true)
+    .withMessage('las contraseñas no coinciden'),
 
+    check('birthday')
+    .notEmpty()
+    .withMessage('se require ser mayor de 13 años'),
+    
+    check('condicion')
+    .isString('on')
+    .withMessage('debe aceptar las condiciones'),
+
+    body('email').custom(value => {
+        /*let result = admins.find(admin => admin.email === value);
         if(result){
             return false
         }else {
             return true
-        }
-    }).withMessage('El usuario ya está registrado!')
+        }*/
+        return db.Users.findOne({
+            where:{
+                email: value
+            }
+        })
+        .then(user =>{
+            return Promise.reject('este email ya esta registrado')
+        })
+    })
     
     ]
-
-
-//aca tiene que ir tus validaciones

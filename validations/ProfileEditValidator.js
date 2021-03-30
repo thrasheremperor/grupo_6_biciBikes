@@ -12,10 +12,10 @@ check('lastName')
 check('email')
 .isEmail().withMessage('campo requerido'),
 
-check('date')
+check('birthday')
 .notEmpty().withMessage('campo requerido'),
 
-check('foto')
+check('avatar')
 .notEmpty().withMessage('campo requerido'),
 
 ]

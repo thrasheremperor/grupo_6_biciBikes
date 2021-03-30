@@ -1,4 +1,4 @@
- 'use strict';
+'use strict';
 const {
   Model
 } = require('sequelize');
@@ -11,23 +11,36 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Product.belongsTo(models.Category,{
-        as : 'category'
-      }),
+      Product.belongsTo(models.category,{ //producto pertenece a una categoria
+        as: 'product_category'
+      })
       Product.hasMany(models.image,{
-        as : 'images'
+        as: 'product_image'
+      })
+      Product.belongsTo(models.make,{
+        as: 'producto_make'
+      })
+      Product.belongsTo(models.model,{
+        as: 'product_model'
+      })
+      Product.belongsToMany(models.User,{
+        as : 'productSelec',
+        through : 'shopping',
+        foreignKey : 'productId',
+        otherKey: 'userId'
       })
     }
   };
   Product.init({
     name: DataTypes.STRING,
-    make: DataTypes.STRING,
-    model: DataTypes.STRING,
-    color: DataTypes.STRING,
+    makeId: DataTypes.INTEGER,
+    modelId: DataTypes.INTEGER,
+    colorId: DataTypes.INTEGER,
     price: DataTypes.DECIMAL,
     description: DataTypes.STRING,
-    discount: DataTypes.INTEGER,
-    categoryId: DataTypes.INTEGER
+    discountId: DataTypes.INTEGER,
+    categoryId: DataTypes.INTEGER,
+    imageId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Product',
