@@ -9,16 +9,35 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       makeId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model :{
+            tablaName: 'makes'
+          },
+          key: 'id'
+        }
       },
       modelId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model :{
+            tablaName: 'models'
+          },
+          key: 'id'
+        }
       },
       colorId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model :{
+            tablaName: 'colors'
+          },
+          key: 'id'
+        }
       },
       price: {
         type: Sequelize.DECIMAL
@@ -27,13 +46,31 @@ module.exports = {
         type: Sequelize.STRING
       },
       discountId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model :{
+            tablaName: 'discounts'
+          },
+          key: 'id'
+        }
       },
       categoryId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model :{
+            tablaName: 'categories'
+          },
+          key: 'id'
+        }
       },
       imageId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references : {
+          model :{
+            tablaName: 'images'
+          },
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

@@ -1,11 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
-const {check , validationResult, body}= require('express-validator');
+const {validationResult}= require('express-validator');
 
-const {getUsuario, setUsuario} = require(path.join('..','data','users'));
+//const {getUsuario, setUsuario} = require(path.join('..','data','users'));
 
-const userJson = getUsuario(); /*user.json parseador  */
+//const userJson = getUsuario(); /*user.json parseador  */
+const db = require('../database/models');
 
 module.exports  =  {
     login : ( req ,  res )  =>{
@@ -25,38 +26,25 @@ module.exports  =  {
         if(!errores.isEmpty()){
             return res.render('user/registro',{
                 title : 'register',
-                errores : errores.mapped()
+                errores : errores.mapped(),
+                
             })
         }else{
             
-        const {name, lastName, password,password2, email,date ,foto} = req.body;
+        const {name, lastName, password,password2, email,birthday ,avatar} = req.body;
 
-        let lastID = 0;
-        userJson.forEach(user => {
-            if(user.id > lastID){
-                lastID = user.id
-            }
-        });
-
-        let passHash = bcrypt.hashSync(password.trim(),10);
-        let passHash2 = bcrypt.hashSync(password2.trim(),10);
-
-        const newUser = {
-            id : Number(lastID +1),
+         db.Users.create({
             name,
-            password: passHash,
-            password2 : passHash2,
-            lastName,
+            lastName,       
             email,
-            foto : req.files[0].filename,
-            date
+            password : bcrypt.hashSync(password,10),
+            password2 : bcrypt.hashSync(password2,10),   
+            avatar : (req.files[0]) ? req.files[0].filename : 
+            birthday
             
-        }
-      
-        userJson.push(newUser);
-
-        setUsuario(userJson);
-        res.redirect('/usuario/login')
+        })
+        .then(()=> res.redirect('/usuario/login'))
+        .catch(error => res.send(error))
         }
 
     },
@@ -67,62 +55,65 @@ module.exports  =  {
         if(!errores.isEmpty()){
             return res.render('user/login',{
                 title:"Log in",   
-                errores : errores.mapped()
+                errores : errores.mapped(),
+               
                
             })
         }else{
             /*aqui pido los datos password y email para comprar con los ya registrados */
             const {password, email , recordar} = req.body;
 
-            let result = userJson.find(user => user.email.toLowerCase() === email.toLowerCase().trim());
-
-            /*y en caso de que los datos coincidan este re redirecciona en home ya teniendo acceso a todas las paginas*/
-            if(result){
-
-                if(bcrypt.compareSync(password.trim(), result.password)){
-                   /*necesito de la vista y ruta perfil para que todo funcione 
-                   se aclara que la compracion de datos funciona */ 
-                                  
-                   req.session.userPerfil = {
-                       id: result.id,
-                       foto :result.foto,
-                       name : result.name,
-                       lastName : result.lastName,
-                       email : result.email,
-                       date:result.date
-                   }
-
-                   if(recordar){
-                       res.cookie('biciBikes', req.session.userPerfil,{
-                           maxAge: 1000*60
-                       })
-                   }
-                   
-                   return res.redirect('/usuario/miPerfil')
-                  
+            db.Users.getOne({
+                where:{
+                    email : email
                 }
-                                
+            })
+            .then( user => {
+                if(user && bcrypt.compareSync(password.trim(), user.password)){
+
+                    req.session.userPerfil = {
+                        id: user.id,
+                        avatar :user.avatar,
+                        name : user.name,
+                        lastName : user.lastName,
+                        email : user.email,
+                        birthday:user.birthday
+                    }
+
+                    if(recordar){
+                        res.cookie('biciBikes', req.session.userPerfil,{
+                            maxAge: 1000*60*60
+                        });
+                    }
+                                       
+                    return res.redirect('/usuario/miPerfil');
+
+                }else{
+                    return res.render('user/login',{
+                        title: "log in",
+                        errores :{
+                            invalid :{
+                                msg : "datos invalidos!"
+                            }
+                        }
+                    })
                 }
-
-                return res.render('user/login',{
-                    title: "log in",
-                    errores:[{
-                        msg: "datos invalidos!"
-                    }]
-                    
-                })
-            }
-
-    },
+            }).catch(error => console.log(error))
+        }},
+            
     perfil : (req,res)=>{
 
-        let datoUser = userJson.find( perfil => perfil.id === req.params.id);
+        //let datoUser = db.Usuarios.find( perfil => perfil.id === req.params.id);
 
         res.render( 'user/perfil',{
             title: "Mi perfil",
-            datoUser
+          //  datoUser
         })
     },
+
+        //edit perfil 
+
+
     cerrar : (req,res)=>{
         req.session.destroy();
         if(req.cookies.biciBikes){
@@ -132,17 +123,6 @@ module.exports  =  {
         }
         res.redirect('/')
     },
-    eliminar  : (req,res)=>{
-        userJson.forEach(user =>{
-            if(user.id === Number(req.params.id)){
-                if(fs.existsSync(path.join('public','images','imgUser', user.foto))){
-                    fs.unlinkSync(path.join('public','images','imgUser', user.foto))
-                }
-                var eliminar = userJson.indeOf(user);
-                userJson.splice(eliminar,1)
-            }
-        });
-        fs.writeFileSync('./data/users.json',JSON.stringify(userJson),'utf-8');
-        res.redirect('/')
-    }
+
+
 }

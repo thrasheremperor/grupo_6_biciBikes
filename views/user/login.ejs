@@ -6,16 +6,16 @@
     <%- include('../partials/header')%>
     <div class="login">
        
-      <form class="sesion" action="" method="POST">
+      <form class="sesion" method="POST">
         <h2 class="loginh2">Inicia sesion</h2>
         
         <input type="email" placeholder="Email" name="email" class="login-credentials">
-        <span><%= (typeof errores != 'undefined' && errores.email)? errores.email.msg: "" %> </span>
+        <span><%= (typeof errores != 'undefined' && errores.email ? errores.email.msg: null) %> </span>
           
 
           
         <input type="password" placeholder="Contraseña" name="password" class="login-credentials">
-        <span><%= (typeof errores != 'undefined' && errores.password)? errores.password.msg: "" %></span>
+        <span><%= (typeof errores != 'undefined' && errores.password ? errores.password.msg: null) %></span>
           
 
         //opcion para usuario normal y admin

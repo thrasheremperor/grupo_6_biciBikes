@@ -1,13 +1,14 @@
-const dataBicis = require('../data/bicis');
+//const dataBicis = require('../data/bicis');
+const db = require('../database/models');
 
 module.exports = {
     detalle :(req, res) => {
-        let producto = dataBicis.find(producto =>{ 
-            return producto.id === Number(req.params.id) && producto.section === req.params.section  /*esto debe ir en el home de los productos */
-        })
-        res.render('detalleProducto',{ /*renderiso la vista de detalleProducto.ejs */
-            title: 'Detalle de Producto',
-            producto
+
+        db.Productos.findByPk(req.params.id)
+        .then(producto =>{
+            return res.render('detalleProducto',{
+                producto
+            })
         })
     }
 }

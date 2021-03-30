@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const {login, registro, processRegistro, processLogin , perfil, eliminar, cerrar} = require('../controllers/usuarioController');
+const {login, registro, processRegistro, processLogin , perfil,/* eliminar,*/ cerrar} = require('../controllers/usuarioController');
 const userCheck = require ('../middleware/userCheck');
 
 /*VALIDACIONES */
 const registerValidator = require('../validations/registerValidator');
 const loginValidator = require('../validations/loginValidator');
-const ProfileEditValidator = require('../validations/ProfileEditValidator');
+//const ProfileEditValidator = require('../validations/ProfileEditValidator');
 
 const upload = require('../middleware/subidaDeImagen');
 
@@ -25,6 +25,6 @@ router.get('/miPerfil', userCheck,perfil);
 
 router.get('/cerrarSesion', cerrar);
 
-router.delete('/eliminarUsuario/:id', eliminar);
+//router.delete('/eliminarUsuario/:id', eliminar);
   
 module.exports = router;

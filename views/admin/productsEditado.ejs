@@ -11,24 +11,28 @@
           <div class="col-10">
             <label for="name">Nombre</label>
             <input type="text" class="form-control" name="name" value="<%= producto.name %>">
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
           </div>
         </div>
         <div class="row">
           <div class="col-10">
             <label for="modelo">Marca</label>
             <input type="text" class="form-control" name="make" value="<%= producto.make %>">
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
           </div>
         </div>  
         <div class="row">
           <div class="col-10">
             <label for="precio">Precio de Producto</label>
             <input type="number" class="form-control" name="price" value="<%= producto.price %>">
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
           </div>
         </div>
         <div class="row">
           <div class="col-10">
             <label for="description">Descripcion</label>
             <input type="text" class="form-control" name="description" value="<%= producto.description %>">
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
           </div>
         </div>
 
@@ -37,6 +41,7 @@
           <div class="col-10">
             <label name="imgagen">Imagen de Producto</label>
             <input type="file" class="form-control" name="img" value="<%= producto.img %>">
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
           </div>
         </div>
         <br>

@@ -8,41 +8,41 @@
     <div class="contenedor">
         <div class="form-registro">
 
-            <form id="form" class="sesion-registro" action="" method="POST" enctype="multipart/form-data">
+            <form id="form" class="sesion-registro" method="POST" enctype="multipart/form-data">
                 <h1 class="registro h1 mt-2">Registro</h1>
 
                 <input id="name" class="form-control mt-5 form-datos" name="name" type="text" placeholder="Nombre">
                 <span class="error" id="nameError"></span>
-                <span><%=(typeof errores != 'undefined' && errores.name)? errores.name.msg: "" %></span>
+                <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
 
                 <input id="lastname" class="form-control mt-5 form-datos" name="lastName" type="text" placeholder="Apellido">
                 <span id="lastNameError"></span>
-                <span><%=(typeof errores != 'undefined' && errores.lastName)? errores.lastName.msg: "" %></span>
+                <span class="text-danger"><%=(typeof errores != 'undefined' && errores.lastName ? errores.lastName.msg: null ) %></span>
 
                 <input id="email" class="form-control mt-5 form-datos" name="email" type="email" placeholder="Email">
                 <span id="emailError"></span>
-                <span><%=(typeof errores != 'undefined' && errores.email)? errores.email.msg: "" %></span>
+                <span class="text-danger"><%=(typeof errores != 'undefined' && errores.email ? errores.email.msg: null ) %></span>
 
                 <input id="password" class="form-control mt-5 form-datos" name="password" type="password" placeholder="Contraseña">
                 <span id="passwordError"></span>
-                <span><%=(typeof errores != 'undefined' && errores.password)? errores.password.msg: "" %></span>
+                <span class="text-danger"><%=(typeof errores != 'undefined' && errores.password ? errores.password.msg: null ) %></span>
 
                 <input id="password2" class="form-control mt-5 form-datos" name="password2" type="password" placeholder="Repetir Contraseña">
                 <span id="passwordError2"></span>
-                <span><%=(typeof errores != 'undefined' && errores.password2)? errores.password2.msg: "" %></span>
+                <span class="text-danger"><%=(typeof errores != 'undefined' && errores.password2 ? errores.password2.msg: null ) %></span>
 
-                <input id="date" class="form-control mt-5 form-datos" name="date" type="date" placeholder="Fec. Nac. - ">
+                <input id="date" class="form-control mt-5 form-datos" name="birthday" type="date" placeholder="Fec. Nac. - ">
                 <span id="dateError"></span>
-                <span><%=(typeof errores != 'undefined' && errores.date)? errores.date.msg: "" %></span>
+                <span class="text-danger"><%=(typeof errores != 'undefined' && errores.birthday ? errores.birthday.msg: null ) %></span>
 
                 <div class="mt-5">
                     <div class="img-container" id="img-preview"></div>
-                    <input class="form-control photo-box mt-3 img-thumbnail" type="file" id="formFile" name="foto">
+                    <input class="form-control photo-box mt-3 img-thumbnail" type="file" id="formFile" name="avatar">
                     <span id="fileErrors"></span>
                 </div>
 
                 <div class="form-check mt-5">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" value=null id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                       Acepto los términos y condiciones
                     </label>

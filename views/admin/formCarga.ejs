@@ -11,24 +11,28 @@
           <div class="col-10">
             <label for="name">Nombre</label>
             <input type="text" name="name">
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
           </div>
         </div>
         <div class="row">
           <div class="col-10">
             <label for="modelo">Marca</label>
             <input type="text"  name="make">
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
           </div>
         </div>  
         <div class="row">
           <div class="col-10">
             <label for="precio">Precio de Producto</label>
             <input type="number"  name="price">
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
           </div>
         </div>
         <div class="row">
           <div class="col-10">
             <label for="description">Descripcion</label>
             <input type="text" name="description">
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
           </div>
         </div>
 
@@ -36,6 +40,7 @@
           <div class="col-10">
             <label name="imgagen">Imagen de Producto</label>
             <input class="form-control form-control-lg" id="formFileLg" type="file"  name="img">
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
           </div>
         </div>
         <br>
