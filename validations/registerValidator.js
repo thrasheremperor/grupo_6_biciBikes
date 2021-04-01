@@ -48,10 +48,13 @@ module.exports = [
         })
         .then(user =>{
             if(user){
+<<<<<<< HEAD
                 return Promise.reject('este email ya esta registrado')
             }
             
+=======
+                return Promise.reject('este email ya esta registrado')}           
+>>>>>>> 90e7a73917b840adb4b626f32c9da705ac0204a5
         })
     })
-    
     ]

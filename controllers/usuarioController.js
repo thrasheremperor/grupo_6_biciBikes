@@ -39,12 +39,12 @@ module.exports  =  {
             email,
             password : bcrypt.hashSync(password,10),
             password2 : bcrypt.hashSync(password2,10),   
-            avatar : (req.files[0]) ? req.files[0].filename : 
+            avatar : req.files[0].filename,
             birthday
             
         })
         .then(()=> res.redirect('/usuario/login'))
-        .catch(error => res.send(error))
+        .catch(error => console.log(error))
         }
 
     },
@@ -56,8 +56,7 @@ module.exports  =  {
             return res.render('user/login',{
                 title:"Log in",   
                 errores : errores.mapped(),
-               
-               
+                             
             })
         }else{
             /*aqui pido los datos password y email para comprar con los ya registrados */
@@ -69,37 +68,36 @@ module.exports  =  {
                 }
             })
             .then( user => {
-                if(user && bcrypt.compareSync(password.trim(), user.password)){
-
-                    req.session.userPerfil = {
-                        id: user.id,
-                        avatar :user.avatar,
-                        name : user.name,
-                        lastName : user.lastName,
-                        email : user.email,
-                        birthday:user.birthday
-                    }
-
-                    if(recordar){
-                        res.cookie('biciBikes', req.session.userPerfil,{
-                            maxAge: 1000*60*60
-                        });
-                    }
-                                       
-                    return res.redirect('/usuario/miPerfil');
-
-                }else{
-                    return res.render('user/login',{
-                        title: "log in",
-                        errores :{
-                            invalid :{
-                                msg : "datos invalidos!"
-                            }
+                if(user){
+                    if(bcrypt.compareSync(password.trim(), user.password)){
+                        req.session.userPerfil = {
+                            id: user.id,
+                            avatar :user.avatar,
+                            name : user.name,
+                            lastName : user.lastName,
+                            email : user.email,
+                            birthday:user.birthday
                         }
-                    })
-                }
-            }).catch(error => console.log(error))
-        }},
+                        if(recordar){
+                            res.cookie('biciBikes', req.session.userPerfil,{
+                                maxAge: 1000*60*60
+                            });
+                        }
+                                           
+                        return res.redirect('/usuario/miPerfil');
+                    }else{
+                        return res.render('user/login',{
+                            title: "log in",
+                            errores :{
+                                invalid :{
+                                    msg : "datos invalidos!"
+                                }
+                            }
+                        })
+                    }
+                }}).catch(error => console.log(error))
+            
+            }},
             
     perfil : (req,res)=>{
 

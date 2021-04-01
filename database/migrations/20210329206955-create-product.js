@@ -16,7 +16,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         references : {
           model :{
-            tablaName: 'makes'
+            tableName: 'makes'
           },
           key: 'id'
         }
@@ -25,7 +25,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         references : {
           model :{
-            tablaName: 'models'
+            tableName: 'models'
           },
           key: 'id'
         }
@@ -34,7 +34,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         references : {
           model :{
-            tablaName: 'colors'
+            tableName: 'colors'
           },
           key: 'id'
         }
@@ -49,7 +49,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         references : {
           model :{
-            tablaName: 'discounts'
+            tableName: 'discounts'
           },
           key: 'id'
         }
@@ -58,7 +58,7 @@ module.exports = {
         type: Sequelize.INTEGER,
         references : {
           model :{
-            tablaName: 'categories'
+            tableName: 'categories'
           },
           key: 'id'
         }
@@ -67,7 +67,16 @@ module.exports = {
         type: Sequelize.INTEGER,
         references : {
           model :{
-            tablaName: 'images'
+            tableName: 'images'
+          },
+          key: 'id'
+        }
+      },
+      sectionId: {
+        type: Sequelize.INTEGER,
+        references : {
+          model :{
+            tableName: 'sections'
           },
           key: 'id'
         }
@@ -77,6 +86,7 @@ module.exports = {
         type: Sequelize.DATE
       },
       updatedAt: {
+        
         allowNull: false,
         type: Sequelize.DATE
       }
