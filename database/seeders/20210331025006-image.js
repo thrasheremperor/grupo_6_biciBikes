@@ -1,6 +1,6 @@
 'use strict';
 
-const imagenes = ['notebook', 'escritorio', '2en1', 'tablets', 'laptops'];
+const imagenes = ['image'];
 
 const images = [];
 

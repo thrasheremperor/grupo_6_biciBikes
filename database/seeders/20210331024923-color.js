@@ -1,6 +1,6 @@
 'use strict';
 
-const colores = ['notebook', 'escritorio', '2en1', 'tablets', 'laptops'];
+const colores = ['amarillo'];
 
 const colors = [];
 

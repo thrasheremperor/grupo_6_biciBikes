@@ -1,10 +1,10 @@
 'use strict';
 
-const category = ['Now','Popular','visited'];
+const categorias = ['todoterreno'];
 
 const categories = [];
 
-category.forEach(category => {
+categorias.forEach(category => {
   const categoria ={
     category,
     createdAt : new Date(),

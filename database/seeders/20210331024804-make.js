@@ -1,16 +1,16 @@
 'use strict';
 
-const marcas = ['notebook', 'escritorio', '2en1', 'tablets', 'laptops'];
+const marcas = ['nike', 'line'];
 
 const makes = [];
 
 marcas.forEach(make => {
-  const make ={
+  const marca ={
     make,
     createdAt : new Date(),
     updatedAt: new Date()
   }
-  makes.push(make)
+  makes.push(marca)
 });
 
 module.exports = {

@@ -1,16 +1,16 @@
 'use strict';
 
-const names = ['notebook', 'escritorio', '2en1', 'tablets', 'laptops'];
+const descuento = ['20'];
 
 const discounts = [];
 
-names.forEach(discount => {
-  const discount ={
+descuento.forEach(discount => {
+  const discountos ={
     discount,
     createdAt : new Date(),
     updatedAt: new Date()
   }
-  discounts.push(discount)
+  discounts.push(discountos)
 });
 
 module.exports = {

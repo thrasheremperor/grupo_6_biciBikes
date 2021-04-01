@@ -1,16 +1,16 @@
 'use strict';
 
-const modelos = ['wuwu'];
+const secciones = ['Now','Popular','visited'];
 
-const models = [];
+const sectiones = [];
 
-modelos.forEach(model => {
-  const modelos ={
-    model,
+secciones.forEach(sections => {
+  const seccion ={
+    sections,
     createdAt : new Date(),
     updatedAt: new Date()
   }
-  models.push(modelos)
+  sectiones.push(seccion)
 });
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-   await queryInterface.bulkInsert('models',models, {});
+   await queryInterface.bulkInsert('sections',sectiones, {});
   },
 
   down: async (queryInterface, Sequelize) => {
@@ -34,7 +34,7 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-      await queryInterface.bulkDelete('models', null, {});
+      await queryInterface.bulkDelete('sections', null, {});
 
   }
 };
