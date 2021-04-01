@@ -1,3 +1,4 @@
+console.log('vinculado');
 let qs = (element) => {
     return document.querySelector(element);
 }

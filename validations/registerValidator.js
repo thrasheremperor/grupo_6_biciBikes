@@ -43,11 +43,14 @@ module.exports = [
         }*/
         return db.Users.findOne({
             where:{
-                email: value
+                email: value 
             }
         })
         .then(user =>{
-            return Promise.reject('este email ya esta registrado')
+            if(user){
+                return Promise.reject('este email ya esta registrado')
+            }
+            
         })
     })
     

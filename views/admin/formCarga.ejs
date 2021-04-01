@@ -4,48 +4,48 @@
 <body class="cuerpo">
   <%- include('../partials/header.ejs') %> 
     <div class="formCarga">
-      <form action="/admin/formCarga" method="POST" id ="formCarga" class="contenedor" enctype="multipart/form-data">
+      <form action="/admin/formCarga" method="POST" id ="formCarga" class="sesion-registro" enctype="multipart/form-data">
         <h2>Agregar nuevo Producto</h2>
         <hr>
         <div class="row">
           <div class="col-10">
             
-            <input type="text" name="name" placeholder="Nombre del producto" id="name">
-            <span class="error" id="nameError"></span>
-            <span><%=(typeof errores != 'undefined' && errores.name)? errores.name.msg: "" %></span>
+            <input type="text" name="name" placeholder="Nombre del producto" id="inputname" class="form-control mt-5 form-datos">
+            <span  id="nameError"></span>
+           
            
           </div>
         </div>
         <div class="row">
           <div class="col-10">
-            <label>Modelo del producto</label>
-            <input type="text" id="make" name="make" placeholder="Modelo o marca del producto">
+            
+            <input type="text" id="make" name="inputmake" placeholder="Modelo o marca del producto" class="form-control mt-5 form-datos">
             <span id="makeError"></span>
-            <span><%=(typeof errores != 'undefined' && errores.name)? errores.name.msg: "" %></span>
+           
           </div>
         </div>  
         <div class="row">
           <div class="col-10">
-            <label for="precio">Precio de Producto</label>
-            <input type="number" id="price" name="price">
+            
+            <input type="number" id="price" name="inputprice" class="form-control mt-5 form-datos" placeholder="Precio de producto">
             <span id="priceError"></span>
-            <span><%=(typeof errores != 'undefined' && errores.name)? errores.name.msg: "" %></span>
+            
           </div>
         </div>
         <div class="row">
           <div class="col-10">
-            <label for="description">Descripcion</label>
+            
             <span id="descriptionError"></span>
-            <input type="text" name="description" id="description">
+            <input type="text" name="description" id="description" class="form-control mt-5 form-datos" placeholder="Description">
           </div>
         </div>
 
         <div class="row">
           <div class="col-10">
             <label name="imgagen">Imagen de Producto</label>
-            <span id="formFileLg"></span>
+            <span id="formFileLgError"></span>
             <input class="form-control form-control-lg" id="formFileLg" type="file"  name="img">
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+           
           </div>
         </div>
         <br>
@@ -55,6 +55,6 @@
     </div>
   <%- include('../partials/footer.ejs')%> 
   <script src="/javascripts/producto.js"></script>
-    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+  <script src="http://momentjs.com/downloads/moment.min.js"></script>
 </body>
 </html>
