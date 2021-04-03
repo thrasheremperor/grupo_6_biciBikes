@@ -23,6 +23,9 @@ module.exports = (sequelize, DataTypes) => {
       Product.belongsTo(models.model,{
         as: 'product_model'
       })
+      Product.belognsTo(models.section,{
+        as: 'product_seccion'
+      })
       Product.belongsToMany(models.User,{
         as : 'productSelec',
         through : 'shopping',
@@ -41,8 +44,7 @@ module.exports = (sequelize, DataTypes) => {
     discountId: DataTypes.INTEGER,
     categoryId: DataTypes.INTEGER,
     imageId: DataTypes.INTEGER,
-    sectionId: DataTypes.INTEGER,
-
+    sectionId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Product',
