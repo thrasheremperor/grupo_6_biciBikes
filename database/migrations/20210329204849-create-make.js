@@ -10,7 +10,7 @@ module.exports = {
       },
       make: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
