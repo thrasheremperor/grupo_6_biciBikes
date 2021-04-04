@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       Product.belongsTo(models.model,{
         as: 'product_model'
       })
-      Product.belognsTo(models.section,{
+      Product.belongsTo(models.section,{
         as: 'product_seccion'
       })
       Product.belongsToMany(models.User,{

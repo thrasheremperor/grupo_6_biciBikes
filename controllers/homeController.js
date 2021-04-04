@@ -3,13 +3,13 @@ const db = require('../database/models');
 const {Op} = require('sequelize')
 module.exports = {
     index : (req, res) => {
-        let productsVisited = db.Products.filter(producto =>{
+        let productsVisited = db.Products.findAll(producto =>{
             return producto.section == 'visited'
         })
-        let productsNow = db.Products.filter(producto=>{
+        let productsNow = db.Products.findAll(producto=>{
             return producto.section == 'now'
         })
-        let productsPopular = db.Products.filter(producto=>{
+        let productsPopular = db.Products.findAll(producto=>{
             return producto.section == 'popular'
         })
         res.render('home', {

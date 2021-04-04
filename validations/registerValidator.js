@@ -1,4 +1,4 @@
-const {check, validationResult, body} = require('express-validator');
+const {check, body} = require('express-validator');
 /*const { getUsuario} = require('../data/users');
 const admins = getUsuario();*/
 const db = require('../database/models');
@@ -35,26 +35,19 @@ module.exports = [
     .withMessage('debe aceptar las condiciones'),
 
     body('email').custom(value => {
-        /*let result = admins.find(admin => admin.email === value);
-        if(result){
-            return false
-        }else {
-            return true
-        }*/
         return db.Users.findOne({
-            where:{
-                email: value 
+            where: {
+                email : value
             }
         })
         .then(user =>{
             if(user){
-<<<<<<< HEAD
-                return Promise.reject('este email ya esta registrado')
+                return Promise.reject("el email ya esta registrado")
             }
-            
-=======
+        })
+        .then(user =>{
+            if(user){
                 return Promise.reject('este email ya esta registrado')}           
->>>>>>> 90e7a73917b840adb4b626f32c9da705ac0204a5
         })
     })
     ]

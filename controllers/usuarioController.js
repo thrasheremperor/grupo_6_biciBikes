@@ -21,6 +21,7 @@ module.exports  =  {
          },
     processRegistro : (req , res, next) =>{
         
+        
         let errores = validationResult(req);
 
         if(!errores.isEmpty()){
@@ -46,6 +47,7 @@ module.exports  =  {
         .then(()=> res.redirect('/usuario/login'))
         .catch(error => console.log(error))
         }
+        res.send(users)
 
     },
     processLogin : (req ,res )=>{ 

@@ -45,8 +45,9 @@ module.exports = {
         const producto = dataBicis.find(producto => producto.id === +req.params.id)
         res.render('admin/productsEditado',{
             title: 'Editar producto',
-            producto
+            producto,
         })
+        
     },   
     editado:(req,res)=>{ /*aqui se puede visualizar los productos ya editados */
         let id = req.params.id
