@@ -1,8 +1,10 @@
+require('dotenv').config()
+
 module.exports = {
   "development": {
     "username": "root",
-    "password": "",
-    "database": "database_Proyecto_Grupo_6",
+    "password": process.env.DB_PASS,
+    "database": process.env.DB_DATABASE,
     "host": "127.0.0.1",
     "dialect": "mysql",
     "seederStorage": "sequelize"
