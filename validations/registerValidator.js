@@ -1,6 +1,5 @@
-const {check, validationResult, body} = require('express-validator');
-/*const { getUsuario} = require('../data/users');
-const admins = getUsuario();*/
+const {check, body} = require('express-validator');
+
 const db = require('../database/models');
 
 module.exports = [
@@ -26,29 +25,25 @@ module.exports = [
     check('password2').custom((value,{req})=> value !== req.body.password ? false : true)
     .withMessage('las contraseñas no coinciden'),
 
-    check('birthday')
+    /*check('birthday')
     .notEmpty()
-    .withMessage('se require ser mayor de 13 años'),
+    .withMessage('se require ser mayor de 13 años'),*/
     
-    check('condicion')
+    /*check('condicion')
     .isString('on')
-    .withMessage('debe aceptar las condiciones'),
+    .withMessage('debe aceptar las condiciones'),*/
 
-    body('email').custom(value => {
-        /*let result = admins.find(admin => admin.email === value);
-        if(result){
-            return false
-        }else {
-            return true
-        }*/
-        return db.Users.findOne({
-            where:{
-                email: value
-            }
+    body('email').custom(value=>{
+
+        return db.User.findOne({
+        where:{
+            email : value
+        }
         })
         .then(user =>{
             if(user){
-                return Promise.reject('este email ya esta registrado')}           
+                return Promise.reject('este email no esta disponible')
+            }
         })
     })
-    ]
+]     

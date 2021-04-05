@@ -23,6 +23,12 @@ module.exports = (sequelize, DataTypes) => {
       Product.belongsTo(models.model,{
         as: 'product_model'
       })
+      Product.hasMany(models.color,{
+        as : 'product_color'
+      })
+      Product.belongsTo(models.discount,{
+        as: 'product_discount'
+      })
       Product.belongsTo(models.section,{
         as: 'product_seccion'
       })

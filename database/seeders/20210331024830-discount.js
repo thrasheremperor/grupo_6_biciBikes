@@ -3,7 +3,7 @@
 const faker = require('faker'); //para poner datos falsos
 
 const discounts = [...Array(30)].map(descuento =>({
-  discount:faker.random.number(),
+  discount:faker.random.number(99),
   createdAt : new Date(),
   updatedAt: new Date()
 }))

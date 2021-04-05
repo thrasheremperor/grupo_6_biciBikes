@@ -14,6 +14,7 @@ module.exports = {
       },
       makeId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references : {
           model :{
             tableName: 'makes'
@@ -23,6 +24,7 @@ module.exports = {
       },
       modelId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references : {
           model :{
             tableName: 'models'
@@ -32,6 +34,7 @@ module.exports = {
       },
       colorId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references : {
           model :{
             tableName: 'colors'
@@ -40,10 +43,12 @@ module.exports = {
         }
       },
       price: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL,
+        allowNull: false,
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       discountId: {
         type: Sequelize.INTEGER,
@@ -56,6 +61,7 @@ module.exports = {
       },
       categoryId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references : {
           model :{
             tableName: 'categories'
@@ -65,6 +71,7 @@ module.exports = {
       },
       imageId: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references : {
           model :{
             tableName: 'images'
