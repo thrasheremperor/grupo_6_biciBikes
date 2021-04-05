@@ -4,6 +4,22 @@ const {Op} = require('sequelize');
 module.exports = {
     index : (req, res) => {
         
+        let productsVisited = db.Products.findAll(producto =>{
+            return producto.section == 'visited'
+        })
+        let productsNow = db.Products.findAll(producto=>{
+            return producto.section == 'now'
+        })
+        let productsPopular = db.Products.findAll(producto=>{
+            return producto.section == 'popular'
+        })
+        res.render('home', {
+            title : "Bici Bikes",
+            productsVisited,
+            productsNow,
+            productsPopular
+        })
+
     },
     carrito :(req, res) => {
         res.render('user/carritoCompras', {

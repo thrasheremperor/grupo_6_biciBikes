@@ -62,6 +62,7 @@ module.exports  =  {
         }else{
             /*aqui pido los datos password y email para comprar con los ya registrados */
             const {password, email , recordar} = req.body;
+            res.send(req.body);
 
             db.User.findOne({
                 where:{
