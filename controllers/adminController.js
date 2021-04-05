@@ -1,6 +1,7 @@
 const dataBicis = require('../data/bicis');
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
 
 
 module.exports = {
@@ -9,30 +10,19 @@ module.exports = {
             title: 'Cargar producto'
         }) /*renderiso  la vista de formCarga.ejs */
     },
-    cargado:(req,res,next)=>{    /*guadado de datos traidos del formulario de carga de producto */
-        
-        let lastID = 1;
-        dataBicis.forEach(producto => {
-            if (producto.id >lastID) { /*indica el valor del proximo id */
-                lastID = producto.id
-                
-            }
-            
-        });
-        const {name,make,price,description,img} = req.body; 
-        const producto = {
-            id:lastID +1,
-            name,
-            make,
-            price,
-            description, 
-            img : req.files[0].filename
-        }
-
-        dataBicis.push(producto) /*envio los datos guardados a el archivo json */
-
-        fs.writeFileSync('./data/bicis.json',JSON.stringify(dataBicis),'utf-8');
-        res.redirect('/admin/list'); /*cuando todo enviar vamos a esta direccion donde pondemos visualizar lo subido */
+    cargado:(req,res,next)=>{    
+        const {name, make,price,description,Imagen} = req.body
+          db.Product.create({
+              name,
+              make,
+              price,
+              description,
+              Imagen
+          })
+          .then(()=>{
+              return res.redirect('/admin/list')
+          })
+          .catch(error => res.send(error))
     },
     
     creado:(req,res) =>{
