@@ -1,7 +1,7 @@
 const dataBicis = require('../data/bicis');
 const fs = require('fs');
 const path = require('path');
-const db = require('../database/models');
+const db = require('../database/models/product');
 
 
 module.exports = {
@@ -11,13 +11,18 @@ module.exports = {
         }) /*renderiso  la vista de formCarga.ejs */
     },
     cargado:(req,res,next)=>{    
-        const {name, make,price,description,Imagen} = req.body
-          db.Product.create({
+        const {name,modelId,description,makeId,colorId,discountId} = req.body
+          db.Products.create({
               name,
-              make,
               price,
               description,
-              Imagen
+              makeId,
+              modelId,
+              categoryId,
+              imageId,
+              sectionId,
+              colorId,
+              discountId
           })
           .then(()=>{
               return res.redirect('/admin/list')
