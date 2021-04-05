@@ -9,7 +9,7 @@
             <div class="col-12">
               <h2 class="products-title">Todos los productos</h2>
             </div>
-            <% bicis.forEach(producto => { %>
+            <% producto.forEach(producto => { %>
               <div class="col-12 col-md-4">
                 <section class="product-box hvr-bounce-in">
                   <a href="/productos/detalle/<%- producto.id %>/<%- producto.section %>">

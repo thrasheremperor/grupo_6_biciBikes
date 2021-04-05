@@ -60,7 +60,7 @@ window.onload = () => {
     $description.onblur = () => {
         switch (true) {
             case !$description.value.trim():
-                $descriptionError.innerHTML = "coloca detalles preferiblemente"
+                $descriptionError.innerHTML = "breve description del producto"
                 $description.classList.add('is-invalid')
                 
                 break;

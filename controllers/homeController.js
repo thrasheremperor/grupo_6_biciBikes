@@ -3,23 +3,18 @@ const db = require('../database/models');
 const {Op} = require('sequelize');
 module.exports = {
     index : (req, res) => {
-        
-        let productsVisited = db.Products.findAll(producto =>{
-            return producto.section == 'visited'
-        })
-        let productsNow = db.Products.findAll(producto=>{
-            return producto.section == 'now'
-        })
-        let productsPopular = db.Products.findAll(producto=>{
-            return producto.section == 'popular'
-        })
-        res.render('home', {
-            title : "Bici Bikes",
-            productsVisited,
-            productsNow,
-            productsPopular
-        })
-
+       let productsVisited = db.section.findAll({
+           where : {
+               id:1
+           },
+           include : [
+            (association : "seccion_product")
+           ]
+       })
+       res.render('home',{
+           title: "Bici Bikes",
+           productsVisited,
+       })
     },
     carrito :(req, res) => {
         res.render('user/carritoCompras', {
@@ -27,16 +22,16 @@ module.exports = {
         })
     },
     productosFull: (req,res)=>{
-       db.Products.findAll()
-       .then(bicis =>{
+       db.Product.findAll()
+       .then(producto =>{
            return res.render('products',{
-               bicis
+               producto
            })
        })
        .catch(error => res.send(error))
     },
     search: (req, res) => { /*buscador siempre va por get */
-        db.Products.findAll({ 
+        db.Product.findAll({ 
             where : {
                 title: req.query.buscador
             }

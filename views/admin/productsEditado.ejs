@@ -11,7 +11,7 @@
           <div class="col-10">
             
             <input type="text" class="form-control mt-5 form-datos" name="name" id="inputname"value="<%= producto.name %>">
-           
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
           <span id="nameError"></span>
           </div>
         </div>
@@ -19,7 +19,7 @@
           <div class="col-10">
             <label for="modelo" id="inputmake">Marca</label>
             <input type="text" class="form-control mt-5 form-datos" name="make" value="<%= producto.make %>">
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
             <span id="makeError"></span>
           </div>
         </div>  
@@ -27,7 +27,7 @@
           <div class="col-10">
             <label for="precio">Precio de Producto</label>
             <input type="number" class="form-control mt-5 form-datos" name="price" id="price" value="<%= producto.price %>">
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
             <span id="priceError"></span>
           </div>
         </div>
@@ -35,7 +35,7 @@
           <div class="col-10">
             <label for="description">Descripcion</label>
             <input type="text" class="form-control mt-5 form-datos" name="description" id="description" value="<%= producto.description %>">
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.description ? errores.description.msg: null ) %></span>
           </div>
         </div>
 
@@ -43,8 +43,8 @@
         <div class="row">
           <div class="col-10">
             <label name="imgagen" >Imagen de Producto</label>
-            <input type="file" class="form-control mt-5 form-datos" id="formFileLg" name="img" value="<%= producto.img %>">
-            <span class="text-danger" ><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+            <input type="file" class="form-control mt-5 form-datos" id="formFileLg" name="image" value="<%= producto.image %>">
+            <span class="text-danger" ><%=(typeof errores != 'undefined' && errores.image ? errores.image.msg: null ) %></span>
             <span id="formFileLgError"></span>
           </div>
         </div>

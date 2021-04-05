@@ -12,7 +12,7 @@
             
             <input type="text" name="name" placeholder="Nombre del producto" id="inputname" class="form-control mt-5 form-datos">
             <span  id="nameError"></span>
-           
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
            
           </div>
         </div>
@@ -21,7 +21,7 @@
             
             <input type="text" id="inputmake" name="make" placeholder="Modelo o marca del producto" class="form-control mt-5 form-datos">
             <span id="makeError"></span>
-           
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
           </div>
         </div>  
         <div class="row">
@@ -29,24 +29,24 @@
             
             <input type="number" id="price" name="price" class="form-control mt-5 form-datos" placeholder="Precio de producto">
             <span id="priceError"></span>
-            
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
           </div>
         </div>
         <div class="row">
           <div class="col-10">
-            
-            
+                       
             <input type="text" name="description" id="description" class="form-control mt-5 form-datos" placeholder="Description">
             <span id="descriptionError"></span>
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.description ? errores.description.msg: null ) %></span>
           </div>
         </div>
 
         <div class="row">
           <div class="col-10">
             <label name="imgagen" class="mt-5">Imagen de Producto</label>
-            <input class="form-control form-control-lg Imagen" id="formFileLg" type="file"  name="img">
+            <input class="form-control form-control-lg Imagen" id="formFileLg" type="file"  name="image">
             <span id="formFileLgError"></span>
-
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.image ? errores.image.msg: null ) %></span>
           </div>
         </div>
         <br>

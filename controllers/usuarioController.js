@@ -33,7 +33,7 @@ module.exports  =  {
 
 
 
-         db.Users.create({
+         db.User.create({
             name,
             lastName,       
             email,
@@ -102,12 +102,18 @@ module.exports  =  {
             
     perfil : (req,res)=>{
 
-        //let datoUser = db.Usuarios.find( perfil => perfil.id === req.params.id);
-
-        res.render( 'user/perfil',{
-            title: "Mi perfil",
-          //  datoUser
+        db.User.findOne({
+            where:{
+                id: req.session.userPerfil.id
+            }
         })
+        .then((perfil)=>{
+            res.render( 'user/perfil',{
+                title: "Mi perfil",
+                perfil
+            })
+        })
+        
     },
 
         //edit perfil 

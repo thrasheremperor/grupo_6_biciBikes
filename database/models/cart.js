@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Cart.belongsTo(models.User,{
-        as: 'shopping_user'
+        as: 'shopping_user',
+        
       })
       Cart.belongsTo(models.Product,{
         as: 'shopping_products'

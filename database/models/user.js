@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.belongsTo(models.address,{  //un usuario pertenece a una direccion
-        as:'user_address'
+        as:'user_address',
+        foreignKey : 'addressId',
       })
       User.belongsToMany(models.Product,{
         as : 'Usuario',

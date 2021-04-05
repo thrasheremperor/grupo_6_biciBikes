@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const db = require('../database/models/product');
+const db = require('../database/models');
 
 
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
     },
     cargado:(req,res,next)=>{    
         const {name,modelId,description,makeId,colorId,discountId} = req.body
-          db.Products.create({
+          db.Product.create({
               name,
               price,
               description,
@@ -42,7 +42,7 @@ module.exports = {
     editado:(req,res)=>{ /*aqui se puede visualizar los productos ya editados */
     },
     borrar: (req,res)=>{ /*la opcion de borara en producto se envuentra en la vista productList */
-        db.Products.destroy({
+        db.Product.destroy({
             where: {
                 id: req.params.id
             }
