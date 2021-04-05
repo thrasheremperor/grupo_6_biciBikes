@@ -1,3 +1,4 @@
+console.log('vinculado');
 let qs = (element) => {
     return document.querySelector(element);
 }
@@ -13,7 +14,7 @@ window.onload = () => {
         $password = qs('#password'),
         $passwordError = qs('#passwordError'),
         $password2 = qs('#password2'),
-        $passwordError2 = qs('#passwordError2'),
+        $passwordError2 = qs('#password2Error'),
         $date = qs('#date'),
         $dateError = qs('#dateError'),
         $terms = qs('#flexCheckDefault'),

@@ -9,29 +9,32 @@
         <hr>
         <div class="row">
           <div class="col-10">
-            <label for="name">Nombre</label>
-            <input type="text" class="form-control" name="name" value="<%= producto.name %>">
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+            
+            <input type="text" class="form-control mt-5 form-datos" name="name" id="inputname"value="<%= producto.name %>">
+           
+          <span id="nameError"></span>
           </div>
         </div>
         <div class="row">
           <div class="col-10">
-            <label for="modelo">Marca</label>
-            <input type="text" class="form-control" name="make" value="<%= producto.make %>">
+            <label for="modelo" id="inputmake">Marca</label>
+            <input type="text" class="form-control mt-5 form-datos" name="make" value="<%= producto.make %>">
             <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+            <span id="makeError"></span>
           </div>
         </div>  
         <div class="row">
           <div class="col-10">
             <label for="precio">Precio de Producto</label>
-            <input type="number" class="form-control" name="price" value="<%= producto.price %>">
+            <input type="number" class="form-control mt-5 form-datos" name="price" id="price" value="<%= producto.price %>">
             <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+            <span id="priceError"></span>
           </div>
         </div>
         <div class="row">
           <div class="col-10">
             <label for="description">Descripcion</label>
-            <input type="text" class="form-control" name="description" value="<%= producto.description %>">
+            <input type="text" class="form-control mt-5 form-datos" name="description" id="description" value="<%= producto.description %>">
             <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
           </div>
         </div>
@@ -39,9 +42,10 @@
 
         <div class="row">
           <div class="col-10">
-            <label name="imgagen">Imagen de Producto</label>
-            <input type="file" class="form-control" name="img" value="<%= producto.img %>">
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+            <label name="imgagen" >Imagen de Producto</label>
+            <input type="file" class="form-control mt-5 form-datos" id="formFileLg" name="img" value="<%= producto.img %>">
+            <span class="text-danger" ><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+            <span id="formFileLgError"></span>
           </div>
         </div>
         <br>
@@ -52,5 +56,8 @@
       </form>
     </div>
   <%- include('../partials/footer.ejs')%> 
+  <script src="/javascript/producto.js"></script>
+  <script src="http://momentjs.com/downloads/moment.min.js"></script>
+  
 </body>
 </html>

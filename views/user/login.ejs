@@ -9,16 +9,18 @@
       <form class="sesion" method="POST">
         <h2 class="loginh2">Inicia sesion</h2>
         
-        <input type="email" placeholder="Email" name="email" class="login-credentials">
-        <span><%= (typeof errores != 'undefined' && errores.email ? errores.email.msg: null) %> </span>
+        <input type="email" placeholder="Email" id="email" name="email" class="login-credentials">
+        <span id="emailErrors"></span>
+        <span><%= (typeof errores != 'undefined' && errores.email)? errores.email.msg: "" %> </span>
           
 
           
-        <input type="password" placeholder="Contraseña" name="password" class="login-credentials">
-        <span><%= (typeof errores != 'undefined' && errores.password ? errores.password.msg: null) %></span>
+        <input type="password" placeholder="Contraseña" id="pass" name="password" class="login-credentials">
+        <span id="passErrors"></span>
+        <span><%= (typeof errores != 'undefined' && errores.password)? errores.password.msg: "" %></span>
           
 
-        //opcion para usuario normal y admin
+        <!--OPCION PARA USAARIO NORMAL Y ADMIN-->
 
 
 
@@ -37,6 +39,8 @@
     </div>
 
     <%- include('../partials/footer') %>
+
+    <script src="/javascript/userLogin.js"></script>
 
   </body>
 </html>
