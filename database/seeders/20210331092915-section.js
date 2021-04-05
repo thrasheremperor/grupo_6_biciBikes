@@ -3,7 +3,7 @@
 const faker = require('faker'); //para poner datos falsos
 
 const sections = [...Array(30)].map(secciones =>({
-  sections: faker.name.title(),
+  sections: faker.name.firstName(),
   createdAt : new Date(),
   updatedAt: new Date()
 }))

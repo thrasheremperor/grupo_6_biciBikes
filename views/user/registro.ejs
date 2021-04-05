@@ -8,7 +8,7 @@
     <div class="contenedor">
         <div class="form-registro">
 
-            <form id="form" class="sesion-registro" method="POST" enctype="multipart/form-data">
+            <form id="form" class="sesion-registro"  action="/usuario/registro" method="POST" enctype="multipart/form-data">
                 <h1 class="registro h1 mt-2">Registro</h1>
 
                 <input id="name" class="form-control mt-5 form-datos" name="name" type="text" placeholder="Nombre">
@@ -33,7 +33,7 @@
 
                 <input id="date" class="form-control mt-5 form-datos" name="birthday" type="date" placeholder="Fec. Nac. - ">
                 <span id="dateError"></span>
-                <span class="text-danger"><%=(typeof errores != 'undefined' && errores.birthday ? errores.birthday.msg: null ) %></span>
+                
 
                 <div class="mt-5">
                     <div class="img-container" id="img-preview"></div>

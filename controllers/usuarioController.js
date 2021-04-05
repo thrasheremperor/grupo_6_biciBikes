@@ -3,9 +3,6 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const {validationResult}= require('express-validator');
 
-//const {getUsuario, setUsuario} = require(path.join('..','data','users'));
-
-//const userJson = getUsuario(); /*user.json parseador  */
 const db = require('../database/models');
 
 module.exports  =  {
@@ -32,15 +29,16 @@ module.exports  =  {
             })
         }else{
             
-        const {name, lastName, password,password2, email,birthday ,avatar} = req.body;
+        const {name, lastName, password, email,birthday ,avatar} = req.body;
+
+
 
          db.Users.create({
             name,
             lastName,       
             email,
-            password : bcrypt.hashSync(password,10),
-            password2 : bcrypt.hashSync(password2,10),   
-            avatar : req.files[0].filename,
+            password : bcrypt.hashSync(password,10),   
+            avatar ,
             birthday
             
         })
@@ -64,9 +62,9 @@ module.exports  =  {
             /*aqui pido los datos password y email para comprar con los ya registrados */
             const {password, email , recordar} = req.body;
 
-            db.Users.getOne({
+            db.User.findOne({
                 where:{
-                    email : email
+                    email : email.trim()
                 }
             })
             .then( user => {
@@ -92,7 +90,7 @@ module.exports  =  {
                             title: "log in",
                             errores :{
                                 invalid :{
-                                    msg : "datos invalidos!"
+                                    msg : "email o contraseña incorrecto"
                                 }
                             }
                         })
