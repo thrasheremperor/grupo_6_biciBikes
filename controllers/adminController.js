@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models/product');
 
 
 module.exports = {
@@ -8,7 +9,24 @@ module.exports = {
             title: 'Cargar producto'
         }) /*renderiso  la vista de formCarga.ejs */
     },
-    cargado:(req,res,next)=>{    /*guadado de datos traidos del formulario de carga de producto */
+    cargado:(req,res,next)=>{    
+        const {name,modelId,description,makeId,colorId,discountId} = req.body
+          db.Products.create({
+              name,
+              price,
+              description,
+              makeId,
+              modelId,
+              categoryId,
+              imageId,
+              sectionId,
+              colorId,
+              discountId
+          })
+          .then(()=>{
+              return res.redirect('/admin/list')
+          })
+          .catch(error => res.send(error))
     },
     
     creado:(req,res) =>{

@@ -12,7 +12,6 @@ for (let index = 0; index < 30; index++) {
     lastName : faker.name.lastName(),
     email: faker.internet.email(),
     password: bcrypt.hashSync('123123',10),
-    password2: bcrypt.hashSync('123123',10),
     birthday: faker.date.past(),
     avatar: faker.image.avatar(),
     addressId: faker.random.number({min:1, max:30}),

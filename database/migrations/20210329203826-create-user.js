@@ -24,10 +24,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      password2: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       birthday: {
         type: Sequelize.DATE,
         allowNull: false,

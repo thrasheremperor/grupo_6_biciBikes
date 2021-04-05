@@ -29,17 +29,16 @@ module.exports  =  {
             })
         }else{
             
-        const {name, lastName, password,password2, email,birthday ,avatar} = req.body;
+        const {name, lastName, password, email,birthday ,avatar} = req.body;
 
-        res.send(req.body);
 
-         db.User.create({
+
+         db.Users.create({
             name,
             lastName,       
             email,
-            password : bcrypt.hashSync(password,10),
-            password2 : bcrypt.hashSync(password2,10),   
-            avatar : req.files[0].filename,
+            password : bcrypt.hashSync(password,10),   
+            avatar ,
             birthday
             
         })
