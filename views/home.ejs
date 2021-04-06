@@ -30,7 +30,7 @@
              <h2 class="products-title">Ultimos vistos</h2>
              <!-- <hr size="3"> -->
            </div>
-           <% productsVisited.seccion_products.forEach(producto => { %>
+           <% productsVisited.seccion_products[0].forEach(producto => { %>
             <div class="col-12 col-md-4">
               <section class="product-box hvr-box-shadow-outset">
                 <a href="/productos/detalle/<%- producto.id %>"></a>
@@ -61,7 +61,7 @@
               <h2 class="products-title">Ahorra ya</h2>
               <!-- <hr size="3"> -->
             </div>
-            <% productsNow.seccion_products.forEach(producto => { %>
+            <% productsNow.seccion_products[0].forEach(producto => { %>
               <div class="col-12 col-md-6">
                 <section class="product-box hvr-box-shadow-outset">
                   <a href="/productos/detalle/<%- producto.id %>">
@@ -92,7 +92,7 @@
               <h2 class="products-title">Populares</h2>
               <!-- <hr size="3"> -->
             </div>
-            <% productsPopular.forEach(producto => { %>
+            <% productsPopular.seccion_products[0].forEach(producto => { %>
               <div class="col-12 col-md-4">
                 <section class="product-box hvr-box-shadow-outset">
                   <a href="/productos/detalle/<%- producto.id %>">
@@ -121,6 +121,9 @@
         <div class="d-flex mt-4 mr-2">
           <button type="button" id="button" class="btn srch-btn hvr-ripple-in"><a href="/full" id="home-lower-button">Ver mas!</a></button>
         </div>
+        <li class="nav-item">
+          <a class="nav-link hvr-icon-bob" href="/full">Bicicletas</a>
+        </li>
       </main>
       <%- include('partials/footer') %>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
