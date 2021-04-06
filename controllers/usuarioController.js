@@ -29,25 +29,24 @@ module.exports  =  {
             })
         }else{
             
-        const {name, lastName, password, email,birthday ,avatar} = req.body;
-
-
+        const {name, lastName, password, email,birthday} = req.body;
 
          db.User.create({
             name,
             lastName,       
             email,
             password : bcrypt.hashSync(password,10),   
-            avatar ,
+            avatar :req.files[0].filename ,
             birthday
             
         })
-        .then(()=> res.redirect('/usuario/login'))
+        .then(user => {
+            console.log(user)
+            res.redirect('/usuario/login')
+        }) 
         .catch(error => console.log(error))
-        }
-        res.send(users)
-
-    },
+    }
+},
     processLogin : (req ,res )=>{ 
         
         let errores = validationResult(req);
@@ -61,7 +60,6 @@ module.exports  =  {
         }else{
             /*aqui pido los datos password y email para comprar con los ya registrados */
             const {password, email , recordar} = req.body;
-            res.send(req.body);
 
             db.User.findOne({
                 where:{

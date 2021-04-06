@@ -16,7 +16,7 @@
             <% producto.forEach(producto => { %>
               <div class="a col-11 col-md-6 col-lg-3">
                 <section class="product-box">
-                   <img src="/images/imgProduct/<%-producto.image %>" alt="bicicleta" class="img-fluid">
+                   <img src="/images/imgProduct/<%-producto.product_image[0].image %>" alt="bicicleta" class="img-fluid">
               
                   <article>
                     <h3>$<%- producto.price%></h3>

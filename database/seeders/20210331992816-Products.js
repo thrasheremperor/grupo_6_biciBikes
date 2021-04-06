@@ -15,8 +15,7 @@ for (let index = 0; index < 30; index++) {
     description : faker.commerce.productDescription(),
     discountId: faker.random.number({min:1, max:30}),
     categoryId:faker.random.number({min:1, max:30}),
-    imageId:faker.random.number({min:1, max:30}),
-    sectionId :faker.random.number({min:1, max:30}),
+    sectionId :faker.random.number({min:1, max:3}),
     createdAt : new Date(),
     updatedAt: new Date()
   }

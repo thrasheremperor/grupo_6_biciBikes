@@ -12,6 +12,20 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      link: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      productId:{
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references : {
+          model :{
+            tableName: 'Products'
+          },
+          key: 'id'
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

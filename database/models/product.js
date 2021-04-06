@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       })
       Product.hasMany(models.image,{
         as: 'product_image',
-        foreignKey : 'imageId',
+        foreignKey : 'productId',
       })
       Product.belongsTo(models.make,{
         as: 'producto_make',
@@ -56,7 +56,6 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
     discountId: DataTypes.INTEGER,
     categoryId: DataTypes.INTEGER,
-    imageId: DataTypes.INTEGER,
     sectionId: DataTypes.INTEGER
   }, {
     sequelize,

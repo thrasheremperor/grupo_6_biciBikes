@@ -2,8 +2,10 @@
 
 const faker = require('faker'); //para poner datos falsos
 
-const images = [...Array(30)].map(imagenes =>({
-  image: faker.image.image(),
+const images = [...Array(30)].map((imagenes,i )=>({
+  image: "defoult.png",
+  link : faker.image.image(),
+  productId: i +1,
   createdAt : new Date(),
   updatedAt: new Date()
 }))

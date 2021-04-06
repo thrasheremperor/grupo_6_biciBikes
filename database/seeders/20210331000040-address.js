@@ -2,7 +2,7 @@
 
 const faker = require('faker'); //para poner datos falsos
 
-const addresses = [...Array(30)].map(address =>({
+const addresses = [...Array(30)].map(elemet =>({
   street : faker.address.streetName(),
   number : faker.random.number(9999),
   city: faker.address.city(),
