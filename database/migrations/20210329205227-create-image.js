@@ -21,9 +21,9 @@ module.exports = {
         allowNull: false,
         references : {
           model :{
-            tableName: 'Products'
+            tableName: "Products"
           },
-          key: 'id'
+          key: "id"
         }
       },
       createdAt: {

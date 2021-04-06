@@ -6,40 +6,54 @@ module.exports = {
        let productsVisited = db.section.findOne({
            where : {
                id:1
-           },
-           include : [{  association : "seccion_product"}],
-
-           include : [{association : "product_image"}],
-       })
+            },
+           include : [
+                {association : "seccion_products",
+                   include:[
+                 {association:"product_discount"},
+                 {association: "product_image"}
+                    ]
+                },
+            ]
+        })
        let productsNow = db.section.findOne({
-        where : {
-            id:2
-        },
-        include : [{  association : "seccion_product"}],
-        include : [{association : "product_image"}],
-        include:[{  association : "product_discount"}]
+           where : {
+              id:2
+            },
+           include : [
+                {association : "seccion_products",
+                 include:[
+                     {association:"product_discount"},
+                     {association: "product_image"}
+                    ]
+                }
+            ]
+        })
+               
 
-        
-    })
-    let productsPopular = db.section.findOne({
-        where : {
-            id:3
-        },
-        include : [
-         {  association : "seccion_product"}
-        ],
-        include : [{association : "product_image"}],
-    })
-       Promise.all([productsVisited,productsNow,productsPopular])
-       .then(([productsVisited,productsNow,productsPopular])=>{
-        res.render('home',{
-            title: "Bici Bikes", 
+        let productsPopular = db.section.findOne({
+            where : {
+               id:3
+             },
+            include : [
+                 {association : "seccion_products",
+                  include:[
+                      {association:"product_discount"},
+                      {association: "product_image"}
+                     ]
+                 }
+             ]
+        })
+        Promise.all([productsVisited,productsNow,productsPopular])
+        .then(([productsVisited,productsNow,productsPopular])=>{
+            res.render('home',{
+            title: "Bici Bikes",
             productsVisited,
             productsNow,
             productsPopular
+            })
+        
         })
-       })
-       
     },
     carrito :(req, res) => {
         res.render('user/carritoCompras', {
