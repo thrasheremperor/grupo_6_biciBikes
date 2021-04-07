@@ -10,17 +10,17 @@ module.exports = {
         }) /*renderiso  la vista de formCarga.ejs */
     },
     cargado:(req,res,next)=>{    
-        const {name,modelId,description,makeId,colorId,discountId} = req.body
+        const {name,model,description,make,color,discount} = req.body
           db.Product.create({
               name,
               price,
               description,
-              makeId,
-              modelId,
-              categoryId,
-              imageId,
-              colorId,
-              discountId
+              make,
+              model,
+              category,
+              image,
+              color,
+              discount
           })
           .then( product => {
               db.Image.create({
