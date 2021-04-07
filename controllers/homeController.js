@@ -56,7 +56,7 @@ module.exports = {
         })
     },
     carrito :(req, res) => {
-        res.render('user/carritoCompras', {
+        res.render('user/', {
             title: 'Carga de Producto'
         })
     },
