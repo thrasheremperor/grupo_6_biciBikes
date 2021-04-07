@@ -11,7 +11,7 @@ module.exports = {
                 {association : "seccion_products",
                    include:[
                  {association:"product_discount"},
-                 {association: "product_image"}
+                 {association: "image_product"}
                     ]
                 },
             ]

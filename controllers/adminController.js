@@ -19,11 +19,14 @@ module.exports = {
               modelId,
               categoryId,
               imageId,
-              sectionId,
               colorId,
               discountId
           })
-          .then(()=>{
+          .then( product => {
+              db.Image.create({
+                  Image : req.files[0].filename,
+                  productId : product.id
+              })
               return res.redirect('/admin/list')
           })
           .catch(error => res.send(error))
