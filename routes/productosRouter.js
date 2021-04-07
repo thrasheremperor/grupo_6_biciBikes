@@ -5,7 +5,4 @@ const {detalle} = require('../controllers/productosController');
 
 router.get('/detalle/:id', detalle); /*ruta lista */
 
-//router.get('/detalle/:id', detalle)
-
-
 module.exports = router;
