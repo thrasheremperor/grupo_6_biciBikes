@@ -9,27 +9,19 @@
         <div class="form-registro">
 
             <form id="form" class="sesion-registro"  action="/usuario/registro" method="POST" enctype="multipart/form-data">
-                <h1 class="registro h1 mt-2">Registro</h1>
+                <h1 class="registro h1 mt-2">edicion de perfil</h1>
 
                 <input id="name" class="form-control mt-5 form-datos" name="name" type="text" placeholder="Nombre">
-                <span class="error" id="nameError"></span>
-                <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+            
+                <span  id="nameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
 
                 <input id="lastname" class="form-control mt-5 form-datos" name="lastName" type="text" placeholder="Apellido">
-                <span id="lastNameError"></span>
-                <span class="text-danger"><%=(typeof errores != 'undefined' && errores.lastName ? errores.lastName.msg: null ) %></span>
+        
+                <span id="lastNameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.lastName ? errores.lastName.msg: null ) %></span>
 
                 <input id="email" class="form-control mt-5 form-datos" name="email" type="email" placeholder="Email">
-                <span id="emailError"></span>
-                <span class="text-danger"><%=(typeof errores != 'undefined' && errores.email ? errores.email.msg: null ) %></span>
-
-                <input id="password" class="form-control mt-5 form-datos" name="password" type="password" placeholder="Contraseña">
-                <span id="passwordError"></span>
-                <span class="text-danger"><%=(typeof errores != 'undefined' && errores.password ? errores.password.msg: null ) %></span>
-
-                <input id="password2" class="form-control mt-5 form-datos" name="password2" type="password" placeholder="Repetir Contraseña">
-                <span id="passwordError2"></span>
-                <span class="text-danger"><%=(typeof errores != 'undefined' && errores.password2 ? errores.password2.msg: null ) %></span>
+            
+                <span  id="emailError" class="text-danger"><%=(typeof errores != 'undefined' && errores.email ? errores.email.msg: null ) %></span>
 
                 <input id="date" class="form-control mt-5 form-datos" name="birthday" type="date" placeholder="Fec. Nac. - ">
                 <span id="dateError"></span>
@@ -41,13 +33,6 @@
                     <span id="fileErrors"></span>
                 </div>
 
-                <div class="form-check mt-5">
-                    <input class="form-check-input" type="checkbox" value=null id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Acepto los términos y condiciones
-                    </label>
-                    <div id="termsErrors"></div>
-                </div>
                 
                 <div>
                     <button class="btn btn-registro hvr-box-shadow-outset" type="submit">Registrar</button>

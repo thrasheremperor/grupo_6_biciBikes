@@ -4,11 +4,11 @@ const db = require('../database/models');
 module.exports = [
     check('name')
     .notEmpty()
-    .withMessage('El nombre de usuario es requerido'),
+    .withMessage('ingrese su nombre'),
 
     check('lastName')
     .notEmpty()
-    .withMessage('El apellido de usuario es requerido'),
+    .withMessage('ingrese su apellido'),
 
     check('password')
     .notEmpty()
@@ -16,10 +16,10 @@ module.exports = [
 
     check('password')
     .isLength({
-        min:3,
-        max:20
+        min:7,
+        max:42
         })
-    .withMessage('La contraseña debe tener entre 3 y 20 caracteres'),
+    .withMessage('La contraseña debe tener entre 7 a 45 caracteres'),
 
     check('password2').custom((value,{req})=> value !== req.body.password ? false : true)
     .withMessage('las contraseñas no coinciden'),
@@ -28,9 +28,13 @@ module.exports = [
     .notEmpty()
     .withMessage('se require ser mayor de 13 años'),*/
     
-    /*check('condicion')
+    check('condicion')
     .isString('on')
-    .withMessage('debe aceptar las condiciones'),*/
+    .withMessage('debe aceptar las condiciones'),
+
+    check('email')
+    .notEmpty()
+    .withMessage('email requerido'),
 
     body('email').custom(value=>{
 

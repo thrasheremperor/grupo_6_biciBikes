@@ -24,7 +24,7 @@ module.exports = {
       },
       modelId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        
         references : {
           model :{
             tableName: 'models'

@@ -85,7 +85,7 @@ window.onload = () => {
                     $password.classList.add('is-invalid')
                     break;
                 case !regExPass.test($password.value):
-                    $passwordError.innerHTML = 'La contraseña debe contener: entre 7 o 42 caracters, minimo una mayuscula, una minuscula y un numero'
+                    $passwordError.innerHTML = 'Ingrese: entre 7 a 42 caracters, minimo una mayuscula, minuscula y un numero'
                     $password.classList.add('is-invalid')
                     break;
                 default:
@@ -178,7 +178,8 @@ window.onload = () => {
 
             let elementosForm = this.elements
             
-            for (let index = 0; index < elementosForm.length-1; index++) {
+            
+            for (let index = 0; index < 6 ; index++) {
                 if(elementosForm[index].value == ""){
                     elementosForm[index].classList.add('is-invalid');
                     submitErrors.innerHTML = "Los campos señalados son obligatorios";

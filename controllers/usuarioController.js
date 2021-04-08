@@ -36,7 +36,7 @@ module.exports  =  {
             lastName,       
             email,
             password : bcrypt.hashSync(password,10),   
-            avatar :req.files[0].filename ,
+            avatar : (req.files[0]) ? req.files[0].filename : "defoult.png",
             birthday
             
         })

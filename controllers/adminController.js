@@ -14,8 +14,9 @@ module.exports = {
         })
         
     },
-    cargado:(req,res,next)=>{    
-        const {name,model,description,make,color,discount,price,category} = req.body
+    cargado:(req,res,next)=>{ 
+          
+        const {name,model,description,make,color,discount,price,category,Image} = req.body
           db.Product.create({
               name,
               price,
@@ -23,7 +24,7 @@ module.exports = {
               make,
               model,
               category,
-              image,
+              Image,
               color,
               discount
           })
@@ -44,7 +45,7 @@ module.exports = {
         })
     },
     editar:(req,res)=>{  /*la opcion de edicion en producto se envuentra en la vista productEditado */
-        
+        db.Product.findByPk(req.params.id)
         
     },   
     editado:(req,res)=>{ /*aqui se puede visualizar los productos ya editados */

@@ -9,9 +9,6 @@ check('name')
 check('lastName')
 .notEmpty().withMessage('campo requerido'),
 
-check('email')
-.isEmail().withMessage('campo requerido'),
-
 check('birthday')
 .notEmpty().withMessage('campo requerido'),
 
