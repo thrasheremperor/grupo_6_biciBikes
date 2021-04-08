@@ -1,12 +1,17 @@
 'use strict';
 
 const faker = require('faker'); //para poner datos falsos
+const categorias1 = ['bmx',"mtb","ciudad","plegable","electrica","kids"]
+const categories = [];
 
-const categories = [...Array(30)].map(categorys =>({
-  category :faker.name.findName(),
-  createdAt : new Date(),
-  updatedAt: new Date()
-}))
+for (let i = 0; i < categorias1.length; i++) {
+  let subcategoria = {
+    category : categorias1[i],
+    createdAt : new Date,
+    updatedAt : new Date
+  } 
+  categories.push(subcategoria)
+};
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {

@@ -44,7 +44,30 @@
         <div class="row">
           <div class="col-10">
             
-            <input type="text" id="inputDiscount" name="discount" placeholder="Agregue su oferta" class="form-control mt-5 form-datos">
+            <input type="text" id="" name="color" class="form-control mt-5 form-datos" placeholder="Color">
+            <span id="priceError"></span>
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            
+            <select name="category"  id="">
+              <option selected hidden >Seleccione la categoria</option>
+              <% categorias.forEach(categoria => { %>
+               <option value="<%= categoria.id %> "><%= categoria.category %> </option>
+              <% }) %>
+            </select>
+           
+            <span id="priceError"></span>
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            
+            <input type="number" id="inputDiscount" name="discount" placeholder="Agregue su oferta" class="form-control mt-5 form-datos">
             <span id="discountError"></span>
             <span class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
 

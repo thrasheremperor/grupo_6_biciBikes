@@ -5,12 +5,17 @@ const db = require('../database/models');
 
 module.exports = {
     cargar :(req, res) => {
-        res.render('admin/formCarga', { /*aqui se puede visualizar un formulario de carga de un nuevo producto */
-            title: 'Cargar producto'
-        }) /*renderiso  la vista de formCarga.ejs */
+        db.category.findAll()
+        .then(categorias => {
+            res.render('admin/formCarga', { /*aqui se puede visualizar un formulario de carga de un nuevo producto */
+                title: 'Cargar producto',
+                categorias /*renderiso  la vista de formCarga.ejs */
+            }) 
+        })
+        
     },
     cargado:(req,res,next)=>{    
-        const {name,model,description,make,color,discount} = req.body
+        const {name,model,description,make,color,discount,price,category} = req.body
           db.Product.create({
               name,
               price,
