@@ -114,7 +114,48 @@ module.exports  =  {
         
     },
 
-        //edit perfil 
+    edit : (req,res)=>{
+        db.User.findByPk(req.params.id)
+        .then(userPerfil=>{
+            res.render('user/editPerfil',{
+                title: 'Editar Perfil',
+                userPerfil
+            })
+        })
+    },
+
+    editado : (req,res)=>{
+        let errores = validationResult(req);
+
+        if(!errores.isEmpty()){
+            return res.render('user/editPerfil'+req.params.id,{
+                title:"Editar Perfil",   
+                errores : errores.mapped(),
+                             
+            })
+        }else{
+            
+        const {name, lastName, email,birthday} = req.body;
+
+         db.User.update({
+            name,
+            lastName,       
+            email,   
+            avatar : (req.files[0]) ? req.files[0].filename : "defoult.png",
+            birthday
+            
+        },{
+            where : {
+                id : req.params.id
+            }
+        })
+        .then(user => {
+            console.log(user)
+            res.redirect('/usuario/edit/'+req.params.id)
+        }) 
+        .catch(error => console.log(error))
+        }
+},
 
 
     cerrar : (req,res)=>{
