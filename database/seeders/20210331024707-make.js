@@ -1,29 +1,28 @@
 'use strict';
+const faker = require('faker'); 
+const marcas = ['MTB','Ciudad','Plegable','Kids', 'BMX', 'Ruta','Electrica'];
 
-const faker = require('faker'); //para poner datos falsos
+const makes = [];
 
-const makes = [...Array(30)].map(marcas =>({
-  make : faker.name.firstName(),
-  createdAt : new Date(),
-  updatedAt: new Date()
-}))
+for (let i = 0; i < marcas.length; i++) {
+  let nombre = {
+    make : marcas[i],
+    createdAt : new Date,
+    updatedAt : new Date
+  } 
+  makes.push(nombre)
+};
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    
-     //Add seed commands here.
-    
-     //Example:
-     await queryInterface.bulkInsert('makes', makes, {});
+   
+      await queryInterface.bulkInsert('makes', makes, {});
     
   },
 
   down: async (queryInterface, Sequelize) => {
     
-    //Add commands to revert seed here.
-    
-    //Example:
-    await queryInterface.bulkDelete('makes', null, {});
-    
+      await queryInterface.bulkDelete('makes', null, {});
+     
   }
 };

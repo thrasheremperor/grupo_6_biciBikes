@@ -1,29 +1,28 @@
 'use strict';
+const faker = require('faker'); 
+const descuentos = ['10','15','5','20', '25', '40','30'];
 
-const faker = require('faker'); //para poner datos falsos
+const discounts = [];
 
-const discounts = [...Array(30)].map(descuento =>({
-  discount:faker.random.number(99),
-  createdAt : new Date(),
-  updatedAt: new Date()
-}))
+for (let i = 0; i < descuentos.length; i++) {
+  let nombre = {
+    discount : descuentos[i],
+    createdAt : new Date,
+    updatedAt : new Date
+  } 
+  discounts.push(nombre)
+};
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    
-     //Add seed commands here.
-    
-     //Example:
-     await queryInterface.bulkInsert('discounts', discounts, {});
+   
+      await queryInterface.bulkInsert('discounts', discounts, {});
     
   },
 
   down: async (queryInterface, Sequelize) => {
     
-    //Add commands to revert seed here.
-    
-    //Example:
-    await queryInterface.bulkDelete('discounts', null, {});
-    
+      await queryInterface.bulkDelete('discounts', null, {});
+     
   }
 };

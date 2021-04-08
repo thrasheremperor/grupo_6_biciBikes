@@ -13,7 +13,7 @@ for (let index = 0; index < 30; index++) {
     colorId:faker.random.number({min:1, max:30}),
     price : faker.commerce.price(),
     description : faker.commerce.productDescription(),
-    discountId: faker.random.number({min:1, max:30}),
+    discountId: faker.random.number({min:1, max:7}),
     categoryId:faker.random.number({min:1, max:7}),
     sectionId :faker.random.number({min:1, max:3}),
     createdAt : new Date(),

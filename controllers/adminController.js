@@ -5,22 +5,28 @@ const db = require('../database/models');
 
 module.exports = {
     cargar :(req, res) => {
-        res.render('admin/formCarga', { /*aqui se puede visualizar un formulario de carga de un nuevo producto */
-            title: 'Cargar producto'
-        }) /*renderiso  la vista de formCarga.ejs */
+        db.category.findAll()
+        .then(categorias => {
+            res.render('admin/formCarga', { /*aqui se puede visualizar un formulario de carga de un nuevo producto */
+                title: 'Cargar producto',
+                categorias /*renderiso  la vista de formCarga.ejs */
+            }) 
+        })
+        
     },
-    cargado:(req,res,next)=>{    
-        const {name,modelId,description,makeId,colorId,discountId} = req.body
+    cargado:(req,res,next)=>{ 
+          
+        const {name,model,description,make,color,discount,price,category,Image} = req.body
           db.Product.create({
               name,
               price,
               description,
-              makeId,
-              modelId,
-              categoryId,
-              imageId,
-              colorId,
-              discountId
+              make,
+              model,
+              category,
+              Image,
+              color,
+              discount
           })
           .then( product => {
               db.Image.create({
@@ -39,7 +45,7 @@ module.exports = {
         })
     },
     editar:(req,res)=>{  /*la opcion de edicion en producto se envuentra en la vista productEditado */
-        
+        db.Product.findByPk(req.params.id)
         
     },   
     editado:(req,res)=>{ /*aqui se puede visualizar los productos ya editados */
