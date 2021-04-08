@@ -9,9 +9,6 @@ check('name')
 check('make')
 .notEmpty().withMessage('campo requerido'),
 
-check('model')
-.notEmpty().withMessage('campo requerido'),
-
 check('color')
 .notEmpty().withMessage('campo requerido'),
 
@@ -19,9 +16,6 @@ check('price')
 .notEmpty().withMessage('campo requerido'),
 
 check('description')
-.notEmpty().withMessage('campo requerido'),
-
-check('discount')
 .notEmpty().withMessage('campo requerido'),
 
 check('category')

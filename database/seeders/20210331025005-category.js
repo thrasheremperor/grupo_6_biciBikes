@@ -1,29 +1,28 @@
 'use strict';
 
-const faker = require('faker'); //para poner datos falsos
+const categorias = ['MTB','Ciudad','Plegable','Kids', 'BMX', 'Ruta','Electrica'];
 
-const categories = [...Array(30)].map(categorys =>({
-  category :faker.name.findName(),
-  createdAt : new Date(),
-  updatedAt: new Date()
-}))
+const categories = [];
+
+for (let i = 0; i < categorias.length; i++) {
+  let nombre = {
+    category : categorias[i],
+    createdAt : new Date,
+    updatedAt : new Date
+  } 
+  categories.push(nombre)
+};
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    
-     //Add seed commands here.
-    
-     //Example:
-     await queryInterface.bulkInsert('categories', categories, {});
+   
+      await queryInterface.bulkInsert('categories', categories, {});
     
   },
 
   down: async (queryInterface, Sequelize) => {
     
-    //Add commands to revert seed here.
-    
-    //Example:
-    await queryInterface.bulkDelete('categories', null, {});
-    
+      await queryInterface.bulkDelete('categories', null, {});
+     
   }
 };

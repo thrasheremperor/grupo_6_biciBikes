@@ -56,15 +56,25 @@ module.exports = {
         })
     },
     carrito :(req, res) => {
-        res.render('user/', {
+        res.render('user/carritoCompras', {
             title: 'Carga de Producto'
         })
     },
     productosFull: (req,res)=>{
-       db.Product.findAll()
-       .then(producto =>{
-           return res.render('products',{
-               producto
+       let productos = db.Product.findAll({
+        include : [
+            {association : "seccion_products",
+               include:[
+             {association:"product_discount"},
+             {association: "product"}
+                ]
+            },
+        ]
+       })
+       Promise.all([productos])
+       .then(([productos]) =>{
+           res.render('products',{
+               productos
            })
        })
        .catch(error => res.send(error))
