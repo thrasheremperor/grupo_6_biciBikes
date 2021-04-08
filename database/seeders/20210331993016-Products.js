@@ -8,9 +8,9 @@ for (let index = 0; index < 30; index++) {
   
   const producto = {
     name: faker.commerce.productName(),
-    makeId:faker.random.number({min:1, max:30}),
-    modelId:faker.random.number({min:1, max:30}),
-    colorId:faker.random.number({min:1, max:30}),
+    makeId:faker.random.number({min:1, max:7}),
+    modelId:faker.random.number({min:1, max:7}),
+    colorId:faker.random.number({min:1, max:7}),
     price : faker.commerce.price(),
     description : faker.commerce.productDescription(),
     discountId: faker.random.number({min:1, max:7}),

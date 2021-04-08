@@ -10,6 +10,7 @@ module.exports  =  {
         res.render( 'user/login', { 
             title:"Log in"
         });
+
     },
     registro : ( req ,  res )  =>{
             res.render( 'user/registro',{
@@ -139,9 +140,8 @@ module.exports  =  {
 
          db.User.update({
             name,
-            lastName,       
-            email,   
-            avatar : (req.files[0]) ? req.files[0].filename : "defoult.png",
+            lastName,         
+            avatar : (req.files[0]) ? req.files[0].filename : req.session.userPerfil.avatar,
             birthday
             
         },{
@@ -157,7 +157,6 @@ module.exports  =  {
         }
 },
 
-
     cerrar : (req,res)=>{
         req.session.destroy();
         if(req.cookies.biciBikes){
@@ -167,6 +166,16 @@ module.exports  =  {
         }
         res.redirect('/')
     },
-
+    eliminar:(req,res)=>{
+        db.User.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(()=>{
+            return res.redirect('/')
+        })
+        .catch(error => res.send(error))
+    }
 
 }
