@@ -7,15 +7,18 @@ module.exports = {
            where: {
                 id: req.params.id
             },
+
            include : [
+                {association: "product"} ,//Para traer la imagen
+                {association:"product_discount"},
+                {association:"producto_make"},
+                {association:"product_color"},
                    
-                   {association: "product"} //Para traer la imagen//
-                ]
+            ] 
         })
-          
         .then(producto =>{
             return res.render('detalleProducto',{
-                title :"detalle",
+                title: "Detalle producto",
                 producto
             })
         })
