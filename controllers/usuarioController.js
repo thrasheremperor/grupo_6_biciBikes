@@ -76,7 +76,8 @@ module.exports  =  {
                             name : user.name,
                             lastName : user.lastName,
                             email : user.email,
-                            birthday:user.birthday
+                            birthday:user.birthday,
+                            rol : user.rol
                         }
                         if(recordar){
                             res.cookie('biciBikes', req.session.userPerfil,{
