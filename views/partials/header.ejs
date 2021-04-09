@@ -26,7 +26,7 @@
                 <li><a class="nav-link hvr-icon-bob" href="/compras">Mis Compras<i class="fas fa-shopping-cart fa-lg"></i></a></li>
               </ul>
             </li>
-          <% } %>
+         
 
           <% if (userPerfil.rol != 2) { %>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -39,38 +39,38 @@
                     <li><a class="dropdown-item" href="/admin/list">Lista de productos</a></li>
                   </ul>
                 </li>
-    
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle hvr-icon-bob" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Filtros
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">MTB</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Ciudad</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Pegable</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Kids</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">BMX</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Electrica</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Ruta</a>
-                  </div>
-                </li>
-                
-                <li class="nav-item">
-                  <a class="nav-link hvr-icon-bob" href="/full">Bicicletas</a>
-                </li>
+             </ul>              
               </div>  
          
-        
+              <% } %>
             
          <%  }else{  %> 
           
           <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle hvr-icon-bob" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Filtros
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">MTB</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Ciudad</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Pegable</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Kids</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">BMX</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Electrica</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Ruta</a>
+              </div>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link hvr-icon-bob" href="/full">Bicicletas</a>
+            </li>
             <li><a class="nav-link hvr-icon-bob" href="/usuario/registro">Registrar<i class="fas fa-user-plus fa-lg"></i></a></li>
             <li><a class="nav-link hvr-icon-bob" href="/usuario/login">Iniciar<i class="fas fa-users fa-lg"></i></a></li>
           </ul>
