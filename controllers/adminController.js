@@ -15,18 +15,16 @@ module.exports = {
         
     },
     cargado:(req,res,next)=>{ 
-          
-        const {name,model,description,make,color,discount,price,category,Image} = req.body
+          res.send(req.body);
+        const {name,description,make,color,discount,price,category} = req.body
           db.Product.create({
               name,
-              price,
+              price : parseFloat(price),
               description,
-              make,
-              model,
-              category,
-              Image,
-              color,
-              discount
+              makeId : make,
+              categoryId : category,
+              colorId : color, //hacer select para category y color  y make
+              discountId : discount
           })
           .then( product => {
               db.Image.create({

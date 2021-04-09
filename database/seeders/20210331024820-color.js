@@ -1,6 +1,6 @@
 'use strict';
 const faker = require('faker'); 
-const colores = ['MTB','Ciudad','Plegable','Kids', 'BMX', 'Ruta','Electrica'];
+const colores = ['amarillo','negro','azul','verde', 'morado', 'rosa','rojo'];
 
 const colors = [];
 
