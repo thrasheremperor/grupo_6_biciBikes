@@ -61,17 +61,11 @@ module.exports = {
         })
         .catch(error=>res.send(error))
     },
-      
     productosFull: (req,res)=>{
         
-      db.Product.findAll({
-            include:[
-               {association : "product_discount"},
-               {association: "product"}
-            ]
-        })
+      db.Product.findAll()
       .then(productos=>{
-           res.render('products',{
+            return res.render('products',{
                productos,
                title: "Todos los productos"
               
