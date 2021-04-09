@@ -8,23 +8,24 @@
        
       <form class="sesion" method="POST">
         <h2 class="loginh2">Inicia sesion</h2>
+
         
         <input type="email" placeholder="Email" id="email" name="email" class="login-credentials">
-        <span id="emailErrors"></span>
-        <span><%= (typeof errores != 'undefined' && errores.email ? errores.email.msg: "") %> </span>
+      
+        <span id="emailErrors" class="text-danger text-center"><%= (typeof errores != 'undefined' && errores.email ? errores.email.msg: "") %> </span>
           
 
           
         <input type="password" placeholder="Contraseña" id="pass" name="password" class="login-credentials">
-        <span id="passErrors"></span>
-        <span><%= (typeof errores != 'undefined' && errores.password ? errores.password.msg: "")%></span>
+        
+        <span id="passErrors" class="text-danger text-center" ><%= (typeof errores != 'undefined' && errores.password ? errores.password.msg: "")%></span>
           
 
         <!--OPCION PARA USAARIO NORMAL Y ADMIN-->
+         <span class="text-danger text-center" ><%= (typeof errores != 'undefined' && errores.invalid)? errores.invalid.msg: "" %></span>
+       
 
-        <span><%= (typeof errores != 'undefined' && errores.invalid)? errores.invalid.msg: "" %></span>
-
-        <span>
+        <span class="mt-3 text-center" >
           <input class="checkbox" type="checkbox" name="recordar" id="recordar">
           <label for="recordar">Recuerdame</label>
         </span>
@@ -34,13 +35,13 @@
           
           
         <a href="/usuario/registro" class="help-login">¿Todavia no tiene una cuenta?</a>
-        <a href="" class="help-login">¿Olvidaste tu Contraseña?</a>
+        <a href="#" class="help-login">¿Olvidaste tu Contraseña?</a>
       </form>
     </div>
 
     <%- include('../partials/footer') %>
 
-    <script src="/javascript/userLogin.js"></script>
+    <script src="/javascripts/userLogin.js"></script>
 
   </body>
 </html>

@@ -32,8 +32,9 @@ app.use(session({
     resave: true, 
     saveUninitialized: true
 }));
-app.use(localCheck);
+
 app.use(cookieCheck)
+app.use(localCheck);
 
 // rutas 
 

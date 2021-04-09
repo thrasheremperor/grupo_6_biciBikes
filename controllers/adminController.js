@@ -15,7 +15,7 @@ module.exports = {
         
     },
     cargado:(req,res,next)=>{ 
-          res.send(req.body);
+          
         const {name,description,make,color,discount,price,category} = req.body
           db.Product.create({
               name,

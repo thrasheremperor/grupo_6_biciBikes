@@ -136,7 +136,7 @@ module.exports  =  {
             })
         }else{
             
-        const {name, lastName, email,birthday} = req.body;
+        const {name, lastName,birthday} = req.body;
 
          db.User.update({
             name,
@@ -151,7 +151,7 @@ module.exports  =  {
         })
         .then(user => {
             console.log(user)
-            res.redirect('/usuario/edit/'+req.params.id)
+            res.redirect('/usuario/miPerfil')
         }) 
         .catch(error => console.log(error))
         }

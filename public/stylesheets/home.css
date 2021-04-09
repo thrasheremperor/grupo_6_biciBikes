@@ -6,6 +6,9 @@ main{
     background-color: var(--black);
     background-position: center;
 }
+.terrible{
+    object-fit: contain;
+}
 
 section.banner{
     background-image: url('../images/biciBanner.jpeg');

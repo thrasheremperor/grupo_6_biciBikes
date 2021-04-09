@@ -1,5 +1,5 @@
 'use strict';
-const faker = require('faker'); 
+
 const marcas = ['MTB','Ciudad','Plegable','Kids', 'BMX', 'Ruta','Electrica'];
 
 const makes = [];
