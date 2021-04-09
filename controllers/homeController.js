@@ -11,7 +11,7 @@ module.exports = {
                 {association : "seccion_products",
                    include:[
                  {association:"product_discount"},
-                 {association: "product"}
+                 {association: "images"}
                     ]
                 },
             ]
@@ -24,7 +24,7 @@ module.exports = {
                 {association : "seccion_products",
                  include:[
                      {association:"product_discount"},
-                     {association: "product"}
+                     {association: "images"}
                     ]
                 }
             ]
@@ -38,7 +38,7 @@ module.exports = {
                  {association : "seccion_products",
                   include:[
                       {association:"product_discount"},
-                      {association: "product"}
+                      {association: "images"}
                      ]
                  }
              ]
