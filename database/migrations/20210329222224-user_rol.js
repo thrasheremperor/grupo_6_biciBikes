@@ -7,7 +7,7 @@ module.exports = {
      *
      * Example:
      */
-     await queryInterface.addColumn('users','rol' ,Sequelize.INTEGER );
+     await queryInterface.addColumn('users','rol' ,Sequelize.STRING );
      
   },
 
@@ -17,7 +17,7 @@ module.exports = {
      *
      * Example:
      */
-    await queryInterface.removeColumn('users','rol' ,Sequelize.INTEGER );
+    await queryInterface.removeColumn('users','rol' ,Sequelize.STRING );
      
   }
 };
