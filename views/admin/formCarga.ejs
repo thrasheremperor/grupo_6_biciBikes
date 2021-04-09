@@ -11,42 +11,46 @@
           <div class="col-10">
             
             <input type="text" name="name" placeholder="Nombre del producto" id="inputname" class="form-control mt-5 form-datos">
-            <span  id="nameError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+            
+            <span  id="nameError" class="text-danger text-center"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
            
           </div>
         </div>
         <div class="row">
           <div class="col-10">
-            
-            <input type="text" id="inputmake" name="make" placeholder="marca del producto" class="form-control mt-5 form-datos">
-            <span id="makeError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+            <select name="make"  id="">
+              <option selected hidden >Seleccione marca</option>
+              <% marcas.forEach(marcas => { %>
+               <option value="<%= marcas.id %>"><%= marcas.make %></option>
+              <% }) %>
+            </select>
+           
+            <span id="makeError" class="text-danger text-center"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
           </div>
         </div>
-        <div class="row">
-          <div class="col-10">
-
-            <input type="text" id="inputModel" name="model" placeholder="Modelo de la bici" class="form-control mt-5 form-datos">
-            <span id="modelError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
-
-          </div>
-        </div>  
+        
         <div class="row">
           <div class="col-10">
             
             <input type="number" id="price" name="price" class="form-control mt-5 form-datos" placeholder="Precio de producto">
-            <span id="priceError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
+          
+            <span id="priceError" class="text-danger text-center"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
           </div>
         </div>
         <div class="row">
           <div class="col-10">
             
-            <input type="text" id="" name="color" class="form-control mt-5 form-datos" placeholder="Color">
-            <span id="priceError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
+             <!--<input type="text" id="" name="color" class="form-control mt-5 form-datos" placeholder="Color">-->
+             
+            <select name="color"  id="">
+              <option selected hidden >Seleccione Color</option>
+              <% colors.forEach(categoria => { %>
+               <option value="<%= categoria.id %> "><%= categoria.color %> </option>
+              <% }) %>
+            </select>
+           
+            
+            <span  id="priceError" class="text-danger text-center"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
           </div>
         </div>
         <div class="row">
@@ -65,9 +69,17 @@
         <div class="row">
           <div class="col-10">
             
-            <input type="number" id="inputDiscount" name="discount" placeholder="Agregue su oferta" class="form-control mt-5 form-datos">
-            <span id="discountError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+            <!--<input type="number" id="inputDiscount" name="discount" placeholder="Agregue su oferta" class="form-control mt-5 form-datos">-->
+             
+            <select name="discount"  id="">
+              <option selected hidden >Seleccione descuento</option>
+              <% descuentos.forEach(categoria => { %>
+               <option value="<%= categoria.id %> "><%= categoria.discount %> </option>
+              <% }) %>
+            </select>
+           
+            
+            <span id="discountError" class="text-danger text-center"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
 
           </div>
         </div>
@@ -75,8 +87,8 @@
           <div class="col-10">
                        
             <input type="text" name="description" id="description" class="form-control mt-5 form-datos" placeholder="Description">
-            <span id="descriptionError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.description ? errores.description.msg: null ) %></span>
+            
+            <span id="descriptionError" class="text-danger text-center"><%=(typeof errores != 'undefined' && errores.description ? errores.description.msg: null ) %></span>
           </div>
         </div>
 
@@ -84,8 +96,8 @@
           <div class="col-10">
             <label name="imgagen" class="mt-5">Imagen de Producto</label>
             <input class="form-control form-control-lg Imagen" id="formFileLg" type="file"  name="Image">
-            <span id="formFileLgError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.image ? errores.image.msg: null ) %></span>
+           
+            <span  id="formFileLgError" class="text-danger text-center"><%=(typeof errores != 'undefined' && errores.image ? errores.image.msg: null ) %></span>
           </div>
         </div>
         <br>

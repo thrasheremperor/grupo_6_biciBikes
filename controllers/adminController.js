@@ -17,7 +17,9 @@ module.exports = {
     cargado:(req,res,next)=>{ 
           
         const {name,model,description,make,color,discount,price,category,Image} = req.body
-          db.Product.create({
+            res.send(req.body)
+
+         /*db.Product.create({
               name,
               price,
               description,
@@ -27,15 +29,15 @@ module.exports = {
               Image,
               color,
               discount
-          })
-          .then( product => {
+          })*/
+           /*.then( product => {
               db.Image.create({
                   Image : req.files[0].filename,
                   productId : product.id
               })
               return res.redirect('/admin/list')
           })
-          .catch(error => res.send(error))
+          .catch(error => res.send(error))*/
     },
     
     creado:(req,res) =>{

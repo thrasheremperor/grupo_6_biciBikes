@@ -30,7 +30,6 @@ module.exports = {
             ]
         })
                
-
         let productsPopular = db.section.findOne({
             where : {
                id:3
@@ -56,31 +55,14 @@ module.exports = {
         })
     },
     
-    
-    
     carrito :(req, res) => {
         res.render('user/carritoCompras', {
             title: 'Carga de Producto'
         })
         .catch(error=>res.send(error))
     },
-    
-    
-    
+      
     productosFull: (req,res)=>{
-        /*db.Product.findAll({
-            include:[
-                {association:"product_discount"},
-                {association:"product"}
-            ]
-        })
-        .then(productos=>{
-            res.render('products',{
-                title: "todos los productos",
-                productos
-            })
-        })
-        .catch(error =>res.send(error))*/
         
       db.Product.findAll({
             include:[
@@ -91,26 +73,28 @@ module.exports = {
       .then(productos=>{
            res.render('products',{
                productos,
-               title: "Bici Bikes - Todos los productos"
+               title: "Todos los productos"
               
             })
         })
        .catch(error=>res.send(error))
     },
 
-    search: (req, res) => { /*buscador siempre va por get */
+    search : (req, res) => { /*buscador siempre va por get */
         db.Product.findAll({ 
             where : {
-                title: req.query.buscador
+
+                name: {
+                    [Op.like]:'%${req.query.buscador}%'
+                }
             }
         })
-        .then( productos => {
+        .then( bicis => {
             return res.render('SearchResult',{
-                productos
+                title: 'BiciBikes',
+                bicis
             })
         })
         .catch(error => res.send(error))
     }
 }
-
-

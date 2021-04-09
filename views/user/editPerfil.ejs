@@ -8,28 +8,24 @@
     <div class="contenedor">
         <div class="form-registro">
 
-            <form id="form" class="sesion-registro"  action="/usuario/edit/<%=userPerfil.id%>?_mothod=PUT" method="POST" enctype="multipart/form-data">
+            <form id="form" class="sesion-registro"  action="/usuario/edit/<%=userPerfil.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <h1 class="registro h1 mt-2">edicion de perfil</h1>
 
                 <input id="name" class="form-control mt-5 form-datos" name="name" type="text" placeholder="Nombre" value="<%= userPerfil.name %> ">
             
                 <span  id="nameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
 
-                <input id="lastname" class="form-control mt-5 form-datos" name="lastName" type="text" placeholder="Apellido" value="<%= userPerfil.apellido %> ">>
+                <input id="lastname" class="form-control mt-5 form-datos" name="lastName" type="text" placeholder="Apellido" value="<%= userPerfil.lastName %> ">
         
                 <span id="lastNameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.lastName ? errores.lastName.msg: null ) %></span>
 
-                <input id="email" class="form-control mt-5 form-datos" name="email" type="email" placeholder="Email" value="<%= userPerfil.email %> ">>
-            
-                <span  id="emailError" class="text-danger"><%=(typeof errores != 'undefined' && errores.email ? errores.email.msg: null ) %></span>
-
-                <input id="date" class="form-control mt-5 form-datos" name="birthday" type="date" placeholder="Fec. Nac. - " value="<%= userPerfil.birthday %> ">>
+                <input id="date" class="form-control mt-5 form-datos" name="birthday" type="date" placeholder="Fec. Nac. - " value="<%= userPerfil.birthday %> ">
                 <span id="dateError"></span>
                 
 
                 <div class="mt-5">
                     <div class="img-container" id="img-preview"></div>
-                    <input class="form-control photo-box mt-3 img-thumbnail" type="file" id="formFile" name="avatar" value="<%= userPerfil.avatar%> ">>
+                    <input class="form-control photo-box mt-3 img-thumbnail" type="file" id="formFile" name="avatar" value="<%= userPerfil.avatar%> ">
                     <span id="fileErrors"></span>
                 </div>
 

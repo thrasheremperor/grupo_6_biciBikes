@@ -151,7 +151,7 @@ module.exports  =  {
         })
         .then(user => {
             console.log(user)
-            res.redirect('/usuario/edit/'+req.params.id)
+            res.redirect('/usuario/miPerfil')
         }) 
         .catch(error => console.log(error))
         }

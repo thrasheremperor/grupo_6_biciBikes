@@ -43,7 +43,7 @@ $Pass.addEventListener('blur', function(){
             $Pass.classList.add('invalido')
             break;
         case !regExPass.test($Pass.value):
-            $passErrors.innerHTML = 'Debe tener entre 6 y 12 caracteres'
+            $passErrors.innerHTML = 'ingrese contraseña'
             $Pass.classList.add('invalido')
             break;
         default:
