@@ -55,13 +55,20 @@ module.exports = {
         
         })
     },
+    
+    
+    
     carrito :(req, res) => {
         res.render('user/carritoCompras', {
             title: 'Carga de Producto'
         })
+        .catch(error=>res.send(error))
     },
+    
+    
+    
     productosFull: (req,res)=>{
-        db.Product.findAll({
+        /*db.Product.findAll({
             include:[
                 {association:"product_discount"},
                 {association:"product"}
@@ -73,8 +80,24 @@ module.exports = {
                 productos
             })
         })
-        .catch(error =>res.send(error))
+        .catch(error =>res.send(error))*/
+        
+      db.Product.findAll({
+            include:[
+               {association : "product_discount"},
+               {association: "product"}
+            ]
+        })
+      .then(productos=>{
+           res.render('products',{
+               productos,
+               title: "Bici Bikes - Todos los productos"
+              
+            })
+        })
+       .catch(error=>res.send(error))
     },
+
     search: (req, res) => { /*buscador siempre va por get */
         db.Product.findAll({ 
             where : {
@@ -89,3 +112,5 @@ module.exports = {
         .catch(error => res.send(error))
     }
 }
+
+

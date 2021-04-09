@@ -18,7 +18,7 @@
                     </figure>
                     <article class="product-box_data">
                       <h6><%- producto.name %> </h6>
-                      <h6><%- producto.make %> </h6>
+                      <h6><%- producto.producto_make.make %> </h6>
                       <span>$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
                       <% if (producto.product_discount.discount != 0) { %>
                         <span><%- producto.product_discount.discount %>% OFF </span>
