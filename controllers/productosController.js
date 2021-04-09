@@ -6,10 +6,14 @@ module.exports = {
      db.Product.findOne({
          where : {
              id : req.params.id
-         }
+         },
+         include: [
+             {association:"images"},
+         ]
 
-     })
+         })
         .then(producto =>{
+            res.send(producto)
             return res.render('detalleProducto',{
                 title: "Detalle producto",
                 producto
