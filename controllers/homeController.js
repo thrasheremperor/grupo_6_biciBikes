@@ -55,30 +55,35 @@ module.exports = {
         
         })
     },
+    
+    
+    
     carrito :(req, res) => {
         res.render('user/carritoCompras', {
             title: 'Carga de Producto'
         })
+        .catch(error=>res.send(error))
     },
+    
+    
+    
     productosFull: (req,res)=>{
-       let productos = db.Product.findAll({
-        include : [
-            {association : "seccion_products",
-               include:[
-             {association:"product_discount"},
-             {association: "product"}
-                ]
-            },
-        ]
-       })
-       Promise.all([productos])
-       .then(([productos]) =>{
+      db.Product.findAll({
+            include:[
+               {association : "product_discount"},
+               {association: "product"}
+            ]
+        })
+      .then(productos=>{
            res.render('products',{
-               productos
-           })
-       })
-       .catch(error => res.send(error))
+               productos,
+               title: "Bici Bikes - Todos los productos"
+              
+            })
+        })
+       .catch(error=>res.send(error))
     },
+
     search: (req, res) => { /*buscador siempre va por get */
         db.Product.findAll({ 
             where : {
@@ -93,3 +98,5 @@ module.exports = {
         .catch(error => res.send(error))
     }
 }
+
+
