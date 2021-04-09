@@ -130,7 +130,7 @@ module.exports  =  {
         let errores = validationResult(req);
 
         if(!errores.isEmpty()){
-            return res.render('user/editPerfil'+req.params.id,{
+            return res.render('user/editPerfil',{
                 title:"Editar Perfil",   
                 errores : errores.mapped(),
                              
@@ -140,10 +140,10 @@ module.exports  =  {
         const {name, lastName,birthday} = req.body;
 
          db.User.update({
-            name,
-            lastName,         
+            name : name,
+            lastName:lastName,         
             avatar : (req.files[0]) ? req.files[0].filename : req.session.userPerfil.avatar,
-            birthday
+            birthday :birthday
             
         },{
             where : {

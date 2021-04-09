@@ -8,7 +8,7 @@
     <div class="contenedor">
         <div class="form-registro">
 
-            <form id="form" class="sesion-registro"  action="/usuario/edit/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form id="form" class="sesion-registro"  action="/usuario/edit/<%=userPerfil.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <h1 class="registro h1 mt-2">edicion de perfil</h1>
 
                 <input id="name" class="form-control mt-5 form-datos" name="name" type="text" placeholder="Nombre" value="<%= userPerfil.name %> ">
@@ -37,8 +37,6 @@
         </div>
     </div>
 
-
-    
 
     <%- include('../partials/footer') %>
     <script src="/javascripts/registro.js"></script>

@@ -5,8 +5,8 @@
 }
 .register-form {
     border: 1px solid white;
-    background-color: var(--yellow);
-    border-radius: 30px;
+    background-color: rgb(83, 69, 52);
+    border-radius: 20px;
 }
 .jugador{
     position: relative;
