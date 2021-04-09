@@ -6,6 +6,7 @@ module.exports = {
         db.Product.findByPk(req.params.id)
         .then(producto =>{
             return res.render('detalleProducto',{
+                title :"detalle",
                 producto
             })
         })

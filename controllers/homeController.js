@@ -61,23 +61,19 @@ module.exports = {
         })
     },
     productosFull: (req,res)=>{
-       let productos = db.Product.findAll({
-        include : [
-            {association : "seccion_products",
-               include:[
-             {association:"product_discount"},
-             {association: "product"}
-                ]
-            },
-        ]
-       })
-       Promise.all([productos])
-       .then(([productos]) =>{
-           res.render('products',{
-               productos
-           })
-       })
-       .catch(error => res.send(error))
+        db.Product.findAll({
+            include:[
+                {association:"product_discount"},
+                {association:"product"}
+            ]
+        })
+        .then(productos=>{
+            res.render('products',{
+                title: "todos los productos",
+                productos
+            })
+        })
+        .catch(error =>res.send(error))
     },
     search: (req, res) => { /*buscador siempre va por get */
         db.Product.findAll({ 

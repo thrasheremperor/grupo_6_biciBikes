@@ -136,7 +136,7 @@ module.exports  =  {
             })
         }else{
             
-        const {name, lastName, email,birthday} = req.body;
+        const {name, lastName,birthday} = req.body;
 
          db.User.update({
             name,
