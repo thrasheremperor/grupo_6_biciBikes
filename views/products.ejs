@@ -9,19 +9,19 @@
             <div class="col-12">
               <h2 class="products-title">Todos los productos</h2>
             </div>
-            <% producto.forEach(producto => { %>
+            <% productos.forEach(producto => { %>
               <div class="col-12 col-md-4">
                 <section class="product-box hvr-bounce-in">
                   <a href="/productos/detalle/<%- producto.id %>"></a>
                     <figure class="product-box_image">
-                      <img src="/images/imgProduct/<%- producto.product.image %> %> " alt="bicicleta" class="img-fluid">
+                      <img src="/images/imgProduct/<%- producto.image %>" alt="bicicleta" class="img-fluid">
                     </figure>
                     <article class="product-box_data">
                       <h6><%- producto.name %> </h6>
-                      <h6><%- producto.make %> </h6>
-                      <span>$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
-                      <% if (producto.product_discount.discount != 0) { %>
-                        <span><%- producto.product_discount.discount %>% OFF </span>
+                    
+                      <span>$<%- (producto.price - producto.price * producto.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                      <% if (producto.discount != 0) { %>
+                        <span><%- producto.discount %>% OFF </span>
                       <% } %>
                       <i class="fas fa-truck"></i>
                     </article>
