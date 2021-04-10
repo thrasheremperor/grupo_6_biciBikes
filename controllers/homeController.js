@@ -63,7 +63,11 @@ module.exports = {
     },
     productosFull: (req,res)=>{
         
-      db.Product.findAll()
+      db.Product.findAll({
+          include: [
+             {association:"images"},
+         ]
+      })
       .then(productos=>{
             return res.render('products',{
                productos,
