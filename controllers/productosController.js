@@ -7,7 +7,9 @@ module.exports = {
          where : {
              id : req.params.id
          },
-         
+         include:[
+             {association:"images"}
+         ]
 
          })
         .then(producto =>{

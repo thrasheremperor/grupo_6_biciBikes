@@ -55,12 +55,6 @@ module.exports = {
         })
     },
     
-    carrito :(req, res) => {
-        res.render('user/carritoCompras', {
-            title: 'Carga de Producto'
-        })
-        .catch(error=>res.send(error))
-    },
     productosFull: (req,res)=>{
         
       db.Product.findAll({
@@ -94,5 +88,13 @@ module.exports = {
             })
         })
         .catch(error => res.send(error))
+    },
+
+
+    carrito :(req, res) => {
+        res.render('user/carritoCompras', {
+            title: 'Carga de Producto'
+        })
+        .catch(error=>res.send(error))
     }
 }
