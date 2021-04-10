@@ -68,8 +68,8 @@ module.exports  =  {
                 }
             })
             .then( user => {
-                if(user){
-                    if(bcrypt.compareSync(password.trim(), user.password)){
+
+                    if(user && bcrypt.compareSync(password.trim(), user.password)){
                         req.session.userPerfil = {
                             id: user.id,
                             avatar :user.avatar,
@@ -95,7 +95,7 @@ module.exports  =  {
                                 }
                             }
                         })
-                    }
+                    
                 }}).catch(error => console.log(error))
             
             }},
