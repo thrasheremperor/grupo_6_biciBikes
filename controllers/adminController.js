@@ -5,13 +5,20 @@ const db = require('../database/models');
 
 module.exports = {
     cargar :(req, res) => {
-        db.category.findAll()
-        .then(categorias => {
+        let categorias = db.category.findAll()
+        let colores = db.color.findAll()
+        let marcas = db.make.findAll()
+        let descuentos = db.discount.findAll()
+        Promise.all([categorias,colores,marcas,descuentos])
+        .then(([categorias,colores,marcas,descuentos]) => {
             res.render('admin/formCarga', { /*aqui se puede visualizar un formulario de carga de un nuevo producto */
                 title: 'Cargar producto',
-                categorias /*renderiso  la vista de formCarga.ejs */
+                categorias,
+                marcas,
+                colores,
+                descuentos /*renderiso  la vista de formCarga.ejs */
+            })
             }) 
-        })
         
     },
     cargado:(req,res,next)=>{ 

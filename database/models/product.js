@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
         as: 'product_model',
         foreignKey : 'modelId',
       })
-      Product.hasMany(models.color,{
+      Product.belongsTo(models.color,{
         as : 'product_color',
         foreignKey : 'colorId',
       })

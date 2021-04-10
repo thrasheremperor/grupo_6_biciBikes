@@ -11,29 +11,31 @@
           <ul class="navbar-nav">
             <% if (typeof userPerfil !='undefined' ) { %>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <%= userPerfil.name %>
-                </a>
+                <a class="nav-link dropdown-toggle hvr-icon-bob" href="" id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= userPerfil.name %> </a>
+
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="/usuario/miPerfil">Mi perfil</a></li>
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a class="dropdown-item" href="/usario//cerrarSesion">Cerrar sesión</a></li>
+                  <li><a class="dropdown-item" href="/usuario//cerrarSesion">Cerrar sesión</a></li>
                   <li><a class="nav-link hvr-icon-bob" href="/compras">Mis Compras<i
                         class="fas fa-shopping-cart fa-lg"></i></a></li>
                 </ul>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle hvr-icon-bob" href="" id="navbarDropdown" role="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrador</a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="/admin/formCarga">Agregar nuevo</a></li>
-                  <div class="dropdown-divider"></div>
-                  <li><a class="dropdown-item" href="/admin/list">Lista de productos</a></li>
-                </ul>
-              </li>
+              <% if (userPerfil.rol == 2) { %>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle hvr-icon-bob" href="" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrador</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/admin/formCarga">Agregar nuevo</a></li>
+                    <div class="dropdown-divider"></div>
+                    <li><a class="dropdown-item" href="/admin/list">Lista de productos</a></li>
+                  </ul>
+                </li>
+              <% } %>
+              
               <% }else{ %>
 
                 <li class="nav-item dropdown">
