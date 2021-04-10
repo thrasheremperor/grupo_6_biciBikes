@@ -9,7 +9,7 @@ const {cargar,creado, editar, borrar,editado,cargado} = require('../controllers/
 const fromCargaValidator = require('../validations/fromCargaValidation')
 
 router.get('/formCarga',userCheck, cargar); /*ruta a formulario de carga de producto / ruta lista*/
-router.post('/formCarga',fromCargaValidator, upload.any(),cargado); /*este es para almacenar los patos enviados por el formulario / ruta lista */
+router.post('/formCarga',upload.any(),fromCargaValidator,cargado); /*este es para almacenar los patos enviados por el formulario / ruta lista */
 
 router.get('/list',userCheck,creado); /*ruta donde se encuentra los productos publicados con las opcines de edicion y eliminacion/ ruta lista*/
 
