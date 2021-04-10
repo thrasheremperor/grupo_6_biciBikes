@@ -12,7 +12,8 @@
             
             <input type="text" class="form-control mt-5 form-datos" name="name" id="inputname"value="<%= producto.name %>">
             <span id="nameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
-          <
+          
+-->
           </div>
         </div>
         <div class="row">
@@ -43,7 +44,7 @@
         <div class="row">
           <div class="col-10">
             <label name="imgagen" >Imagen de Producto</label>
-            <input type="file" class="form-control mt-5 form-datos" id="formFileLg" name="image" value="<%= producto.image %>">
+            <input type="file" class="form-control mt-5 form-datos" id="formFileLg" name="image" >
             <span id="formFileLgError" class="text-danger" ><%=(typeof errores != 'undefined' && errores.image ? errores.image.msg: null ) %></span>
           
           </div>

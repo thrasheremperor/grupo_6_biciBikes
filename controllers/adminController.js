@@ -5,6 +5,7 @@ const db = require('../database/models');
 
 module.exports = {
     cargar :(req, res) => {
+        
         let categorias = db.category.findAll()
         let colores = db.color.findAll()
         let marcas = db.make.findAll()
@@ -28,26 +29,37 @@ module.exports = {
               name,
               price : parseFloat(price),
               description,
-              makeId : make,
-              categoryId : category,
-              colorId : color, //hacer select para category y color  y make
-              discountId : discount
+              makeId : +make,
+              categoryId : +category,
+              colorId : +color, //hacer select para category y color  y make
+              discountId : +discount
           })
           .then( product => {
-              db.Image.create({
-                  Image : req.files[0].filename,
+              db.image.create({
+                  image : req.files[0] ? req.files[0].filename : null,
                   productId : product.id
               })
-              return res.redirect('/admin/list')
+              .then(function(){
+                return res.redirect('/admin/list')
+              })             
           })
           .catch(error => res.send(error))
     },
     
     creado:(req,res) =>{
-         res.render('admin/productsList',{ /*aqui se puede visualizar los productos publicados con sus opciones */
-            title:'Carga realizada',
-        
+        db.Product.findAll({ 
+            include : [
+                {association : 'images'}
+            ]
+       })
+        .then(productos =>{
+            res.render('admin/productsList',{ /*aqui se puede visualizar los productos publicados con sus opciones */
+                title:'Carga realizada',
+                productos 
+            
+            })
         })
+        .catch(error => {console.log(error)})
     },
     editar:(req,res)=>{  /*la opcion de edicion en producto se envuentra en la vista productEditado */
         db.Product.findByPk(req.params.id)
