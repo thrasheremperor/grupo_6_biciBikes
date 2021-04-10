@@ -9,10 +9,4 @@ check('name')
 check('lastName')
 .notEmpty().withMessage('campo requerido'),
 
-check('birthday')
-.notEmpty().withMessage('campo requerido'),
-
-check('avatar')
-.notEmpty().withMessage('campo requerido'),
-
 ]

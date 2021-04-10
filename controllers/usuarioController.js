@@ -69,7 +69,6 @@ module.exports  =  {
                 }
             })
             .then( user => {
-
                     if(user && bcrypt.compareSync(password.trim(), user.password)){
                         req.session.userPerfil = {
                             id: user.id,
@@ -119,15 +118,16 @@ module.exports  =  {
 
     edit : (req,res)=>{
         db.User.findByPk(req.params.id)
-        .then(userPerfil=>{
+        .then(user=>{
             res.render('user/editPerfil',{
                 title: 'Editar Perfil',
-                userPerfil
+                user
             })
         })
     },
 
     editado : (req,res)=>{
+        
         let errores = validationResult(req);
 
         if(!errores.isEmpty()){

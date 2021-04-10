@@ -2,7 +2,7 @@ console.log('vinculado');
 let qs = (element) => {
     return document.querySelector(element);
 }
-
+ 
 window.onload = () => {
     let $form = qs('#form'),
         $name = qs('#name'),
@@ -24,7 +24,7 @@ window.onload = () => {
         $imgPreview = qs('#img-preview'),
         regExAlpha = /^[a-zA-Z\sñáéíóúü ]+$/i,
         regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-        regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,42}$/;
+        regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,20}$/;
 
 
         $name.onblur = () => {
@@ -85,7 +85,8 @@ window.onload = () => {
                     $password.classList.add('is-invalid')
                     break;
                 case !regExPass.test($password.value):
-                    $passwordError.innerHTML = 'Ingrese: entre 7 a 42 caracters, minimo una mayuscula, minuscula y un numero'
+                    $passwordError.innerHTML = 'Ingrese: entre 4 a 20 
+                     caracters, minimo una mayuscula, minuscula y un numero'
                     $password.classList.add('is-invalid')
                     break;
                 default:

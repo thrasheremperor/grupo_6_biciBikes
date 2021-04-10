@@ -1,17 +1,14 @@
-let qs = function(element) {
-    return document.querySelector(element)
-
+let qs = (element) => {
+    return document.querySelector(element);
 }
 
 window.addEventListener('load', function() {
-
-
     let $inputEmail = qs('#email'),
     $emailErrors = qs('#emailErrors'),
     $Pass = qs('#pass'),
     $passErrors = qs('#passErrors'),
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-    regExPass = /^.{6,12}$/;
+    regExPass = /^.{4,20}$/;
 
 /* VALIDACIÓN EMAIL */
 
