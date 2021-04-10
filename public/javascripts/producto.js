@@ -39,7 +39,7 @@ window.onload = () => {
 
     $inputmake.onblur = () => {
         switch (true) {
-            case !$inputmake.value.trim():
+            case !$inputmake.valuetrim():
                 $makeError.innerHTML = "Marca de la bici"
                 $inputmake.classList.add('is-invalid')
                 
