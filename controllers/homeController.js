@@ -60,6 +60,7 @@ module.exports = {
       db.Product.findAll({
           include: [
              {association:"images"},
+             {association:"product_discount"}
          ]
       })
       .then(productos=>{
