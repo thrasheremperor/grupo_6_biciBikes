@@ -11,15 +11,15 @@
             <form id="form" class="sesion-registro"  action="/usuario/edit/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <h1 class="registro h1 mt-2">edicion de perfil</h1>
 
-                <input id="name" class="form-control mt-5 form-datos" name="name" type="text" placeholder="Nombre" value="<%= userPerfil.name %> ">
+                <input id="name" class="form-control mt-5 form-datos" name="name" type="text" placeholder="Nombre" value="<%= user.name %> ">
             
                 <span  id="nameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
 
-                <input id="lastname" class="form-control mt-5 form-datos" name="lastName" type="text" placeholder="Apellido" value="<%= userPerfil.lastName %> ">
+                <input id="lastname" class="form-control mt-5 form-datos" name="lastName" type="text" placeholder="Apellido" value="<%= user.lastName %> ">
         
                 <span id="lastNameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.lastName ? errores.lastName.msg: null ) %></span>
 
-                <input id="date" class="form-control mt-5 form-datos" name="birthday" type="date" placeholder="Fec. Nac. - " value="<%= userPerfil.birthday %> ">
+                <input id="date" class="form-control mt-5 form-datos" name="birthday" type="date" placeholder="Fec. Nac. - " value="<%= user.birthday %> ">
                 <span id="dateError"></span>
                 
 

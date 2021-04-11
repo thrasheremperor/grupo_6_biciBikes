@@ -107,10 +107,10 @@ module.exports  =  {
                 id: req.session.userPerfil.id
             }
         })
-        .then((perfil)=>{
+        .then((user)=>{
             res.render( 'user/perfil',{
                 title: "Mi perfil",
-                perfil
+                user
             })
         })
         

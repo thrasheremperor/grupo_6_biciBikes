@@ -13,46 +13,39 @@
                 <div class="register-form">
                     
                         <div class="pic text-center">
-                            <img src="/images/imgUser/<%= userPerfil.avatar%>" alt="foto de perfil" class="img-fluid">
+                            <img src="/images/imgUser/<%= user.avatar%>" alt="foto de perfil" class="img-fluid">
                         </div>
                         <div>
                             <!--ESPACIO PARA QUE SE ACOMODEN LAS COSAS-->
                         </div>
-                        <p class="jugador">
-                            <label>usuario: <span><%= ' ' + userPerfil.name + ' ' + userPerfil.lastName%> </span></label>
+                        <div class="usuario-registrado">
+                            <label>usuario: <span><%= ' ' + user.name + ' ' + user.lastName%> </span></label>
                             
-                        </p>
-                        <p class="ml-md-3">
-                            <label>Email: <span><%= ' ' + userPerfil.email %> </span></label>
-                          
-                        </p>
+                            <br>
 
-                    <a href="/usuario/edit/<%=userPerfil.id%>">editar</a>
-                       
+                            <label>Email: <span><%= ' ' + user.email %> </span></label>
+
+                            <!-- poner address -->
+
+                        </div>
+                      
                         <div>
+
                             <button class="btn header-btn hvr-ripple-in mb-3">
-                                <a href="/usuario/cerrarSesion">cerrar sesion</a>
-                           </button>  
+                                <a href="/usuario/edit/<%=user.id%>">editar</a>
+                            </button>
                            
-                           <form action="/usuario/eliminar/<%= userPerfil.id %>?_method=DELETE" method="POST">
-                            <button  class="btn header-btn hvr-ripple-in" type="submit">eliminar cuenta</button>
-                          </form>
+                           <form action="/usuario/eliminar/<%= user.id %>?_method=DELETE" method="POST">
+                                <button  class="btn header-btn hvr-ripple-in" type="submit">eliminar cuenta</button>
+                           </form>
                           
-                        </div>                       
-                        
-                               
-                                                   
-                       
-                 
-                    
+                        </div>                          
+                                     
                 </div>
     
               </div>    
             </div>
         </div>
-    
-    
-        
     
         <%- include('../partials/footer') %>
     </body>
