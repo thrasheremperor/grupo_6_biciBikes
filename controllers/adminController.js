@@ -104,46 +104,23 @@ module.exports = {
         .catch(error => res.send(error))
     },
     borrar: (req,res)=>{
-        let categorias = db.category.destroy()
-        let colores = db.color.destroy()
-        let marcas = db.make.destroy()
-        let descuentos = db.discount.destroy()
-        let producto = db.Product.destroy(req.params.id)
-        Promise.all([categorias,colores,marcas,descuentos,producto])
-         /*la opcion de borara en producto se envuentra en la vista productList */
-        .then((categorias,colores,marcas,descuentos,producto)=>{
-            db.Product.destroy({
-                where: {
-                    id: req.params.id
-                }
-            })
-            db.image.destroy({
-                where : {
-                    image : req.params.id
-                }
-            })
-            db.make.destroy({
-                where : {
-                    make : req.params.id
-                }
-            })
-            db.color.destroy({
-                where : {
-                    color : req.params.id
-                }
-            })
-            db.discount.destroy({
-                where : {
-                    discount : req.params.id
-                }
-            })
-            db.category.destroy({
-                where : {
-                    category : req.params.id
-                }
-            })
-            return res.redirect('/admin/list')
+    let id = req.params.id
+       db.Product.destroy({
+           where : {
+               id
+           }
+           
+       })
+       db.image.destroy({
+            where : {
+                id
+            }
         })
-        .catch(error => res.send(error))
+       .then(()=>{
+        
+          
+           return res.redirect('/admin/list')
+       })
+       .catch(error => res.send(error))
     }
 }
