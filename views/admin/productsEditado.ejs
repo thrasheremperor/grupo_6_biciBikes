@@ -8,31 +8,79 @@
         <h2>Editar Producto</h3>
         <hr>
         <div class="row">
-          <div class="col-10">
-            
-            <input type="text" class="form-control mt-5 form-datos" name="name" id="inputname"value="<%= producto.name %>">
-            <span id="nameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+        
+          <div class="col-12">
+            <label>Nombre de producto</label>
+          <input type="text" class="form-control  form-datos" name="name" id="inputname"value="<%= producto.name %>">
+          <span id="nameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
           
           </div>
         </div>
-        <div class="row">
-          <div class="col-10">
-            <label for="modelo" id="inputmake">Marca</label>
-            <input type="text" class="form-control mt-5 form-datos" name="make" value="<%= producto.make %>">
+        
+          <div class="col-12 col-md-6">
+            <label>Descuento</label>
+            <select name="discount" class="form-datos">
+              <% descuentos.forEach(descuento => { %>
+                <option <%= descuento.id == producto.discountId ? "selected" : null %>  value="<%= descuento.id %> "><%= descuento.discount %> </option>
+               <% }) %>
+             </select>
+            <span id="makeError" class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+            
+          </div>
+        </div> 
+
+        
+          <div class="col-12 col-md-6">
+
+            <label>Marca</label>
+            <select name="make" class="form-datos">
+              <% marcas.forEach(marca => { %>
+                <option <%= marca.id == producto.makeId ? "selected" : null %>  value="<%= marca.id %> "><%= marca.make %> </option>
+               <% }) %>
+             </select>
             <span id="makeError" class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
             
           </div>
         </div>  
-        <div class="row">
-          <div class="col-10">
-            <label for="precio">Precio de Producto</label>
+        
+        
+          <div class="col-12 col-md-6">
+
+            <label>Categoria</label>
+            <select name="category" class="form-datos">
+              <% categorias.forEach(categoria => { %>
+                <option <%= categoria.id == producto.categoryId ? "selected" : null %>  value="<%= categoria.id %> "><%= categoria.category %> </option>
+               <% }) %>
+             </select>
+            <span id="makeError" class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+            
+          </div>
+        </div>  
+
+        
+          <div class="col-12 col-md-6">
+            
+            <label>Color</label>
+            <select name="color" class="form-datos">
+              <% colores.forEach(colore => { %>
+                <option <%= colore.id == producto.colorId ? "selected" : null %>  value="<%= colore.id %> "><%= colore.color %> </option>
+               <% }) %>
+             </select>
+            <span id="makeError" class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+            
+          </div>
+        </div>  
+        
+        
+          <div class="col-12 col-md-6">
+            <label for="precio">Precio nuevo</label>
             <input type="number" class="form-control mt-5 form-datos" name="price" id="price" value="<%= producto.price %>">
             <span id="priceError" class="text-danger"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
           
           </div>
         </div>
-        <div class="row">
-          <div class="col-10">
+        
+          <div class="col-12 col-md-6">
             <label for="description">Descripcion</label>
             <input type="text" class="form-control mt-5 form-datos" name="description" id="description" value="<%= producto.description %>">
             <span id="descriptionError" class="text-danger"><%=(typeof errores != 'undefined' && errores.description ? errores.description.msg: null ) %></span>
@@ -40,8 +88,8 @@
         </div>
 
 
-        <div class="row">
-          <div class="col-10">
+        
+          <div class="col-12 col-md-6">
             <label name="imgagen" >Imagen de Producto</label>
             <input type="file" class="form-control mt-5 form-datos" id="formFileLg" name="image" >
             <span id="formFileLgError" class="text-danger" ><%=(typeof errores != 'undefined' && errores.image ? errores.image.msg: null ) %></span>
@@ -55,6 +103,8 @@
         
       </form>
     </div>
+
+  </div>
   <%- include('../partials/footer.ejs')%> 
   <script src="/javascripts/producto.js"></script>
   <script src="http://momentjs.com/downloads/moment.min.js"></script>

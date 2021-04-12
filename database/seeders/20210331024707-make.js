@@ -1,6 +1,6 @@
 'use strict';
 
-const marcas = ['MTB','Ciudad','Plegable','Kids', 'BMX', 'Ruta','Electrica'];
+const marcas = ['RADIO','WeThePeople','Tesla','Kinder', 'Mountain', 'BambooCycles','MotorBikes'];
 
 const makes = [];
 
