@@ -91,17 +91,22 @@ module.exports = {
               categoryId : +category,/*aqui se puede visualizar los productos ya editados */
               colorId : +color, 
               discountId : +discount
+              
         },
         {
             where : {
                    id : req.params.id
             }
         })
-        .then(()=>{
-           
-            return res.redirect('admin/List')
+        .then( product => {
+            db.image.update({
+                image : req.files[0] ? req.files[0].filename : null,
+                productId : product.id
+            })
+            .then(function(){
+              return res.redirect('/admin/list')
+            })             
         })
-        .catch(error => res.send(error))
     },
     borrar: (req,res)=>{
         let categorias = db.category.destroy()
