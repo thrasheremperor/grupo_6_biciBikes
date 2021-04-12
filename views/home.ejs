@@ -39,12 +39,13 @@
                   </figure>
                   <article class="product-box_data">
                     <h3><%- producto.make %> </h3>
-                    <h3><%- producto.name %> </h3>
+                    <h4><%- producto.name %> </h4>
                     <% if (producto.discount == 0) { %>
                     <span class="text-success h4">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
                     <% } else { %>
-                      <span><strike>$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike></span>
-                      <span><%- producto.product_discount.discount %>% OFF </span>
+                      <span><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </span>
+                      <span class="text-success h3">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                      <span class="h4" ><%- producto.product_discount.discount %>% OFF </span>
                     <% } %>
                     <i class="fas fa-truck"></i>
                   </article>
@@ -71,11 +72,14 @@
                       <img src=" /images/imgProduct/<%- producto.images[0].image %> " alt="bicicleta" class="img-fluid">
                     </figure>
                     <article class="product-box_data">
-                      <h6><%- producto.name %> </h6>
-                      <h6><%- producto.make %> </h6>
-                      <span>$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
-                      <% if (producto.product_discount.discount != 0) { %>
-                        <span><%- producto.product_discount.discount %>% OFF </span>
+                      <h3><%- producto.make %> </h3>
+                      <h4><%- producto.name %> </h4>
+                      <% if (producto.discount == 0) { %>
+                      <span class="text-success h4">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                      <% } else { %>
+                        <span><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </span>
+                        <span class="text-success h3">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                        <span class="h4" ><%- producto.product_discount.discount %>% OFF </span>
                       <% } %>
                       <i class="fas fa-truck"></i>
                     </article>
@@ -102,13 +106,15 @@
                       <img src=" /images/imgProduct/<%-producto.images[0].image %> " alt="bicicleta" class="img-fluid">
                     </figure>
                     <article class="product-box_data">
-                      <h6><%- producto.name %> </h6>
-                      <h6><%- producto.make %> </h6>
-                      <span>$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
-                      <% if (producto.product_discount.discount != 0) { %>
-                        <span><%- producto.product_discount.discount %>% OFF </span>
+                      <h3><%- producto.make %> </h3>
+                      <h4><%- producto.name %> </h4>
+                      <% if (producto.discount == 0) { %>
+                      <span class="text-success h4">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                      <% } else { %>
+                        <span><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </span>
+                        <span class="text-success h3">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                        <span class="h4" ><%- producto.product_discount.discount %>% OFF </span>
                       <% } %>
-                     
                       <i class="fas fa-truck"></i>
                     </article>
                   </a>
