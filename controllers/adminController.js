@@ -91,64 +91,29 @@ module.exports = {
               categoryId : +category,/*aqui se puede visualizar los productos ya editados */
               colorId : +color, 
               discountId : +discount
-              
         },
         {
             where : {
                    id : req.params.id
             }
         })
-        .then( product => {
-            db.image.update({
-                image : req.files[0] ? req.files[0].filename : null,
-                productId : product.id
-            })
-            .then(function(){
-              return res.redirect('/admin/list')
-            })             
-        })
-    },
-    borrar: (req,res)=>{
-        let categorias = db.category.destroy()
-        let colores = db.color.destroy()
-        let marcas = db.make.destroy()
-        let descuentos = db.discount.destroy()
-        let producto = db.Product.destroy(req.params.id)
-        Promise.all([categorias,colores,marcas,descuentos,producto])
-         /*la opcion de borara en producto se envuentra en la vista productList */
-        .then((categorias,colores,marcas,descuentos,producto)=>{
-            db.Product.destroy({
-                where: {
-                    id: req.params.id
-                }
-            })
-            db.image.destroy({
-                where : {
-                    image : req.params.id
-                }
-            })
-            db.make.destroy({
-                where : {
-                    make : req.params.id
-                }
-            })
-            db.color.destroy({
-                where : {
-                    color : req.params.id
-                }
-            })
-            db.discount.destroy({
-                where : {
-                    discount : req.params.id
-                }
-            })
-            db.category.destroy({
-                where : {
-                    category : req.params.id
-                }
-            })
-            return res.redirect('/admin/list')
+        .then(()=>{
+
+            return res.redirect('admin/List')
         })
         .catch(error => res.send(error))
+    },
+    borrar: (req,res)=>{
+        db.Product.destroy({
+            where : {
+                id : req.params.id
+            }
+        })
+        .then(()=>{
+            return res.redirect('admin/productList')
+        })
+        .catch(error => {console.log(error)})
+         /*la opcion de borara en producto se envuentra en la vista productList */
+        
     }
 }
