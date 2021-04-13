@@ -14,7 +14,7 @@ router.post('/formCarga',upload.any(),fromCargaValidator,cargado); /*este es par
 router.get('/list',userCheck,creado); /*ruta donde se encuentra los productos publicados con las opcines de edicion y eliminacion/ ruta lista*/
 
 router.get('/editar/:id',userCheck,editar)/*ruta para productos ya editados / ruta lista */
-router.put('/editado/:id',fromCargaValidator, editado); /*ruta para edicion de producto / ruta lista*/
+router.put('/editado/:id',upload.any(),fromCargaValidator, editado); /*ruta para edicion de producto / ruta lista*/
 
 router.delete('/eliminar/:id',borrar); /*ruta para borrar un producto */
 
