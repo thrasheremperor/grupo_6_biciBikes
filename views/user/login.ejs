@@ -22,13 +22,13 @@
         <!--OPCION PARA USAARIO NORMAL Y ADMIN-->
          <span id = "submitErrors" class="text-danger text-center" ><%= (typeof errores != 'undefined' && errores.invalid)? errores.invalid.msg: "" %></span>
        
-
-        <span class="mt-3 text-center" >
+        
+        <div class="text-center"> 
           <input class="checkbox" type="checkbox" name="recordar" id="recordar">
-          <label for="recordar">Recuerdame</label>
-        </span>
-          
-          
+        <label for="recordar">Recuerdame</label>
+         
+        </div>
+         
         <button class="btn login-button" type="submit">Entrar</button>
           
           
