@@ -128,7 +128,7 @@ module.exports = {
             }
         })
         .then(()=>{
-            return res.redirect('/admin/productList')
+            return res.redirect('/admin/list')
         })
         .catch(error => {console.log(error)})
          /*la opcion de borara en producto se envuentra en la vista productList */

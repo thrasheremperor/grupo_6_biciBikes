@@ -3,23 +3,25 @@ const db = require('../database/models');
 
 module.exports = {
     detalle :(req, res) => {
-     db.Product.findOne({
-         where : {
-             id : req.params.id
-         },
-         include:[
-             {association:"images"},
-             {association: "producto_make"},
-             {association:"product_discount"},
-             {association:"product_color"}
-         ]
-
-         })
-        .then(producto =>{
+        let colores= db.color.findAll()
+        let producto= db.Product.findOne({
+            where : {
+                id : req.params.id
+            },
+            include:[
+                {association:"images"},
+                {association: "producto_make"},
+                {association:"product_discount"},
+                {association:"product_color"}
+            ]
+        })
+        Promise.all([colores, producto])
+        .then(([colores,producto]) =>{
             
             return res.render('detalleProducto',{
                 title: "Detalle del producto",
-                producto
+                producto,
+                colores
             })
         })
         .catch(error => res.send(error))
@@ -31,7 +33,9 @@ module.exports = {
              },
              include:[
                  {association: 'category_product',
-                include:[{association: 'images'}]}]
+                include:[
+                    {association: 'images'},
+                {association:"product_discount"}]}]
          })
          .then(category =>{
              res.render('filter',{

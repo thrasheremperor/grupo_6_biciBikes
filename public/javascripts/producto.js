@@ -1,4 +1,4 @@
-console.log('Vinculado')
+console.log('VINCULADO')
 let qs = (element) => {
     return document.querySelector(element);
 }
@@ -8,15 +8,19 @@ window.onload = () => {
     $nameError = qs('#nameError'),
     $inputmake = qs('#inputmake'),
     $makeError = qs('#makeError'),
+    $color = qs('#color'),
+    $colorError =qs('#colorError'),
+    $category = qs('#category'),
+    $categoryError = qs('#categoryError'),
     $price = qs('#price'),
     $priceError = qs('#priceError'),
     $description = qs('#description'),
     $descriptionError = qs('#descriptionError'),
-    $formFileLg =qs('#formFileLg'),
-    $formFileLgError =('#formFileLgError'),
+    $file =qs('#file'),
+    $fileErrors =('#fileError'),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]+$/i,
-    regExLetter = /^[\s\S]{0,2}$/;
-    inputimage.getElementById() = 
+    regExLetter = /^[\s\S]{0,200}$/;
+     
 
     $inputname.onblur = () => {
         switch (true) {
@@ -40,16 +44,11 @@ window.onload = () => {
 
     $inputmake.onblur = () => {
         switch (true) {
-            case !$inputmake.valuetrim():
-                $makeError.innerHTML = "Marca de la bici"
-                $inputmake.classList.add('is-invalid')
-                
+            case !$inputmake.value.trim():
+                $makeError.innerHTML = "Selecciona una marca"
+                $inputmake.classList.add('is-invalid')              
                 break;
-            case !regExAlpha.test($inputmake.value):
-                $inputmake.innerHTML = 'Tu nombre no es valido'
-                $inputmake.classList.add('is-invalid')
-            break;    
-        
+               
             default:
                 $inputmake.classList.remove('is-invalid')
                 $inputmake.classList.add('is-valid')
@@ -58,22 +57,31 @@ window.onload = () => {
         }
     }
 
-    $description.onblur = () => {
+    $category.onblur = () => {
         switch (true) {
-            case !$description.value.trim():
-                $descriptionError.innerHTML = "breve description del producto"
-                $description.classList.add('is-invalid')
+            case !$category.value.trim():
+                $categoryError.innerHTML = "Seleccione una categoria"
+                $category.classList.add('is-invalid')
                 
-                break;
-             case !regExLetter.test($description.value):
-                 $description.innerHTML = "Maximo 200 caracteres"
-                 $description.classList.add('is-invalid')
-
-             break;   
+                break;   
             default:
-                $description.classList.remove('is-invalid')
-                $description.classList.add('is-valid')
-                $descriptionError.innerHTML = null
+                $category.classList.remove('is-invalid')
+                $category.classList.add('is-valid')
+                $categoryError.innerHTML = null
+                break;
+        }
+    }
+    $color.onblur = () => {
+        switch (true) {
+            case !$color.value.trim():
+                $colorError.innerHTML = "Seleccione un color"
+                $color.classList.add('is-invalid')
+                
+                break;   
+            default:
+                $color.classList.remove('is-invalid')
+                $color.classList.add('is-valid')
+                $colorError.innerHTML = null
                 break;
         }
     }
@@ -93,20 +101,71 @@ window.onload = () => {
         }
     }
 
-    $formFileLg.onblur = () => {
+    $description.onblur = () => {
         switch (true) {
-            case !$formFileLg.value.trim():
-                $formFileLgError.innerHTML = "campo requerido"
-                $formFileLg.classList.add('is-invalid')
+            case !$description.value.trim():
+                $descriptionError.innerHTML = "Recomendamos una descripcion"
+                $description.classList.add('is-invalid')
                 
                 break;
-        
+             case !regExLetter.test($description.value):
+                 $descriptionError.innerHTML = "Maximo 200 caracteres"
+                 $description.classList.add('is-invalid')
+
+             break;   
             default:
-                $formFileLg.classList.remove('is-invalid')
-                $formFileLgError.classList.add('is-valid')
-                $formFileLgError.innerHTML = null
+                $description.classList.remove('is-invalid')
+                $description.classList.add('is-valid')
+                $descriptionError.innerHTML = null
                 break;
         }
     }
 
- }
+    $file.addEventListener('change', 
+    function fileValidation(){
+        let filePath = $file.value, //Capturo el valor del input
+            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
+            if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+            $fileErrors.innerHTML = 'Extensiones validas (.jpg - .jpeg - .png - .gif)';
+            $file.value = '';
+            $imgPreview.innerHTML = '';
+            return false;
+        }else{
+            // Image preview
+            if($file.files && $file.files[0]){
+                let reader = new FileReader();
+                reader.onload = function(e){
+                    $imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
+                };
+                reader.readAsDataURL($file.files[0]);
+                $fileErrors.innerHTML = '';
+            }
+        }
+    }) 
+
+    $form.addEventListener('submit',function(event){
+        let error = false;
+        event.preventDefault()
+
+        let elementosForm = this.elements
+        
+        for (let index = 0; index < 6; index++) {
+            if(elementosForm[index].value == ""){
+                elementosForm[index].classList.add('is-invalid');
+                submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                error = true;
+            }
+        }
+
+        if(!$terms.checked){
+            $terms.classList.add('is-invalid');
+            $termsErrors.innerHTML = "Debes aceptar las bases y condiciones"
+            error = true
+        }
+
+        if(!error){
+            $form.submit()
+        }
+
+    })
+}

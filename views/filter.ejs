@@ -10,7 +10,7 @@
               <h2 class="products-title">Los productos de la categoria : <%= categoria %></h2>
             </div>
             <% productos.forEach(producto => { %>
-              <div class="col-12 col-md-4">
+             <!-- <div class="col-12 col-md-4">
                 <section class="product-box hvr-bounce-in">
                   <a href="/productos/detalle/<%- producto.id %>">
                     <figure class="product-box_image">
@@ -23,6 +23,28 @@
                     </article>
                   </a>
                 </section>
+              </div>-->
+              <div class="col-12 col-md-3 my-2">
+                <div class="card" style="height: 400px;"> <!--El div de las col no se toca, para modificar el estilo de la caja, hacerlo desde acá-->
+                  <a href="/productos/detalle/<%- producto.id %>">
+                  <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-top" alt="...">
+                </a>
+                  <div class="card-body">
+                    <h5 class="card-title"><%- producto.name %> </h5>
+                    <article class="product-box_data p-3">
+                      <% if (producto.discount == 0) { %>
+                      <span class="text-success h4">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                      <% } else { %>
+                       
+                        <span><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </span>
+                        <span class="text-success h1">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                        <span class="h3" ><%- producto.product_discount.discount %>% OFF </span>
+                      <% } %>
+                      <i class="fas fa-truck"></i>
+                    </article>
+                  </div>
+                </div>
+               
               </div>
             <% }) %>  
           </div>

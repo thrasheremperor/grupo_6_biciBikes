@@ -27,7 +27,7 @@
        <div class="container">
          <div class="row">
            <div class="col-12">
-             <h2 class="products-title">Ultimos vistos</h2>
+             <h2 class="products-title">Últimos vistos</h2>
            
            </div>
           <% productsVisited.seccion_products.forEach(producto => { %>
@@ -57,7 +57,7 @@
               <section class="product-box hvr-box-shadow-outset">
                 <a href="/productos/detalle/<%- producto.id %>">
                   <figure class="product-box_image text-center">
-                    <img src="/images/imgProduct/<%- producto.images[0].image %> " alt="bicicleta" class="img-fluid">
+                    <img src="/images/imgProduct/<%- producto.images[0].image %> " alt="bicicleta" class="img-fluid" style="object-fit: cover;" >
                   </figure>
                   <article class="product-box_data">
                     <h3><%- producto.make %> </h3>
@@ -79,11 +79,11 @@
         </div>
 
 
-        <!--AHORRA YA-->
+        <!--AHORRÁ YA-->
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h2 class="products-title">Ahorra ya</h2>
+              <h2 class="products-title">Ahorrá ya</h2>
               
             </div>
             <% productsNow.seccion_products.forEach(producto => { %>
