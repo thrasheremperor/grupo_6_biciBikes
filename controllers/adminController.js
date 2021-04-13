@@ -98,29 +98,22 @@ module.exports = {
             }
         })
         .then(()=>{
-           
+
             return res.redirect('admin/List')
         })
         .catch(error => res.send(error))
     },
     borrar: (req,res)=>{
-    let id = req.params.id
-       db.Product.destroy({
-           where : {
-               id
-           }
-           
-       })
-       db.image.destroy({
+        db.Product.destroy({
             where : {
-                id
+                id : req.params.id
             }
         })
-       .then(()=>{
+        .then(()=>{
+            return res.redirect('admin/productList')
+        })
+        .catch(error => {console.log(error)})
+         /*la opcion de borara en producto se envuentra en la vista productList */
         
-          
-           return res.redirect('/admin/list')
-       })
-       .catch(error => res.send(error))
     }
 }

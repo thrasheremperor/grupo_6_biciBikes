@@ -1,6 +1,6 @@
 'use strict';
 const faker = require('faker'); 
-const descuentos = ['5','10','15','20', '25', '40','30'];
+const descuentos = ['5','10','15','20', '25', '30','40'];
 
 const discounts = [];
 

@@ -9,6 +9,7 @@
         <div class="container products-wrapper">
           <div class="row">
             <div class="col-12">
+              
               <h2 class="products-title">Lista de productos</h2>
             </div>
             
@@ -28,9 +29,10 @@
                   </div>
                 </section>
                <div class="product-box">
+                
                 <div class="m-2 justify-content-around">
                   <a href="/admin/editar/<%= producto.id %>" class="btn btn-sm btn-success"><i class= "fas fa-edit"></i></a>
-                  <form action="/admin/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
+                  <form action="/admin/eliminar/<%= productos.id %>?_method=DELETE" method="POST">
                     <button class="btn btn-sm btn-danger" type="submit"><i class="fas fa-trash-alt"></i></button>
                   </form>
                 </div>
@@ -38,7 +40,7 @@
               </div>
              
             <% }) %>
-            
+            %
           </div>
         </div>
      
