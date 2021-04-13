@@ -40,35 +40,36 @@
               
               <% }else{ %>
 
+               
+                <li><a class="nav-link hvr-icon-bob" href="/usuario/registro">Registrar<i
+                      class="fas fa-user-plus fa-lg"></i></a></li>
+                <li><a class="nav-link hvr-icon-bob" href="/usuario/login">Iniciar<i class="fas fa-users fa-lg"></i></a>
+                </li>
+                <% } %>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle hvr-icon-bob" href="#" id="navbarDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Filtros
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">MTB</a>
+                    <a class="dropdown-item" href="/productos/category/1">MTB</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Ciudad</a>
+                    <a class="dropdown-item" href="/productos/category/2">Ciudad</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Pegable</a>
+                    <a class="dropdown-item" href="/productos/category/3">Pegable</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Kids</a>
+                    <a class="dropdown-item" href="/productos/category/4">Kids</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">BMX</a>
+                    <a class="dropdown-item" href="/productos/category/5">BMX</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Electrica</a>
+                    <a class="dropdown-item" href="/productos/category/7">Electrica</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Ruta</a>
+                    <a class="dropdown-item" href="/productos/category/6">Ruta</a>
                   </div>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link hvr-icon-bob" href="/full">Bicicletas</a>
                 </li>
-                <li><a class="nav-link hvr-icon-bob" href="/usuario/registro">Registrar<i
-                      class="fas fa-user-plus fa-lg"></i></a></li>
-                <li><a class="nav-link hvr-icon-bob" href="/usuario/login">Iniciar<i class="fas fa-users fa-lg"></i></a>
-                </li>
-                <% } %>
           </ul>
           <form action="/buscar" class="form-inline my-2 my-lg-0">
             <input class="form-control input-search " type="search" placeholder="Productos, marcas y mas ..." aria-label="Search" name="buscador">

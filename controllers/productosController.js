@@ -23,5 +23,24 @@ module.exports = {
             })
         })
         .catch(error => res.send(error))
+    },
+    filter : (req,res)=>{
+         db.category.findOne({
+             where : {
+                 id: req.params.id
+             },
+             include:[
+                 {association: 'category_product',
+                include:[{association: 'images'}]}]
+         })
+         .then(category =>{
+             res.render('filter',{
+                 productos : category.category_product,
+                 title: 'Categoria',
+                categoria : category.category
+             })
+
+        })
+        .catch(error => console.log(error))
     }
 }
