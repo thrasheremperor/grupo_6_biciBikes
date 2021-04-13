@@ -9,7 +9,7 @@
     <section class="detalle">
       <div class="row">
         <div class="col-12">
-          <h2 class="titulo-detalle"><%- producto.name %> <%- producto.make %></h2>
+          <h2 class="titulo-detalle"><%- producto.name %> <%- producto.producto_make.make %></h2>
 
         </div>
         <div class="col-12 paraBorder">
@@ -22,9 +22,9 @@
                 <hr id="hr">
               </div>
               <div class="col-12 col-lg-4 text-center auto">
-                <h3 class="sub-titulo"><%- producto.name + ' ' + producto.make%></h3>
+                <h3 class="sub-titulo"><%- producto.name + ' ' + producto.producto_make.make%></h3>
                 <h3 class="precio">$<%-producto.price%></h3>
-                <h3 class="descuento"><%-producto.discount%> %OFF</h3>
+                <h3 class="descuento"><%-producto.product_discount.discount%> %OFF</h3>
 
                 <i class="fas fa-truck"></i>
                 <div class="form-control-color-picker mb-4" tabindex="0">

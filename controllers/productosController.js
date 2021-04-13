@@ -8,14 +8,17 @@ module.exports = {
              id : req.params.id
          },
          include:[
-             {association:"images"}
+             {association:"images"},
+             {association: "producto_make"},
+             {association:"product_discount"},
+             {association:"product_color"}
          ]
 
          })
         .then(producto =>{
             
             return res.render('detalleProducto',{
-                title: "Detalle producto",
+                title: "Detalle del producto",
                 producto
             })
         })

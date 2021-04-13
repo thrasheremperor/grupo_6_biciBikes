@@ -79,13 +79,21 @@ module.exports = {
 
                 name: {
                     [Op.like]:`%${req.query.buscador}%`
-                }
-            }
+                },
+               
+       
+            },
+            include:[
+                {association:"images"},
+                {association: 'producto_make'},
+                {association:'product_discount'},
+                {association:'product_color'}
+            ]
         })
         .then( productos => {
             
-            return res.render('SearchResult',{
-                title: 'BiciBikes',
+            return res.render('products',{
+                title: 'Resultados de la búsqueda',
                 productos
             })
         })
