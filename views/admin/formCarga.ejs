@@ -8,9 +8,10 @@
         <h2>Agregar nuevo Producto</h2>
         <hr>
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 mb-3">
             
             <input type="text" name="name" placeholder="Nombre del producto" id="inputname" class="form-control form-datos">
+            
             <span  id="nameError"></span>
             <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
            
@@ -18,39 +19,40 @@
         
           <div class="col-12 col-md-6">
 
-            <select name="make" class="form-datos">
+            <select name="make" class="form-datos" id="inputmake">
               <option selected hidden value="">Seleccione la marca</option>
               <% marcas.forEach(marca => { %>
                <option value="<%= marca.id %> "><%= marca.make %> </option>
               <% }) %>
-            </select>
-            
-            <span id="makeError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+            </select>  
+            <span></span>       
+            <span class="text-danger" id="nameError"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+         
           </div>
 
           <div class="col-12 col-md-6">
 
-            <select name="color" class="form-datos">
+            <select name="color" class="form-datos" id="color">
               <option selected hidden value="" >Seleccione el color</option>
               <% colores.forEach(colors => { %>
                <option value="<%= colors.id %> "><%= colors.color %> </option>
               <% }) %>
             </select>
 
-            <span id="priceError"></span>
+            <span id="colorError"></span>
             <span class="text-danger"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
           </div>
 
           <div class="col-12 col-md-6">
             
-            <select name="category" class="form-datos">
+            <select name="category" class="form-datos" id="category">
               <option selected hidden value="" >Seleccione la categoria</option>
               <% categorias.forEach(categoria => { %>
                <option value="<%= categoria.id %> "><%= categoria.category %> </option>
               <% }) %>
             </select>
-           
+
+           <span id="categoryError"></span>
            
           </div>
 
@@ -88,10 +90,10 @@
     <div class="row mt-5">
           <div class="col-12 col-md-6">
             <div class="custom-file">
-              <input type="file" class="custom-file-input" id="formFileLg" name="image">
+              <input type="file" class="custom-file-input" id="file" name="image">
               <label class="custom-file-label" for="customFile">Elija la imagen</label>
             </div>
-            <span id="formFileLgError"></span>
+            <span id="fileError"></span>
             <span class="text-danger"><%=(typeof errores != 'undefined' && errores.image ? errores.image.msg: null ) %></span>
           </div>
 
