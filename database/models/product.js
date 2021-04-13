@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       Product.hasMany(models.image,{
         as: 'images',
         foreignKey : 'productId',
+        onDelete : 'cascade'
       })
       Product.belongsTo(models.make,{
         as: 'producto_make',

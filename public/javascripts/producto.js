@@ -16,6 +16,7 @@ window.onload = () => {
     $formFileLgError =('#formFileLgError'),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]+$/i,
     regExLetter = /^[\s\S]{0,2}$/;
+    inputimage.getElementById() = 
 
     $inputname.onblur = () => {
         switch (true) {

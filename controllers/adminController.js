@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { title } = require('process');
+
 const db = require('../database/models');
 
 
@@ -67,7 +67,14 @@ module.exports = {
         let colores = db.color.findAll()
         let marcas = db.make.findAll()
         let descuentos = db.discount.findAll()
-        let producto = db.Product.findByPk(req.params.id)
+        let producto = db.Product.findOne({
+            where : {
+                id : req.params.id
+            },
+            include : [
+                {association : 'images'}
+            ]
+        })
         Promise.all([categorias,colores,marcas,descuentos,producto])
         .then(([categorias,colores,marcas,descuentos,producto]) =>{
             res.render('admin/productsEditado',{
@@ -98,8 +105,19 @@ module.exports = {
             }
         })
         .then(()=>{
+            db.image.update({
+                image : req.files[0] ? req.files[0].filename : undefined
+            },
+            {
+                where : {
+                    productId : req.params.id
+                }
+            })
+            .then( () => {
+                return res.redirect('/admin/list')
 
-            return res.redirect('admin/List')
+            })
+
         })
         .catch(error => res.send(error))
     },
@@ -110,7 +128,7 @@ module.exports = {
             }
         })
         .then(()=>{
-            return res.redirect('admin/productList')
+            return res.redirect('/admin/productList')
         })
         .catch(error => {console.log(error)})
          /*la opcion de borara en producto se envuentra en la vista productList */

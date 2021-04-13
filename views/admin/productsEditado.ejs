@@ -4,31 +4,17 @@
 <body class="admin">
   <%- include('../partials/header.ejs') %> 
     <div class="container">
-      <form action="/admin/editado/<%= producto.id %>?_method=PUT"  class="sesion-registro" method="POST">
+      <form action="/admin/editado/<%= producto.id %>?_method=PUT"  class="sesion-registro" method="POST" enctype="multipart/form-data">
         <h2>Editar Producto</h3>
         <hr>
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 col-md-6">
             <label>Nombre de producto</label>
           <input type="text" class="form-control  form-datos" name="name" id="inputname"value="<%= producto.name %>">
           <span id="nameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
           
           </div>
        
-        
-          <div class="col-12 col-md-6">
-            <label>Descuento</label>
-            <select name="discount" class="form-datos">
-              <% descuentos.forEach(descuento => { %>
-                <option <%= descuento.id == producto.discountId ? "selected" : null %>  value="<%= descuento.id %> "><%= descuento.discount %> </option>
-               <% }) %>
-             </select>
-            <span id="makeError" class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
-            
-          </div>
-        
-
-        
           <div class="col-12 col-md-6">
 
             <label>Marca</label>
@@ -40,10 +26,8 @@
             <span id="makeError" class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
             
           </div>
-       
         
-        
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-3">
 
             <label>Categoria</label>
             <select name="category" class="form-datos">
@@ -54,10 +38,8 @@
             <span id="makeError" class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
             
           </div>
-        
 
-        
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-3">
             
             <label>Color</label>
             <select name="color" class="form-datos">
@@ -68,27 +50,35 @@
             <span id="makeError" class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
             
           </div>
-      
-        
-        
-          <div class="col-12 col-md-6">
+
+          <div class="col-12 col-md-3">
             <label for="precio">Precio nuevo</label>
             <input type="number" class="form-control form-datos" name="price" id="price" value="<%= producto.price %>">
             <span id="priceError" class="text-danger"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
           
           </div>
-        
-        
-          <div class="col-12 col-md-6">
+
+          <div class="col-12 col-md-3">
+            <label>Descuento</label>
+            <select name="discount" class="form-datos">
+              <% descuentos.forEach(descuento => { %>
+                <option <%= descuento.id == producto.discountId ? "selected" : null %>  value="<%= descuento.id %> "><%= descuento.discount %> </option>
+               <% }) %>
+             </select>
+            <span id="makeError" class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+            
+          </div>
+
+          <div class="col-12">
             <label for="description">Descripcion</label>
             <input type="text" class="form-control  form-datos" name="description" id="description" value="<%= producto.description %>">
             <span id="descriptionError" class="text-danger"><%=(typeof errores != 'undefined' && errores.description ? errores.description.msg: null ) %></span>
           </div>
-      
 
-
-          <div class="row mt-5">
-            <div class="col-12 col-md-8">
+          <div class="col-12 col-md-4">
+            <img class="img-fluid" src="/images/imgProduct/<%= producto.images[0].image %> " alt="">
+          </div>
+            <div class="col-12 col-md-4">
               <div class="custom-file">
                 <input type="file" class="custom-file-input" id="formFileLg" name="image">
                 <label class="custom-file-label" for="customFile">Elija la imagen</label>
@@ -101,7 +91,6 @@
               <button class="btn btn-primary" type="submit">Publicar</button>
   
             </div>
-          </div>
           
         
       </form>
