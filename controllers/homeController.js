@@ -78,14 +78,15 @@ module.exports = {
             where : {
 
                 name: {
-                    [Op.like]:'%${req.query.buscador}%'
+                    [Op.like]:`%${req.query.buscador}%`
                 }
             }
         })
-        .then( bicis => {
+        .then( productos => {
+            
             return res.render('SearchResult',{
                 title: 'BiciBikes',
-                bicis
+                productos
             })
         })
         .catch(error => res.send(error))
