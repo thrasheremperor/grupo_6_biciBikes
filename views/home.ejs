@@ -30,9 +30,31 @@
              <h2 class="products-title">Ultimos vistos</h2>
            
            </div>
-           <% productsVisited.seccion_products.forEach(producto => { %>
-            <div class="col-12 col-md-4 terrible ">
-              <section class="product-box hvr-box-shadow-outset" >
+          <% productsVisited.seccion_products.forEach(producto => { %>
+             <div class="col-12 col-md-3 my-2">
+              <div class="card" style="height: 400px;">
+                <a href="/productos/detalle/<%- producto.id %>">
+                <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-top" alt="...">
+              </a>
+                <div class="card-body">
+                  <h5 class="card-title"><%- producto.name %> </h5>
+                  <article class="product-box_data p-3">
+                    <% if (producto.discount == 0) { %>
+                    <span class="text-success h4">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                    <% } else { %>
+                     
+                      <span><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </span>
+                      <span class="text-success h1">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                      <span class="h3" ><%- producto.product_discount.discount %>% OFF </span>
+                    <% } %>
+                    <i class="fas fa-truck"></i>
+                  </article>
+                </div>
+              </div>
+              <!--  -->
+             </div>
+             <!--<div class="col-12 col-md-4 terrible ">
+              <section class="product-box hvr-box-shadow-outset">
                 <a href="/productos/detalle/<%- producto.id %>">
                   <figure class="product-box_image text-center">
                     <img src="/images/imgProduct/<%- producto.images[0].image %> " alt="bicicleta" class="img-fluid" style="object-fit: cover;" >
@@ -51,8 +73,8 @@
                   </article>
                 </a>
               </section>
-            </div>
-          <% }) %>          
+             </div> -->
+           <% }) %>          
           </div>
         </div>
 
@@ -65,7 +87,7 @@
               
             </div>
             <% productsNow.seccion_products.forEach(producto => { %>
-              <div class="col-12 col-md-4 terrible">
+              <!--<div class="col-12 col-md-4 terrible">
                 <section class="product-box hvr-box-shadow-outset">
                   <a href="/productos/detalle/<%- producto.id %>">
                     <figure class="product-box_image text-center">
@@ -85,6 +107,28 @@
                     </article>
                   </a>
                 </section>
+              </div> -->
+              <div class="col-12 col-md-3 my-2">
+                <div class="card" style="height: 400px;">
+                  <a href="/productos/detalle/<%- producto.id %>">
+                  <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-top" alt="...">
+                </a>
+                  <div class="card-body">
+                    <h5 class="card-title"><%- producto.name %> </h5>
+                    <article class="product-box_data p-3">
+                      <% if (producto.discount == 0) { %>
+                      <span class="text-success h4">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                      <% } else { %>
+                       
+                        <span><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </span>
+                        <span class="text-success h1">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                        <span class="h3" ><%- producto.product_discount.discount %>% OFF </span>
+                      <% } %>
+                      <i class="fas fa-truck"></i>
+                    </article>
+                  </div>
+                </div>
+               <!--  -->
               </div>
             <% }) %>    
           </div>
@@ -99,7 +143,7 @@
              
             </div>
             <% productsPopular.seccion_products.forEach(producto => { %>
-              <div class="col-12 col-md-4 terrible">
+              <!--<div class="col-12 col-md-4 terrible">
                 <section class="product-box hvr-box-shadow-outset">
                   <a href="/productos/detalle/<%- producto.id %>">
                     <figure class="product-box_image text-center">
@@ -119,6 +163,28 @@
                     </article>
                   </a>
                 </section>
+              </div> -->
+              <div class="col-12 col-md-3 my-2">
+                <div class="card" style="height: 400px;">
+                  <a href="/productos/detalle/<%- producto.id %>">
+                  <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-top" alt="...">
+                </a>
+                  <div class="card-body">
+                    <h5 class="card-title"><%- producto.name %> </h5>
+                    <article class="product-box_data p-3">
+                      <% if (producto.discount == 0) { %>
+                      <span class="text-success h4">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                      <% } else { %>
+                       
+                        <span><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </span>
+                        <span class="text-success h1">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                        <span class="h3" ><%- producto.product_discount.discount %>% OFF </span>
+                      <% } %>
+                      <i class="fas fa-truck"></i>
+                    </article>
+                  </div>
+                </div>
+               <!--  -->
               </div>
             <% }) %>    
           </div>
