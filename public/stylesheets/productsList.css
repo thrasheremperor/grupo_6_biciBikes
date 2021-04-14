@@ -1,0 +1,15 @@
+.caja-producto{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+  border: 1px solid var(--darkGreen);
+  padding: 10px;
+  margin: 10px 0;
+  background-color: white;
+  box-shadow: 10px 10px 10px var(--black);
+  text-decoration: none;
+  box-sizing: content-box;
+    }
+ 
