@@ -11,6 +11,8 @@ section.detalle h2.titulo-detalle {
     background-color: #ffd369;
     color:black;
     font-size: 4em;
+    margin-top: 10px;
+    margin-bottom: 0px;
 }
 
 .contain{
@@ -40,26 +42,11 @@ section.detalle h2.titulo-detalle {
     height: -5px -5px -5px -5px;
 }
 
-.precio{
-    font-size: large;
-    margin:10px
-}
-
-.descuento{
-    font-size: large;
+#desc {
+   font-size: large;
     color: rgb(59, 221, 59);
-    margin:10px
-}
-
-.color{
-    font-size: large;
-    margin:10px
-}
-
-.description{
-    font-size: large;
-    margin:10px
-}
+    margin:10px;
+  }
 
 div .auto i{
     text-decoration: none;

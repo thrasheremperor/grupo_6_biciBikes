@@ -16,7 +16,7 @@
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-5 d-flex justify-content-center align-items-center">
-                <figure class="">
+                <figure>
                   <img src="/images/imgProduct/<%-producto.images[0].image %>" alt="bicicleta" class="img-fluid">
                 </figure>
                 <hr id="hr">
@@ -25,13 +25,13 @@
                 <h3 class="sub-titulo"><%- producto.name + ' ' + producto.producto_make.make%></h3>
                 <div class="d-flex justify-content-center my-4">
                   <h3 class="p-0 mx-1">$<%-producto.price%></h3>
-                  <span class="p-0 m-0"><%-producto.product_discount.discount%> %OFF</span>
+                  <span class="p-0 m-0" id="desc"><%-producto.product_discount.discount%> %OFF</span>
                 </div>
                 <div class="my-4">
                   <p><%-producto.description%></p>
 
                 </div>
-                <select class="custom-select my-4">
+                <select class="custom-select my-4" id="color">
                   <% colores.forEach(color => { %>
                     <option value="<%= color.id %>" <%= color.id == producto.product_color.id ? "selected" : null %> ><%= color.color %> </option>
                   <% }) %>
@@ -39,7 +39,7 @@
               
                 <div class="btns-detalle">
                   <button class="btn btn-detalle hvr-buzz-out" type="submit"><a href="">comprar</a></button>
-                  <button class="btn btn-detalle hvr-buzz-out" type="submit"><a href="">agregar a carrito</a></button>
+                  <button class="btn btn-detalle hvr-buzz-out" type="submit"><a href="">agregar al carrito</a></button>
                 </div>
                 <hr>
               </div> 

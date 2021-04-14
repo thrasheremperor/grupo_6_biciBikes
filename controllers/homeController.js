@@ -103,9 +103,13 @@ module.exports = {
 
 
     carrito :(req, res) => {
-        res.render('user/carritoCompras', {
+        db.Product.findAll()
+        .then(products=>{
+        res.render('product', {
             title: 'Carga de Producto'
+        });
+
         })
-        .catch(error=>res.send(error))
+        .catch(error=>{res.send(error)})
     }
 }
