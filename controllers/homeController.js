@@ -100,6 +100,26 @@ module.exports = {
         .catch(error => res.send(error))
     },
 
+    contacto : (req,res)=>{
+        res.render('contacto',{
+            title: 'Contacto'
+        })
+        .catch(error=>console.log(error))
+    },
+
+    nosotros : (req,res)=>{
+        res.render('nosotros',{
+            title : 'Nosotros'
+        })
+        .catch(error => console.log(error))
+    },
+
+    Mpagos : (req,res)=>{
+        res.render('Mpagos',{
+            title : 'Bici Bikes'
+        })
+        .catch(error => console.log(error))
+    },
 
     carrito :(req, res) => {
         res.render('user/carritoCompras', {
