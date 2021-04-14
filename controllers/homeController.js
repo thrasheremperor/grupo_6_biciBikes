@@ -45,6 +45,7 @@ module.exports = {
         })
         Promise.all([productsVisited,productsNow,productsPopular])
         .then(([productsVisited,productsNow,productsPopular])=>{
+            
             res.render('home',{
             title: "Bici Bikes",
             productsVisited,
