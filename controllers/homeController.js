@@ -45,7 +45,7 @@ module.exports = {
         })
         Promise.all([productsVisited,productsNow,productsPopular])
         .then(([productsVisited,productsNow,productsPopular])=>{
-            !req.session.carrito ? req.session.carrito = [] : null
+            
             res.render('home',{
             title: "Bici Bikes",
             productsVisited,
@@ -102,10 +102,10 @@ module.exports = {
     },
 
 
-   /* carrito :(req, res) => {
+    carrito :(req, res) => {
         res.render('user/carritoCompras', {
             title: 'Carga de Producto'
         })
         .catch(error=>res.send(error))
-    }*/
+    }
 }
