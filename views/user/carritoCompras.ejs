@@ -1,47 +1,52 @@
 <!DOCTYPE html>
-<html lang="es">
-  <%- include('../partials/head.ejs') %> 
-<body class="cart-body">
-  <%- include('../partials/header.ejs') %> 
-  <!--aqui es donde debe ir la vista de detalle de los productos selecionados -->
-  <h2 class="carrito-h2">Carrito de Productos</h2>
-   
-    <div class="cart-item container-fluid">
+<html>
+<%- include('../partials/head') %>
 
-    <div class="row">
+  <body>
+    <%- include('../partials/header') %>
+      <main class="container">
+        <section class="carousel-destacados">
+          <h2 class="my-3">Productos</h2>
+          <div class="carousel-container">
+            <button class="glider-prev-destacados"><i class="fas fa-chevron-left"></i></button>
+            <div class="carousel-elements-destacados">
+              <% productos.forEach(producto=> { %>
+                <div class="col-12 col-md-3 my-2">
+                  <div class="card" style="height: 400px;"> <!--El div de las col no se toca, para modificar el estilo de la caja, hacerlo desde acá-->
+                    <a href="/productos/detalle/<%- producto.id %>">
+                    <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-top" alt="...">
+                  </a>
+                    <div class="card-body">
+                      <h5 class="card-title"><%- producto.name %> </h5>
+                      <article class="product-box_data p-3">
+                        <% if (producto.discount == 0) { %>
+                        <span class="text-success h4">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                        <% } else { %>
+                         
+                          <span><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </span>
+                          <span class="text-success h1">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
+                          <span class="h3" ><%- producto.product_discount.discount %>% OFF </span>
+                        <% } %>
+                        <i class="fas fa-truck"></i>
+                      </article>
+                    </div>
+                  </div>
+                 
+                </div>
+            <% }) %>
+          </div>
+          <button class="glider-next-destacados"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          <div role="tablist" class="dots-detacados"></div>
 
-      <div class="col-6 col-md-3">
-        <img src="/images/imgProduct/otraBike.png">
-      </div>
-      <div class="description col-6 col-md-9">
-         <p>
-           Bici MTB, Rodado 27, Azul
-           <br>
-           $49.000
-         </p>
-        </div>  
-    </div>
-    <div class="options-container p-3">
-        <a href="">Eliminar</a> 
-        <a class="ml-5" href="">Otros productos</a>
-    </div>
-    
-  </div>
+        </section>
+        <section>
 
-  
-   <section class="cart-footer">
+        </section>
 
-    
+      </main>
+      <%- include('./partials/footer.ejs') %>
 
-      <p>Total a pagar</p>
-      
-      <button class="d-flex align-self-end mb-1" type="submit">Continuar compra</button>
+  </body>
 
-     <p class="mr-1">$</p> <p>90.000</p>
-
-   </section>
-                        
-  
-  <%- include('../partials/footer.ejs') %> 
-</body>
 </html>

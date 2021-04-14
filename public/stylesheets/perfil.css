@@ -6,7 +6,7 @@
 
 .pic img {
     display: block;
-    height: 100px;
+    height: 123px;
     border-radius: 50%;
 }
 
@@ -17,7 +17,8 @@
 
 .pic {
     position: relative;
-    left:50px;
+    height: 140px;
+    left:60px;
     top:10px;
     display: inline-block;
     padding: 8px;
