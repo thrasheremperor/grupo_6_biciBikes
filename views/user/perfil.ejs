@@ -10,7 +10,7 @@
             
             <div class="row">
               <div class="register-wrapper">
-                <div class="register-form">
+                <div class="register-form m-3">
                     
                         <div class="pic text-center">
                             <img src="/images/imgUser/<%= user.avatar %>" alt="foto de perfil" class="img-fluid">
@@ -36,15 +36,15 @@
 
                         </div>
                         <br>
-                        <div style="display: flex;">
-
+                        <div class= "botones">
+  
                            
                                <a class="btn header-btn hvr-ripple-in mb-3" href="/usuario/edit/<%=user.id%>" id="">Editar</a>
                             </button>
                            
 
                            <form action="/usuario/eliminar/<%= user.id %>?_method=DELETE" method="POST">
-                                <button  class="btn header-btn hvr-ripple-in" type="submit">eliminar cuenta</button>
+                                <button  class="btn header-btn hvr-ripple-in mr-3" type="submit">eliminar cuenta</button>
                            </form>
                           
                         </div>                          
