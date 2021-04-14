@@ -6,7 +6,7 @@
 
 .pic img {
     display: block;
-    height: 123px;
+    height: 100px;
     border-radius: 50%;
 }
 .register-form{
@@ -25,7 +25,6 @@
 .pic {
     position: relative;
     left:35px;
-    height: 140px;
     top:10px;
     display: inline-block;
     padding: 10px;
