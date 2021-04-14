@@ -30,27 +30,38 @@
               <h2 class="products-title">Últimos vistos</h2>
            </div>
             <%productsVisited.seccion_products.forEach(producto => { %>
-               <div class="col-12 col-md-3 my-2">
-                  <div class="card" style="height: 400px;">
-                    <a href="/productos/detalle/<%- producto.id %>">
-                      <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-fluid" alt="bicicleta"  style="object-fit: cover;" >
-                    </a>
-                       <div class="card-body">
-                          <h5 class="card-title"><%- producto.name %> </h5>
-                          <article class="product-box_data p-3">
-                               <% if (producto.discount == 0) { %>
-                                  <span class="text-success h4">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
-                                <% } else { %>
-                                  <span><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </span>
-                                  <span class="text-success h1">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
-                                  <span class="h3" ><%- producto.product_discount.discount %>% OFF </span>
-                                <% } %>
-                                <i class="fas fa-truck"></i>
-                           </article>
-                       </div>
+               <div class="col-12 col-md-4 col-lg-3 my-2">
+
+                <div class="card">
+                  <a href="/productos/detalle/<%- producto.id %>">
+                    <figure class="p-3">
+                      <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-top" alt="...">
+
+                    </figure>
+                  </a>
+                  <div class="card-body">
+                    <div class="d-flex justify-content-end">
+                    <p class="my-0 mr-1"> <i class="fas fa-truck h5"></i></p> 
+
+                    </div>
+                    <h2 class="card-title"><%- producto.name %> </h2>
+
+                    <% if (producto.discount == 0) { %>
+                      <h3 class="text-success">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h3>
+                    <% } else { %>
+                      <h4><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </h4>
+                      <div class="d-flex justify-content-center">   
+                      <h2 class="text-success">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h2>
+                        <h5><%- producto.product_discount.discount %>% OFF </h5>
+                      </div>
                      
-                   </div>
-               </div>
+                    <% } %>
+                   
+                  </div>
+                </div>
+
+                </div>
+                 
            <% }) %>          
           </div>
         </div>
@@ -65,23 +76,31 @@
             </div>
             <% productsNow.seccion_products.forEach(producto => { %>
               <div class="col-12 col-md-3 my-2">
-                <div class="card" style="height: 400px;">
+                <div class="card">
                   <a href="/productos/detalle/<%- producto.id %>">
-                   <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-fluid" alt="bicicleta"  style="object-fit: cover;" >
+                    <figure class="p-3">
+                      <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-top" alt="...">
+
+                    </figure>
                   </a>
                   <div class="card-body">
-                    <h5 class="card-title"><%- producto.name %> </h5>
-                    <article class="product-box_data p-3">
-                      <% if (producto.discount == 0) { %>
-                      <span class="text-success h4">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
-                      <% } else { %>
-                       
-                        <span><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </span>
-                        <span class="text-success h1">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
-                        <span class="h3" ><%- producto.product_discount.discount %>% OFF </span>
-                      <% } %>
-                      <i class="fas fa-truck"></i>
-                    </article>
+                    <div class="d-flex justify-content-end">
+                    <p class="my-0 mr-1"> <i class="fas fa-truck h5"></i></p> 
+
+                    </div>
+                    <h2 class="card-title"><%- producto.name %> </h2>
+
+                    <% if (producto.discount == 0) { %>
+                      <h3 class="text-success">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h3>
+                    <% } else { %>
+                      <h4><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </h4>
+                      <div class="d-flex justify-content-center">   
+                      <h2 class="text-success">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h2>
+                        <h5><%- producto.product_discount.discount %>% OFF </h5>
+                      </div>
+                     
+                    <% } %>
+                   
                   </div>
                 </div>
               </div>
@@ -99,23 +118,31 @@
             </div>
             <% productsPopular.seccion_products.forEach(producto => { %>
               <div class="col-12 col-md-3 my-2">
-                <div class="card" style="height: 400px;">
+                <div class="card">
                   <a href="/productos/detalle/<%- producto.id %>">
-                   <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-fluid" alt="bicicleta"  style="object-fit: cover;" >
+                    <figure class="p-3">
+                      <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-top" alt="...">
+
+                    </figure>
                   </a>
                   <div class="card-body">
-                    <h5 class="card-title"><%- producto.name %> </h5>
-                    <article class="product-box_data p-3">
-                      <% if (producto.discount == 0) { %>
-                        <span class="text-success h4">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
-                      <% } else { %>
-                       
-                        <span><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </span>
-                        <span class="text-success h1">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></span>
-                        <span class="h3" ><%- producto.product_discount.discount %>% OFF </span>
-                      <% } %>
-                      <i class="fas fa-truck"></i>
-                    </article>
+                    <div class="d-flex justify-content-end">
+                    <p class="my-0 mr-1"> <i class="fas fa-truck h5"></i></p> 
+
+                    </div>
+                    <h2 class="card-title"><%- producto.name %> </h2>
+
+                    <% if (producto.discount == 0) { %>
+                      <h3 class="text-success">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h3>
+                    <% } else { %>
+                      <h4><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </h4>
+                      <div class="d-flex justify-content-center">   
+                      <h2 class="text-success">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h2>
+                        <h5><%- producto.product_discount.discount %>% OFF </h5>
+                      </div>
+                     
+                    <% } %>
+                   
                   </div>
                 </div>
               </div>

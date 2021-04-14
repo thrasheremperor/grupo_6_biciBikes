@@ -26,26 +26,36 @@ module.exports  =  {
             return res.render('user/registro',{
                 title : 'register',
                 errores : errores.mapped(),
+                old :req.body
                 
             })
         }else{
             
-        const {name, lastName, password, email,birthday} = req.body;
-
-         db.User.create({
-            name,
-            lastName,       
-            email,
-            password : bcrypt.hashSync(password,10),   
-            avatar : (req.files[0]) ? req.files[0].filename : "defoult.png",
-            birthday,
-            rol:1,
-            
+        const {name, lastName, password, email} = req.body;
+        db.address.create({
+            street:null,
+            number:null,
+            city:null,
+            state:null,
+            zipCode: null
         })
-        .then(user => {
-            console.log(user)
-            res.redirect('/usuario/login')
-        }) 
+        .then((address)=>{
+            db.User.create({
+                name,
+                lastName,       
+                email,
+                password : bcrypt.hashSync(password,10),   
+                avatar : (req.files[0]) ? req.files[0].filename : "defoult.png",
+                rol:1,
+                addressId : address.id
+                
+            })
+         
+            .then(user => {
+                console.log(user)
+                res.redirect('/usuario/login')
+            }) 
+        })
         .catch(error => console.log(error))
     }
 },
@@ -76,7 +86,6 @@ module.exports  =  {
                             name : user.name,
                             lastName : user.lastName,
                             email : user.email,
-                            birthday:user.birthday,
                             rol : user.rol
                         }
                         if(recordar){
@@ -85,7 +94,7 @@ module.exports  =  {
                             });
                         }
                                            
-                        return res.redirect('/usuario/miPerfil');
+                        return res.redirect('/');
                     }else{
                         return res.render('user/login',{
                             title: "log in",
@@ -117,7 +126,12 @@ module.exports  =  {
     },
 
     edit : (req,res)=>{
-        db.User.findByPk(req.params.id)
+        db.User.findOne({
+            where:{
+                id: req.session.userPerfil.id
+            },
+            include : [{association : 'user_address'}]
+        })
         .then(user=>{
             res.render('user/editPerfil',{
                 title: 'Editar Perfil',
@@ -138,13 +152,12 @@ module.exports  =  {
             })
         }else{
             
-        const {name, lastName,birthday} = req.body;
+        const {name, lastName} = req.body;
 
          db.User.update({
             name : name,
             lastName:lastName,         
             avatar : (req.files[0]) ? req.files[0].filename : req.session.userPerfil.avatar,
-            birthday :birthday
             
         },{
             where : {

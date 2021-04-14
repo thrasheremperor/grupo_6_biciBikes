@@ -21,7 +21,7 @@ router.post('/login',loginValidator,processLogin);/*ruta lista */
 /*mi perfil */
 router.get('/miPerfil', userCheck,perfil);
 /*editar perfil */
-router.get('/edit/:id', edit);
+router.get('/edit/:id', userCheck,edit);
 router.put('/edit/:id',upload.any(), ProfileEditValidator,editado);
 /*cerrar secion y eliminar */
 router.get('/cerrarSesion', cerrar);

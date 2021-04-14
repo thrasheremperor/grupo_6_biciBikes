@@ -10,43 +10,64 @@
 
             <form id="form" class="sesion-registro"  action="/usuario/registro" method="POST" enctype="multipart/form-data">
                 <h1 class="registro h1 mt-2">Registro</h1>
-
-                <input id="name" class="form-control mt-5 form-datos" name="name" type="text" placeholder="Nombre">
+                <div class="row">
+                    <div class="col-12 col-md-9">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <input id="name" class="form-control mt-5 form-datos" name="name" type="text" placeholder="Nombre" value="<%=(typeof old != 'undefined' && old.name ? old.name : null ) %>">
+                        
+                                <span  id="nameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+                            
+                            </div>
             
-                <span  id="nameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
-
-                <input id="lastname" class="form-control mt-5 form-datos" name="lastName" type="text" placeholder="Apellido">
-        
-                <span id="lastNameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.lastName ? errores.lastName.msg: null ) %></span>
-
-                <input id="email" class="form-control mt-5 form-datos" name="email" type="email" placeholder="Email">
+                            <div class="col-12 col-md-6">
+                                <input id="lastname" class="form-control mt-5 form-datos " name="lastName" type="text" placeholder="Apellido" value="<%=(typeof old != 'undefined' && old.lastName ? old.lastName : null ) %>" >
+                    
+                                <span id="lastNameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.lastName ? errores.lastName.msg: null ) %></span>
+                            
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <input id="email" class="form-control mt-5 form-datos" name="email" type="email" placeholder="Email" value="<%=(typeof old != 'undefined' && old.email ? old.email : null)  %>" >
+                        
+                                <span  id="emailError" class="text-danger"><%=(typeof errores != 'undefined' && errores.email ? errores.email.msg: null ) %></span>
+                           
+                            </div>
+                             <div class="col-12 col-md-6">
+                                <input id="password" class="form-control mt-5 form-datos" name="password" type="password" placeholder="Contraseña" value="<%=(typeof old != 'undefined' && old.password ? old.password : null ) %>">
+                            
+                                <span id="passwordError" class="text-danger"><%=(typeof errores != 'undefined' && errores.password ? errores.password.msg: null ) %></span>
+                            
+                            
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <input id="password2" class="form-control mt-5 form-datos" name="password2" type="password" placeholder="Repetir Contraseña" value="<%=(typeof old != 'undefined' && old.password2 ? old.password2 : null ) %>">
+                        
+                                <span id="passwordError2" class="text-danger"><%=(typeof errores != 'undefined' && errores.password2 ? errores.password2.msg: null ) %></span>
             
-                <span  id="emailError" class="text-danger"><%=(typeof errores != 'undefined' && errores.email ? errores.email.msg: null ) %></span>
+                            </div>
+                            
+                            <div class="col-12 col-md-6">
+                                <div class="mt-5">
+                                    <div class="img-container" id="img-preview"></div>
 
-                <input id="password" class="form-control mt-5 form-datos" name="password" type="password" placeholder="Contraseña">
-                
-                <span id="passwordError" class="text-danger"><%=(typeof errores != 'undefined' && errores.password ? errores.password.msg: null ) %></span>
-
-                <input id="password2" class="form-control mt-5 form-datos" name="password2" type="password" placeholder="Repetir Contraseña">
-            
-                <span id="passwordError2" class="text-danger"><%=(typeof errores != 'undefined' && errores.password2 ? errores.password2.msg: null ) %></span>
-
-                <input id="date" class="form-control mt-5 form-datos" name="birthday" type="date" placeholder="Fec. Nac. - ">
-                <span id="dateError"></span>
-                
-
-                <div class="mt-5">
-                    <div class="img-container" id="img-preview"></div>
-                    <input class="form-control photo-box mt-3 img-thumbnail" type="file" id="formFile" name="avatar">
-                    <span id="fileErrors"></span>
+                                    <input class="form-control photo-box mt-3 img-thumbnail" type="file" id="formFile" name="avatar">
+                                   
+                                    <span id="fileErrors"></span>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
                 </div>
+                
 
-                <div class="form-check mt-5">
+                <div class="form-check text-center mt-5">
                     <input class="form-check-input" type="checkbox" value=null id="flexCheckDefault" name="condicion">
                     <label class="form-check-label" for="flexCheckDefault">
                       Acepto los términos y condiciones
                     </label>
-                    <span id="termsErrors" class="text-danger"><%=(typeof errores != 'undefined' && errores.password2 ? errores.password2.msg: null ) %></span>
+                    <span id="termsErrors" class="text-danger"><%=(typeof errores != 'undefined' && errores.condicion ? errores.condicion.msg: null ) %></span>
                     <span id="submitErrors" class="submitErros"></span>
                 </div>
                 

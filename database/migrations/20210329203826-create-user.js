@@ -26,7 +26,7 @@ module.exports = {
       },
       birthday: {
         type: Sequelize.DATE,
-        allowNull: false,
+       
       },
       avatar: {
         type: Sequelize.STRING
