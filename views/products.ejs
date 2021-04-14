@@ -10,7 +10,7 @@
               <h2 class="products-title"><%= title %></h2>
             </div>
             <% productos.forEach(producto => { %>
-              <div class="col-12 col-md-3 my-2">
+              <div class="col-11 col-md-4 my-2">
                 <div class="card" style="height: 400px;"> <!--El div de las col no se toca, para modificar el estilo de la caja, hacerlo desde acá-->
                   <a href="/productos/detalle/<%- producto.id %>">
                   <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-fluid" alt="bicicleta"  style="object-fit: cover;">

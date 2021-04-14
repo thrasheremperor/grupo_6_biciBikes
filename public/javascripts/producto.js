@@ -12,6 +12,8 @@ window.onload = () => {
     $colorError =qs('#colorError'),
     $category = qs('#category'),
     $categoryError = qs('#categoryError'),
+    $discount = qs('#discount'),
+    $discountError = qs('#discountError'),
     $price = qs('#price'),
     $priceError = qs('#priceError'),
     $description = qs('#description'),
@@ -71,6 +73,22 @@ window.onload = () => {
                 break;
         }
     }
+
+    $discount.onblur = () => {
+        switch (true) {
+            case !$discount.value.trim():
+                $discountError.innerHTML = "Recomendamos una oferta"
+                $discount.classList.add('is-invalid')              
+                break;
+               
+            default:
+                $discount.classList.remove('is-invalid')
+                $discount.classList.add('is-valid')
+                $discount.innerHTML = null
+                break;
+        }
+    }
+
     $color.onblur = () => {
         switch (true) {
             case !$color.value.trim():
@@ -156,13 +174,6 @@ window.onload = () => {
                 error = true;
             }
         }
-
-        if(!$terms.checked){
-            $terms.classList.add('is-invalid');
-            $termsErrors.innerHTML = "Debes aceptar las bases y condiciones"
-            error = true
-        }
-
         if(!error){
             $form.submit()
         }
