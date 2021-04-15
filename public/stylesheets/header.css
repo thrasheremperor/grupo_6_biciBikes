@@ -210,6 +210,12 @@ body {
     transform: rotate(360deg);
 } 
 
+@media(min-width:300px){
+    .form-control{
+      width: 50%;
+    }
+}
+
 @media(min-width:768px){
     .search-form {
         width: 73%;
