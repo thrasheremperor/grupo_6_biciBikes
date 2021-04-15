@@ -74,20 +74,7 @@ window.onload = () => {
         }
     }
 
-    $discount.onblur = () => {
-        switch (true) {
-            case !$discount.value.trim():
-                $discountError.innerHTML = "Recomendamos una oferta"
-                $discount.classList.add('is-invalid')              
-                break;
-               
-            default:
-                $discount.classList.remove('is-invalid')
-                $discount.classList.add('is-valid')
-                $discount.innerHTML = null
-                break;
-        }
-    }
+    
 
     $color.onblur = () => {
         switch (true) {

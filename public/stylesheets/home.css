@@ -40,6 +40,42 @@ h1{
     text-align: center;
 }
 
+.card{
+  width: 100%;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:row;
+  position:relative;
+  border: 1px solid var(--darkGreen);
+  padding: 10px;
+  margin: 10px 0;
+  background-color: white;
+  box-shadow: 10px 10px 10px var(--black);
+  text-decoration: none;
+  box-sizing: content-box;
+}
+
+.card-img-fluid{
+    width: 220px;
+    max-height: 172px;
+    min-height: 152px;
+    size:inherit;
+    position: inherit;
+    box-sizing: content-box;
+}
+
+.card-body{
+    size: inherit;
+    position:inherit;
+    box-sizing: content-box;
+    margin:0px 5px 5px 5px;
+    padding-top: 10px;
+
+}
+
+.card-title{
+    margin-bottom: 0px;
+}
 
 .product-box_data {
     width:inherit;
@@ -66,6 +102,9 @@ div.container div.row div.col-12 div.card:hover, .card:focus, .card:active {
     box-shadow: 5px 5px 10px 5px var(--yellow);
 }
 
+.d-flex{
+    margin: 10px 8px 3px 8px;
+}
 .btn srch-btn {
     position: relative;
     left: 40%;
@@ -80,13 +119,15 @@ div.container div.row div.col-12 div.card:hover, .card:focus, .card:active {
 }
 
 
-p i{
+article i{
+ right: 18px;
+ top: -15px;
  color: orange;
  border:1px solid rgb(241, 226, 11);
- width: 35px;
- height: 35px;
+ width: 27px;
+ height: 27px;
  border-radius: 20px;
- padding:5px;
+ padding:4px;
  font-size:16px;
  transition: all .5s ease;
  -webkit-transition: all .5s ease-out;
@@ -94,7 +135,7 @@ p i{
  -ms-transition: all .5s ease;
 }
 
-p i:hover {
+article i:hover {
  -webkit-transform: rotate(360deg);
  -moz-transform: rotate(360deg);
  -ms-transform: rotate(360deg);
@@ -158,10 +199,6 @@ p i:hover {
     transform: scale(5);
     -webkit-transition-timing-function: cubic-bezier(0.20, 20.02, 0.60, 0.36);
     transition-timing-function: cubic-bezier(0.20, 20.02, 0.60, 0.36);
-}
-
-.card{
-    height: 480px;
 }
 
 /* Tablet */

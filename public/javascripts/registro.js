@@ -9,7 +9,7 @@ window.onload = () => {
         $lastNameError = qs('#lastNameError'),
         $lastName = qs('#lastname'),
         $email = qs('#email'),
-        $emailError = qs('#emailError')
+        $emailError = qs('#emailError'),
         $password = qs('#password'),
         $passwordError = qs('#passwordError'),
         $password2 = qs('#password2'),
