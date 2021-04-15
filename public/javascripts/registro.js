@@ -43,6 +43,7 @@ window.onload = () => {
                     break;
             }
         }
+        
         $lastName.onblur = () => {
             switch (true) {
                 case !$lastName.value.trim():

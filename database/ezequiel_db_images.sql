@@ -1,8 +1,4 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
---
--- Host: 127.0.0.1    Database: ezequiel_db
--- ------------------------------------------------------
--- Server version	5.5.5-10.1.38-MariaDB
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;

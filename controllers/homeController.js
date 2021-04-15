@@ -97,6 +97,7 @@ module.exports = {
                 title: 'Resultados de la búsqueda',
                 productos
             })
+            
         })
         .catch(error => res.send(error))
     },
@@ -109,9 +110,20 @@ module.exports = {
     },
 
     nosotros : (req,res)=>{
-        res.render('nosotros',{
-            title : 'Nosotros'
+        db.Product.findOne({
+            where:{
+             id:{
+                 
+             }
+            }
         })
+        .then(nosotros=>{
+            return res.render('nosotros',{
+            title : 'Nosotros',
+            nosotros
+            })
+        })
+        
         .catch(error => console.log(error))
     },
 
