@@ -94,7 +94,7 @@ module.exports = {
         .then( productos => {
             
             return res.render('products',{
-                title: 'Resultados de la búsqueda',
+                title: 'Resultados de la búsqueda:',
                 productos
             })
             

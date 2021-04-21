@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('partials/head')%>
+ <%- include('partials/head')%>
   <body>
     <%- include('partials/header')%>
       <main>
         <div class="container products-wrapper">
           <div class="row">
-            <div class="col-12">
+             <div class="col-12">
               <h2 class="products-title"><%= title %></h2>
-            </div>
-            <% productos.forEach(producto => { %>
-              <div class="col-12 col-md-4 my-3">
-                <div class="card" style="object-fit: contain;height:450px;">
-                  <a href="/productos/detalle/<%- producto.id %>">
-                    <figure class="p-3">
-                      <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-top" alt="..." style="object-fit: contain; height:150px;">
+             </div>
+             <%if (productos[0] != undefined){%>
+                <% productos.forEach(producto => {%>
+                  <div class="col-12 col-md-4 my-3">
+                    <div class="card" style="height:450px;">
+                      <a href="/productos/detalle/<%- producto.id %>">
+                        <figure class="p-3">
+                          <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-top" alt="..." style="object-fit: contain;">
 
-                    </figure>
-                  </a>
-                  <div class="card-body">
-                    <div class="d-flex justify-content-end">
-                    <p class="my-0 mr-1"> <i class="fas fa-truck h5"></i></p> 
+                         </figure>
+                      </a>
+                      <div class="card-body">
+                        <div class="d-flex justify-content-end">
+                          <p class="my-0 mr-1">Envío Gratis! <i class="fas fa-truck h5"></i></p> 
 
-                    </div>
-                    <h3 class="card-title"><%- producto.name %> </h3>
+                        </div>
+                        <h3 class="card-title"><%- producto.name %> </h3>
 
-                    <% if (producto.discount == 0) { %>
-                      <h3 class="text-success">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h3>
-                    <% } else { %>
-                      <h4><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </h4>
-                      <div class="d-flex justify-content-center">   
-                      <h2 class="text-success">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h2>
-                        <h5><%- producto.product_discount.discount %>% OFF </h5>
-                      </div>
+                        <% if (producto.discount == 0) { %>
+                         <h3 class="text-success">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h3>
+                       <% } else { %>
+                          <h4><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </h4>
+                          <div class="d-flex justify-content-center">   
+                           <h2 class="text-success">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h2>
+                           <h5><%- producto.product_discount.discount %>% OFF </h5>
+                         </div>
                      
-                    <% } %>
-                   
+                        <% } %>
+                     </div>
+                   </div>
+                 </div>
+               <%})%> 
+              <%}else{%>
+                  <div class="col-12">
+                    <h2 class="products-title" style="border-radius: 20px; font-family: Montserrat; font-weight: 200;">Lo sentimos! Aquí no hay resultados que coincidan</h2>
                   </div>
-                </div>
-               
-              </div>
-            <% }) %>  
-          </div>
+              <%}%>
+           </div>
         </div>
       </main>
       <%- include('partials/footer') %>
   </body>
-  </html>
+</html>
