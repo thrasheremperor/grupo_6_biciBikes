@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs')%>
+<body class="cuerpo">
+  <%- include('../partials/header.ejs') %> 
+    <div class="formCarga">
+      <form action="/admin/formCarga" method="POST" id ="formCarga" class="sesion-registro" enctype="multipart/form-data">
+        <h2>Agregar nuevo Producto</h2>
+        <hr>
+        <div class="row">
+          <div class="col-12 mb-3">
+            
+            <input type="text" name="name" placeholder="Nombre del producto" id="inputname" class="form-control form-datos">
+            
+            <span  id="nameError"></span>
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+           
+          </div>
+        
+          <div class="col-12 col-md-6">
+
+            <select name="make" class="form-datos" id="inputmake">
+              <option selected hidden value="">Seleccione la marca</option>
+              <% marcas.forEach(marca => { %>
+               <option value="<%= marca.id %> "><%= marca.make %> </option>
+              <% }) %>
+            </select>  
+            <span class="text-danger" id ="makeError"></span>       
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+         
+          </div>
+
+          <div class="col-12 col-md-6">
+
+            <select name="color" class="form-datos" id="color">
+              <option selected hidden value="" >Seleccione el color</option>
+              <% colores.forEach(colors => { %>
+               <option value="<%= colors.id %> "><%= colors.color %> </option>
+              <% }) %>
+            </select>
+
+            <span class="text-danger" id="colorError"></span>
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
+          </div>
+
+          <div class="col-12 col-md-6">
+            
+            <select name="category" class="form-datos" id="category">
+              <option selected hidden value="" >Seleccione la categoria</option>
+              <% categorias.forEach(categoria => { %>
+               <option value="<%= categoria.id %> "><%= categoria.category %> </option>
+              <% }) %>
+            </select>
+
+           <span class="text-danger" id="categoryError"></span>
+           
+          </div>
+
+          <div class="col-12 col-md-6">
+
+            <select name="discount" id="discount" class="form-datos">
+              <option selected hidden value="" >Seleccione el descuento</option>
+              <% descuentos.forEach(descuento => { %>
+               <option value="<%= descuento.id %> "><%= descuento.discount %> </option>
+              <% }) %>
+            </select>
+            
+           
+            <span class="text-danger" id="discountError"></span>
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+
+          </div>
+       
+          <div class="col-12 col-md-6">
+            
+            <input type="number" id="price" name="price" class="form-control form-datos" placeholder="Precio de producto">
+            <span id="priceError"></span>
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
+          </div>
+        
+         
+        
+          <div class="col-12 col-md-6">
+                       
+            <input type="text" name="description" id="description" class="form-control form-datos" placeholder="Description">
+            <span id="descriptionError"></span>
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.description ? errores.description.msg: null ) %></span>
+          </div>
+        </div>
+    <div class="row mt-5">
+          <div class="col-12 col-md-6">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="file" name="image">
+              <label class="custom-file-label" for="customFile">Elija la imagen</label>
+            </div>
+            <span id="fileError"></span>
+            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.image ? errores.image.msg: null ) %></span>
+          </div>
+          
+          
+          <div class="col-12 col-md-6 d-flex justify-content-center">
+            <button class="btn btn-primary" type="submit">Publicar</button>
+            <span id="submitErrors" class="text-danger"></span>
+          </div>
+        </div>
+       
+        
+      </form>
+    </div>
+  <%- include('../partials/footer.ejs')%> 
+  <script src="/javascripts/producto.js"></script>
+  <script src="http://momentjs.com/downloads/moment.min.js"></script>
+</body>
+</html>

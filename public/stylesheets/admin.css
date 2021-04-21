@@ -1,0 +1,38 @@
+
+body.admin{
+    background-color:rgba(250, 241, 119, 0.6);
+}
+.formCarga {
+    margin: 10px;
+    background-color:var(--yellow);
+    box-shadow: 0 0 20px 0 rgba(44, 40, 40, 0.9);
+    margin-top:20px;
+    margin-bottom: 10px;
+}
+
+/* div label{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: x-large;
+} */
+input .form-control:hover{
+    text-decoration: none;
+    color:rgb(225, 233, 112);
+}
+.button:hover,
+.button:focus{
+    background:red;
+    color:white;
+    transition: background-color 1s;
+    outline: 0;
+}
+input[type=checkbox]{
+    box-sizing: border-box;
+    padding: 0;
+}
+
+@media(max-width : 425px){
+  .session{
+      width:80%;
+  }
+}

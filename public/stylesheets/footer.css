@@ -1,21 +1,104 @@
-/* FOOTER */
+.footer {
+    background-color: rgba(184, 135, 11, 0.507);
+}
 
-footer {
-    height: 20vh;
-    background-color: var(--yellow);
-    border: solid 0.5px black;
+#footer {
+    align-self: center;
 }
-.logo{
-    max-width: 150px;
-    max-height: 100px;
-  }
-ul li {
-    list-style: none;
+
+.more-links li {
+    text-align: center;
 }
-ul a i {
-    color:black;
+
+.texto {
+    color: var(--yellow);
+    text-decoration: none;
+    font-size: 20px;
 }
-a {
+
+.texto:hover {
+    color: var(--darkGreen);
     text-decoration: none;
 }
 
+.ft-icon {
+    color: black;
+    font-size: 2rem;
+}
+
+.icono {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.cards {
+    margin-top: 20px;
+}
+
+.cards, .sites {
+    height: 40%;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logoo {
+    display: flex;
+    align-self: center;
+}
+
+.logo {
+    width: 60%;
+}
+
+.copyright-box {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.copyright-1, .copyright-2 {
+    font-size: 13px;
+    line-height: 20px;
+    
+}
+
+.copyright-2 {
+    padding: 10px 0px 0px;
+}
+
+/* TABLETS*/
+@media(min-width:768px){
+    #footer {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .boxed1, .boxed2, .boxed3 {
+        width: 100%;
+        grid-column: span 2;
+    }
+
+    .boxed1 {
+        margin-top: 15px;
+    }
+
+    .logo {
+        width: 80%;
+        margin-top: 15px;
+    }
+
+    .copyright-box {
+        text-align: center;
+        grid-column: 1 / -1;
+    }
+
+    .texto {
+        font-size: 20px;
+    }
+}
+@media(min-width:1020px){
+    .icono i {
+        font-size: 3rem;
+    }
+}

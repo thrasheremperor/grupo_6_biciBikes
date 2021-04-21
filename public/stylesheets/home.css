@@ -1,0 +1,179 @@
+main{
+    background-image: url('../images/bg-tree.png');
+    background-size: auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: var(--black);
+    background-position: center;
+}
+
+
+section.banner{
+    background-image: url('../images/biciBanner.jpeg');
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 30%;
+    background-color: var(--black);
+}
+
+h1{
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    background-color: rgba(11, 10, 7, 0.9);
+}
+
+.products-title {
+    color: var(--black);
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    padding: 10px 0;
+    background-color:  #ffd369;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.home-text{
+    font-family: Montserrat;
+    text-align: center;
+}
+
+
+.product-box_data {
+    width:inherit;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+div.container div.row div.col-12 div.card:hover{
+    transform: scale(1.009);
+}
+
+div.container div.row div.col-12 div.card {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+div.container div.row div.col-12 div.card:hover, .card:focus, .card:active {
+    box-shadow: 5px 5px 10px 5px var(--yellow);
+}
+
+.btn srch-btn {
+    position: relative;
+    left: 40%;
+    margin-bottom: 20px;
+    background-color: var(--darkGreen);
+}
+
+#home-lower-button {
+    margin: 0px 0px 10px 0px;
+    color: black;
+    text-decoration: none;
+}
+
+
+p i{
+ color: orange;
+ border:1px solid rgb(241, 226, 11);
+ width: 35px;
+ height: 35px;
+ border-radius: 20px;
+ padding:5px;
+ font-size:16px;
+ transition: all .5s ease;
+ -webkit-transition: all .5s ease-out;
+ -moz-transition: all .5s ease;
+ -ms-transition: all .5s ease;
+}
+
+p i:hover {
+ -webkit-transform: rotate(360deg);
+ -moz-transform: rotate(360deg);
+ -ms-transform: rotate(360deg);
+ transform: rotate(360deg);
+}
+
+@-webkit-keyframes hvr-ripple-in {
+    100% {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 1;
+    }
+  }
+  @keyframes hvr-ripple-in {
+    100% {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 1;
+    }
+}
+
+.card-ripple-in {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px var(--black);
+    position: relative;
+}
+
+.card-ripple-in:before {
+    content: '';
+    position: absolute;
+    border: darkgoldenrod solid 4px;
+    border-radius: .25rem;
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+
+.card-bounce-in {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 20px var(--yellow);
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+.card-bounce-in:hover, .card-bounce-in:active {
+    -webkit-transform: scale(5);
+    transform: scale(5);
+    -webkit-transition-timing-function: cubic-bezier(0.20, 20.02, 0.60, 0.36);
+    transition-timing-function: cubic-bezier(0.20, 20.02, 0.60, 0.36);
+}
+
+.card{
+    height: 480px;
+}
+
+/* Tablet */
+
+@media(min-width:426px){
+    .srch-btn {
+        left: 47%;
+    }
+}
+
+/*ESCRITORIO*/
+
+@media(min-width:1024px) {
+    
+}

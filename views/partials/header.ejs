@@ -1,64 +1,82 @@
-
 <header>
-    <nav class="navbar navbar-expand-lg navbar">
-      <a class="navbar-brand" href="#"><img src="/images/logo.png" alt=""></a>
-      <div class="indicate">Let's<br>Ride!<i class="fas fa-arrow-right"></i></div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span><img class="wheel" src="/images/wheel.png" alt=""></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Contacto</a>
-            </li>
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">registro</a>
-              </li>
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">iniciar sesion</a>
-                </li>
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">carrito de compras</a>
+  <div class="container-fluid header">
+
+    <nav class="navbar navbar-expand-md navbar">
+      <div class="row row-header">
+        <div class="col-10 ">
+          <a class="navbar-brand" href="/"><img src="/images/bicilogoo.png" class="img-fluid" alt=""></a>
+        </div> 
+
+        <button class="navbar-toggler wheel" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-biking"></i></button> 
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <% if (typeof userPerfil !='undefined' ) { %>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle hvr-icon-bob" href="" id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= userPerfil.name %> </a>
+
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/usuario/miPerfil">Mi perfil</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
                   </li>
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                    <a class="nav-link" href="#">administrador</a>
-                    </li>
-                   <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Bicis
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">MTB</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Ciudad</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Pegable</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Kids</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">BMX</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Electrica</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Ruta</a>
-              <div class="dropdown-divider"></div>
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
+                  <li><a class="dropdown-item" href="/usuario//cerrarSesion">Cerrar sesión</a></li>
+                  <li><a class="nav-link hvr-icon-bob" href="/compras">Mis Compras<i
+                        class="fas fa-shopping-cart fa-lg"></i></a></li>
+                </ul>
+              </li>
+              <% if (userPerfil.rol == 2) { %>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle hvr-icon-bob" href="" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrador</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/admin/formCarga">Agregar nuevo</a></li>
+                    <div class="dropdown-divider"></div>
+                    <li><a class="dropdown-item" href="/admin/list">Lista de productos</a></li>
+                  </ul>
+                </li>
+              <% } %>
+              
+              <% }else{ %>
+
+               
+                <li><a class="nav-link hvr-icon-bob" href="/usuario/registro">Registrar<i
+                      class="fas fa-user-plus fa-lg"></i></a></li>
+                <li><a class="nav-link hvr-icon-bob" href="/usuario/login">Iniciar<i class="fas fa-users fa-lg"></i></a>
+                </li>
+                <% } %>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle hvr-icon-bob" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Filtros
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/productos/category/1">MTB</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/productos/category/2">Ciudad</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/productos/category/3">Pegable</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/productos/category/4">Kids</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/productos/category/5">BMX</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/productos/category/7">Electrica</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/productos/category/6">Ruta</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link hvr-icon-bob" href="/full">Bicicletas</a>
+                </li>
+          </ul>
+          <form action="/buscar" class="form-inline my-2 my-lg-0">
+            <input class="form-control input-search " id="buscador"type="search" placeholder="Productos, marcas y mas ..." aria-label="Search" name="buscador">
+            <button class="btn header-btn hvr-ripple-in" type="submit">Search</button>
+          </form>
+        </div>
     </nav>
+  </div>
+  </div>
 </header>

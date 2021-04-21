@@ -1,18 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('./partials/header.ejs') %> 
-<body>
-  <%- include('./partials/head.ejs') %> 
-  <main>
-    <%= about %> 
-  </main>
-      <div class='col-12'>
-        <figure class="center">
-          <img src="../public/images/biciEjemplo.png" alt="" class="img-fluid">
-        </figure>
-      </div>
-    
- 
-  <%- include('./partials/footer.ejs') %> 
-</body>
-</html>
+<%- include('partials/head')%>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
+
+
+
+  <body>
+    <%- include('partials/header')%>
+
+      <main>
+        <section class="banner py-4">
+          <h1>¡Bienvenidos a BiciBikes!</h1>
+        </section>
+
+        <div class="owl-carousel owl-theme mt-3">
+          <div class="item"><a href=""><img id="image-main" src="/images/summersale.png"></a></li></div>
+          <div class="item"><a href=""><img id="image-main" src="/images/biciplaza.png"></a></li></div>
+          <div class="item"><a href=""><img id="image-main" src="/images/bikesOwl2.png"></a></li></div>
+          <div class="item"><a href=""><img id="image-main" src="/images/electricsale.png"></a></li></div>
+          <div class="item"><a href=""><img id="image-main" src="/images/womanBike.png"></a></li></div>
+        </div>
+        
+        <!--ULTIMOS VISTOS-->
+       <div class="container">
+         <div class="row">
+           <div class="col-12">
+              <h2 class="products-title">Últimos vistos</h2>
+           </div>
+            <%productsVisited.seccion_products.forEach(producto => { %>
+               <div class="col-12 col-md-4 col-lg-3 my-2" style=" object-fit: contain;">
+
+                <div class="card" >
+                  <a href="/productos/detalle/<%- producto.id %>">
+                    <figure class="p-3">
+                      <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-top" alt="bicicleta" style="object-fit: contain; height:150px;">
+
+                    </figure>
+                  </a>
+                  <div class="card-body">
+                    <div class="d-flex justify-content-end">
+                    <p class="my-0 mr-1">Envío Gratis! <i class="fas fa-truck h5"></i></p> 
+
+                    </div>
+                    <h2 class="card-title"><%- producto.name %> </h2>
+
+                    <% if (producto.discount == 0) { %>
+                      <h3 class="text-success">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h3>
+                    <% } else { %>
+                      <h4><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </h4>
+                      <div class="d-flex justify-content-center">   
+                      <h2 class="text-success">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h2>
+                        <h5><%- producto.product_discount.discount %>% OFF </h5>
+                      </div>
+                     
+                    <% } %>
+                   
+                  </div>
+                </div>
+
+                </div>
+                 
+           <% }) %>          
+          </div>
+        </div>
+
+
+        <!--AHORRÁ YA-->
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="products-title">Ahorrá ya</h2>
+              
+            </div>
+            <% productsNow.seccion_products.forEach(producto => { %>
+              <div class="col-12 col-md-4 col-lg-3 my-2" style=" object-fit: contain;">
+                <div class="card">
+                  <a href="/productos/detalle/<%- producto.id %>">
+                    <figure class="p-3">
+                      <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-top" alt="..." style="object-fit: contain; height:150px;">
+
+                    </figure>
+                  </a>
+                  <div class="card-body">
+                    <div class="d-flex justify-content-end">
+                    <p class="my-0 mr-1">Envío Gratis! <i class="fas fa-truck h5"></i></p> 
+
+                    </div>
+                    <h2 class="card-title"><%- producto.name %> </h2>
+
+                    <% if (producto.discount == 0) { %>
+                      <h3 class="text-success">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h3>
+                    <% } else { %>
+                      <h4><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </h4>
+                      <div class="d-flex justify-content-center">   
+                      <h2 class="text-success">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h2>
+                        <h5><%- producto.product_discount.discount %>% OFF </h5>
+                      </div>
+                     
+                    <% } %>
+                   
+                  </div>
+                </div>
+              </div>
+            <% }) %>    
+          </div>
+        </div>
+
+
+        <!--POPULARES-->
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="products-title">Populares</h2>
+             
+            </div>
+            <% productsPopular.seccion_products.forEach(producto => { %>
+              <div class="col-12 col-md-4 col-lg-3 my-2" style="object-fit: contain;">
+                <div class="card">
+                  <a href="/productos/detalle/<%- producto.id %>">
+                    <figure class="p-3">
+                      <img src="/images/imgProduct/<%- producto.images[0].image %>" class="card-img-top" alt="..." style="object-fit: contain; height:150px;">
+
+                    </figure>
+                  </a>
+                  <div class="card-body">
+                    <div class="d-flex justify-content-end">
+                    <p class="my-0 mr-1">Envío Gratis! <i class="fas fa-truck h5"></i></p> 
+
+                    </div>
+                    <h2 class="card-title"><%- producto.name %> </h2>
+
+                    <% if (producto.discount == 0) { %>
+                      <h3 class="text-success">$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h3>
+                    <% } else { %>
+                      <h4><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike> </h4>
+                      <div class="d-flex justify-content-center">   
+                      <h2 class="text-success">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h2>
+                        <h5><%- producto.product_discount.discount %>% OFF </h5>
+                      </div>
+                     
+                    <% } %>
+                   
+                  </div>
+                </div>
+              </div>
+            <% }) %>    
+          </div>
+        </div>
+        
+
+
+        <div class="d-flex mt-4 mr-2">
+          <a class="btn srch-btn hvr-ripple-in" href="/full" id="home-lower-button">Ver más!</a></button>
+        </div>
+        
+      </main>
+      <%- include('partials/footer') %>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+      <script src="/javascripts/home.js"></script>
+    </body>
+  </html>

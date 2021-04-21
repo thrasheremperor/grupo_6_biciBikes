@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head')%>
+
+<body class="cuerpo">
+    <%- include('../partials/header')%>
+   
+    <div id="perfil" class="contenedor">
+        <div class="form-registro">
+
+            <form id="form" class="sesion-registro"  action="/usuario/edit/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <h1 class="registro h1 mt-2">edicion de perfil</h1>
+                <div class="row">
+                    <div class="col-12 col-md-3 mt-5">
+                        <img id="vistaPrevia" src="/images/imgUser/<%= user.avatar %> " alt="" class="img-fluid">
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <div class="row">
+                        <div class="col-12 col-md-6">
+                            <input id="name" class="form-control mt-5 form-datos" name="name" type="text" placeholder="Nombre" value="<%= user.name %> ">
+                            <span  id="nameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input id="lastname" class="form-control mt-5 form-datos" name="lastName" type="text" placeholder="Apellido" value="<%= user.lastName %>">
+                            <span id="lastNameError" class="text-danger"><%=(typeof errores != 'undefined' && errores.lastName ? errores.lastName.msg: null ) %></span>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input id="street" class="form-control mt-5 form-datos" name="street" type="text" placeholder="Calle" value="<%= user.user_address.street %>">
+                            <span id="streetError" class="text-danger"><%=(typeof errores != 'undefined' && errores.street ? errores.street.msg: null ) %></span>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input id="number" class="form-control mt-5 form-datos" name="number" type="text" placeholder="Altura" value="<%= user.user_address.number %>">
+                            <span id="numberError" class="text-danger"><%=(typeof errores != 'undefined' && errores.number ? errores.number.msg: null ) %></span>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input id="city" class="form-control mt-5 form-datos" name="city" type="text" placeholder="Ciudad" value="<%= user.user_address.city %>">
+                            <span id="cityError" class="text-danger"><%=(typeof errores != 'undefined' && errores.city ? errores.city.msg: null ) %></span>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input id="state" class="form-control mt-5 form-datos" name="state" type="text" placeholder="Provincia" value="<%= user.user_address.state %>">
+                            <span id="stateError" class="text-danger"><%=(typeof errores != 'undefined' && errores.state ? errores.state.msg: null ) %></span>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input id="zipCode" class="form-control mt-5 form-datos" name="zipCode" type="text" placeholder="Código postal" value="<%= user.user_address.zipCode %>">
+                            <span id="zipCodeError" class="text-danger"><%=(typeof errores != 'undefined' && errores.zipCode ? errores.zipCode.msg: null ) %></span>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="mt-5">
+                                <div class="img-container" id="img-preview"></div>
+                                <input class="form-control photo-box mt-3 img-thumbnail" type="file" id="formFile" name="avatar">
+                                <span id="fileErrors"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                    
+                </div>
+            
+                <div>
+                    <button class="btn btn-registro hvr-box-shadow-outset" type="submit">subir cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <%- include('../partials/footer') %>
+    <script src="/javascripts/registro.js"></script>
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+</body>
+</html>

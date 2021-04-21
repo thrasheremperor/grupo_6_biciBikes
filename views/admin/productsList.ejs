@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head')%>
+
+  <body>
+    <%- include('../partials/header')%>
+
+      <main>
+        <div class="container products-wrapper">
+          <div class="row">
+            <div class="col-12">
+              
+              <h2 class="products-title">Lista de productos</h2>
+            </div>
+            
+
+            <% productos.forEach(producto => { %>
+              <div class="a col-11 col-md-6 col-lg-3" >
+                <section class="caja-producto" style="object-fit: contain;height: 450px;">
+                   <img src="/images/imgProduct/<%=producto.images[0].image %>" alt="bicicleta" class="img-fluid" style="object-fit: contain; height:150px;">
+            
+                  <div class="text-center my-4">
+                    <h4><%-producto.name%></h4>
+                  </div>
+                
+                <div class="d-flex justify-content-center">
+                  <a href="/admin/editar/<%= producto.id %>"><button  class="btn-success mx-2" style="width: 50px; height: 50px;"><i class= "fas fa-edit"></i></button></a>
+                  <form action="/admin/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
+                    <div class="">
+                      <button class="btn-danger mx-2" type="submit" style="width: 50px; height: 50px;"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                  </form>
+                </div>
+              </section>
+            </div>
+             
+            <% }) %>
+            %
+          </div>
+        </div>
+     
+        
+      </main>
+      <%- include('../partials/footer') %>
+
+  </body>
+  </html>
