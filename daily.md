@@ -32,3 +32,8 @@
 **Daily 10/03/2021**
 
 - Breve reunion para ver como estaba cada miembro del equipo
+
+
+**Aclaracion**
+
+- Comentamos que sostuvimos reuniones hasta el 15/04/2021 por nuestro proyecto , aqui no esta registrado ya que en el momento estabamos enfocados en nuestro proyecto, tanto que no recordamos hacer este breve comentario.

@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-/* :root {
-    --black: #222831;
-=======
 :root {
->>>>>>> develop
     --darkGray: #393e46;
     --lightGray: #eeeeee;
     --bc:rgba(250, 241, 119, 0.6);
@@ -27,38 +22,3 @@
 .fa-amazon:hover{color: orange;}
 .fa-instagram:hover{color: rgb(206, 43, 111);}
 
-<<<<<<< HEAD
-.wheel {
-    position: absolute;
-    right: 20px;
-    top: 50px;
-    width: 5rem;
-    border-radius: 70px;
-    transition: all .5s ease;
-    -webkit-transition: all .5s ease-out;
-    -moz-transition: all .5s ease;
-    -ms-transition: all .5s ease;
-}
-
-.wheel:hover {
-    box-shadow: 5px 5px 10px gray;
-    transform: scale(1.05);
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-}
-
-.indicate i {
-    padding: 5px 0px 5px 5px;
-}
-
-main {
-    min-height: 80vh;
-
-}
-@media(min-width:425){
-    
-} */
-=======
->>>>>>> develop

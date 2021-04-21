@@ -105,6 +105,7 @@
 **dejar de hacer**
 - tareas no tan urgentes 
 
-  
 
+ 
+**Me gustaria hacer una ultima restrospectiva con ustedes chicos**
 
