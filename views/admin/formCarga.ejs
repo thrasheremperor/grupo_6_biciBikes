@@ -12,8 +12,8 @@
             
             <input type="text" name="name" placeholder="Nombre del producto" id="inputname" class="form-control form-datos">
             
-            <span  id="nameError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
+            <!-- validaciones front y back en un mismo span-->
+            <span class="text-danger" id="nameError"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
            
           </div>
         
@@ -25,8 +25,8 @@
                <option value="<%= marca.id %> "><%= marca.make %> </option>
               <% }) %>
             </select>  
-            <span class="text-danger" id ="makeError"></span>       
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+            
+            <span class="text-danger" id ="makeError"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
          
           </div>
 
@@ -39,8 +39,8 @@
               <% }) %>
             </select>
 
-            <span class="text-danger" id="colorError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
+           
+            <span class="text-danger" id="colorError"><%=(typeof errores != 'undefined' && errores.color ? errores.color.msg: null ) %></span>
           </div>
 
           <div class="col-12 col-md-6">
@@ -52,7 +52,9 @@
               <% }) %>
             </select>
 
-           <span class="text-danger" id="categoryError"></span>
+           
+           <span class="text-danger" id="categoryError"><%=(typeof errores != 'undefined' && errores.category ? errores.category.msg: null ) %></span>
+         
            
           </div>
 
@@ -64,18 +66,16 @@
                <option value="<%= descuento.id %> "><%= descuento.discount %> </option>
               <% }) %>
             </select>
-            
-           
-            <span class="text-danger" id="discountError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+          
+            <span class="text-danger" id="discountError"><%=(typeof errores != 'undefined' && errores.discount ? errores.discount.msg: null ) %></span>
 
           </div>
        
           <div class="col-12 col-md-6">
             
             <input type="number" id="price" name="price" class="form-control form-datos" placeholder="Precio de producto">
-            <span id="priceError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
+            
+            <span class="text-danger" id="priceError"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
           </div>
         
          
@@ -83,8 +83,8 @@
           <div class="col-12 col-md-6">
                        
             <input type="text" name="description" id="description" class="form-control form-datos" placeholder="Description">
-            <span id="descriptionError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.description ? errores.description.msg: null ) %></span>
+            
+            <span class="text-danger" id="descriptionError"><%=(typeof errores != 'undefined' && errores.description ? errores.description.msg: null ) %></span>
           </div>
         </div>
     <div class="row mt-5">
@@ -93,8 +93,8 @@
               <input type="file" class="custom-file-input" id="file" name="image">
               <label class="custom-file-label" for="customFile">Elija la imagen</label>
             </div>
-            <span id="fileError"></span>
-            <span class="text-danger"><%=(typeof errores != 'undefined' && errores.image ? errores.image.msg: null ) %></span>
+          
+            <span class="text-danger" id="fileError"><%=(typeof errores != 'undefined' && errores.image ? errores.image.msg: null ) %></span>
           </div>
           
           

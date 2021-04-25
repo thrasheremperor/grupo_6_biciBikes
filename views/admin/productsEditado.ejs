@@ -35,7 +35,7 @@
                 <option <%= categoria.id == producto.categoryId ? "selected" : null %>  value="<%= categoria.id %> "><%= categoria.category %> </option>
                <% }) %>
              </select>
-            <span id="makeError" class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+            <span id="categoryError" class="text-danger"><%=(typeof errores != 'undefined' && errores.category ? errores.category.msg: null ) %></span>
             
           </div>
 
@@ -47,7 +47,7 @@
                 <option <%= colore.id == producto.colorId ? "selected" : null %>  value="<%= colore.id %> "><%= colore.color %> </option>
                <% }) %>
              </select>
-            <span id="makeError" class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+            <span class="text-danger" id="colorError"><%=(typeof errores != 'undefined' && errores.color ? errores.color.msg: null ) %></span>
             
           </div>
 
@@ -65,7 +65,7 @@
                 <option <%= descuento.id == producto.discountId ? "selected" : null %>  value="<%= descuento.id %> "><%= descuento.discount %> </option>
                <% }) %>
              </select>
-            <span id="makeError" class="text-danger"><%=(typeof errores != 'undefined' && errores.make ? errores.make.msg: null ) %></span>
+            <span id="makeError" class="text-danger"><%=(typeof errores != 'undefined' && errores.discount ? errores.discount.msg: null ) %></span>
             
           </div>
 
@@ -83,8 +83,8 @@
                 <input type="file" class="custom-file-input" id="formFileLg" name="image">
                 <label class="custom-file-label" for="customFile">Elija la imagen</label>
               </div>
-              <span id="formFileLgError"></span>
-              <span class="text-danger"><%=(typeof errores != 'undefined' && errores.image ? errores.image.msg: null ) %></span>
+              
+              <span class="text-danger" id="formFileLgError"><%=(typeof errores != 'undefined' && errores.image ? errores.image.msg: null ) %></span>
             </div>
   
             <div class="col-12 col-md-4 d-flex justify-content-center">

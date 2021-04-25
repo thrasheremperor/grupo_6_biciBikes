@@ -166,7 +166,7 @@ module.exports  =  {
         })
         .then(user => {
             console.log(user)
-            res.redirect('/')
+            res.redirect('/usuario/miPerfil')
         }) 
         .catch(error => console.log(error))
         }
@@ -181,16 +181,21 @@ module.exports  =  {
         }
         res.redirect('/')
     },
-    eliminar:(req,res)=>{
+    eliminar  : (req,res)=>{
         db.User.destroy({
-            where: {
-                id: req.params.id
+            where : {
+                id : req.params.id
             }
         })
         .then(()=>{
+            req.session.destroy();
+            if(req.cookies.biciBikes){
+            res.cookie('biciBikes','',{
+                maxAge: -1
+            })
+        }
             return res.redirect('/')
         })
-        .catch(error => res.send(error))
+        .catch(error => {console.log(error)})      
     }
-
 }

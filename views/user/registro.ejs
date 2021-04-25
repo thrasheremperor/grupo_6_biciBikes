@@ -63,7 +63,7 @@
                 
 
                 <div class="form-check text-center mt-5">
-                    <input class="form-check-input" type="checkbox" value=null id="flexCheckDefault" name="condicion">
+                    <input class="form-check-input" type="checkbox" value=null id="flexCheckDefault" name="condicion" value="<%=(typeof old != 'undefined' && old.condicion ? old.condicion : null ) %>">
                     <label class="form-check-label" for="flexCheckDefault">
                       Acepto los términos y condiciones
                     </label>

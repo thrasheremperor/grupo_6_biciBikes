@@ -5,43 +5,52 @@
   <%- include('partials/header.ejs') %> 
   <!--aqui es donde debe ir la vista de detalle de los productos selecionados -->
   
-  <div class="container detalle">
-    <section class="detalle">
+  <div class="container detalle mt-5" >
+    <section class="detalle" style="border-radius: 5px;">
       <div class="row">
-        <div class="col-12">
-          <h2 class="titulo-detalle"><%- producto.name %> <%- producto.producto_make.make %></h2>
-
-        </div>
+        
         <div class="col-12 paraBorder">
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-5 d-flex justify-content-center align-items-center">
-                <figure>
+                <figure style="border: 5px solid orange;">
                   <img src="/images/imgProduct/<%-producto.images[0].image %>" alt="bicicleta" class="img-fluid">
                 </figure>
                 <hr id="hr">
               </div>
-              <div class="col-12 col-md-6 ">
+            
+              <div class="col-12 col-md-6 mt-3">
                 <h3 class="sub-titulo"><%- producto.name + ' ' + producto.producto_make.make%></h3>
                 <div class="d-flex justify-content-center my-4">
-                  <h3 class="p-0 mx-1">$<%-producto.price%></h3>
-                  <span class="p-0 m-0" id="desc"><%-producto.product_discount.discount%> %OFF</span>
+                  <% if (producto.discount == 0) { %>
+                    <h3>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h3>
+                  <% } else { %>
+                    <h4><strike>$<%= producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></strike></h4>
+                    <div class="d-flex">   
+                    <h3 class="">$<%- (producto.price - producto.price * producto.product_discount.discount / 100).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g,".") %></h3>
+                      <h5  class="text-success"><%- producto.product_discount.discount %>% OFF </h5>
+                    </div>
+                   
+                  <% } %>
                 </div>
+                <hr>
                 <div class="my-4">
                   <p><%-producto.description%></p>
 
                 </div>
+                <hr>
                 <select class="custom-select my-4" id="color">
                   <% colores.forEach(color => { %>
                     <option value="<%= color.id %>" <%= color.id == producto.product_color.id ? "selected" : null %> ><%= color.color %> </option>
                   <% }) %>
                 </select>
-              
+                <hr>
                 <div class="btns-detalle">
                   <button class="btn btn-detalle hvr-buzz-out" type="submit"><a href="">comprar</a></button>
                   <button class="btn btn-detalle hvr-buzz-out" type="submit"><a href="">agregar al carrito</a></button>
                 </div>
-                <hr>
+                <br>
+                
               </div> 
             </div>
           </div> 
