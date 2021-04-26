@@ -22,7 +22,7 @@ router.post('/login',loginValidator,processLogin);/*ruta lista */
 router.get('/miPerfil', userCheck,perfil);
 /*editar perfil */
 router.get('/edit/:id', userCheck,edit);
-router.put('/edit/:id',upload.any(), ProfileEditValidator,editado);
+router.put('/edit/:id',upload.any(),ProfileEditValidator,editado);
 /*cerrar secion y eliminar */
 router.get('/cerrarSesion', cerrar);
 router.delete('/eliminar/:id',eliminar)
