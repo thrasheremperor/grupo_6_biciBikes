@@ -104,6 +104,7 @@ module.exports = {
                    id : req.params.id
             }
         })
+
         .then(()=>{
             db.image.update({
                 image : req.files[0] ? req.files[0].filename : undefined
@@ -121,6 +122,7 @@ module.exports = {
         })
         .catch(error => res.send(error))
     },
+    
     borrar: (req,res)=>{
         db.Product.destroy({
             where : {
