@@ -166,7 +166,7 @@ module.exports  =  {
         })
         .then(user => {
             console.log(user)
-            res.redirect('/usuario/miPerfil')
+            res.redirect('/usuario/login')
         }) 
         .catch(error => console.log(error))
         }
