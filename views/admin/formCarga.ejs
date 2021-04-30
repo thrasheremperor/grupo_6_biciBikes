@@ -4,13 +4,13 @@
 <body class="cuerpo">
   <%- include('../partials/header.ejs') %> 
     <div class="formCarga">
-      <form action="/admin/formCarga" method="POST" id ="formCarga" class="sesion-registro" enctype="multipart/form-data">
+      <form action="/admin/formCarga" method="POST" id ="formCarga" class="form-carga" enctype="multipart/form-data">
         <h2>Agregar nuevo Producto</h2>
         <hr>
         <div class="row">
-          <div class="col-12 mb-3">
-            
-            <input type="text" name="name" placeholder="Nombre del producto" id="inputname" class="form-control form-datos">
+          <div class="col-12 col-md-6">
+            <label>Nombre del producto</label>
+            <input type="text" name="name" placeholder="Nombre del producto" id="inputname" class="form-datos">
             
             <!-- validaciones front y back en un mismo span-->
             <span class="text-danger" id="nameError"><%=(typeof errores != 'undefined' && errores.name ? errores.name.msg: null ) %></span>
@@ -19,6 +19,7 @@
         
           <div class="col-12 col-md-6">
 
+            <label>Marca</label>
             <select name="make" class="form-datos" id="inputmake">
               <option selected hidden value="">Seleccione la marca</option>
               <% marcas.forEach(marca => { %>
@@ -30,8 +31,9 @@
          
           </div>
 
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-3">
 
+            <label>Color</label>
             <select name="color" class="form-datos" id="color">
               <option selected hidden value="" >Seleccione el color</option>
               <% colores.forEach(colors => { %>
@@ -43,8 +45,9 @@
             <span class="text-danger" id="colorError"><%=(typeof errores != 'undefined' && errores.color ? errores.color.msg: null ) %></span>
           </div>
 
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-3">
             
+            <label>Categoria</label>
             <select name="category" class="form-datos" id="category">
               <option selected hidden value="" >Seleccione la categoria</option>
               <% categorias.forEach(categoria => { %>
@@ -58,8 +61,9 @@
            
           </div>
 
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-3">
 
+            <label>Descuento</label>
             <select name="discount" id="discount" class="form-datos">
               <option selected hidden value="" >Seleccione el descuento</option>
               <% descuentos.forEach(descuento => { %>
@@ -71,18 +75,18 @@
 
           </div>
        
-          <div class="col-12 col-md-6">
-            
-            <input type="number" id="price" name="price" class="form-control form-datos" placeholder="Precio de producto">
+          <div class="col-12 col-md-3">
+            <label>Precio del producto</label>
+            <input type="number" id="price" name="price" class="form-datos" >
             
             <span class="text-danger" id="priceError"><%=(typeof errores != 'undefined' && errores.price ? errores.price.msg: null ) %></span>
           </div>
         
          
         
-          <div class="col-12 col-md-6">
+          <div class="col-12 ">
                        
-            <input type="text" name="description" id="description" class="form-control form-datos" placeholder="Description">
+            <input type="text" name="description" id="description" class="form-datos" placeholder="Description">
             
             <span class="text-danger" id="descriptionError"><%=(typeof errores != 'undefined' && errores.description ? errores.description.msg: null ) %></span>
           </div>
@@ -98,7 +102,7 @@
           </div>
           
           
-          <div class="col-12 col-md-6 d-flex justify-content-center">
+          <div class="col-12 col-md-6 d-flex justify-content-center mt-2 mr-1">
             <button class="btn btn-primary" type="submit">Publicar</button>
             <span id="submitErrors" class="text-danger"></span>
           </div>

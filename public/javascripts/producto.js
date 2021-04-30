@@ -4,7 +4,8 @@ let qs = (element) => {
 }
 
 window.onload = () => {
-    let $inputname = qs('#inputname'),
+    let $formCarga = qs('#formCarga'), 
+    $inputname = qs('#inputname'),
     $nameError = qs('#nameError'),
     $inputmake = qs('#inputmake'),
     $makeError = qs('#makeError'),
@@ -74,22 +75,16 @@ window.onload = () => {
         }
     }
 
-    
-
-    $color.onblur = () => {
-        switch (true) {
-            case !$color.value.trim():
-                $colorError.innerHTML = "Seleccione un color"
-                $color.classList.add('is-invalid')
-                
-                break;   
-            default:
-                $color.classList.remove('is-invalid')
-                $color.classList.add('is-valid')
-                $colorError.innerHTML = null
-                break;
+    $color.addEventListener('blur',function(){
+        if(!$color.value.trim()){
+            $colorError.innerHTML = "Seleccione color"
+            $color.classList.add('is-invalid')
+        }else{
+            $color.classList.remove('is-invalid')
+            $color.classList.add('is-valid')
+            $colorError.innerHTML = null
         }
-    }
+    })
 
     $price.onblur = () => {
         switch (true) {
@@ -148,7 +143,7 @@ window.onload = () => {
         }
     }) 
 
-    $form.addEventListener('submit',function(event){
+    $formCarga.addEventListener('submit',function(event){
         let error = false;
         event.preventDefault()
 
@@ -156,13 +151,13 @@ window.onload = () => {
         
         for (let index = 0; index < 6; index++) {
             if(elementosForm[index].value == ""){
-                elementosForm[index].classList.add('is-invalid');
-                submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                elementosForm[index].classList.add('was-validated');
+                submitErrors.innerHTML = "hay campos incompletos";
                 error = true;
             }
         }
         if(!error){
-            $form.submit()
+            $formCarga.submit()
         }
 
     })

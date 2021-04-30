@@ -37,7 +37,7 @@ module.exports = {
           })
           .then( product => {
               db.image.create({
-                  image : req.files[0] ? req.files[0].filename : null,
+                  image : req.files[0] ? req.files[0].filename :  "defoult.png",
                   productId : product.id
               })
               .then(function(){

@@ -95,7 +95,6 @@ body {
     color: var(--black);
     background-color: var(--darkGreen);
     position: relative;
-    left: 10%;
     height: 40px;
 }
 
