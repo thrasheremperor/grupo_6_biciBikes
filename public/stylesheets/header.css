@@ -9,6 +9,20 @@ body {
 .row-header {
     background-color: rgba(11, 10, 7, 0.1);
 }
+.btn-cart{
+    border: 0;
+    background: none;
+    margin-right: 15px;
+  }
+  .btn-cart i{
+    font-size: 40px;
+  }
+  .btn-cart span{
+    font-size: 16px;
+    position: absolute;
+    top:5px;
+    right: 20px;
+  }
 
 @-webkit-keyframes hvr-icon-bob {
     0% {

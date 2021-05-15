@@ -45,7 +45,7 @@ module.exports = {
         })
         Promise.all([productsVisited,productsNow,productsPopular])
         .then(([productsVisited,productsNow,productsPopular])=>{
-            
+            !req.session.carrito ? req.session.carrito = [] : null
             res.render('home',{
             title: "Bici Bikes",
             productsVisited,
@@ -101,39 +101,6 @@ module.exports = {
         })
         .catch(error => res.send(error))
     },
-
-    contacto : (req,res)=>{
-        res.render('contacto',{
-            title: 'Contacto'
-        })
-        .catch(error=>console.log(error))
-    },
-
-    nosotros : (req,res)=>{
-        db.Product.findOne({
-            where:{
-             id:{
-                 
-             }
-            }
-        })
-        .then(nosotros=>{
-            return res.render('nosotros',{
-            title : 'Nosotros',
-            nosotros
-            })
-        })
-        
-        .catch(error => console.log(error))
-    },
-
-    Mpagos : (req,res)=>{
-        res.render('Mpagos',{
-            title : 'Bici Bikes'
-        })
-        .catch(error => console.log(error))
-    },
-
     carrito :(req, res) => {
         db.Product.findAll()
         .then(products=>{

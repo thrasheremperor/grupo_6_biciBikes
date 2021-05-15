@@ -1,0 +1,52 @@
+
+
+.t-body, .modal{
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal{
+    position: fixed;
+    top:0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-modal:checked ~ .modal{
+   opacity: 1;
+   visibility: visible;
+}
+.contenedore{
+    width:400px;
+    height: 300px;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
+    transition: all 500ms ease;
+}
+
+.contenedore header{
+    padding: 10px;
+    background: #db8846;
+    color: #fff;
+}
+
+.contenedore label{
+    position: absolute;
+    right: 370px;
+    font-size: 15px;
+    cursor: pointer;
+}
+#btn-modal{
+    display: none;
+}
+.lbl-modal{
+    background:#fff;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
