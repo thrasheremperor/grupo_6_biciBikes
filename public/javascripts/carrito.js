@@ -118,3 +118,7 @@ btnCartEmpty.addEventListener('click', (e) =>{
  
     vaciarCarrito()
 })
+
+$('#modal-carrito').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })

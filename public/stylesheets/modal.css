@@ -1,5 +1,5 @@
 
-
+/*
 .t-body, .modal{
     width: 100vh;
     height: 100vh;
@@ -45,6 +45,12 @@
     display: none;
 }
 .lbl-modal{
+    opacity: 0;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    right:-600px;
+    top:-60px;
     background:#fff;
     padding: 10px;
     border-radius: 4px;
