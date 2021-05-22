@@ -1,4 +1,8 @@
-
+.btn-cart span{
+    position: relative;
+    top:-20px;
+    left:-5px;
+}
 /*
 .t-body, .modal{
     width: 100vh;
